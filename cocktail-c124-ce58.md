@@ -35,7 +35,8 @@ addons:
 cocktail: true
 # (optional) if nfs server available
 nfs_ip: "192.168.0.175"
-nfs_mountdir: "/nfs"
+nfs_mountdir: "/cocktail-nfs"
+
 # cube deploy -v debug
 ```
 
