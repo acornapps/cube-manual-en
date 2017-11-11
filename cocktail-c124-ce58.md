@@ -1,4 +1,4 @@
-# Cube cli 를 이용한 Cocktail Installation
+# Cocktail Installation on baremetal
 
 1. 먼저 cube 명령어로 baremetal 설치 script를 내려받는다.
 
@@ -6,7 +6,7 @@
 # cube init -p baremetal
 ```
 
-2. Baremetal의 ip와 NFS 서버로 활용한 ip, Loadbalancer ip등의 정보를 편집기로 cube.yaml에 저장한다.
+1. Baremetal의 ip와 NFS 서버로 활용한 ip, Loadbalancer ip등의 정보를 편집기로 cube.yaml에 저장한다.
 
 ```
 # vi cube.yaml
@@ -45,7 +45,7 @@ nfs_ip: "192.168.0.175"
 nfs_mountdir: "/cocktail-nfs"
 ```
 
-3. cube deploy명령을 이용하여 설치한다.  -v debug 옵션을 지정하면 설치과정의 로그를 확인할 수 있.
+1. cube deploy명령을 이용하여 설치한다.  -v debug 옵션을 지정하면 설치과정의 로그를 확인할 수 있.
 
 ```
 # cube deploy -v debug
