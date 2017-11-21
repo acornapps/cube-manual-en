@@ -116,7 +116,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/k8s_dashboard_5.jpeg)
 
-6. 브라우저로 [http://{VM의](http://{VM의) masterip}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
+1. 브라우저로 [http://{VM의](http://{VM의) masterip}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
 
 ![](/assets/cocktail_login.jpeg)
 
@@ -148,4 +148,20 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 생성된 클러스터 정보를 기입한다. 아래 192.168.50.11은 cube.yaml파일에서 master ip를 기입하면 되고, Certification의 값을 제외한 항목은 그림에서 표시된 값으로 기입하면 된다.
 
 ![](/assets/cocktail_conf_cluster.jpeg)
+
+Cluster CA Certification 값은 cube.yaml파일의 master ip로 ssh 접속한 후, 아래 결과값을 넣어주면 되고, 
+
+```
+# cat /etc/kubernetes/pki/ca.pem
+```
+
+
+
+Certificate Authority Data 값은 아래 명령을 실행한 결과를 https://www.base64encode.org/ 접속하여 base64 encoding한 값을 넣어주면 된다.
+
+```
+# cat /etc/kubernetes/pki/apiserver-key.pem
+```
+
+
 
