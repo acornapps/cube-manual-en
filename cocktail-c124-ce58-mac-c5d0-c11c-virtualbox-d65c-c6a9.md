@@ -108,3 +108,13 @@ The key's randomart image is:
 
 사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
 
+Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다
+
+
+
+![](/assets/k8s_dashboard_4.jpeg)
+
+connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 3
+
+![](/assets/k8s_dashboard_5.jpeg)1876 port임.
+
