@@ -113,9 +113,9 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/k8s_dashboard_5.jpeg)
 
-1. 브라우저로 [http://{VM의](http://{VM의) masterip}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
+1. 브라우저로 [http://{lb\_ip](http://{VM의)}:31876 또는 [http://{master1\_ip](http://{VM의)}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
 
-![](/assets/cocktail_login.jpeg)
+
 
 1. 프로바이더 등록
 
@@ -142,15 +142,13 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 1. 클러스터 등록
 
-생성된 클러스터 정보를 기입한다. 
+생성된 클러스터 정보를 기입한다.
 
-마스터 URL은 https://{lb\__ip}:6443 or https://{master1ip_}:6443 로 기재
+마스터 URL은 [https://{lb\_\_ip}:6443](https://{lb__ip}:6443) or [https://{master1ip\_}:6443](https://{master1ip_}:6443) 로 기재
 
-모니터링 호스트, ingress host는 lb_ip or master1_ip로 기재.
+모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.
 
 ![](/assets/cocktail_conf_cluster_baremetal.jpeg)
-
-
 
 Clustngress hoster CA Certification 값은 cube.yaml파일의 master ip로 ssh 접속한 후, 아래 결과값을 넣어주면 되고,
 
