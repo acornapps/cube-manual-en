@@ -98,19 +98,15 @@ The key's randomart image is:
 # cube deploy [-v debug]
 ```
 
-
-
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
+![](/assets/k8s_dashboard_1.jpeg)
 
+고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
 
+![](/assets/k8s_dashboard_2.jpeg)
 
+사용자이름과
 
-
-
-
-
-
-
-
+![](/assets/k8s_dashboard_3.jpeg)
 
