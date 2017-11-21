@@ -116,15 +116,13 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/k8s_dashboard_5.jpeg)
 
-6. 
 
 
+6. 브라우저로 [http://{VM의](http://{VM의) masterip}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
 
-1. 브라우저로 [http://{VM의](http://{VM의) masterip}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
+![](/assets/cocktail_login.jpeg)
 
-   ![](/assets/cocktail_login.jpeg)
-
-2. 프로바이더 등록
+1. 프로바이더 등록
 
 프로바이더는 클라우드 리소스로 사용 할 Public/Private 클라우드 계정 정보를 등록, 편집, 삭제할 수 있다.
 
