@@ -15,7 +15,7 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 # cube init -p baremetal
 ```
 
-3.cube.yam 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 2ea, worker 3ea, nfs server로 구성하는 예임.
+3.cube.yam 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 3ea, nfs server로 구성하는 예임.
 
 외부 LoadBalancer가 있으면, ib\_ip에 해당 ip를 기재하면 됨.
 
@@ -25,7 +25,7 @@ cloud_provider: "baremetal"
 
 
 # (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
-master_ip: ["203.236.100.10", "203.236.100.11"]
+master_ip: ["203.236.100.10"]
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
 worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"]
@@ -95,7 +95,7 @@ The key's randomart image is:
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
-이때,  Loadbalancer가 활성화 되어 있으면, https://lb_ip:6443/ui 로 접속하게 되고 아니면 https://master1_ip:6443/ui 로 접속합니다.
+이때,  Loadbalancer가 활성화 되어 있으면, [https://lb\_ip:6443/ui](https://lb_ip:6443/ui) 로 접속하게 되고 아니면 [https://master1\_ip:6443/ui](https://master1_ip:6443/ui) 로 접속합니다.
 
 ![](/assets/k8s_dashboard_1.jpeg)
 
