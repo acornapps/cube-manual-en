@@ -124,9 +124,13 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 프로바이더 계정을 등록함으로써 해당 프로바이더의 리소스, 미터링 정보를 가져 오거나 서버를 생성 할 수 있다. 단 로컬 테스트 환경에서는 클러스터를 생성하기 위한 정보로만 사용됨.
 
-![](/assets/cocktail_conf_provider.jpeg)
 
-| 프로바이더  | **설명** |
+
+프로바이더는 O
+
+![](/assets/cocktail_conf_provider.jpeg)npremise, 유형은 U
+
+| **프로바이더ser로 선택한다.** | **설명** |
 | :--- | :--- |
 | Amazon Web Service | Amazon사의 public 클라우드 서비스 |
 | Google Cloud Platform | Google사의 public클라우스 서비스 |
