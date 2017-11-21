@@ -15,26 +15,20 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 # cube init -p baremetal
 ```
 
-3.cube.yam 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 예시임.
+3.cube.yam 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 2ea, worker 3ea, nfs server로 구성하는 예임.
+
+외부 LoadBalancer가 있으면, ib\_ip에 해당 ip를 기재하면 됨.
 
 ```
-# vi cube.yaml
 ---
-cloud_provider: "virtualbox"
+cloud_provider: "baremetal"
 
 
 # (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
-master_ip: ["192.168.50.11"]
+master_ip: ["203.236.100.10", "203.236.100.11"]
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
-worker_ip: ["192.168.50.12"]
-
-# (required) vCpu number
-cpus: 2
-
-# (required) Memory size (MB)
-memory: 2048
-
+worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"]
 
 # (required) Set true if high-availability is required.
 high_availability: false
@@ -48,6 +42,7 @@ private_key_path: "/cubetest/id_rsa"
 # (required) Path to an SSH public key file to be provisioned as the SSH key.
 key_path: "/cubetest/id_rsa.pub"
 
+
 # Kubernetes
 k8s_version: "1.6.7"
 cluster_name: "cube"
@@ -60,7 +55,7 @@ addons:
 # (required) cocktail service
 cocktail: true
 # (optional) if nfs server available
-nfs_ip: "192.168.50.12"
+nfs_ip: "203.236.100.15"
 nfs_mountdir: "/nfs"
 ```
 
