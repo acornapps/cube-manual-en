@@ -126,7 +126,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/cocktail_conf_provider.jpeg)
 
-| 프로바이 | **설명** |
+| 프로바이더  | **설명** |
 | :--- | :--- |
 | Amazon Web Service | Amazon사의 public 클라우드 서비스 |
 | Google Cloud Platform | Google사의 public클라우스 서비스 |
@@ -139,6 +139,5 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 | User | 프로바이더 등록을 위한 기본 값. 미터링 아닌 경우 User 선택 |
 | Metering | Public Cloud를 사용시, 리소스 사용량을 받아오고자 할 때 선택 |
 
-  
 
 
