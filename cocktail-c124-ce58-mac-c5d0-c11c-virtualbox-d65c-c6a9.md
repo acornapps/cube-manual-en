@@ -163,3 +163,11 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://
 
 ![](/assets/cocktail_cert_encoding.jpeg)
 
+
+
+8.볼륨 설정하기
+
+서비스에서 사용되는 Volume을 등록한다. 입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
+
+![](/assets/cocktail_volume.jpeg)
+
