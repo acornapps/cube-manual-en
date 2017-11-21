@@ -116,15 +116,13 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/k8s_dashboard_5.jpeg)
 
-7. 브라우저로 [http://{VM의](http://{VM의) masterip}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\) ![](/assets/cocktail_login.jpeg)
+1. 브라우저로 [http://{VM의](http://{VM의) masterip}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\) ![](/assets/cocktail_login.jpeg)
 
-8. 프로바이더 등록  
+2. 프로바이더 등록
 
-클라우드 리소스로 사용 할 Public/Private 클라우드 계정 정보를 등록, 편집, 삭제할 수 있다.
+프로바이더는 클라우드 리소스로 사용 할 Public/Private 클라우드 계정 정보를 등록, 편집, 삭제할 수 있다.
 
-프로바이더 계정을 등록하므로써 해당 프로바이더의 리소스, 미터링 정보를 가져 오거나 서버를 생성 할 수 있습니다.
-
-
+프로바이더 계정을 등록함으로써 해당 프로바이더의 리소스, 미터링 정보를 가져 오거나 서버를 생성 할 수 있다. 단 로컬 테스트 환경에서는 클러스터를 생성하기 위한 정보로만 사용됨.
 
 ![](/assets/cocktail_conf_provider.jpeg)
 
