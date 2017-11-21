@@ -95,6 +95,8 @@ The key's randomart image is:
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
+이때,  Loadbalancer가 활성화 되어 있으면, https://lb_ip:6443/ui 로 접속하게 되고 아니면 https://master1_ip:6443/ui 로 접속합니다.
+
 ![](/assets/k8s_dashboard_1.jpeg)
 
 고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
