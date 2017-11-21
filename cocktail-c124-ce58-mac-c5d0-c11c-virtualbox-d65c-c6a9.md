@@ -106,7 +106,5 @@ The key's randomart image is:
 
 ![](/assets/k8s_dashboard_2.jpeg)
 
-사용자이름과
-
-![](/assets/k8s_dashboard_3.jpeg)
+사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
 
