@@ -116,3 +116,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/k8s_dashboard_5.jpeg)
 
+브라우저로 http://{VM의 masterip}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\) ![](/assets/cocktail_login.jpeg)
+
+
+
