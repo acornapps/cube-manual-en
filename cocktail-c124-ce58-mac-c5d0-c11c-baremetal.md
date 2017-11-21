@@ -142,11 +142,17 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 1. 클러스터 등록
 
-생성된 클러스터 정보를 기입한다. 아래 192.168.50.11은 cube.yaml파일에서 master ip를 기입하면 되고, Certification의 값을 제외한 항목은 그림에서 표시된 값으로 기입하면 된다.
+생성된 클러스터 정보를 기입한다. 
 
-![](/assets/cocktail_conf_cluster.jpeg)
+마스터 URL은 https://{lb\__ip}:6443 or https://{master1ip_}:6443 로 기재
 
-Cluster CA Certification 값은 cube.yaml파일의 master ip로 ssh 접속한 후, 아래 결과값을 넣어주면 되고,
+모니터링 호스트, ingress host는 lb_ip or master1_ip로 기재.
+
+![](/assets/cocktail_conf_cluster_baremetal.jpeg)
+
+
+
+Clustngress hoster CA Certification 값은 cube.yaml파일의 master ip로 ssh 접속한 후, 아래 결과값을 넣어주면 되고,
 
 ```
 # cat /etc/kubernetes/pki/ca.pem
