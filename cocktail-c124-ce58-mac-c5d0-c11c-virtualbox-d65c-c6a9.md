@@ -110,11 +110,9 @@ The key's randomart image is:
 
 Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다
 
-
-
 ![](/assets/k8s_dashboard_4.jpeg)
 
-connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 3
+connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 31876 port임.
 
-![](/assets/k8s_dashboard_5.jpeg)1876 port임.
+![](/assets/k8s_dashboard_5.jpeg)
 
