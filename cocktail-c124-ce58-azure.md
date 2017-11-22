@@ -22,11 +22,11 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 * client\_secret 값 구하기
 
-상기화면에서 우측의 Keys 메뉴를 선택하고 
+상기화면에서 우측의 Keys 메뉴를 선택하고 description\(예, cocktail\_key\), expires\(never expires\)를 입력하고 저장버튼을 클릭하면 자동으로 value값이 표시되는데 이 값이  client\_secret값임.
 
 
 
-1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
+
 
 ```
 # mkdir /tmp/cubetest
