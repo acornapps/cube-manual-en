@@ -33,7 +33,7 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
   # cd /tmp/cubetest
   ```
 
-2.cube 명령을 이용하여 baremetal용 설치 script를 download 받고 초기화 한다.
+2.cube 명령을 이용하여 azure용 설치 script를 download 받고 초기화 한다.
 
 ```
 # cube init -p baremetal
