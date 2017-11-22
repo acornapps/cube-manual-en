@@ -26,6 +26,12 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 
 
+![](/assets/AccessControl_IAM.jpeg)
+
+
+
+
+
 
 
 ```
