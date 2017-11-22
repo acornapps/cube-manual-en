@@ -64,13 +64,13 @@ nfs_mountdir: "/nfs"
 &lt; ssh key 신규 발급 방법 &gt;
 
 ```
-# ssh-keygen
+# ssh-keygen -t rsa
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/cloud/.ssh/id_rsa): /tmp/cubetest/id_rsa
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
-Your identification has been saved in /Users/cloud/git/cubedeploy/virtualbox/5/id_rsa.
-Your public key has been saved in /Users/cloud/git/cubedeploy/virtualbox/5/id_rsa.pub.
+Your identification has been saved in /tmp/cubetest/id_rsa.
+Your public key has been saved in /tmp/cubetest/id_rsa.pub.
 The key fingerprint is:
 SHA256:liTKyW/l3eU9+mBzyksL0AKpYXRsvsQ793nWJiUgJC0 cloud@Clouds-MacBook-Pro.local
 The key's randomart image is:
@@ -87,7 +87,13 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+4. Baremetal 서버에 ssh private key로 자동 접속을 위해 ssh-copy-id 명령을 사용하여 ssh public key를 해당 서버에 복사한다.
+
+```
+# ssy-copy-id -i /tmp/cubetest/id_rsa.pub root@ip
+```
+
+5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
 # cube deploy [-v debug]
@@ -114,8 +120,6 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 ![](/assets/k8s_dashboard_5.jpeg)
 
 1. 브라우저로 [http://{lb\_ip](http://{VM의)}:31876 또는 [http://{master1\_ip](http://{VM의)}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
-
-
 
 1. 프로바이더 등록
 
