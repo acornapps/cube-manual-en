@@ -8,21 +8,25 @@ Azure cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 
 ![](/assets/TenantId.jpeg)
 
-* ApplicationId 등록 : Home &gt; Azure Active Directory &gt; App registrations 에서  +New application registration 메뉴 선택.
-* Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서비스 URL\) [http://cocktail.acornsoft.io](http://cocktail.acornsoft.io) 로 입력
+* ApplicationId 등록하여  clientId 값 구하기
 
+Home &gt; Azure Active Directory &gt; App registrations 에서  +New application registration 메뉴 선택.
 
+Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서비스 URL\) [http://cocktail.acornsoft.io](http://cocktail.acornsoft.io) 로 입력
 
 ![](/assets/ClientId.jpeg)
 
 
+
+등록된 application 상세 화면에서 Application ID가 clientId 값임.
+
+![](/assets/ClientId2.jpeg)
 
 
 
 
 
 ```
-
 
 ```
 
