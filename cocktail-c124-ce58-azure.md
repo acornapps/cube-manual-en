@@ -10,11 +10,18 @@ Azure cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 
 
 
-```
+* ApplicationId 등록 : Home &gt; Azure Active Directory &gt; App registrations 에서  +New application registration 메뉴 선택.
+* Application Type을 Web app/API로 선택하고, Sign-on URL\(ㅔ공할 \) Uhttp://cocktail.acornsoft.io 로 입력
+
+
+
+
+
+
 
 ```
 
-
+```
 
 1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
