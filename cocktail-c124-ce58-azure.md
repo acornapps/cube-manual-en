@@ -36,12 +36,10 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 2.cube 명령을 이용하여 azure용 설치 script를 download 받고 초기화 한다.
 
 ```
-# cube init -p baremetal
+# cube init -p azure
 ```
 
-3.cube.yam 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 3ea, nfs server로 구성하는 예임.
-
-만약 외부 LoadBalancer가 가용하여 master를 이중화 할 경우 ib\_ip에 해당 load balancer ip를 기재하면 됨.
+3.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 Azure 정보 및 인스턴스 정보를 기입한다. 
 
 ```
 ---
