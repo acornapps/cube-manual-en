@@ -20,15 +20,11 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 ![](/assets/ClientId2.jpeg)
 
-
-
 * client\_secret 값 구하기
 
-상기화면에서 우측의 Keys 메뉴를 선택하고
+상기화면에서 우측의 Keys 메뉴를 선택하고 
 
-```
 
-```
 
 1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
