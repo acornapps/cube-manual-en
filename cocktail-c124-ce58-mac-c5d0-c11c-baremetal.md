@@ -87,10 +87,10 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4. Baremetal 서버에 ssh private key로 자동 접속을 위해 ssh-copy-id 명령을 사용하여 ssh public key를 해당 서버에 복사한다.
+1. Baremetal 서버에 ssh private key로 자동 접속을 위해 ssh-copy-id 명령을 사용하여 ssh public key를 해당 서버에 복사한다.
 
 ```
-# ssy-copy-id -i /tmp/cubetest/id_rsa.pub root@ip
+# ssh-copy-id -i /tmp/cubetest/id_rsa.pub root@ip
 ```
 
 5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
@@ -121,7 +121,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 1. 브라우저로 [http://{lb\_ip](http://{VM의)}:31876 또는 [http://{master1\_ip](http://{VM의)}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
 
-1. 프로바이더 등록
+2. 프로바이더 등록
 
 프로바이더는 클라우드 리소스로 사용 할 Public/Private 클라우드 계정 정보를 등록, 편집, 삭제할 수 있다.
 
@@ -173,4 +173,10 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://
 서비스에서 사용되는 Volume을 등록한다. 입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
 
 ![](/assets/cocktail_volume.jpeg)
+
+9.서비스 생성하기
+
+아래와 같이 간단한 tomcat server를 deploy 하고 완료시 해당 service port로 접속하여 정상적으로 tomcat 초기 화면이 표시되는지 확인한다.
+
+
 
