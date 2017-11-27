@@ -6,7 +6,7 @@ Cocktail 설치 및 환경설정 작업이 완료되면 기본적인 서비스 �
 
 아래와 같이 간단한 tomcat server를 deploy 하고 완료시 해당 service port로 접속하여 정상적으로 tomcat 초기 화면이 표시되는지 확인한다. **단, tomcat server의 특성상 Memory request 양과 limit양을 각각 512, 1024로 설정해 주어야 정상 기동하게 된다.**
 
-홈 &gt; 서비스 &gt; 맵생성 &gt; 서 생성 화면에서 아래 그림을 참고해서 등록한 후 배포버튼을 클릭한다.
+홈 &gt; 서비스 &gt; 맵생성 &gt; 서 생성 화면에서 아래 그림을 참고해서 등록한 후 생버튼을 클릭한다.
 
 ![](/assets/deploy1.jpeg)
 
