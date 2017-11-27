@@ -178,11 +178,15 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://
 
 아래와 같이 간단한 tomcat server를 deploy 하고 완료시 해당 service port로 접속하여 정상적으로 tomcat 초기 화면이 표시되는지 확인한다.
 
-
-
 ![](/assets/deploy1.jpeg)
 
 ![](/assets/deploy2.jpeg)
 
 ![](/assets/deploy3.jpeg)
+
+![](/assets/deploy4.jpeg)
+
+![](/assets/deploy5.jpeg)
+
+![](/assets/deploy6.jpeg)
 
