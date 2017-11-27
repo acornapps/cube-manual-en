@@ -10,9 +10,25 @@ Cocktail 설치 및 환경설정 작업이 완료되면 기본적인 서비스 �
 
 ![](/assets/deploy1.jpeg)
 
-![](/assets/deploy2.jpeg)
+![](/assets/deploy2.jpeg)정상적으로 배포가 완료되면 아래와 같이  tomcat 초기화면이 표시된다.![](/assets/deploy3.jpeg)
 
 ![](/assets/deploy3.jpeg)
+
+![](/assets/deploy3.jpeg)
+
+![](/assets/deploy3.jpeg)
+
+![](/assets/deploy3.jpeg)
+
+![](/assets/deploy3.jpeg)
+
+![](/assets/deploy3.jpeg)
+
+![](/assets/deploy3.jpeg)
+
+![](/assets/deploy3.jpeg)
+
+![](/assets/deploy3.jpeg) t
 
 ![](/assets/deploy4.jpeg)
 
