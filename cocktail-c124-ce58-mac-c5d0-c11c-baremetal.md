@@ -190,3 +190,7 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://
 
 ![](/assets/deploy6.jpeg)
 
+![](/assets/deploy7.jpeg)
+
+![](/assets/deploy8.jpeg)![](/assets/deploy9.jpeg)![](/assets/deploy10.jpeg)![](/assets/deploy11.jpeg)![](/assets/deploy12.jpeg)
+
