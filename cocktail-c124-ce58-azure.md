@@ -39,31 +39,43 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 # cube init -p azure
 ```
 
-3.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 Azure 정보 및 인스턴스 정보를 기입한다. 
+3.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 Azure 정보 및 인스턴스 정보를 기입한다.
 
 ```
 ---
-cloud_provider: "baremetal"
+cloud_provider: "azure"
 
+## (required) When azure is used, you need to set the following variables.
+subscription_id: "359a4193-7b57-4fea-881a-001998abe36e"
 
-# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
-master_ip: ["203.236.100.10"]
+client_id: "ac441ccf-55a7-4cc8-ba51-39ca89c72e15"
 
-# (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
-worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"]
+client_secret: "v5jR6aTM+Hz9f6qB+HuNbBDRP+3rvrXpDw31eIVrPn8="
 
-# (required) Set true if high-availability is required.
-high_availability: false
+tenant_id: "64b1988f-c49c-4cd3-a885-ff7b984c76b3"
 
-# (conditional) Set load-balancer ip.
-lb_ip:
+location: "JapanWest"
+
+# (optional) Instance size for the master node(s). Default: Standard_F2s.
+master_vm_size: "Standard_D2_v3"
+
+# (optional) Instance size for the worker node(s). Default: Standard_F2s.
+worker_vm_size: "Standard_D2_v3"
+
+# (required) The number of master nodes to be created. Example: 2
+master_node_count: 1
+
+# (required) The number of worker nodes to be created. Example: 3
+worker_node_count: 2
+
+# (required) Storage account type. Example: Standard_LRS
+storage_account_type: "Standard_LRS"
 
 # (required) Path to an SSH private key file to access server.
-private_key_path: "/cubetest/id_rsa"
+private_key_path: "/Users/cloud/git/cubedeploy/namujapan/azure/cert/id_rsa"
 
 # (required) Path to an SSH public key file to be provisioned as the SSH key.
-key_path: "/cubetest/id_rsa.pub"
-
+key_path: "/Users/cloud/git/cubedeploy/namujapan/azure/cert/id_rsa.pub"
 
 # Kubernetes
 k8s_version: "1.6.7"
@@ -75,10 +87,7 @@ addons:
   logging: true
 
 # (required) cocktail service
-cocktail: true
-# (optional) if nfs server available
-nfs_ip: "203.236.100.15"
-nfs_mountdir: "/nfs"
+cocktail: false
 ```
 
 상기 항목에서 private\_key\_path  와 key\_path 는 Baremetal 장비에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
@@ -109,12 +118,6 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-1. Baremetal 서버에 ssh private key로 자동 접속을 위해 ssh-copy-id 명령을 사용하여 ssh public key를 해당 서버에 복사한다.
-
-```
-# ssy-copy-id -i /tmp/cubetest/id_rsa.pub root@ip
-```
-
 5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
@@ -123,76 +126,5 @@ The key's randomart image is:
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
-이때,  Loadbalancer가 활성화 되어 있으면, [https://lb\_ip:6443/ui](https://lb_ip:6443/ui) 로 접속하게 되고 아니면 [https://master1\_ip:6443/ui](https://master1_ip:6443/ui) 로 접속합니다.
 
-![](/assets/k8s_dashboard_1.jpeg)
-
-고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
-
-![](/assets/k8s_dashboard_2.jpeg)
-
-사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
-
-Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다
-
-![](/assets/k8s_dashboard_4.jpeg)
-
-connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 31876 port임.
-
-![](/assets/k8s_dashboard_5.jpeg)
-
-1. 브라우저로 [http://{lb\_ip](http://{VM의)}:31876 또는 [http://{master1\_ip](http://{VM의)}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
-
-2. 프로바이더 등록
-
-프로바이더는 클라우드 리소스로 사용 할 Public/Private 클라우드 계정 정보를 등록, 편집, 삭제할 수 있다.
-
-프로바이더 계정을 등록함으로써 해당 프로바이더의 리소스, 미터링 정보를 가져 오거나 서버를 생성 할 수 있다. 단 로컬 테스트 환경에서는 클러스터를 생성하기 위한 정보로만 사용됨.
-
-프로바이더는 Onpremise, 유형은 User로 선택하고 생성버튼을 클릭한다.
-
-![](/assets/cocktail_conf_provider.jpeg)
-
-| **프로바이더** | **설명** |
-| :--- | :--- |
-| Amazon Web Service | Amazon사의 public 클라우드 서비스 |
-| Google Cloud Platform | Google사의 public클라우스 서비스 |
-| Microsoft cloud Service | Microsoft사의 public 클라우드 서비스 |
-| Rovius Cloud | Rovius사의 private 클라우드 서비스 |
-| Onpremise | Baremetal환경의 private 클라우드 서비스 |
-
-| **유형** | **설명** |
-| :--- | :--- |
-| User | 프로바이더 등록을 위한 기본 값. 미터링 아닌 경우 User 선택 |
-| Metering | Public Cloud를 사용시, 리소스 사용량을 받아오고자 할 때 선택 |
-
-1. 클러스터 등록
-
-생성된 클러스터 정보를 기입한다.
-
-마스터 URL은 [https://{lb\_\_ip}:6443](https://{lb__ip}:6443) or [https://{master1ip\_}:6443](https://{master1ip_}:6443) 로 기재
-
-모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.
-
-![](/assets/cocktail_conf_cluster_baremetal.jpeg)
-
-Clustngress hoster CA Certification 값은 cube.yaml파일의 master ip로 ssh 접속한 후, 아래 결과값을 넣어주면 되고,
-
-```
-# cat /etc/kubernetes/pki/ca.pem
-```
-
-Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://www.base64encode.org/](https://www.base64encode.org/) 접속하여 base64 encoding한 값을 넣어주면 된다.
-
-```
-# cat /etc/kubernetes/pki/apiserver-key.pem
-```
-
-![](/assets/cocktail_cert_encoding.jpeg)
-
-8.볼륨 설정하기
-
-서비스에서 사용되는 Volume을 등록한다. 입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
-
-![](/assets/cocktail_volume.jpeg)
 
