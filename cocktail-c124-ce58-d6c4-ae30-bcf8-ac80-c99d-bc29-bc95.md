@@ -10,25 +10,19 @@ Cocktail 설치 및 환경설정 작업이 완료되면 기본적인 서비스 �
 
 ![](/assets/deploy1.jpeg)
 
-![](/assets/deploy2.jpeg)정상적으로 배포가 완료되면 아래와 같이  tomcat 초기화면이 표시된다.![](/assets/deploy3.jpeg)
+상태가 Running으로 완료되면 tomcat 제목아래에 있는 webport:192.168... 을 클릭한다.
 
-![](/assets/deploy3.jpeg)
 
-![](/assets/deploy3.jpeg)
 
-![](/assets/deploy3.jpeg)
 
-![](/assets/deploy3.jpeg)
 
-![](/assets/deploy3.jpeg)
+![](/assets/deploy2.jpeg)
 
-![](/assets/deploy3.jpeg)
+정상적으로 배포가 완료되면 아래와 같이  tomcat 초기화면이 표시된다. 주의할 점은 초기에 tomcat이 기동되는 시간이 다소 소요될 수 있으므로 이를 감안하여 화면으로 reload 하면 된다.![](/assets/deploy3.jpeg)
 
-![](/assets/deploy3.jpeg)
 
-![](/assets/deploy3.jpeg)
 
-![](/assets/deploy3.jpeg) t
+
 
 ![](/assets/deploy4.jpeg)
 
