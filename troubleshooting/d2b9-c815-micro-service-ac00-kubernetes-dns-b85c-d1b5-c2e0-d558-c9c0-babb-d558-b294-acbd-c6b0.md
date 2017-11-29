@@ -33,12 +33,12 @@ spec:
 // busybox container가 생성되는지 확인
 # kubectl get pods
 [root@master1 test]# kubectl get pods
-NAME                                      READY     STATUS              RESTARTS   AGE
-busybox                                   0/1       ContainerCreating   0          5s
+NAME                                      READY     STATUS    RESTARTS   AGE
+busybox                                   1/1       Running   0          1m
 ...
 ```
 
- Busybox container에 접속하여 nslookup 명령으로 kubernetes의 DNS 접속여부를 확인한다.
+Busybox container에 접속하여 nslookup 명령으로 kubernetes의 DNS 접속여부를 확인한다.
 
 ```
 # kubectl exec -it busybox -- /bin/sh
@@ -50,8 +50,6 @@ Address 1: 100.64.0.10 kube-dns.kube-system.svc.cube
 Name:      kubernetes.default
 Address 1: 100.64.0.1 kubernetes.default.svc.cube
 ```
-
-
 
 
 
