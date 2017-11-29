@@ -8,4 +8,6 @@
 * [기존 cluster에 node 추가하기](chapter1.md)
 * [Cocktail DB backup 및 restore 방법](aa.md)
 * [TroubleShooting](troubleshooting.md)
+  * [클러스터 health check방법](troubleshooting/case1.md)
+  * [특정 micro service가 kubernetes dns로 통신하지 못하는 경우](troubleshooting/d2b9-c815-micro-service-ac00-kubernetes-dns-b85c-d1b5-c2e0-d558-c9c0-babb-d558-b294-acbd-c6b0.md)
 
