@@ -1,6 +1,6 @@
 # 사용자의 micro service가 서로 연결이 안될때.
 
-일반적으로 k8s에서 각 Container들은 연관된 Container와 통신하기 이해 Kubernetes DNS를 사용한다.
+일반적으로 k8s에서 각 Container들은 연관된 Container와 통신하기 이해 Kubernetes DNS를 사용한다. 즉 POD는 생성과 삭제가 일어나면 POD가 가지고 있던 내부 cluster ip는 변동되게 됨으로 일반적으로 micro service들을 k8s dns를 통해 필요한 container를 찾는다.
 
 먼저 k8s의 DNS 서비스가 정상 동작 중인지 확인하는 방법은 busybox를 생성하고 컨테이너에 접속해서 nslookup명령으로 k8s의 DNS에 접속되는지 확인한다.
 
