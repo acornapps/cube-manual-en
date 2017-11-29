@@ -1,8 +1,8 @@
-# 사용자의 micro service가 k8s dns로 서로 통신하지 못하는 경우.
+# 사용자의 micro service가 서로 연결이 안될때.
 
 일반적으로 k8s에서 각 Container들은 연관된 Container와 통신하기 이해 Kubernetes DNS를 사용한다.
 
-먼저 k8s의 DNS 서비스가 정상 동작 중인지 확인하는 방법은 busybox를 생성하고 컨테이너에 접속해서 nslookup명령으로 k8s의 DNS에 접속되는지 확인한다. 
+먼저 k8s의 DNS 서비스가 정상 동작 중인지 확인하는 방법은 busybox를 생성하고 컨테이너에 접속해서 nslookup명령으로 k8s의 DNS에 접속되는지 확인한다.
 
 * busybox container 생성
 
