@@ -41,14 +41,24 @@ busybox                                   1/1       Running   0          1m
 Busybox container에 접속하여 nslookup 명령으로 kubernetes의 DNS 접속여부를 확인한다.
 
 ```
+// busybox에 접속후 shell 실행
 # kubectl exec -it busybox -- /bin/sh
 
-# nslookup kubernetes.default
+// kubernetes.default dns 접속여부 확인
+/ # nslookup kubernetes.default
 Server:    100.64.0.10
 Address 1: 100.64.0.10 kube-dns.kube-system.svc.cube
 
 Name:      kubernetes.default
 Address 1: 100.64.0.1 kubernetes.default.svc.cube
+
+// 다른 서비스 접속 여부 확인 (아래는 예시로 cocktail component중 api server를 lookup한 예임)
+/ # nslookup cocktail-api.cocktail-system
+Server:    100.64.0.10
+Address 1: 100.64.0.10 kube-dns.kube-system.svc.cube
+
+Name:      cocktail-api.cocktail-system
+Address 1: 100.72.213.63 cocktail-api.cocktail-system.svc.cube
 ```
 
 
