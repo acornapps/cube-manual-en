@@ -24,7 +24,7 @@ spec:
   restartPolicy: Always
 ```
 
-마스터 서버에 접속하여 kubectl 명령으로 busybox container를 생성한다.
+* 마스터 서버에 ssh로 접속하여 kubectl 명령으로 busybox container를 생성한다.
 
 ```
 // busybox 생성
@@ -38,7 +38,7 @@ busybox                                   1/1       Running   0          1m
 ...
 ```
 
-Busybox container에 접속하여 nslookup 명령으로 kubernetes의 DNS 접속여부를 확인한다.
+* Busybox container에 접속하여 nslookup 명령으로 kubernetes의 DNS 접속여부를 확인한다.
 
 ```
 // busybox에 접속후 shell 실행
