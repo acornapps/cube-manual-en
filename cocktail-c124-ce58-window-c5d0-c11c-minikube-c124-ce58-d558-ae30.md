@@ -2,19 +2,31 @@
 
 Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우 아래의 절차에 따라 설치한다.
 
+
+
+### **사전준비**
+
 설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메지가 발생한다.
 
 \(에러 메시지에대한 해결책은 문서 마지막 TroubleShooting 에서 확인할 수 있다.\)
 
-1\) Docker 다운로드 [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
+1\) Docker 다운로드 후 설치
+
+[https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
 2\) Hyper-v : \[제어판\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 켜주면 된다.
 
-3\) kubectl.exe 다운로드 [https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
+3\) kubectl.exe 다운로드 후 환경설정 path설정
 
-4\) minikube.exe 다운로드 [https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
+[https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
+
+4\) minikube.exe 다운로드 후 환경설정 path설정
+
+[https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
 
 #### ㅤ
+
+### **설치 **
 
 1.먼저 설치를 위해 CMD창에서 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.\(CMD는 반드시 관리자 모드로 실행한다.\)
 
