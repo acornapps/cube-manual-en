@@ -12,7 +12,7 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우 �
 
 [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-2\) Hyper-v : \[제어판\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 활성화 
+2\) Hyper-v : \[제어판\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 활성화
 
 3\) kubectl.exe 다운로드 후 환경설정 path설정
 
@@ -26,7 +26,7 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우 �
 
 ### **설치 **
 
-1.먼저 설치를 위해 CMD창에서 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.\(CMD는 반드시 관리자 모드로 실행한다.\)
+1.먼저 설치를 위해 CMD창에서 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.\(**CMD는 반드시 관리자 모드로 실행한다.**\)
 
 ```
 # mkdir /tmp/cubetest
@@ -39,7 +39,7 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우 �
 # cube init -p minikube
 ```
 
-3.정상적으로 script가 다운로드 받아지면 해당 폴더에 cube.yaml파일이 생성되고 파일을 열어 필요한 정보를 입력 한다.
+3.정상적으로 script가 다운로드 되면 해당 폴더에 cube.yaml파일이 생성되고 파일을 열어 필요한 정보를 입력 한다.
 
 ```
 cloud_provider: "minikube"
@@ -68,7 +68,7 @@ builder_key_pem:
 
 #### ㅤ
 
-**TroubleShooting**
+### **TroubleShooting**
 
 **1.도커가 설치되어 있지 않은 경우**
 
@@ -82,7 +82,7 @@ Visit
 https://store.docker.com/editions/community/docker-ce-desktop-windows
 ```
 
-다운로드 경로로 이동하여 도커 설치. 이후 도커 실행하면 아래와 같은 알림창이 뜨며 Hyper-v 기능을 켤 것인지 물어보고,
+다운로드 경로로 이동하여 도커 설치 후 도커 실행하면 아래와 같은 알림창이 뜬다. Hyper-v 기능을 켤 것인지 물어보는 알림창으로
 
 ok 를 눌러 Hyper-v 활성화 시킨다.
 
