@@ -32,6 +32,9 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 # tar -xvf harbor-online-installer-v1.1.1-rc4.tgz
 # cd harbor
 
+
+
+
 # vi harbor.cfg
 
 ## Configuration file of Harbor
