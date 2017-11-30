@@ -1,4 +1,4 @@
-# Cocktail Builder 서버 설치 
+# Cocktail Builder 서버 설치
 
 MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단하게 확인하고자 할 경우에 아래의 절차를 따라 설치한다.
 
@@ -13,17 +13,23 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 # systemctl start docker
 ```
 
-2. Docker-Compose 설치
+2.Docker-Compose 설치
 
-    # sudo su - 
-    # mkdir software
-    # cd software
-    # curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > docker-compose
-    # chmod +x docker-compose
-    # mv docker-compose /usr/local/bin/
-    # docker-compose --version
+# sudo su -
 
-3. Harbor 설치
+# mkdir software
+
+# cd software
+
+# curl -L [https://github.com/docker/compose/releases/download/1.12.0/docker-compose-\`uname](https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname) -s-uname -m\` &gt; docker-compose
+
+# chmod +x docker-compose
+
+# mv docker-compose /usr/local/bin/
+
+# docker-compose --version
+
+1. Harbor 설치
 
 ```
 # sudo su -
@@ -179,11 +185,7 @@ The key's randomart image is:
 
 Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 31876 port임.
 
-
-
 1. 브라우저로 [http://{VM의](http://{VM의) masterip}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
-
-
 
 1. 프로바이더 등록
 
@@ -192,8 +194,6 @@ Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-cl
 프로바이더 계정을 등록함으로써 해당 프로바이더의 리소스, 미터링 정보를 가져 오거나 서버를 생성 할 수 있다. 단 로컬 테스트 환경에서는 클러스터를 생성하기 위한 정보로만 사용됨.
 
 프로바이더는 Onpremise, 유형은 User로 선택하고 생성버튼을 클릭한다.
-
-
 
 | **프로바이더** | **설명** |
 | :--- | :--- |
@@ -212,8 +212,6 @@ Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-cl
 
 생성된 클러스터 정보를 기입한다. 아래 192.168.50.11은 cube.yaml파일에서 master ip를 기입하면 되고, Certification의 값을 제외한 항목은 그림에서 표시된 값으로 기입하면 된다.
 
-
-
 Cluster CA Certification 값은 cube.yaml파일의 master ip로 ssh 접속한 후, 아래 결과값을 넣어주면 되고,
 
 ```
@@ -226,11 +224,7 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://
 # cat /etc/kubernetes/pki/apiserver-key.pem
 ```
 
-
-
 8.볼륨 설정하기
 
 서비스에서 사용되는 Volume을 등록한다. 입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
-
-
 
