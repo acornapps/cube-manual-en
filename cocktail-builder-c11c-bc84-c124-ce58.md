@@ -147,8 +147,6 @@ verify_remote_cert = on
 #############
 ```
 
-
-
 | **프로바이더** | **설명** |
 | :--- | :--- |
 | Amazon Web Service | Amazon사의 public 클라우드 서비스 |
@@ -161,8 +159,6 @@ verify_remote_cert = on
 | :--- | :--- |
 | User | 프로바이더 등록을 위한 기본 값. 미터링 아닌 경우 User 선택 |
 | Metering | Public Cloud를 사용시, 리소스 사용량을 받아오고자 할 때 선택 |
-
-
 
 
 
