@@ -17,23 +17,13 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 
 ```
 # sudo su -
-# yum install -y yum-uti
-# udo su -
+# mkdir software
+# cd software
+# wget https://github.com/vmware/harbor/releases/download/v1.1.1-rc4/harbor-online-installer-v1.1.1-rc4.tgz
+# 
 ```
 
-# mkdir software
-
-# cd software
-
-# curl -L [https://github.com/docker/compose/releases/download/1.12.0/docker-compose-\`uname](https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname) -s-uname -m\` &gt; docker-compose
-
-# chmod +x docker-compose
-
-# mv docker-compose /usr/local/bin/
-
-# docker-compose --version
-
-1. Harbor 설치
+3.Harbor 설치
 
 ```
 # sudo su -
