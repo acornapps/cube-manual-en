@@ -25,6 +25,7 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에
 # cube init -p minikube
 ```
 
+
 3.정상적으로 script가 다운로드 받아지면 해당 폴더에 cube.yaml파일이 생성되고 파일을 열어 필요한 정보를 입력 한다.
 
 ```
