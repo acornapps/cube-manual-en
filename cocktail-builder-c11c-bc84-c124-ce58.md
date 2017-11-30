@@ -47,7 +47,6 @@ harbor.cfg파일을 vi로 열어서 아래 표와 같이 해당 필드의 값을
 | harbor-admin-password | C0ckt@1lAdmin |
 
 ```
-
 # vi harbor.cfg
 
 ## Configuration file of Harbor
@@ -152,19 +151,6 @@ verify_remote_cert = on
 #************************END INITIAL PROPERTIES************************
 #############
 ```
-
-| **프로바이더** | **설명** |
-| :--- | :--- |
-| Amazon Web Service | Amazon사의 public 클라우드 서비스 |
-| Google Cloud Platform | Google사의 public클라우스 서비스 |
-| Microsoft cloud Service | Microsoft사의 public 클라우드 서비스 |
-| Rovius Cloud | Rovius사의 private 클라우드 서비스 |
-| Onpremise | Baremetal환경의 private 클라우드 서비스 |
-
-| **유형** | **설명** |
-| :--- | :--- |
-| User | 프로바이더 등록을 위한 기본 값. 미터링 아닌 경우 User 선택 |
-| Metering | Public Cloud를 사용시, 리소스 사용량을 받아오고자 할 때 선택 |
 
 
 
