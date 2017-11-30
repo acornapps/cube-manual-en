@@ -1,4 +1,4 @@
-# Cocktail Installation on windows
+# 에 Cocktail Installation on windows
 
 Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우 아래의 절차 따라 설치한다.
 
