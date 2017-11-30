@@ -19,13 +19,13 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에
 # cd /tmp/cubetest
 ```
 
-1. cube 명령을 이용하여 minikube용 설치 script를 download 받고 초기화 한다. \(cube init --help 명령어를 통해 제공하는 프로바이더들을 확인할 수 있다.\) 
+2.cube 명령을 이용하여 minikube용 설치 script를 download 받고 초기화 한다. \(cube init --help 명령어를 통해 제공하는 프로바이더들을 확인할 수 있다.\) 
 
 ```
 # cube init -p minikube
 ```
 
-1. 생성된 cube.yaml파일을 열어 필요한 정보를 입력 한다. 
+3.생성된 cube.yaml파일을 열어 필요한 정보를 입력 한다. 
 
 ```
 cloud_provider: "minikube"
@@ -46,7 +46,19 @@ builder_cert_pem:
 builder_key_pem:
 ```
 
-2.
+4. cube 명령어를 이용하여 칵테일을 설치한다.
+
+```
+# cube deploy -v debug
+```
+
+3.생성된 c
+
+```
+# cube init -p minikube
+```
+
+3.생성된 c
 
 cube.exe 환경변수로 잡아 어디 위치에서든 실행시킬 수 있도록 한다.
 
