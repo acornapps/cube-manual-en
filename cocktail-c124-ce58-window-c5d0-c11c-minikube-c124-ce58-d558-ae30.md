@@ -138,5 +138,5 @@ E1130 14:12:17.468288    6000 start.go:150] Error starting host: Error creating 
 E1130 14:32:05.030589   14024 start.go:150] Error starting host: Error loading existing host. Please try running [minikube delete], then run [minikube start] again.: Error loading host from store: open C:\Users\acornsoft\.minikube\machines\minikube\config.json: The system cannot find the file specified..
 ```
 
- minikube폴더를완전히삭제후다시설치를시도한다.
+minikube폴더를 완전히 삭제 후 다시 설치를 시도한다.
 
