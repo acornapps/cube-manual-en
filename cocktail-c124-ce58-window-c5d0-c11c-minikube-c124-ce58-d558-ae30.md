@@ -1,6 +1,6 @@
 # Cocktail Installation on windows
 
-Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우 아래의 절차를 따라 설치한다.
+Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우 아래의 절차 따라 설치한다.
 
 설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 한다. 설치 되어 있지 않을 경우 에러메세지가 발생하며 문서 마지막에 TroubleShooting 에서 해결책을 확인할 수 있다.
 
