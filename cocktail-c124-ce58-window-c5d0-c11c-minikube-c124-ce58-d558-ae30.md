@@ -56,7 +56,7 @@ builder_key_pem:
 
 **TroubleShooting**
 
-**1.도커가 설치되어 있지 않은 경우 아래와 같은 에러메시지가 발생하며 도커 다운로드 경로로 이동하여 도커를 설치한다.**
+**1.도커가 설치되어 있지 않은 경우 에러메시지 발생**
 
 ```
 C:\Users\acornsoft\minitest>cube init -p minikube
@@ -68,13 +68,15 @@ Visit
 https://store.docker.com/editions/community/docker-ce-desktop-windows
 ```
 
-도커 설치 후 시작하면 아래와 같은 알림창이 뜨며 Hyper-v 기능을 켤 것인지 물어보고, ok 를 눌러 Hyper-v 활성화 시킨다.
+다운로드 경로로 이동하여 도커 설치. 이후 도커 실행하면 아래와 같은 알림창이 뜨며 Hyper-v 기능을 켤 것인지 물어보고,
+
+ok 를 눌러 Hyper-v 활성화 시킨다.
 
 ![](/assets/도커하이퍼v.png)
 
 #### ㅤ
 
-**2.kubectl.exe 파일이 없을 경우 아래와 같은 메시지가 발생한다.**
+**2.kubectl.exe 파일이 없을 경우 에러메시지 발생 **
 
 ```
 C:\Users\acornsoft\minitest>cube init -p minikube
@@ -88,7 +90,7 @@ Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
 다운로드 경로로 이동하여 아래 그림과 같이 파일 다운로드 후 환경변수 path를 설정한다.![](/assets/kubectl다운로드1.PNG)  
 ㅤㅤ
 
-**3.minikube.exe 파일이 없을 경우 아래와 같은 메시지가 발생한다.**
+**3.minikube.exe 파일이 없을 경우 에러메시지가 발생**
 
 ```
 C:\Users\acornsoft\minitest>cube init -p minikube
