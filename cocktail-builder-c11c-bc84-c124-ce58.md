@@ -108,5 +108,11 @@ harbor_admin_password = C0ckt@1lAdmin
 ...
 ```
 
+이제 Harbor를 설치한다.
+
+```
+# ./install.sh
+```
+
 
 
