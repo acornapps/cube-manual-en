@@ -132,7 +132,7 @@ E1130 13:54:26.071982   11236 start.go:156] Error starting host:  Error creating
 
 \[Hyper-V 관리자\] -ㅤ \[가상스위치관리자\] - \[가상스위치만들기\] 를 선택한다. ![](/assets/가상네트워크생성1.png)
 
-가상스위치이름을\[ExternalSwitch\]로설정하고연결형식을외부네트워크로설정한다.  
+가상 스위치 이름을 \[ExternalSwitch\]로 설정하고 연결형식을 외부네트워크로 설정한다.  
 ![](/assets/가상네트워크생성2.PNG)
 
 #### ㅤ
