@@ -102,7 +102,7 @@ Visit
 https://github.com/kubernetes/minikube/releases
 ```
 
-다운로드 경로로 이동하여 아래와같파일 다운로드 후 minikube.exe로 파일이름을수정한다.이후환경변수 path를 설정한다.![](/assets/minikube다운로드.PNG)
+다운로드 경로로 이동하여 아래와 같이 파일 다운로드 후 minikube.exe로 파일이름을 수정한다. 이후 환경변수 path를 설정한다.![](/assets/minikube다운로드.PNG)
 
 #### ㅤ
 
