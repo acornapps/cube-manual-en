@@ -25,7 +25,7 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에
 # cube init -p minikube
 ```
 
-1. 정상적으로 script가 다운로드 받아지면 해당 폴더에 cube.yaml파일이 생성되고 파일을 열어 필요한 정보를 입력 한다.
+3.정상적으로 script가 다운로드 받아지면 해당 폴더에 cube.yaml파일이 생성되고 파일을 열어 필요한 정보를 입력 한다.
 
 ```
 cloud_provider: "minikube"
@@ -46,7 +46,7 @@ builder_cert_pem:
 builder_key_pem:
 ```
 
-1. cube 명령어를 이용하여 칵테일을 설치한다.
+4.cube 명령어를 이용하여 칵테일을 설치한다.
 
 ```
 # cube deploy -v debug
@@ -70,7 +70,7 @@ https://store.docker.com/editions/community/docker-ce-desktop-windows
 
 ![](/assets/도커하이퍼v.png)
 
-1. kubectl.exe 파일이 없을 경우 아래와 같은 메시지가 발생한다. 
+2.kubectl.exe 파일이 없을 경우 아래와 같은 메시지가 발생한다. 
 
 ```
 C:\Users\acornsoft\minitest>cube init -p minikube
@@ -81,9 +81,9 @@ kubectl is not found. please install kubectl before proceeding
 Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
 ```
 
-다운로드 경로로 이동하여 아래 그림과 같이 파일 다운로드 후 환경변수 path를 잡아준다.![](/assets/kubectl다운로드1.PNG)
+다운로드 경로로 이동하여 아래 그림과 같이 파일 다운로드 후 환경변수 path를 설정한다.![](/assets/kubectl다운로드1.PNG)
 
-kubectl.exe 파일이 없을 경우 아래와 같은 메시지가 발생한다.
+3.kubectl.exe 파일이 없을 경우 아래와 같은 메시지가 발생한다.
 
 ```
 C:\Users\acornsoft\minitest>cube init -p minikube
@@ -95,7 +95,7 @@ Visit
 https://github.com/kubernetes/minikube/releases
 ```
 
-다운로드 경로로 이동하여 파일 다운로드 후 환경변수 path를 잡아준다.
+다운로드 경로로 이동하여 아래와같파일 다운로드 후 minikube.exe경변수 path를 설정한다.
 
 도커 설치 후 시작하면 아래와 같은 알림창이 뜨며 Hyper-v 기능을 켤 것인지 물어보고, ok
 
@@ -125,10 +125,6 @@ exec: "minikube": executable file not found in %PATH%
 minikube is not found. please install minikube before proceeding
 
 Visit [https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
-
-
-
-
 
 .
 
