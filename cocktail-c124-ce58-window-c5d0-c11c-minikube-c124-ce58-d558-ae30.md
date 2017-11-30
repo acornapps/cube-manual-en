@@ -2,11 +2,11 @@
 
 Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에 아래의 절차를 따라 설치한다.
 
-설치 전 아래와 같은 프로그램들이 미리 설치되어 있어야 한다. 설치되어 있지 않을 경우 설치 
+설치 전 아래와 같은 프로그램들이 미리 설치되어 있어야 한다. 설치되어 있지 않을 경우 설치
 
 1\) Docker
 
-https://store.docker.com/editions/community/docker-ce-desktop-windows
+[https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
 2\) Hyper-v
 
@@ -77,11 +77,13 @@ C:\Users\acornsoft\minitest&gt;cube init -p minikube
 
 Current Working directory : C:\Users\acornsoft\minitest
 
+Checking pre-requisition \[windows\]
 
+exec: "docker": executable file not found in %PATH%
 
+kubectl is not found. please install kubectl before proceeding
 
-
-
+Visit [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://www.gitbook.com/book/acornsoft/cube-manual/edit#)
 
 **kubectl**
 
