@@ -3,6 +3,8 @@
 3. 도커 설치 안됨
 4. 도커 다운로드 후 도커 실행하면 하이퍼v 필요하다며 윈도우 재부팅
 5. 다시 cube init -p minikube하면 kubectl 필요
+6. kubectl다운로드 후 path잡아줌
+7. minikube필요 다운로드 후 path잡아줌
 
 
 
