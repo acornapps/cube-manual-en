@@ -90,7 +90,7 @@ Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
 다운로드 경로로 이동하여 아래 그림과 같이 파일 다운로드 후 환경변수 path를 설정한다.![](/assets/kubectl다운로드1.PNG)  
 ㅤㅤ
 
-**3.minikube.exe 파일이 없을 경우 에러메시지가 발생**
+**3.minikube.exe 파일이 없을 경우 에러메시지 발생**
 
 ```
 C:\Users\acornsoft\minitest>cube init -p minikube
