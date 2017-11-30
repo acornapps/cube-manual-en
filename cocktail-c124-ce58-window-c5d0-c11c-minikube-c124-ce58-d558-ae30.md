@@ -2,7 +2,7 @@
 
 Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에 아래의 절차를 따라 설치한다.
 
-설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 한다. 설치 되어 있지 않을 경우 에러메세지가 발생하며 문서 마지막에 TroubleShooting 에서 해결책을 확인할 수 있다. 
+설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 한다. 설치 되어 있지 않을 경우 에러메세지가 발생하며 문서 마지막에 TroubleShooting 에서 해결책을 확인할 수 있다.
 
 1\) Docker 다운로드 [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
@@ -25,7 +25,7 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에
 # cube init -p minikube
 ```
 
-3. 정상적으로 script가 다운로드 받아지면 해당 폴더에 cube.yaml파일이 생성되고 파일을 열어 필요한 정보를 입력 한다.
+1. 정상적으로 script가 다운로드 받아지면 해당 폴더에 cube.yaml파일이 생성되고 파일을 열어 필요한 정보를 입력 한다.
 
 ```
 cloud_provider: "minikube"
@@ -52,12 +52,6 @@ builder_key_pem:
 # cube deploy -v debug
 ```
 
-
-
-
-
-
-
 **TroubleShooting**
 
 1.도커가 설치되어 있지 않은 경우 아래와 같은 에러메시지가 발생하며 도커 다운로드 경로로 이동하여 도커를 설치한다.
@@ -76,7 +70,7 @@ https://store.docker.com/editions/community/docker-ce-desktop-windows
 
 ![](/assets/도커하이퍼v.png)
 
-2. kubectl.exe 파일이 없을 경우 아래와 같은 메시지가 발생하며&gt;
+1. kubectl.exe 파일이 없을 경우 아래와 같은 메시지가 발생한다. 
 
 ```
 C:\Users\acornsoft\minitest>cube init -p minikube
@@ -84,10 +78,28 @@ Current Working directory : C:\Users\acornsoft\minitest
 Checking pre-requisition [windows]
 exec: "kubectl": executable file not found in %PATH%
 kubectl is not found. please install kubectl before proceeding
-Visit 
-https://kubernetes.io/docs/tasks/tools/install-kubectl
+Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
+```
+
+다운로드 경로로 이동하여 아래 그림과 같이 파일 다운로드 후 환경변수 path를 잡아준다.
+
+![](/assets/kubectl다운로드1.PNG)
+
+kubectl.exe 파일이 없을 경우 아래와 같은 메시지가 발생하며 다운로드 
 
 ```
+C:\Users\acornsoft\minitest>cube init -p minikube
+Current Working directory : C:\Users\acornsoft\minitest
+Checking pre-requisition [windows]
+exec: "minikube": executable file not found in %PATH%
+minikube is not found. please install minikube before proceeding
+Visit 
+https://github.com/kubernetes/minikube/releases
+```
+
+다운로드 경로로 이동하여 파일 다운로드 후 환경변수 path를 잡아준다.
+
+
 
 도커 설치 후 시작하면 아래와 같은 알림창이 뜨며 Hyper-v 기능을 켤 것인지 물어보고, ok
 
@@ -101,20 +113,6 @@ cube.exe 환경변수로 잡아 어디 위치에서든 실행시킬 수 있도�
 4. 다시 cube init -p minikube하면 kubectl 필요
 5. kubectl다운로드 후 path잡아줌
 6. minikube필요 다운로드 후 path잡아줌. minikube-windows-amd64.exe 파일이름 minikube.exe 로 수
-
-
-
-**kubectl**
-
-C:\Users\acornsoft\minitest&gt;cube init -p minikube
-
-Current Working directory : C:\Users\acornsoft\minitest
-
-Checking pre-requisition \[windows\]
-
-exec: "kubectl": executable file not found in %PATH%
-
-kubectl is not found. please install kubectl before proceeding
 
 Visit [https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
