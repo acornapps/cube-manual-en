@@ -110,7 +110,7 @@ E1130 13:54:26.071982   11236 start.go:156] Error starting host:  Error creating
 : vswitch "ExternalSwitch" not found
 ```
 
-.
+
 
 **5.CMD 가 관리자 모드로 행되지 않을 경우**
 
@@ -119,7 +119,7 @@ E1130 13:54:26.070118   11236 start.go:150] Error starting host: Error creating 
 : vswitch "ExternalSwitch" not found.
 ```
 
-.
+#### ㅤ
 
 6.**CMD 가 관리자 모드로 행되지 않을 경우**
 
@@ -137,7 +137,7 @@ E1130 14:12:17.468288    6000 start.go:150] Error starting host: Error creating 
 : exit status 1.
 ```
 
-.
+#### ㅤ
 
 8.**CMD 가 관리자 모드로 행되지 않을 경우**
 
