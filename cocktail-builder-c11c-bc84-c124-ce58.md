@@ -31,32 +31,24 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 # wget https://github.com/vmware/harbor/releases/download/v1.1.1-rc4/harbor-online-installer-v1.1.1-rc4.tgz
 # tar -xvf harbor-online-installer-v1.1.1-rc4.tgz
 # cd harbor
+
+
+
+
 ```
 
-|  |  |
+| 필드명 | 값 |
 | :--- | :--- |
-| hostname |  |
-| ui\_uri\_protocol |  |
-| db\_password |  |
-| ssl\_cert |  |
-| ssl\_cert\_key |  |
+| hostname | cube-hub.acornsoft.io |
+| ui\_uri\_protocol | https |
+| db\_password | root123 |
+| ssl\_cert | /data/cert/star\_acornsoft\_io.crt |
+| ssl\_cert\_key | /data/cert/star\_acornsoft\_io.key |
+| harbor-admin-password | C0ckt@1lAdmin |
 |  |  |
-|  |  |
-
-
-
-
-
-
 
 ```
-# sudo su -
-# cd ~/software
-# wget https://github.com/vmware/harbor/releases/download/v1.1.1-rc4/harbor-online-installer-v1.1.1-rc4.tgz
-# tar -xvf harbor-online-installer-v1.1.1-rc4.tgz
-# cd harbor
-
-
+harbor.cfg파일을 vi로 열어서 아래 표와 같이 수정한다.
 
 
 # vi harbor.cfg
