@@ -52,6 +52,8 @@ builder_key_pem:
 # cube deploy -v debug
 ```
 
+#### ㅤ
+
 **TroubleShooting**
 
 **1.도커가 설치되어 있지 않은 경우 아래와 같은 에러메시지가 발생하며 도커 다운로드 경로로 이동하여 도커를 설치한다.**
@@ -70,6 +72,8 @@ https://store.docker.com/editions/community/docker-ce-desktop-windows
 
 ![](/assets/도커하이퍼v.png)
 
+#### ㅤ
+
 **2.kubectl.exe 파일이 없을 경우 아래와 같은 메시지가 발생한다.**
 
 ```
@@ -82,7 +86,7 @@ Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
 ```
 
 다운로드 경로로 이동하여 아래 그림과 같이 파일 다운로드 후 환경변수 path를 설정한다.![](/assets/kubectl다운로드1.PNG)  
-ㅤ
+ㅤㅤ
 
 **3.minikube.exe 파일이 없을 경우 아래와 같은 메시지가 발생한다.**
 
@@ -98,7 +102,7 @@ https://github.com/kubernetes/minikube/releases
 
 다운로드 경로로 이동하여 아래와같파일 다운로드 후 minikube.exe로 파일이름을수정한다.이후환경변수 path를 설정한다.![](/assets/minikube다운로드.PNG)
 
-.
+#### ㅤ
 
 4.**hyper-v 에 가상 스위치가 없을경우 발생 하는 에러메시지 **
 
@@ -110,7 +114,7 @@ E1130 13:54:26.071982   11236 start.go:156] Error starting host:  Error creating
 : vswitch "ExternalSwitch" not found
 ```
 
-
+#### ㅤ
 
 **5.CMD 가 관리자 모드로 행되지 않을 경우**
 
