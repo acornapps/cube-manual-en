@@ -121,8 +121,6 @@ E1130 13:54:26.071982   11236 start.go:156] Error starting host:  Error creating
 가상스위치이름을\[ExternalSwitch\]로설정하고연결형식을외부네트워크로설정한다.  
 ![](/assets/가상네트워크생성2.PNG)
 
-
-
 5.윈도우리소스가부족한경
 
 ```
