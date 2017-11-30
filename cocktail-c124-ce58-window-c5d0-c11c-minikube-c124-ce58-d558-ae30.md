@@ -2,17 +2,15 @@
 
 Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에 아래의 절차를 따라 설치한다.
 
-설치 전 아래와 같은 프로그램들이 미리 설치되어 있어야 한다. 설치되어 있지 않을 경우 설치
+설치 전 아래와 같은 프로그램들이 미리 설치되어 있어야 한다. 설치되어 있지 않을 경우 설치 중 에러메세지를 
 
-1\) Docker
-
-[https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
+1\) Docker - [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
 2\) Hyper-v
 
-3\) kubectl.exe
+3\) kubectl.exe - [https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
-4\) minikube.exe
+4\) minikube.exe - [https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
 
 1.먼저 설치를 위해 CMD창에서 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.\(CMD는 반드시 관리자 모드로 실행한다.\)
 
