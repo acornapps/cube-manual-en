@@ -2,9 +2,11 @@
 
 Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에 아래의 절차를 따라 설치한다.
 
-설치 전 아래와 같은 프로그램들이 미리 설치되어 있어야 한다. 설치되어 있지 않을 경우 
+설치 전 아래와 같은 프로그램들이 미리 설치되어 있어야 한다. 설치되어 있지 않을 경우 설치 
 
 1\) Docker
+
+https://store.docker.com/editions/community/docker-ce-desktop-windows
 
 2\) Hyper-v
 
@@ -68,6 +70,18 @@ cube.exe 환경변수로 잡아 어디 위치에서든 실행시킬 수 있도�
 4. 다시 cube init -p minikube하면 kubectl 필요
 5. kubectl다운로드 후 path잡아줌
 6. minikube필요 다운로드 후 path잡아줌. minikube-windows-amd64.exe 파일이름 minikube.exe 로 수 
+
+**docker**
+
+C:\Users\acornsoft\minitest&gt;cube init -p minikube
+
+Current Working directory : C:\Users\acornsoft\minitest
+
+
+
+
+
+
 
 **kubectl**
 
