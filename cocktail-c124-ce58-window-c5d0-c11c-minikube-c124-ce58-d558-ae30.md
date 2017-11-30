@@ -1,8 +1,8 @@
 # Cocktail Installation on windows
 
-Windows에서 minikube를 이용하여 Cocktail이 제공하는 기능을 간단하게 확인하고자 할 경우에 아래의 절차를 따라 설치한다.
+Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에 아래의 절차를 따라 설치한다.
 
-설치 전 아래와 같은 프로그램들이 설치되어 있어야 한다.
+설치 전 아래와 같은 프로그램들이 미리 설치되어 있어야 한다.
 
 1\) Docker
 
@@ -12,10 +12,6 @@ Windows에서 minikube를 이용하여 Cocktail이 제공하는 기능을 간단
 
 4\) minikube
 
-
-
-
-
 1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
 ```
@@ -23,7 +19,7 @@ Windows에서 minikube를 이용하여 Cocktail이 제공하는 기능을 간단
 # cd /tmp/cubetest
 ```
 
-2. cube 명령을 이용하여 minikube용 설치 script를 download 받고 초기화 한다. \(cube init --help 명령어를 통해 제공하는 프로바이더들을 확인할 수 있다.\) 
+1. cube 명령을 이용하여 minikube용 설치 script를 download 받고 초기화 한다. \(cube init --help 명령어를 통해 제공하는 프로바이더들을 확인할 수 있다.\) 
 
 ```
 # cube init -p minikube
