@@ -35,27 +35,7 @@ Harbor를 다운로드 받아서 압축을 푼후 설정파일의 값을 아래�
 # cd harbor
 ```
 
-| 필드명 | 값 |
-| :--- | :--- |
-| hostname | cube-hub.acornsoft.io |
-| ui\_uri\_protocol | https |
-| db\_password | root123 |
-| ssl\_cert | /data/cert/star\_acornsoft\_io.crt |
-| ssl\_cert\_key | /data/cert/star\_acornsoft\_io.key |
-| harbor-admin-password | C0ckt@1lAdmin |
-|  |  |
-
-
-
-
-
-
-
-
-
-
-
-
+harbor.cfg파일을 vi로 열어서 아래 표와 같이 해당 필드의 값을 수정한다.
 
 | 필드명 | 값 |
 | :--- | :--- |
@@ -65,11 +45,8 @@ Harbor를 다운로드 받아서 압축을 푼후 설정파일의 값을 아래�
 | ssl\_cert | /data/cert/star\_acornsoft\_io.crt |
 | ssl\_cert\_key | /data/cert/star\_acornsoft\_io.key |
 | harbor-admin-password | C0ckt@1lAdmin |
-|  |  |
 
 ```
-harbor.cfg파일을 vi로 열어서 아래 표와 같이 수정한다.
-
 
 # vi harbor.cfg
 
