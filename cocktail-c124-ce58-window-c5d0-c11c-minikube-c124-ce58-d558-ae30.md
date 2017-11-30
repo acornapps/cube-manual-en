@@ -25,10 +25,25 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에
 # cube init -p minikube
 ```
 
-d
+1. 생성된 cube.yaml파일을 열어 필요한 정보를 입력 한다. 
 
 ```
-# cd /tmp/cubetest
+cloud_provider: "minikube"
+(required) vCpu number
+cpus: 2
+(required) Memory size (MB)
+memory: 4096
+(required) Hyper-V switch name for initializing vm instance.
+hyperv_switch_name: "ExternalSwitch"
+Kubernetes
+k8s_version: "1.8.0"
+(required) cocktail service
+cocktail: true
+(required) if cocktail service true
+builder_server_type:
+builder_ca_pem:
+builder_cert_pem:
+builder_key_pem:
 ```
 
 2.
