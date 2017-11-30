@@ -56,7 +56,7 @@ builder_key_pem:
 
 **TroubleShooting**
 
-**1.도커가 설치되어 있지 않은 경우 에러메시지 발생**
+**1.도커가 설치되어 있지 않은 경우**
 
 ```
 C:\Users\acornsoft\minitest>cube init -p minikube
@@ -76,7 +76,7 @@ ok 를 눌러 Hyper-v 활성화 시킨다.
 
 #### ㅤ
 
-**2.kubectl.exe 파일이 없을 경우 에러메시지 발생 **
+**2.kubectl.exe 파일이 없는 경우 **
 
 ```
 C:\Users\acornsoft\minitest>cube init -p minikube
@@ -90,7 +90,7 @@ Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
 다운로드 경로로 이동하여 아래 그림과 같이 파일 다운로드 후 환경변수 path를 설정한다.![](/assets/kubectl다운로드1.PNG)  
 ㅤㅤ
 
-**3.minikube.exe 파일이 없을 경우 에러메시지 발생**
+**3.minikube.exe 파일이 없을 경우**
 
 ```
 C:\Users\acornsoft\minitest>cube init -p minikube
@@ -106,7 +106,7 @@ https://github.com/kubernetes/minikube/releases
 
 #### ㅤ
 
-4.**hyper-v 에 가상 스위치가 없을경우 발생 하는 에러메시지 **
+4.**hyper-v 에 가상 스위치가 설정되어있지 않은경우 **
 
 ```
 E1130 13:54:26.070118   11236 start.go:150] Error starting host: Error creating host: Error executing step: Running precreate checks.
@@ -116,7 +116,11 @@ E1130 13:54:26.071982   11236 start.go:156] Error starting host:  Error creating
 : vswitch "ExternalSwitch" not found
 ```
 
-#### ㅤ
+#### Hyper-V 관리자 -ㅤ 가상스위치관리자-가상스위치만들 ![](/assets/가상네트워크생성1.png) 
+ㅇㅇ
+![](/assets/가상네트워크생성2.PNG)
+
+
 
 **5.CMD 가 관리자 모드로 행되지 않을 경우**
 
