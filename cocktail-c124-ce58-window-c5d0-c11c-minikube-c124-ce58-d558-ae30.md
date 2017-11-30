@@ -186,15 +186,23 @@ E1130 14:12:17.470160    6000 start.go:156\] Error starting host:  Error creatin
 
 
 
-json.errot
+.
+
+.
+
+.
+
+
+
+
+
+**json.error**
 
 C:\Users\acornsoft\minitest&gt;cube deploy -v debug
 
 Start provisioning for cloud infrastructure \[minikube\]
 
 \[37mDEBU\[0m\[0000\] minikube \[start --vm-driver hyperv --cpus 2 --memory 4096 --hyperv-virtual-switch ExternalSwitch --kubernetes-version v1.8.0\]
-
-
 
 \[37mDEBU\[0m\[0003\] Starting local Kubernetes v1.8.0 cluster...
 
@@ -212,11 +220,9 @@ Start provisioning for cloud infrastructure \[minikube\]
 
 \[37mDEBU\[0m\[0003\] ================================================================================
 
-E1130 14:32:05.030589   14024 start.go:150\] Error starting host: Error loading existing host. Please try running \[minikube delete\], then run \[minikube start\] again.: Error loading host from store: open C:\Users\acornsoft\.minikube\machines\minikube\config.json: The system cannot find the file specified..
+E1130 14:32:05.030589   14024 start.go:150\] Error starting host: Error loading existing host. Please try running \[minikube delete\], then run \[minikube start\] again.: Error loading host from store: open C:\Users\acornsoft.minikube\machines\minikube\config.json: The system cannot find the file specified..
 
+Retrying.
 
-
- Retrying.
-
-E1130 14:32:05.035590   14024 start.go:156\] Error starting host:  Error loading existing host. Please try running \[minikube delete\], then run \[minikube start\] again.: Error loading host from store: open C:\Users\acornsoft\.minikube\machines\minikube\config.json: The system cannot find the file specified.
+E1130 14:32:05.035590   14024 start.go:156\] Error starting host:  Error loading existing host. Please try running \[minikube delete\], then run \[minikube start\] again.: Error loading host from store: open C:\Users\acornsoft.minikube\machines\minikube\config.json: The system cannot find the file specified.
 
