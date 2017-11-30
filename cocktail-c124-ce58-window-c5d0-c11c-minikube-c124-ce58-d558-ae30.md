@@ -2,15 +2,15 @@
 
 Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에 아래의 절차를 따라 설치한다.
 
-설치 전 아래와 같은 프로그램들이 미리 설치되어 있어야 한다.
+설치 전 아래와 같은 프로그램들이 미리 설치되어 있어야 한다. 설치되어 있지 않을 경우 
 
 1\) Docker
 
 2\) Hyper-v
 
-3\) kubectl
+3\) kubectl.exe
 
-4\) minikube
+4\) minikube.exe
 
 1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
@@ -19,13 +19,13 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에
 # cd /tmp/cubetest
 ```
 
-2.cube 명령을 이용하여 minikube용 설치 script를 download 받고 초기화 한다. \(cube init --help 명령어를 통해 제공하는 프로바이더들을 확인할 수 있다.\) 
+2.cube 명령을 이용하여 minikube용 설치 script를 download 받고 초기화 한다. \(cube init --help 명령어를 통해 제공하는 프로바이더들을 확인할 수 있다.\)
 
 ```
 # cube init -p minikube
 ```
 
-3.생성된 cube.yaml파일을 열어 필요한 정보를 입력 한다. 
+3.생성된 cube.yaml파일을 열어 필요한 정보를 입력 한다.
 
 ```
 cloud_provider: "minikube"
@@ -46,7 +46,7 @@ builder_cert_pem:
 builder_key_pem:
 ```
 
-4. cube 명령어를 이용하여 칵테일을 설치한다.
+1. cube 명령어를 이용하여 칵테일을 설치한다.
 
 ```
 # cube deploy -v debug
