@@ -6,8 +6,6 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우 �
 
 \(에러 메시지에대한 해결책은 문서 마지막 TroubleShooting 에서 확인할 수 있다.\)
 
-#### ㅤ
-
 1\) Docker 다운로드 [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
 2\) Hyper-v : \[제어판\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 켜주면 된다.
