@@ -14,7 +14,7 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우에
 
 4\) minikube.exe
 
-1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
+1.먼저 설치를 위해 CMD창에서 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.\(CMD는 반드시 관리자 모드로 실행한다.\)
 
 ```
 # mkdir /tmp/cubetest
