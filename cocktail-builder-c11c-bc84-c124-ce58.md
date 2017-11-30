@@ -15,7 +15,11 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 
 2.Docker-Compose 설치
 
+```
 # sudo su -
+# yum install -y yum-uti
+# udo su -
+```
 
 # mkdir software
 
@@ -187,7 +191,7 @@ Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-cl
 
 1. 브라우저로 [http://{VM의](http://{VM의) masterip}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
 
-1. 프로바이더 등록
+2. 프로바이더 등록
 
 프로바이더는 클라우드 리소스로 사용 할 Public/Private 클라우드 계정 정보를 등록, 편집, 삭제할 수 있다.
 
