@@ -105,51 +105,7 @@ email_ssl = false
 #Change the admin password from UI after launching Harbor.
 harbor_admin_password = C0ckt@1lAdmin
 
-##By default the auth mode is db_auth, i.e. the credentials are stored in a local database.
-#Set it to ldap_auth if you want to verify a user's credentials against an LDAP server.
-auth_mode = db_auth
-
-#The url for an ldap endpoint.
-ldap_url = ldaps://ldap.mydomain.com
-
-#A user's DN who has the permission to search the LDAP/AD server.
-#If your LDAP/AD server does not support anonymous search, you should configure this DN and ldap_search_pwd.
-#ldap_searchdn = uid=searchuser,ou=people,dc=mydomain,dc=com
-
-#the password of the ldap_searchdn
-#ldap_search_pwd = password
-
-#The base DN from which to look up a user in LDAP/AD
-ldap_basedn = ou=people,dc=mydomain,dc=com
-
-#Search filter for LDAP/AD, make sure the syntax of the filter is correct.
-#ldap_filter = (objectClass=person)
-
-# The attribute used in a search to match a user, it could be uid, cn, email, sAMAccountName or other attributes depending on your LDAP/AD
-ldap_uid = uid
-
-#the scope to search for users, 1-LDAP_SCOPE_BASE, 2-LDAP_SCOPE_ONELEVEL, 3-LDAP_SCOPE_SUBTREE
-ldap_scope = 3
-
-#Timeout (in seconds)  when connecting to an LDAP Server. The default value (and most reasonable) is 5 seconds.
-ldap_timeout = 5
-
-#Turn on or off the self-registration feature
-self_registration = on
-
-#The expiration time (in minute) of token created by token service, default is 30 minutes
-token_expiration = 30
-
-#The flag to control what users have permission to create projects
-#The default value "everyone" allows everyone to creates a project.
-#Set to "adminonly" so that only admin user can create project.
-project_creation_restriction = everyone
-
-#Determine whether the job service should verify the ssl cert when it connects to a remote registry.
-#Set this flag to off when the remote registry uses a self-signed or untrusted certificate.
-verify_remote_cert = on
-#************************END INITIAL PROPERTIES************************
-#############
+...
 ```
 
 
