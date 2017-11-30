@@ -160,7 +160,7 @@ E1130 13:54:26.071982   11236 start.go:156\] Error starting host:  Error creatin
 
 .
 
-**creating VM error**
+**creating VM error -자원부족**
 
 C:\Users\acornsoft\minitest&gt;cube deploy -v debug
 
@@ -184,17 +184,11 @@ E1130 14:12:17.470160    6000 start.go:156\] Error starting host:  Error creatin
 
 : exit status 1
 
-
-
 .
 
 .
 
 .
-
-
-
-
 
 **json.error**
 
