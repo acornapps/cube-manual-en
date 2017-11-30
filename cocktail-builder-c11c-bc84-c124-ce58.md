@@ -31,6 +31,30 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 # wget https://github.com/vmware/harbor/releases/download/v1.1.1-rc4/harbor-online-installer-v1.1.1-rc4.tgz
 # tar -xvf harbor-online-installer-v1.1.1-rc4.tgz
 # cd harbor
+```
+
+|  |  |
+| :--- | :--- |
+| hostname |  |
+| ui\_uri\_protocol |  |
+| db\_password |  |
+| ssl\_cert |  |
+| ssl\_cert\_key |  |
+|  |  |
+|  |  |
+
+
+
+
+
+
+
+```
+# sudo su -
+# cd ~/software
+# wget https://github.com/vmware/harbor/releases/download/v1.1.1-rc4/harbor-online-installer-v1.1.1-rc4.tgz
+# tar -xvf harbor-online-installer-v1.1.1-rc4.tgz
+# cd harbor
 
 
 
