@@ -81,11 +81,9 @@ kubectl is not found. please install kubectl before proceeding
 Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
 ```
 
-다운로드 경로로 이동하여 아래 그림과 같이 파일 다운로드 후 환경변수 path를 잡아준다.
+다운로드 경로로 이동하여 아래 그림과 같이 파일 다운로드 후 환경변수 path를 잡아준다.![](/assets/kubectl다운로드1.PNG)
 
-![](/assets/kubectl다운로드1.PNG)
-
-kubectl.exe 파일이 없을 경우 아래와 같은 메시지가 발생하며 다운로드 
+kubectl.exe 파일이 없을 경우 아래와 같은 메시지가 발생한다.
 
 ```
 C:\Users\acornsoft\minitest>cube init -p minikube
@@ -98,8 +96,6 @@ https://github.com/kubernetes/minikube/releases
 ```
 
 다운로드 경로로 이동하여 파일 다운로드 후 환경변수 path를 잡아준다.
-
-
 
 도커 설치 후 시작하면 아래와 같은 알림창이 뜨며 Hyper-v 기능을 켤 것인지 물어보고, ok
 
@@ -130,45 +126,9 @@ minikube is not found. please install minikube before proceeding
 
 Visit [https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
 
-cube.yaml 열면
 
----
 
-cloud\_provider: "minikube"
 
-\# \(required\) vCpu number
-
-cpus: 2
-
-\# \(required\) Memory size \(MB\)
-
-memory: 4096
-
-\# \(required\) Hyper-V switch name for initializing vm instance.
-
-hyperv\_switch\_name: "ExternalSwitch"
-
-\# Kubernetes
-
-k8s\_version: "1.8.0"
-
-\# \(required\) cocktail service
-
-cocktail: true
-
-\# \(required\) if cocktail service true
-
-builder\_server\_type:
-
-builder\_ca\_pem:
-
-builder\_cert\_pem:
-
-builder\_key\_pem:
-
-.
-
-.
 
 .
 
