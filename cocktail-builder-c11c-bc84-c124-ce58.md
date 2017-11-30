@@ -147,57 +147,7 @@ verify_remote_cert = on
 #############
 ```
 
-상기 항목에서 private\_key\_path  와 key\_path 는 각각 VM에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
 
-&lt; ssh key 신규 발급 방법 &gt;
-
-```
-# ssh-keygen
-Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/cloud/.ssh/id_rsa): /tmp/cubetest/id_rsa
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /Users/cloud/git/cubedeploy/virtualbox/5/id_rsa.
-Your public key has been saved in /Users/cloud/git/cubedeploy/virtualbox/5/id_rsa.pub.
-The key fingerprint is:
-SHA256:liTKyW/l3eU9+mBzyksL0AKpYXRsvsQ793nWJiUgJC0 cloud@Clouds-MacBook-Pro.local
-The key's randomart image is:
-+---[RSA 2048]----+
-|     ....        |
-|    . .E.o       |
-|     o=o=        |
-|   o.oo*.o..     |
-|    =.. So... .  |
-|     . B oo. + o |
-|      o + o.o==o.|
-|     .     o=+Bo.|
-|            o*=. |
-+----[SHA256]-----+
-```
-
-4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
-
-```
-# cube deploy [-v debug]
-```
-
-5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
-
-고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
-
-사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
-
-Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 31876 port임.
-
-1. 브라우저로 [http://{VM의](http://{VM의) masterip}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
-
-2. 프로바이더 등록
-
-프로바이더는 클라우드 리소스로 사용 할 Public/Private 클라우드 계정 정보를 등록, 편집, 삭제할 수 있다.
-
-프로바이더 계정을 등록함으로써 해당 프로바이더의 리소스, 미터링 정보를 가져 오거나 서버를 생성 할 수 있다. 단 로컬 테스트 환경에서는 클러스터를 생성하기 위한 정보로만 사용됨.
-
-프로바이더는 Onpremise, 유형은 User로 선택하고 생성버튼을 클릭한다.
 
 | **프로바이더** | **설명** |
 | :--- | :--- |
@@ -212,23 +162,7 @@ Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-cl
 | User | 프로바이더 등록을 위한 기본 값. 미터링 아닌 경우 User 선택 |
 | Metering | Public Cloud를 사용시, 리소스 사용량을 받아오고자 할 때 선택 |
 
-1. 클러스터 등록
 
-생성된 클러스터 정보를 기입한다. 아래 192.168.50.11은 cube.yaml파일에서 master ip를 기입하면 되고, Certification의 값을 제외한 항목은 그림에서 표시된 값으로 기입하면 된다.
 
-Cluster CA Certification 값은 cube.yaml파일의 master ip로 ssh 접속한 후, 아래 결과값을 넣어주면 되고,
 
-```
-# cat /etc/kubernetes/pki/ca.pem
-```
-
-Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://www.base64encode.org/](https://www.base64encode.org/) 접속하여 base64 encoding한 값을 넣어주면 된다.
-
-```
-# cat /etc/kubernetes/pki/apiserver-key.pem
-```
-
-8.볼륨 설정하기
-
-서비스에서 사용되는 Volume을 등록한다. 입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
 
