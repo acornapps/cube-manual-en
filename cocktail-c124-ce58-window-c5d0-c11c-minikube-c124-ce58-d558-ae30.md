@@ -128,8 +128,6 @@ Start provisioning for cloud infrastructure \[minikube\]
 
 \[37mDEBU\[0m\[0000\] minikube \[start --vm-driver hyperv --cpus 2 --memory 4096 --hyperv-virtual-switch ExternalSwitch --kubernetes-version v1.8.0\]
 
-
-
 \[37mDEBU\[0m\[0000\] Starting local Kubernetes v1.8.0 cluster...
 
 \[37mDEBU\[0m\[0000\] Starting VM...
@@ -150,7 +148,7 @@ E1130 13:54:26.070118   11236 start.go:150\] Error starting host: Error creating
 
 : vswitch "ExternalSwitch" not found.
 
- Retrying.
+Retrying.
 
 E1130 13:54:26.071982   11236 start.go:156\] Error starting host:  Error creating host: Error executing step: Running precreate checks.
 
@@ -164,15 +162,11 @@ E1130 13:54:26.071982   11236 start.go:156\] Error starting host:  Error creatin
 
 **creating VM error**
 
-
-
 C:\Users\acornsoft\minitest&gt;cube deploy -v debug
 
 Start provisioning for cloud infrastructure \[minikube\]
 
 \[37mDEBU\[0m\[0000\] minikube \[start --vm-driver hyperv --cpus 2 --memory 4096 --hyperv-virtual-switch ExternalSwitch --kubernetes-version v1.8.0\]
-
-
 
 \[37mDEBU\[0m\[0000\] Starting local Kubernetes v1.8.0 cluster...
 
@@ -184,11 +178,45 @@ E1130 14:12:17.468288    6000 start.go:150\] Error starting host: Error creating
 
 : exit status 1.
 
-
-
- Retrying.
+Retrying.
 
 E1130 14:12:17.470160    6000 start.go:156\] Error starting host:  Error creating host: Error executing step: Creating VM.
 
 : exit status 1
+
+
+
+json.errot
+
+C:\Users\acornsoft\minitest&gt;cube deploy -v debug
+
+Start provisioning for cloud infrastructure \[minikube\]
+
+\[37mDEBU\[0m\[0000\] minikube \[start --vm-driver hyperv --cpus 2 --memory 4096 --hyperv-virtual-switch ExternalSwitch --kubernetes-version v1.8.0\]
+
+
+
+\[37mDEBU\[0m\[0003\] Starting local Kubernetes v1.8.0 cluster...
+
+\[37mDEBU\[0m\[0003\] Starting VM...
+
+\[37mDEBU\[0m\[0003\] ================================================================================
+
+\[37mDEBU\[0m\[0003\] An error has occurred. Would you like to opt in to sending anonymized crash
+
+\[37mDEBU\[0m\[0003\] information to minikube to help prevent future errors?
+
+\[37mDEBU\[0m\[0003\] To opt out of these messages, run the command:
+
+\[37mDEBU\[0m\[0003\]     minikube config set WantReportErrorPrompt false
+
+\[37mDEBU\[0m\[0003\] ================================================================================
+
+E1130 14:32:05.030589   14024 start.go:150\] Error starting host: Error loading existing host. Please try running \[minikube delete\], then run \[minikube start\] again.: Error loading host from store: open C:\Users\acornsoft\.minikube\machines\minikube\config.json: The system cannot find the file specified..
+
+
+
+ Retrying.
+
+E1130 14:32:05.035590   14024 start.go:156\] Error starting host:  Error loading existing host. Please try running \[minikube delete\], then run \[minikube start\] again.: Error loading host from store: open C:\Users\acornsoft\.minikube\machines\minikube\config.json: The system cannot find the file specified.
 
