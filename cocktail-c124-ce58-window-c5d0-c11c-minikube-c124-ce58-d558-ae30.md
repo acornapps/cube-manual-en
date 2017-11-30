@@ -83,6 +83,7 @@ Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
 ```
 
 다운로드 경로로 이동하여 아래 그림과 같이 파일 다운로드 후 환경변수 path를 설정한다.![](/assets/kubectl다운로드1.PNG)
+ㅤ
 
 **3.minikube.exe 파일이 없을 경우 아래와 같은 메시지가 발생한다.**
 
@@ -98,7 +99,7 @@ https://github.com/kubernetes/minikube/releases
 
 다운로드 경로로 이동하여 아래와같파일 다운로드 후 minikube.exe로 파일이름을수정한다.이후환경변수 path를 설정한다.![](/assets/minikube다운로드.PNG)
 
-
+.
 
 
 
@@ -112,7 +113,7 @@ E1130 13:54:26.071982   11236 start.go:156] Error starting host:  Error creating
 : vswitch "ExternalSwitch" not found
 ```
 
-
+.
 
 **5.CMD 가 관리자 모드로 행되지 않을 경우**
 
@@ -122,7 +123,7 @@ E1130 13:54:26.070118   11236 start.go:150] Error starting host: Error creating 
 ```
 
   
-
+.
 
 6.**CMD 가 관리자 모드로 행되지 않을 경우**
 
@@ -130,7 +131,7 @@ E1130 13:54:26.070118   11236 start.go:150] Error starting host: Error creating 
 E1130 13:54:26.070118   11236 start.go:150] Error starting host: Error creating host: Error executing step: Running precreate checks.
 : vswitch "ExternalSwitch" not found.
 ```
-
+.
   
 7.**CMD 가 관리자 모드로 행되지 않을 경우**
 
@@ -139,7 +140,7 @@ E1130 14:12:17.468288    6000 start.go:150] Error starting host: Error creating 
 : exit status 1.
 ```
 
-
+.
 
 8.**CMD 가 관리자 모드로 행되지 않을 경우**
 
