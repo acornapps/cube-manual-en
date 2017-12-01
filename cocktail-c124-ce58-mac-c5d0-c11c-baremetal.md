@@ -5,8 +5,8 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
 ```
-# mkdir /tmp/cubetest
-# cd /tmp/cubetest
+# mkdir /Desktop/cubetest
+# cd /Desktop/cubetest
 ```
 
 2.cube 명령을 이용하여 baremetal용 설치 script를 download 받고 초기화 한다.
