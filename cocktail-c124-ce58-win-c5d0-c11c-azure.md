@@ -135,9 +135,16 @@ The key's randomart image is:
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
-Shooting Trouble
+#### ㅤ
 
-\* azurerm\_virtual\_machine.master.1: compute.VirtualMachinesClient\#CreateOrUpdate: Failure responding to request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=409 Code="OperationNotAllowed" Message="Operation results in exceeding quota limits of Core. Maximum allowed: 10, Current in use: 10, Additional requested: 2. Please read more about quota increase at [http://aka.ms/corequotaincrease](http://aka.ms/corequotaincrease)."
+### **Shooting Trouble**
 
-\* azurerm\_virtual\_machine.worker\[0\]: 1 error\(s\) occurred:
+1. azure리소스가 부족할 때
+
+```
+azurerm_virtual_machine.master.1: compute.VirtualMachinesClient#CreateOrUpdate: Failure responding to request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=409 Code="OperationNotAllowed" Message="Operation results in exceeding quota limits of Core. Maximum allowed: 10, Current in use: 10, Additional requested: 2. Please read more about quota increase at 
+http://aka.ms/corequotaincrease."
+```
+
+
 
