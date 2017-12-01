@@ -22,7 +22,7 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우 �
 
 [https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
 
-#### ㅤ
+#### 
 
 ### **설치 **
 
