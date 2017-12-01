@@ -139,11 +139,11 @@ The key's randomart image is:
 
 ### **Shooting Trouble**
 
-1. azure리소스가 부족할 때
+1. 할당받은 quota를 초과했을 때
 
 ```
-azurerm_virtual_machine.master.1: compute.VirtualMachinesClient#CreateOrUpdate: Failure responding to request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=409 Code="OperationNotAllowed" Message="Operation results in exceeding quota limits of Core. Maximum allowed: 10, Current in use: 10, Additional requested: 2. Please read more about quota increase at 
-http://aka.ms/corequotaincrease."
+azurerm_virtual_machine.master.1: compute.VirtualMachinesClient#CreateOrUpdate: Failure responding to request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=409 Code="OperationNotAllowed"
+Message="Operation results in exceeding quota limits of Core. Maximum allowed: 10, Current in use: 10, Additional requested: 2. Please read more about quota increase at http://aka.ms/corequotaincrease."
 ```
 
 
