@@ -141,7 +141,7 @@ E1130 13:54:26.071982   11236 start.go:156] Error starting host:  Error creating
 
 #### ㅤ
 
-**5.윈도우 리소스가 부족한 경우 **
+**5. cube deploy -v debug 명령어 실행 시 윈도우 리소스가 부족한 경우 **
 
 ```
 E1130 14:12:17.468288    6000 start.go:150] Error starting host: Error creating host: Error executing step: Creating VM.
@@ -152,7 +152,7 @@ cocktail 설치에 필요한 리스가 부족한 경우 발생하는 에러메�
 
 ㅤ
 
-**6.minikube에 config.json 파일을 찾지 못할경우 **
+**6.cube deploy -v debug 명령어 실행 시 minikube에 config.json 파일을 찾지 못할경우 **
 
 ```
 E1130 14:32:05.030589   14024 start.go:150] Error starting host: Error loading existing host. Please try running [minikube delete], then run [minikube start] again.: Error loading host from store: open C:\Users\acornsoft\.minikube\machines\minikube\config.json: The system cannot find the file specified..
