@@ -1,4 +1,4 @@
-# Cocktail Installation on Azure
+# Cocktail Installation on Azure\(windows\)
 
 Azure cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 
