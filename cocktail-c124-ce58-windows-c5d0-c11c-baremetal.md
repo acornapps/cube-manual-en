@@ -15,7 +15,7 @@ Windows 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 �
 # cube init -p baremetal
 ```
 
-3.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 3ea, nfs server로 구성하는 예임.
+3.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 3ea, nfs server로 구성하는 예임.
 
 만약 외부 LoadBalancer가 가용하여 master를 이중화 할 경우 ib\_ip에 해당 load balancer ip를 기재하면 됨.
 
@@ -25,23 +25,22 @@ cloud_provider: "baremetal"
 
 
 # (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
-master_ip: ["203.236.100.10"]
+master_ip: "104.199.151.160"
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
-worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"]
+worker_ip: "104.154.140.17"
 
 # (required) Set true if high-availability is required.
-high_availability: false
+haproxy: false
 
 # (conditional) Set load-balancer ip.
 lb_ip:
 
 # (required) Path to an SSH private key file to access server.
-private_key_path: "/cubetest/id_rsa"
+private_key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa"
 
 # (required) Path to an SSH public key file to be provisioned as the SSH key.
-key_path: "/cubetest/id_rsa.pub"
-
+key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa.pub"
 
 # Kubernetes
 k8s_version: "1.6.7"
@@ -55,8 +54,8 @@ addons:
 # (required) cocktail service
 cocktail: true
 # (optional) if nfs server available
-nfs_ip: "203.236.100.15"
-nfs_mountdir: "/nfs"
+nfs_ip: "35.201.132.14"
+nfs_mountdir: "/nfs/data"
 ```
 
 상기 항목에서 private\_key\_path  와 key\_path 는 Baremetal 장비에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
