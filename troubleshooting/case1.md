@@ -2,8 +2,6 @@
 
 Cube로 설치한 장비에서 Kubernetes와 Cocktail의 주요 구성 요소에 대해 상태 체크를 하기 위한 방법은 아래와 같다.
 
-
-
 * etcd 데몬 상태 체크
 
 etcd daemon은 kubernetes에서 생성되는 각종 object의 데이터 저장소로서 아래와 같이 상태를 체크할 수 있다.
@@ -21,6 +19,7 @@ cluster is healthy
 flannel daemon은 kubernetes에서 내부적인 network으로 사용되는 것으로, POD끼리 kubernetes DNS로 접속이 안될 경우 해당 flannel설정파일과 etcd 데이터의 정합성을 체크해 본다.
 
 ```
+// etcd에 각 node의 overlay network 리스트 조회
 # etcdctl ls -r
 /atomic.io
 /atomic.io/network
@@ -34,7 +33,8 @@ flannel daemon은 kubernetes에서 내부적인 network으로 사용되는 것�
 /atomic.io/network/subnets/10.10.27.0-24
 /atomic.io/network/subnets/10.10.73.0-24
 
-#
+// flanneld의 상태 조회
+# systemctl status flanneld
 ```
 
 
