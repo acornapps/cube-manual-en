@@ -2,7 +2,7 @@
 
 Azure cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 
-1.Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
+Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
 
 * TenantId : Home &gt; Azure Active Directory &gt; App registrations &gt; Endpoints &gt; OAUTH2.0 AUTHORIZATION에 포함된 값이 TenantId 임.
 
@@ -26,7 +26,7 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 ![](/assets/AccessControl_IAM.jpeg)
 
-2.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.
+1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.
 
 * ```
   # mkdir /tmp/cubetest
@@ -119,7 +119,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
 # cube deploy [-v debug]
