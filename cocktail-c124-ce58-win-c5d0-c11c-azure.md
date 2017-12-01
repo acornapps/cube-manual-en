@@ -28,10 +28,10 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.
 
- ```
+```
   # mkdir /tmp/cubetest
   # cd /tmp/cubetest
-  ```
+```
 
 2.cube 명령을 이용하여 azure용 설치 script를 download 받고 초기화 한다.
 
@@ -126,4 +126,16 @@ The key's randomart image is:
 ```
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+
+
+
+
+
+Shooting Trouble
+
+
+
+\* azurerm\_virtual\_machine.master.1: compute.VirtualMachinesClient\#CreateOrUpdate: Failure responding to request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=409 Code="OperationNotAllowed" Message="Operation results in exceeding quota limits of Core. Maximum allowed: 10, Current in use: 10, Additional requested: 2. Please read more about quota increase at http://aka.ms/corequotaincrease."
+
+\* azurerm\_virtual\_machine.worker\[0\]: 1 error\(s\) occurred:
 
