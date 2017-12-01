@@ -15,5 +15,7 @@
   * [NFS 접속 확인 방법](troubleshooting/nfs-c811-c18d-d655-c778-bc29-bc95.md)
   * [NFS 추가 설정방법](nfs-cd94-ac00-c124-c815-bc29-bc95.md)
   * [Instance IP가 변경될 경우](instance-ipac00-bcc0-acbd-b420-acbd-c6b0.md)
+  * [Kubernetes 인증서 update 방법](troubleshooting/kubernetes-c778-c99d-c11c-update-bc29-bc95.md)
+* [Kubernetes 인증서 update 방법](kubernetes-c778-c99d-c11c-update-bc29-bc95.md)
 * [Cocktail 설치 - win에서 azure](cocktail-c124-ce58-win-c5d0-c11c-azure.md)
 

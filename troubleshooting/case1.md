@@ -28,8 +28,10 @@ f95af587a997f2bf: name=cocktail01 peerURLs=http://192.168.0.171:2380 clientURLs=
 
 flannel daemon은 kubernetes에서 사용하는 overlay network으로 사용되는 것으로, POD간 이 network을 통해 통신하게 된다. 일반적으로 OD간에는 Service 이름으로 상태 POD를 찾게 되는데 이때 사용되는 DNS 서버가 kubernetes DNS로, POD간 접속 에러가 발생하는 경우에 해당 flannel설정파일과 etcd 데이터의 정합성을 체크해 본다.
 
+아래는 master node 2대, worker node 5대 일 경우에 예시를 든 것이다.
+
 ```
-// etcd에 각 node의 overlay network 리스트 조회
+etcd에 각 node의 overlay network 리스트 조회
 # etcdctl ls -r
 /atomic.io
 /atomic.io/network
