@@ -15,7 +15,7 @@ Wondows 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 �
 # cube init -p baremetal
 ```
 
-3.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 3ea, nfs server로 구성하는 예임.
+3.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 2ea, nfs server로 구성하는 예임.
 
 만약 외부 LoadBalancer가 가용하여 master를 이중화 할 경우 ib\_ip에 해당 load balancer ip를 기재하면 됨.
 
@@ -28,7 +28,7 @@ cloud_provider: "baremetal"
 master_ip: ["203.236.100.10"]
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
-worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"]
+worker_ip: ["203.236.100.12", "203.236.100.13"]
 
 # (required) Set true if high-availability is required.
 high_availability: false
