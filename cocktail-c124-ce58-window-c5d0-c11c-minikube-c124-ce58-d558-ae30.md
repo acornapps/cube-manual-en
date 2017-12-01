@@ -148,7 +148,7 @@ E1130 14:12:17.468288    6000 start.go:150] Error starting host: Error creating 
 : exit status 1.
 ```
 
-cocktail 설치에 필요한 리스가 부족한 경우 발생하는 에러메시지로 설치 pㅤc 사양 업그레이드가 필요하다.
+cocktail 설치에 필요한 리스가 부족한 경우 발생하는 에러메시지로 설치 pc 사양 업그레이드가 필요하다.
 
 ㅤ
 

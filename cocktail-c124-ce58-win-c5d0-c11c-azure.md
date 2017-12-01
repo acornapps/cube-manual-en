@@ -4,6 +4,8 @@ Azure cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 
 Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
 
+![](/assets/섭스크립션id.PNG)
+
 * TenantId : Home &gt; Azure Active Directory &gt; App registrations &gt; Endpoints &gt; OAUTH2.0 AUTHORIZATION에 포함된 값이 TenantId 임.
 
 ![](/assets/TenantId.jpeg)
@@ -24,7 +26,7 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 상기화면에서 우측의 Keys 메뉴를 선택하고 description\(예, cocktail\_key\), expires\(never expires\)를 입력하고 저장버튼을 클릭하면 자동으로 value값이 표시되는데 이 값이  client\_secret값임.
 
-![](/assets/AccessControl_IAM.jpeg)
+
 
 1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.
 
