@@ -12,7 +12,9 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 
 [https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
-2\) Hyper-v : \[제어판\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 활성화
+2\) Vagrant 다운로드 후 설치
+
+[https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
 3\) kubectl.exe 다운로드 후 환경설정 path설정
 
@@ -193,7 +195,7 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://
 
 ### **TroubleShooting**
 
-**1.도커가 설치되어 있지 않은 경우**
+**1.Docker가 설치되어 있지 않은 경우**
 
 ```
 cocktailui-MacBook-Pro:cubetest cocktail$ cube init -p virtualbox
@@ -204,5 +206,18 @@ docker is not found. please install docker before proceeding
 Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
 ```
 
-다운로드 링크로 이동하여 도커 설치 후 도커를 실행하여 해결한다.
+다운로드 링크로 이동하여 Docker 설치 후 실행하여 해결한다.
+
+2**.Vagrant가 설치되어 있지 않은 경우**
+
+```
+MinHoui-MacBook-Pro:cubetest minhona$ cube init -p virtualbox
+Current Working directory : /Users/minhona/Desktop/cubetest
+Checking pre-requisition [darwin]
+exec: "vagrant": executable file not found in $PATH
+vagrant not found. please install vagrant before proceeding
+Visit https://www.vagrantup.com/downloads.html
+```
+
+다운로드 링크로 이동하여 Vagrant 설치 후 실행하여 해결한다.
 
