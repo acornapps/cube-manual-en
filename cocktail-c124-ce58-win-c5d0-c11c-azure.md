@@ -4,7 +4,7 @@ Azure cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 
 Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
 
-* TenantId : Home &gt; Azure Active Directory &gt; App registrations &gt; Endpoints &gt; OAUTH2.0 AUTHORIZATION에 포함된 값이 TenantId 임.
+* Subscription\_Id : Azure포탈 메인페이지 상단 중간 검색창에 'subscription' 검색하여 subscriptionID값을 확인
 
 ![](/assets/섭스크립션id.PNG)
 
