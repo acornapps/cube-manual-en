@@ -46,13 +46,13 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 cloud_provider: "azure"
 
 ## (required) When azure is used, you need to set the following variables.
-subscription_id: "359a4193-7b57-4fea-881a-001998abe36e"
+subscription_id: "1e1b970c-b8c5-4497-8b34-a0e5fa50e119"
 
-client_id: "ac441ccf-55a7-4cc8-ba51-39ca89c72e15"
+client_id: "4942f40e-8196-46a9-aa5e-3b6702f618a3"
 
-client_secret: "v5jR6aTM+Hz9f6qB+HuNbBDRP+3rvrXpDw31eIVrPn8="
+client_secret: "8aOJoTE6N7wFLacfQxDF0PvvEJH/i2JeRjWTmomYNkc="
 
-tenant_id: "64b1988f-c49c-4cd3-a885-ff7b984c76b3"
+tenant_id: "96791477-8a50-4aa8-9a20-f0ea90971d46"
 
 location: "JapanWest"
 
@@ -72,10 +72,11 @@ worker_node_count: 2
 storage_account_type: "Standard_LRS"
 
 # (required) Path to an SSH private key file to access server.
-private_key_path: "/Users/cloud/git/cubedeploy/namujapan/azure/cert/id_rsa"
+private_key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa"
 
 # (required) Path to an SSH public key file to be provisioned as the SSH key.
-key_path: "/Users/cloud/git/cubedeploy/namujapan/azure/cert/id_rsa.pub"
+key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa.pub"
+
 
 # Kubernetes
 k8s_version: "1.6.7"
@@ -87,7 +88,7 @@ addons:
   logging: true
 
 # (required) cocktail service
-cocktail: false
+cocktail: true
 ```
 
 상기 항목에서 private\_key\_path  와 key\_path 는 Baremetal 장비에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
