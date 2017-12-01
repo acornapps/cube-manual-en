@@ -12,22 +12,19 @@ MacOS에서 Minikube를 이용하여 Cocktail이 제공하는 기능을 간단�
 
 [https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
-2\) Vagrant 다운로드 후 설치
-
-[https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
-
-3\) Virtualbox 다운로드 \(5.1.x version\)
+2\) Virtualbox 다운로드 \(5.1.x version\)
 
 [https://www.virtualbox.org/wiki/Download\_Old\_Builds\_5\_1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 
-4\) SSH private key & public key 생성 및 유저 등록
+3\) kubectl 다운로드
 
-키 생성의 경우 아래의 항목에서 상세하게 확인할 수 있다.
+[https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
-```
-# ssh-keygen -t rsa
-# ssh-add id_rsa (유저등록)
-```
+4\) minikube 다운로드 
+
+[https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
+
+#### ㅤ
 
 1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
@@ -39,85 +36,33 @@ MacOS에서 Minikube를 이용하여 Cocktail이 제공하는 기능을 간단�
 2.cube 명령을 이용하여 virtualbox용 설치 script를 download 받고 초기화 한다.
 
 ```
-# cube init -p virtualbox
+# cube init -p minikube
 ```
 
 3.cube.yam 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 예시임.
 
 ```
-# vi cube.yaml
 ---
-cloud_provider: "virtualbox"
-
-
-# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
-master_ip: ["192.168.50.11"]
-
-# (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
-worker_ip: ["192.168.50.12"]
+cloud_provider: "minikube"
 
 # (required) vCpu number
 cpus: 2
 
 # (required) Memory size (MB)
-memory: 2048
+memory: 4096
 
-
-# (required) Set true if high-availability is required.
-haproxy: false
-
-# (conditional) Set load-balancer ip.
-lb_ip:
-
-# (required) Path to an SSH private key file to access server.
-private_key_path: "/cubetest/id_rsa"
-
-# (required) Path to an SSH public key file to be provisioned as the SSH key.
-key_path: "/cubetest/id_rsa.pub"
+# (required) Hyper-V switch name for initializing vm instance.
+hyperv_switch_name: "ExternalSwitch"
 
 # Kubernetes
-k8s_version: "1.6.7"
-cluster_name: "cube"
-domain_name: "acornsoft.io"
-addons:
-  ingress: true
-  monitoring: true
-  logging: true
+k8s_version: "1.8.0"
 
 # (required) cocktail service
 cocktail: true
-# (optional) if nfs server available
-nfs_ip: "192.168.50.12"
-nfs_mountdir: "/nfs"
-```
-
-상기 항목에서 private\_key\_path  와 key\_path 는 각각 VM에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
-
-**&lt; ssh key 신규 발급 방법 &gt;**
 
 ```
-# ssh-keygen
-Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/cloud/.ssh/id_rsa): /Desktop/cubetest/id_rsa
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /Users/cloud/git/cubedeploy/virtualbox/5/id_rsa.
-Your public key has been saved in /Users/cloud/git/cubedeploy/virtualbox/5/id_rsa.pub.
-The key fingerprint is:
-SHA256:liTKyW/l3eU9+mBzyksL0AKpYXRsvsQ793nWJiUgJC0 cloud@Clouds-MacBook-Pro.local
-The key's randomart image is:
-+---[RSA 2048]----+
-|     ....        |
-|    . .E.o       |
-|     o=o=        |
-|   o.oo*.o..     |
-|    =.. So... .  |
-|     . B oo. + o |
-|      o + o.o==o.|
-|     .     o=+Bo.|
-|            o*=. |
-+----[SHA256]-----+
-```
+
+hyperv-_switch-name는 windows에서 설치를 할 경우, hyperv 옵션이다.\(실행시 스킵\)_
 
 4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
@@ -127,11 +72,11 @@ The key's randomart image is:
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
-![](/assets/k8s_dashboard_1.jpeg)
+
 
 고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
 
-![](/assets/k8s_dashboard_2.jpeg)
+
 
 사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
 
@@ -139,7 +84,7 @@ Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-cl
 
 ![](/assets/k8s_dashboard_4.jpeg)
 
-connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 30000 port임.
+connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 31876 port임.
 
 ![](/assets/k8s_dashboard_5.jpeg)
 
@@ -198,7 +143,7 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://
 
 ### **TroubleShooting**
 
-**1.Docker가 설치되어 있지 않은 경우**
+**1.Docker 설치되어 있지 않은 경우**
 
 ```
 MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
@@ -211,7 +156,7 @@ Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
 
 다운로드 링크로 이동하여 Docker 설치 후 cube를 재실행 한다.
 
-**2.Virtualbox가 설치되어 있지 않은 경우 **
+**2.Virtualbox 설치되어 있지 않은 경우 **
 
 ```
 MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
@@ -223,4 +168,30 @@ Visit https://www.virtualbox.org/wiki/Download_Old_Builds_5_1
 ```
 
 다운로드 링크로 이동하여 Virtualbox 설치 후 cube를 재실행 한다.
+
+**3.kubectl 설치되어 있지 않은 경우 **
+
+```
+MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
+Current Working directory : /Users/minhona/Desktop/cubetest
+Checking pre-requisition [darwin]
+exec: "kubectl": executable file not found in $PATH
+kubectl is not found. please install kubectl before proceeding
+Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
+```
+
+다운로드 링크로 이동하여 kubectl 설치 후 cube를 재실행 한다.
+
+**4.minikube 설치되어 있지 않은 경우 **
+
+```
+MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
+Current Working directory : /Users/minhona/Desktop/cubetest
+Checking pre-requisition [darwin]
+exec: "minikube": executable file not found in $PATH
+minikube is not found. please install minikube before proceeding
+Visit https://github.com/kubernetes/minikube
+```
+
+다운로드 링크로 이동하여 minikube 설치 후 cube를 재실행 한다.
 
