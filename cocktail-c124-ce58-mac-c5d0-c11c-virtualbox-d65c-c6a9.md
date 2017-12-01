@@ -231,8 +231,8 @@ MinHoui-MacBook-Pro:cubetest minhona$ cube init -p virtualbox
 Current Working directory : /Users/minhona/Desktop/cubetest
 Checking pre-requisition [darwin]
 exit status 126
-virtualbox not found. please install virtualbox before proceeding
-Visit https://github.com/kubernetes/minikube/releases
+virtualbox 5.1.x not found. please install virtualbox before proceeding
+Visit https://www.virtualbox.org/wiki/Download_Old_Builds_5_1
 ```
 
 다운로드 링크로 이동하여 Virtualbox 설치 후 cube를 재실행 한다.

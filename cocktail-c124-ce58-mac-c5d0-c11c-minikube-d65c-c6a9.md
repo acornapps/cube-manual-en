@@ -201,8 +201,8 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://
 **1.Docker가 설치되어 있지 않은 경우**
 
 ```
-cocktailui-MacBook-Pro:cubetest cocktail$ cube init -p virtualbox
-Current Working directory : /tmp/cubetest
+MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
+Current Working directory : /Users/minhona/Desktop/cubetest
 Checking pre-requisition [darwin]
 exec: "docker": executable file not found in $PATH
 docker is not found. please install docker before proceeding
@@ -211,28 +211,15 @@ Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
 
 다운로드 링크로 이동하여 Docker 설치 후 cube를 재실행 한다.
 
-**2.Vagrant가 설치되어 있지 않은 경우**
+**2.Virtualbox가 설치되어 있지 않은 경우 **
 
 ```
-MinHoui-MacBook-Pro:cubetest minhona$ cube init -p virtualbox
-Current Working directory : /Users/minhona/Desktop/cubetest
-Checking pre-requisition [darwin]
-exec: "vagrant": executable file not found in $PATH
-vagrant not found. please install vagrant before proceeding
-Visit https://www.vagrantup.com/downloads.html
-```
-
-다운로드 링크로 이동하여 Vagrant 설치 후 cube를 재실행 한다.
-
-3**.Virtualbox가 설치되어 있지 않은 경우 **
-
-```
-MinHoui-MacBook-Pro:cubetest minhona$ cube init -p virtualbox
+MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
 Current Working directory : /Users/minhona/Desktop/cubetest
 Checking pre-requisition [darwin]
 exit status 126
-virtualbox not found. please install virtualbox before proceeding
-Visit https://github.com/kubernetes/minikube/releases
+virtualbox 5.1.x not found. please install virtualbox before proceeding
+Visit https://www.virtualbox.org/wiki/Download_Old_Builds_5_1
 ```
 
 다운로드 링크로 이동하여 Virtualbox 설치 후 cube를 재실행 한다.
