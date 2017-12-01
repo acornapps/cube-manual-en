@@ -2,6 +2,28 @@
 
 MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단하게 확인하고자 할 경우에 아래의 절차를 따라 설치한다.
 
+### **사전준비**
+
+설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메지가 발생한다.
+
+\(에러 메시지에대한 해결책은 문서 마지막 TroubleShooting 에서 확인할 수 있다.\)
+
+1\) Docker 다운로드 후 설치
+
+[https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
+
+2\) Hyper-v : \[제어판\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 활성화
+
+3\) kubectl.exe 다운로드 후 환경설정 path설정
+
+[https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
+
+4\) minikube.exe 다운로드 후 환경설정 path설정
+
+[https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
+
+#### 
+
 1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
 ```
@@ -163,11 +185,24 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://
 
 ![](/assets/cocktail_cert_encoding.jpeg)
 
-
-
 8.볼륨 설정하기
 
 서비스에서 사용되는 Volume을 등록한다. 입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
 
 ![](/assets/cocktail_volume.jpeg)
+
+### **TroubleShooting**
+
+**1.도커가 설치되어 있지 않은 경우**
+
+```
+cocktailui-MacBook-Pro:cubetest cocktail$ cube init -p virtualbox
+Current Working directory : /tmp/cubetest
+Checking pre-requisition [darwin]
+exec: "docker": executable file not found in $PATH
+docker is not found. please install docker before proceeding
+Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
+```
+
+다운로드 링크로 이동하여 도커 설치 후 도커를 실행하여 해결한다.
 
