@@ -60,13 +60,17 @@ builder_cert_pem:
 builder_key_pem:
 ```
 
-4.cube 명령어를 이용하여 칵테일을 설치한다.
+4..cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
-# cube deploy -v debug
+# cube deploy [-v debug]
 ```
 
-#### ㅤ
+ㅤ
+
+5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+
+ㅤ
 
 ### **TroubleShooting**
 
