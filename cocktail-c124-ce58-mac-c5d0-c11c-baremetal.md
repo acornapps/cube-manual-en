@@ -2,6 +2,35 @@
 
 Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다음과 같다.
 
+### **사전준비**
+
+설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메지가 발생한다.
+
+\(에러 메시지에대한 해결책은 문서 마지막 TroubleShooting 에서 확인할 수 있다.\)
+
+1\) Docker 다운로드 후 설치
+
+[https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
+
+2\) Vagrant 다운로드 후 설치
+
+[https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
+
+3\) Virtualbox 다운로드 \(5.1.x version\)
+
+[https://www.virtualbox.org/wiki/Download\_Old\_Builds\_5\_1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
+
+4\) SSH private key & public key 생성 및 유저 등록
+
+키 생성의 경우 아래의 항목에서 상세하게 확인할 수 있다.
+
+```
+# ssh-keygen -t rsa
+# ssh-add id_rsa (유저등록)
+```
+
+
+
 1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
 ```
