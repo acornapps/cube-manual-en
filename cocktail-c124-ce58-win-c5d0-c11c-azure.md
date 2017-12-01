@@ -28,7 +28,7 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.
 
-* ```
+ ```
   # mkdir /tmp/cubetest
   # cd /tmp/cubetest
   ```
