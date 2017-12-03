@@ -84,5 +84,13 @@ Hint: Some lines were ellipsized, use -l to show in full.
 # tail -f /var/log/messages
 ```
 
+* master와 node간 정상 접속 여부 확인
+
+kubectl 명령을 활용하여 master 서버에서 cluster에 포함되어 있는 node 연결 상태를 조회할 수 있다.
+
+```
+# kubectl get nodes
+```
+
 
 
