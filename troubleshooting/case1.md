@@ -76,7 +76,13 @@ Hint: Some lines were ellipsized, use -l to show in full.
 # systemctl status kubelet
 ```
 
+* system log message 조회
 
+시스템 로그에는  k8s 기본 컴포넌트의 로그정보가 실시간으로 기록되기 때문에 문제 발생시 해당 log를 tail로 조회하여 오류 사항을 먼저 파악하는 것이 효과적이다.
+
+```
+# tail -f /var/log/messages
+```
 
 
 
