@@ -64,5 +64,19 @@ Warning: Journal has been rotated since unit was started. Log output is incomple
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
+* Docker 상태 체크
+
+```
+# systemctl status docker
+```
+
+* kubelet 데몬 상태 체크
+
+```
+# systemctl status kubelet
+```
+
+
+
 
 
