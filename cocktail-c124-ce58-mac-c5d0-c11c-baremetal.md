@@ -16,11 +16,7 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 
 [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
-3\) Virtualbox 다운로드 \(5.1.x version\)
-
-[https://www.virtualbox.org/wiki/Download\_Old\_Builds\_5\_1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
-
-4\) SSH private key & public key 복사
+3\) SSH private key & public key 복사
 
 키 복사의 경우 아래의 항목에서 상세하게 확인할 수 있다.
 
@@ -28,7 +24,7 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 # ssh-copy-id -i id_rsa.pub root@ip
 ```
 
-5\) NFS 설치
+4\) NFS 설치
 
 ```
 # yum install -y nfs

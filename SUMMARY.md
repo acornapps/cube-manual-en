@@ -4,6 +4,7 @@
 * [Cocktail 설치 - Mac에서 Virtualbox 활용](cocktail-c124-ce58-mac-c5d0-c11c-virtualbox-d65c-c6a9.md)
 * [Cocktail 설치 - Mac에서 Baremetal](cocktail-c124-ce58-mac-c5d0-c11c-baremetal.md)
 * [Cocktail 설치 - Mac에서 Minikube](aaa1.md)
+* [Cocktail 설치 - AWS](cocktail-c124-ce58-aws.md)
 * [Cocktail 설치 - Azure](cocktail-c124-ce58-azure.md)
 * [Cocktail 설치 후 기본 확인사항](cocktail-c124-ce58-d6c4-ae30-bcf8-ac80-c99d-bc29-bc95.md)
 * [내부테스트를 위한 Harbor 사설 인증서 설정하기](b0b4-bd80-d14c-c2a4-d2b8-b97c-c704-d55c-harbor-c0ac-c124-c778-c99d-c11c-c124-c815-d558-ae30.md)
@@ -19,6 +20,6 @@
   * [Instance IP가 변경될 경우](instance-ipac00-bcc0-acbd-b420-acbd-c6b0.md)
 * [클러스터 업데이트](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8.md)
   * [인증서 업데이트](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/c778-c99d-c11c-c5c5-b370-c774-d2b8.md)
-  * K8s version 업그레이드
-  * 스케일링
+  * [K8s version 업그레이드](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/k8s-version-c5c5-adf8-b808-c774-b4dc.md)
+  * [스케일링](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/c2a4-cf00-c77c-b9c1.md)
 
