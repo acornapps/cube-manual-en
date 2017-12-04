@@ -12,8 +12,6 @@ Windows 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 �
 
 2\) Hyper-v : \[제어판\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 활성화
 
-
-
 ### 설치
 
 1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
@@ -167,19 +165,25 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/cocktail_conf_cluster_baremetal.jpeg)
 
-Clustngress hoster CA Certification 값은 cube.yaml파일의 master ip로 ssh 접속한 후, 아래 결과값을 넣어주면 되고,
+모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.![](/assets/스크린샷 2017-12-04 오후 1.12.49.png)Clustngress hoster CA Certification 값은 아래 결과값을 넣어주면 되고,
 
 ```
 # cat /etc/kubernetes/pki/ca.pem
 ```
 
-Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://www.base64encode.org/](https://www.base64encode.org/) 접속하여 base64 encoding한 값을 넣어주면 된다.
+Certificate Certificate Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
+
+```
+# cat /etc/kubernetes/pki/apiserver.pem
+```
+
+Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
 
 ```
 # cat /etc/kubernetes/pki/apiserver-key.pem
 ```
 
-![](/assets/cocktail_cert_encoding.jpeg)
+
 
 8.볼륨 설정하기
 
