@@ -10,19 +10,7 @@
 
 [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-2\) ansible cfg의 서버 계정을 바꿔준다. \(cubetest -&gt; cubescripts -&gt; ansible.cfg\)
-
-```
-[defaults]
-remote_user =     root
-sudo = yes
-host_key_checking = False
-fact_caching = jsonfile
-fact_caching_connection = /tmp
-callback_whitelist = profile_tasks
-```
-
-3\) AWS 설치를 위해서는 Access Key와 Secret Key가 필요하니 아래와 같이 조회하여 메모해 놓는다.
+2\) AWS 설치를 위해서는 Access Key와 Secret Key가 필요하니 아래와 같이 조회하여 메모해 놓는다.
 
 * **Access Key와 Secret Key를 발급받기 위해 AWS 서비스 콘솔에서 상단 우측 카테고리에서 'Security Credentials'를 클릭합니다.**![](/assets/aws-add.png)
 
@@ -47,7 +35,19 @@ callback_whitelist = profile_tasks
 # cube init -p aws
 ```
 
-3.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 1ea, nfs server로 구성하는 예임.
+3. AWS의 경우 서버os명을 서버유저명으로 사용한다. 따라서 ansible cfg의 remote\_user를 서버os명인 centos로 수정한다. \(스크립트생성폴더/cubescripts/ansible.cfg\)
+
+```
+[defaults]
+remote_user =     centos
+sudo = yes
+host_key_checking = False
+fact_caching = jsonfile
+fact_caching_connection = /tmp
+callback_whitelist = profile_tasks
+```
+
+4.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 1ea, nfs server로 구성하는 예임.
 
 만약 외부 LoadBalancer가 가용하여 master를 이중화 할 경우 ib\_ip에 해당 load balancer ip를 기재하면 됨.
 
@@ -128,5 +128,5 @@ The key's randomart image is:
 # cube deploy [-v debug]
 ```
 
-6.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
