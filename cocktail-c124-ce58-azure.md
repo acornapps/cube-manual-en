@@ -14,6 +14,18 @@
 
 * Subscription\_Id : Azure포탈 메인페이지 상단 중간 검색창에 'subscription' 검색하여 subscriptionID값을 확인
 
+3\) ansible cfg의 서버 계정을 바꿔준다. \(cubetest -&gt; cubescripts -&gt; ansible.cfg\)
+
+```
+[defaults]
+remote_user = 	root
+sudo = yes
+host_key_checking = False
+fact_caching = jsonfile
+fact_caching_connection = /tmp
+callback_whitelist = profile_tasks
+```
+
 ![](/assets/섭스크립션id.PNG)
 
 * TenantId : Home &gt; Azure Active Directory &gt; App registrations &gt; Endpoints &gt; OAUTH2.0 AUTHORIZATION에 포함된 값 중 아래 예시와 같이 x로 표시된 부분이 TenantId 임.\) 

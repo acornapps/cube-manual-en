@@ -12,6 +12,20 @@
 
 2\) AWS 설치를 위해서는 Access Key와 Secret Key가 필요하니 아래와 같이 조회하여 메모해 놓는다.
 
+3\) ansible cfg의 서버 계정을 바꿔준다. \(cubetest -&gt; cubescripts -&gt; ansible.cfg\)
+
+```
+[defaults]
+remote_user =     root
+sudo = yes
+host_key_checking = False
+fact_caching = jsonfile
+fact_caching_connection = /tmp
+callback_whitelist = profile_tasks
+```
+
+
+
 * **Access Key와 Secret Key를 발급받기 위해 AWS 서비스 콘솔에서 상단 우측 카테고리에서 'Security Credentials'를 클릭합니다.**![](/assets/aws-add.png)
 
 * **첫 화면에서 아래와 같은 경고창을 만나는데 IAM User를 생성할 것인지에 대한 내용이고, 여기서는 왼쪽 Continue to Security Credentials 버튼을 눌러 계속 진행합니다.**![](/assets/aws-add1.png)
