@@ -70,7 +70,81 @@ builder_key_pem:
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
-ㅤ
+이때,  Loadbalancer가 활성화 되어 있으면, [https://lb\_ip:6443/ui](https://lb_ip:6443/ui) 로 접속하게 되고 아니면 [https://master1\_ip:6443/ui](https://master1_ip:6443/ui) 로 접속한다.
+
+![](/assets/k8s_dashboard_1.jpeg)
+
+고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
+
+![](/assets/k8s_dashboard_2.jpeg)
+
+사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
+
+Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다
+
+![](/assets/k8s_dashboard_4.jpeg)
+
+connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 31876 port임.
+
+![](/assets/k8s_dashboard_5.jpeg)
+
+브라우저로 [http://{lb\_ip](http://{VM의)}:31876 또는 [http://{master1\_ip](http://{VM의)}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
+
+6.프로바이더 등록
+
+프로바이더는 클라우드 리소스로 사용 할 Public/Private 클라우드 계정 정보를 등록, 편집, 삭제할 수 있다.
+
+프로바이더 계정을 등록함으로써 해당 프로바이더의 리소스, 미터링 정보를 가져 오거나 서버를 생성 할 수 있다. 단 로컬 테스트 환경에서는 클러스터를 생성하기 위한 정보로만 사용됨.
+
+프로바이더는 Onpremise, 유형은 User로 선택하고 생성버튼을 클릭한다.
+
+![](/assets/cocktail_conf_provider.jpeg)
+
+| **프로바이더** | **설명** |
+| :--- | :--- |
+| Amazon Web Service | Amazon사의 public 클라우드 서비스 |
+| Google Cloud Platform | Google사의 public클라우스 서비스 |
+| Microsoft cloud Service | Microsoft사의 public 클라우드 서비스 |
+| Onpremise | Baremetal환경의 private 클라우드 서비스 |
+
+| **유형** | **설명** |
+| :--- | :--- |
+| User | 프로바이더 등록을 위한 기본 값. 미터링 아닌 경우 User 선택 |
+| Metering | Public Cloud를 사용시, 리소스 사용량을 받아오고자 할 때 선택 |
+
+7.클러스터 등록
+
+생성된 클러스터 정보를 기입한다.
+
+마스터 URL은 [https://{lb\_\_ip}:6443](https://{lb__ip}:6443) or [https://{master1ip\_}:6443](https://{master1ip_}:6443) 로 기재
+
+모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.
+
+![](/assets/cocktail_conf_cluster_baremetal.jpeg)
+
+모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.![](/assets/스크린샷 2017-12-04 오후 1.12.49.png)Clustngress hoster CA Certification 값은 아래 결과값을 넣어주면 되고,
+
+```
+# cat /etc/kubernetes/pki/ca.pem
+```
+
+Certificate Certificate Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
+
+```
+# cat /etc/kubernetes/pki/apiserver.pem
+```
+
+Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
+
+```
+# cat /etc/kubernetes/pki/apiserver-key.pem
+```
+
+8.볼륨 설정하기
+
+서비스에서 사용되는 Volume을 등록한다. 입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
+
+![](/assets/cocktail_volume.jpeg)ㅤ
 
 ### **TroubleShooting**
 
