@@ -12,6 +12,7 @@
 * [Cocktail DB backup 및 restore 방법](aa.md)
 * [Cocktail 설치 - Windows에서 minikube](cocktail-c124-ce58-window-c5d0-c11c-minikube-c124-ce58-d558-ae30.md)
 * [Cocktail 설치 - Windows에서 baremetal](cocktail-c124-ce58-windows-c5d0-c11c-baremetal.md)
+* [Cocktail 설치 - Windows에서 AWS](cocktail-c124-ce58-windows-c5d0-c11c-aws.md)
 * [Cocktail 설치 - Windows에서 azure](cocktail-c124-ce58-win-c5d0-c11c-azure.md)
 * [TroubleShooting](troubleshooting.md)
   * [클러스터 health check방법](troubleshooting/case1.md)
