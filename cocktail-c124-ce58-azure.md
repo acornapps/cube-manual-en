@@ -10,19 +10,7 @@
 
 [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-2\) ansible cfg의 서버 계정을 바꿔준다. \(cubetest -&gt; cubescripts -&gt; ansible.cfg\)
-
-```
-[defaults]
-remote_user =     root
-sudo = yes
-host_key_checking = False
-fact_caching = jsonfile
-fact_caching_connection = /tmp
-callback_whitelist = profile_tasks
-```
-
-3\) Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
+2\) Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
 
 * Subscription\_Id : Azure포탈 메인페이지 상단 중간 검색창에 'subscription' 검색하여 subscriptionID값을 확인
 
@@ -67,7 +55,19 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 # cube init -p azure
 ```
 
-3.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 Azure 정보 및 인스턴스 정보를 기입한다.
+3.ansible cfg의 서버 계정을 바꿔준다. \(script다운로드폴더-&gt;cubescripts -&gt; ansible.cfg\)
+
+```
+[defaults]
+remote_user =     root
+sudo = yes
+host_key_checking = False
+fact_caching = jsonfile
+fact_caching_connection = /tmp
+callback_whitelist = profile_tasks
+```
+
+4.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 Azure 정보 및 인스턴스 정보를 기입한다.
 
 ```
 ---
@@ -147,13 +147,13 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+5.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
 # cube deploy [-v debug]
 ```
 
-5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+6.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
 #### ㅤ
 
