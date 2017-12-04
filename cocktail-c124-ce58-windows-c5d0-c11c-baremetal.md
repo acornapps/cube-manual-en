@@ -104,7 +104,7 @@ The key's randomart image is:
 # ssh-copy-id -i /tmp/cubetest/id_rsa.pub root@ip
 ```
 
-5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
 # cube deploy [-v debug]
@@ -182,8 +182,6 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 ```
 # cat /etc/kubernetes/pki/apiserver-key.pem
 ```
-
-
 
 8.볼륨 설정하기
 
