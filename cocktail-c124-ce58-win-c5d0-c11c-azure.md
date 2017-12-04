@@ -10,7 +10,11 @@ Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해�
 
 ![](/assets/섭스크립션id.PNG)
 
-* TenantId : Home &gt; Azure Active Directory &gt; App registrations &gt; Endpoints &gt; OAUTH2.0 AUTHORIZATION에 포함된 값이 TenantId 임.
+* TenantId : Home &gt; Azure Active Directory &gt; App registrations &gt; Endpoints &gt; OAUTH2.0 AUTHORIZATION에 포함된 값 중 아래 예시와 같이 x로 표시된 부분이 TenantId 임.\) 
+
+\(EX : https://login.microsoftonline.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/oauth2/authorize \)
+
+
 
 ![](/assets/TenantId.jpeg)
 
