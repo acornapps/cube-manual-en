@@ -20,16 +20,19 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 
 [https://www.virtualbox.org/wiki/Download\_Old\_Builds\_5\_1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 
-4\) SSH private key & public key 생성 및 유저 등록
+4\) SSH private key & public key 복사
 
-키 생성의 경우 아래의 항목에서 상세하게 확인할 수 있다.
+키 복사의 경우 아래의 항목에서 상세하게 확인할 수 있다.
 
 ```
-# ssh-keygen -t rsa
-# ssh-add id_rsa (유저등록)
+# ssh-copy-id -i id_rsa.pub root@ip
 ```
 
-#### ㅤ
+5\) NFS 설치
+
+```
+# yum install -y nfs
+```
 
 1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
@@ -179,10 +182,16 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 마스터 URL은 [https://{lb\_\_ip}:6443](https://{lb__ip}:6443) or [https://{master1ip\_}:6443](https://{master1ip_}:6443) 로 기재
 
-모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.![](/assets/cocktail_conf_cluster_baremetal.jpeg)Clustngress hoster CA Certification 값은 아래 결과값을 넣어주면 되고,
+모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.![](/assets/스크린샷 2017-12-04 오후 1.12.49.png)Clustngress hoster CA Certification 값은 아래 결과값을 넣어주면 되고,
 
 ```
 # cat /etc/kubernetes/pki/ca.pem
+```
+
+Certificate Certificate Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
+
+```
+# cat /etc/kubernetes/pki/apiserver.pem
 ```
 
 Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
