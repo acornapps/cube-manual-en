@@ -17,5 +17,4 @@
   * [특정 micro service가 kubernetes dns로 통신하지 못하는 경우](troubleshooting/d2b9-c815-micro-service-ac00-kubernetes-dns-b85c-d1b5-c2e0-d558-c9c0-babb-d558-b294-acbd-c6b0.md)
   * [NFS 접속 확인 방법](troubleshooting/nfs-c811-c18d-d655-c778-bc29-bc95.md)
   * [Instance IP가 변경될 경우](instance-ipac00-bcc0-acbd-b420-acbd-c6b0.md)
-* [Cocktail 설치 - Mac에서 Minikube 활용](cocktail-c124-ce58-mac-c5d0-c11c-minikube-d65c-c6a9.md)
 
