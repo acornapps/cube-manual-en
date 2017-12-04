@@ -123,7 +123,7 @@ The key's randomart image is:
 # ssh-copy-id -i /tmp/cubetest/id_rsa.pub root@ip
 ```
 
-5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
 # cube deploy [-v debug]
@@ -149,9 +149,9 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/k8s_dashboard_5.jpeg)
 
-1. 브라우저로 [http://{lb\_ip](http://{VM의)}:31876 또는 [http://{master1\_ip](http://{VM의)}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
+브라우저로 [http://{lb\_ip](http://{VM의)}:31876 또는 [http://{master1\_ip](http://{VM의)}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의
 
-2. 프로바이더 등록
+6.프로바이더 등록
 
 프로바이더는 클라우드 리소스로 사용 할 Public/Private 클라우드 계정 정보를 등록, 편집, 삭제할 수 있다.
 
@@ -174,7 +174,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 | User | 프로바이더 등록을 위한 기본 값. 미터링 아닌 경우 User 선택 |
 | Metering | Public Cloud를 사용시, 리소스 사용량을 받아오고자 할 때 선택 |
 
-1. 클러스터 등록
+7.클러스터 등록
 
 생성된 클러스터 정보를 기입한다.
 
