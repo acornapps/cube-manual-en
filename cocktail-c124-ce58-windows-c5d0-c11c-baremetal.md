@@ -98,7 +98,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-1. Baremetal 서버에 ssh private key로 자동 접속을 위해 ssh-copy-id 명령을 사용하여 ssh public key를 해당 서버에 복사한다.
+Baremetal 서버에 ssh private key로 자동 접속을 위해 ssh-copy-id 명령을 사용하여 ssh public key를 해당 서버에 복사한다.
 
 ```
 # ssh-copy-id -i /tmp/cubetest/id_rsa.pub root@ip
