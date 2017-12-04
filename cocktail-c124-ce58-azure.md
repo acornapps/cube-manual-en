@@ -58,11 +58,12 @@ cloud_provider: "azure"
 ## (required) When azure is used, you need to set the following variables.
 subscription_id: "359a4193-7b57-4fea-881a-001998abe36e"
 
-client_id: "ac441ccf-55a7-4cc8-ba51-39ca89c72e15"
+client_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
-client_secret: "v5jR6aTM+Hz9f6qB+HuNbBDRP+3rvrXpDw31eIVrPn8="
+client_secret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-tenant_id: "64b1988f-c49c-4cd3-a885-ff7b984c76b3"
+tenant_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+
 
 location: "JapanWest"
 
