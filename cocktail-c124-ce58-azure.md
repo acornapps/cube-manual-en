@@ -39,8 +39,8 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.
 
 ```
-  # mkdir /tmp/cubetest
-  # cd /tmp/cubetest
+  # mkdir /Desktop/cubetest/cubetest
+  # cd /Desktop/cubetest/cubetest
 ```
 
 2.cube 명령을 이용하여 azure용 설치 script를 download 받고 초기화 한다.
@@ -97,7 +97,7 @@ addons:
   logging: true
 
 # (required) cocktail service
-cocktail: false
+cocktail: true
 ```
 
 상기 항목에서 private\_key\_path  와 key\_path 는 Baremetal 장비에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
