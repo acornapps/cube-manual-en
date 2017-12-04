@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Cocktail 설치 - Mac에서 Virtualbox 활용](cocktail-c124-ce58-mac-c5d0-c11c-virtualbox-d65c-c6a9.md)
 * [Cocktail 설치 - Mac에서 Baremetal](cocktail-c124-ce58-mac-c5d0-c11c-baremetal.md)
-* [aaa1](aaa1.md)
+* [Cocktail 설치 - Mac에서 Minikube](aaa1.md)
 * [Cocktail 설치 - Azure](cocktail-c124-ce58-azure.md)
 * [Cocktail 설치 후 기본 확인사항](cocktail-c124-ce58-d6c4-ae30-bcf8-ac80-c99d-bc29-bc95.md)
 * [내부테스트를 위한 Harbor 사설 인증서 설정하기](b0b4-bd80-d14c-c2a4-d2b8-b97c-c704-d55c-harbor-c0ac-c124-c778-c99d-c11c-c124-c815-d558-ae30.md)
