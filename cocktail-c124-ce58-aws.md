@@ -25,14 +25,14 @@
 1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
 ```
-# mkdir /tmp/cubetest
-# cd /tmp/cubetest
+# mkdir /Desktop/cubetest
+# cd /Desktop/cubetest
 ```
 
 2.cube 명령을 이용하여 baremetal용 설치 script를 download 받고 초기화 한다.
 
 ```
-# cube init -p baremetal
+# cube init -p aws
 ```
 
 3.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 1ea, nfs server로 구성하는 예임.
@@ -44,9 +44,9 @@
 cloud_provider: "aws"
 
 ## (required) When azure is used, you need to set the following variables.
-access_key: "AKIAJ6QOB32DFQ644VLQ"
+access_key: "********************"
 
-secret_key: "ZTbaa6G6KfcV1oneSRjTH5Q3tdgRN4VFFBfkL1Mi"
+secret_key: "*****************************************"
 
 # (optional) Instance size for the master node(s). Default: t2.medium.
 master_vm_size: "t2.medium"
