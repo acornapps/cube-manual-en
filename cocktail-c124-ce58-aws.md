@@ -130,3 +130,18 @@ The key's randomart image is:
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
+### **Shooting Trouble**
+
+**1.Docker 설치되어 있지 않은 경우**
+
+```
+MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
+Current Working directory : /Users/minhona/Desktop/cubetest
+Checking pre-requisition [darwin]
+exec: "docker": executable file not found in $PATH
+docker is not found. please install docker before proceeding
+Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
+```
+
+다운로드 링크로 이동하여 Docker 설치 후 cube를 재실행 한다.
+

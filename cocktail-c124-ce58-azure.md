@@ -173,7 +173,20 @@ callback_whitelist = profile_tasks
 
 ### **Shooting Trouble**
 
-1. 할당받은 quota를 초과했을 때
+**1.Docker 설치되어 있지 않은 경우**
+
+```
+MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
+Current Working directory : /Users/minhona/Desktop/cubetest
+Checking pre-requisition [darwin]
+exec: "docker": executable file not found in $PATH
+docker is not found. please install docker before proceeding
+Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
+```
+
+다운로드 링크로 이동하여 Docker 설치 후 cube를 재실행 한다.
+
+**2.Queta 수가 초과됐을할 경**
 
 ```
 Error: Error applying plan:
