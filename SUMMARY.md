@@ -13,7 +13,7 @@
 * [Cocktail 설치 - Windows에서 minikube](cocktail-c124-ce58-window-c5d0-c11c-minikube-c124-ce58-d558-ae30.md)
 * [Cocktail 설치 - Windows에서 baremetal](cocktail-c124-ce58-windows-c5d0-c11c-baremetal.md)
 * [Cocktail 설치 - Windows에서 AWS](cocktail-c124-ce58-win-c5d0-c11c-azure/cocktail-c124-ce58-windows-c5d0-c11c-aws.md)
-* [Cocktail 설치 - Windows에서 azure](cocktail-c124-ce58-win-c5d0-c11c-azure.md)
+* [Cocktail 설치 - Windows에서 Azure](cocktail-c124-ce58-win-c5d0-c11c-azure.md)
 * [TroubleShooting](troubleshooting.md)
   * [클러스터 health check방법](troubleshooting/case1.md)
   * [특정 micro service가 kubernetes dns로 통신하지 못하는 경우](troubleshooting/d2b9-c815-micro-service-ac00-kubernetes-dns-b85c-d1b5-c2e0-d558-c9c0-babb-d558-b294-acbd-c6b0.md)
