@@ -124,6 +124,8 @@ fact_caching_connection = /tmp
 callback_whitelist = profile_tasks
 ```
 
+
+
 5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
