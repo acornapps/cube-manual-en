@@ -179,23 +179,17 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 마스터 URL은 [https://{lb\_\_ip}:6443](https://{lb__ip}:6443) or [https://{master1ip\_}:6443](https://{master1ip_}:6443) 로 기재
 
-모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.
-
-![](/assets/cocktail_conf_cluster_baremetal.jpeg)
-
-Clustngress hoster CA Certification 값은 cube.yaml파일의 master ip로 ssh 접속한 후, 아래 결과값을 넣어주면 되고,
+모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.![](/assets/cocktail_conf_cluster_baremetal.jpeg)Clustngress hoster CA Certification 값은 아래 결과값을 넣어주면 되고,
 
 ```
 # cat /etc/kubernetes/pki/ca.pem
 ```
 
-Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://www.base64encode.org/](https://www.base64encode.org/) 접속하여 base64 encoding한 값을 넣어주면 된다.
+Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
 
 ```
 # cat /etc/kubernetes/pki/apiserver-key.pem
 ```
-
-![](/assets/cocktail_cert_encoding.jpeg)
 
 8.볼륨 설정하기
 
@@ -223,5 +217,42 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://
 
 ![](/assets/deploy11.jpeg)
 
-![](/assets/deploy8.jpeg)![](/assets/deploy9.jpeg)![](/assets/deploy10.jpeg)![](/assets/deploy12.jpeg)
+![](/assets/deploy8.jpeg)![](/assets/deploy9.jpeg)![](/assets/deploy10.jpeg)![](/assets/deploy12.jpeg)**TroubleShooting**
+
+**1.Docker가 설치되어 있지 않은 경우**
+
+```
+MinHoui-MacBook-Pro:cubetest minhona$ cube init -p baremetal
+Current Working directory : /Users/minhona/Desktop/cubetest
+Checking pre-requisition [darwin]
+exec: "docker": executable file not found in $PATH
+docker is not found. please install docker before proceeding
+Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
+```
+
+다운로드 링크로 이동하여 Docker 설치 후 cube를 재실행 한다.
+
+**2.local-**_**hostname과 ansible-hostname이 다른 경우**_
+
+```
+TASK [addon : assign master roles]
+Monday 30 October 2017  10:55:37 +0900 (0:00:00.042)     0:02:29.762
+failed: [192.168.50.11] (item=master1) => ["changed": true, "cmd": "kubectl label nodes master1 
+role=master1 --overwrite", "delta":"0:00:00.117665", "end": "2017-10-30 10:54:30.111133", "failed":
+true, "item": "master1", "rc" 1, "start": "2017-10-30 10:54:29.993468", "stderr": Error from server
+(NotFound): nodes \"master1\" not found", "stderr_lines": ["Error from server (NotFound): nodes \
+"master1\" not found"]
+```
+
+서버에서 직접 hostname을 검색하고 그 값을 \[cubescripts-&gt;roles-&gt;addon-&gt;tasks-&gt;main.yml\]의 with\_items 값을 수정하고 재실행합니다.
+
+```
+name: assign master roles
+  when: kube_dash and cloud_provider != "aws"
+  shell: "kubectl label nodes {{ item }} role=master --overwrite"
+  with_items: "{{ ansible_hostname|lower }}"
+  register: assign_master_roles
+```
+
+
 
