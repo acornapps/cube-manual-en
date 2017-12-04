@@ -176,6 +176,8 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 생성된 클러스터 정보를 기입한다. 아래 192.168.50.11은 cube.yaml파일에서 master ip를 기입하면 되고, Certification의 값을 제외한 항목은 그림에서 표시된 값으로 기입하면 된다.
 
+![](/assets/cocktail_conf_cluster_baremetal.jpeg)
+
 ![](/assets/스크린샷 2017-12-04 오후 1.12.49.png)Cluster CA Certification 값은 master ip로 ssh 접속한 후, 아래 명령의 실행한 결과값을 넣어주면 된다.
 
 ```
