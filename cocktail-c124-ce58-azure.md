@@ -55,7 +55,7 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 # cube init -p azure
 ```
 
-3.ansible cfg의 서버 계정을 바꿔준다. \(script다운로드폴더-&gt;cubescripts -&gt; ansible.cfg\)
+3.ansible.cfg의 서버 계정을 바꿔준다. \(script다운로드폴더-&gt;cubescripts -&gt; ansible.cfg\)
 
 ```
 [defaults]
