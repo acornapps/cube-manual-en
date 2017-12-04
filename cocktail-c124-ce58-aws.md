@@ -24,8 +24,6 @@ callback_whitelist = profile_tasks
 
 3\) AWS 설치를 위해서는 Access Key와 Secret Key가 필요하니 아래와 같이 조회하여 메모해 놓는다.
 
-
-
 * **Access Key와 Secret Key를 발급받기 위해 AWS 서비스 콘솔에서 상단 우측 카테고리에서 'Security Credentials'를 클릭합니다.**![](/assets/aws-add.png)
 
 * **첫 화면에서 아래와 같은 경고창을 만나는데 IAM User를 생성할 것인지에 대한 내용이고, 여기서는 왼쪽 Continue to Security Credentials 버튼을 눌러 계속 진행합니다.**![](/assets/aws-add1.png)
@@ -78,10 +76,10 @@ worker_node_count: 2
 region: "ap-northeast-1"
 
 # (required) Path to an SSH private key file to access server.
-private_key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa"
+private_key_path: "/Users/minhona/.ssh/id_rsa"
 
 # (required) Path to an SSH public key file to be provisioned as the SSH key.
-key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa.pub"
+key_path: "/Users/minhona/.ssh/id_rsa.pub"
 
 # Kubernetes
 k8s_version: "1.6.7"
