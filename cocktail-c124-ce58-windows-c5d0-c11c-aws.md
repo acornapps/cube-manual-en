@@ -2,15 +2,25 @@
 
 AWS cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 
-AWS 설치를 위해서는 Access Key와 Secret Key가 필요하니 아래와 같이 조회하여 메모해 놓는다.
+### **사전준비**
 
-**1\) Access Key와 Secret Key를 발급받기 위해 AWS 서비스 콘솔에서 상단 우측 카테고리에서 'Security Credentials'를 클릭합니다.**![](/assets/aws-add.png)
+설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메시지가 발생한다.
 
-**2\) 첫 화면에서 아래와 같은 경고창을 만나는데 IAM User를 생성할 것인지에 대한 내용이고, 여기서는 왼쪽 Continue to Security Credentials 버튼을 눌러 계속 진행합니다.**![](/assets/aws-add1.png)
+1\) Docker 다운로드 후 설치
 
-3**\) 이후 화면에서 Access Keys\(Access Key ID and Secret Access Key\) 를 선택 후 Create New Access Key를 눌러 키를 발급 받는다.**![](/assets/aws-add2.png)
+[https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-4**\) 키가 생성되면 아래와 같은 창을 볼 수 있고, show Access Key를 통해 Access Key와 Credit Key를 확인할 수 있습니다. 또한 Download Key File을 눌러 키를 저장할 수 있습니다.**![](/assets/aws-add3.png)![](/assets/aws-add4.png)
+2\) Hyper-v : \[제어판\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 활성화
+
+3\) AWS 설치를 위해서는 Access Key와 Secret Key가 필요하니 아래와 같이 조회하여 메모해 놓는다.
+
+* **Access Key와 Secret Key를 발급받기 위해 AWS 서비스 콘솔에서 상단 우측 카테고리에서 'Security Credentials'를 클릭합니다.**![](/assets/aws-add.png)
+
+* **첫 화면에서 아래와 같은 경고창을 만나는데 IAM User를 생성할 것인지에 대한 내용이고, 여기서는 왼쪽 Continue to Security Credentials 버튼을 눌러 계속 진행합니다.**![](/assets/aws-add1.png)
+
+* **이후 화면에서 Access Keys\(Access Key ID and Secret Access Key\) 를 선택 후 Create New Access Key를 눌러 키를 발급 받는다.**![](/assets/aws-add2.png)
+
+* **키가 생성되면 아래와 같은 창을 볼 수 있고, show Access Key를 통해 Access Key와 Credit Key를 확인할 수 있습니다. 또한 Download Key File을 눌러 키를 저장할 수 있습니다.**![](/assets/aws-add3.png)![](/assets/aws-add4.png)
 
 ### 설치
 
