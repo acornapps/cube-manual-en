@@ -12,9 +12,11 @@ Azure cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 
 2\) Hyper-v : \[제어판\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 활성화ㅤ
 
+3\) Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
+
 * Subscription\_Id : Azure포탈 메인페이지 상단 중간 검색창에 'subscription' 검색하여 subscriptionID값을 확인
 
-3\) Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
+
 
 ![](/assets/섭스크립션id.PNG)
 
