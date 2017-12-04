@@ -28,10 +28,10 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.
 
- ```
+```
   # mkdir /tmp/cubetest
   # cd /tmp/cubetest
-  ```
+```
 
 2.cube 명령을 이용하여 azure용 설치 script를 download 받고 초기화 한다.
 
@@ -118,11 +118,13 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+4. cubescripts/ansible.cfg 파일을 편집기로 열어서 remote\_user=cocktail로 반드시 변경한다. 
+
+5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
-# cube deploy [-v debug] 
+# cube deploy [-v debug]
 ```
 
-5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+6.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
