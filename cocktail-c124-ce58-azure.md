@@ -186,7 +186,7 @@ Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
 
 다운로드 링크로 이동하여 Docker 설치 후 cube를 재실행 한다.
 
-**2.Queta 수가 초과됐을할 경**
+**2.Queta 수가 초과됐을할 경우**
 
 ```
 Error: Error applying plan:
