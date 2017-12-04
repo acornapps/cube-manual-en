@@ -45,8 +45,8 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.
 
 ```
-  # mkdir /tmp/cubetest
-  # cd /tmp/cubetest
+  # mkdir /Desktop/cubetest
+  # cd /Desktop/cubetest
 ```
 
 2.cube 명령을 이용하여 azure용 설치 script를 download 받고 초기화 한다.
@@ -167,5 +167,5 @@ any resources that successfully completed. Please address the error
 above and apply again to incrementally change your infrastructure.
 ```
 
-https://docs.microsoft.com/en-us/azure/azure-supportability/resource-manager-core-quotas-request 공식링크의 방법에 따라 quota를 늘린 후, 재실행한다.
+[https://docs.microsoft.com/en-us/azure/azure-supportability/resource-manager-core-quotas-request](https://docs.microsoft.com/en-us/azure/azure-supportability/resource-manager-core-quotas-request) 공식링크의 방법에 따라 quota를 늘린 후, 재실행한다.
 
