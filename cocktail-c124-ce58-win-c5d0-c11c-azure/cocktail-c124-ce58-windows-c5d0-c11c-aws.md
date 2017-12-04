@@ -46,9 +46,9 @@ AWS cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 cloud_provider: "aws"
 
 ## (required) When azure is used, you need to set the following variables.
-access_key: "AKIAJ6QOB32DFQ644VLQ"
+access_key: "*********************"
 
-secret_key: "ZTbaa6G6KfcV1oneSRjTH5Q3tdgRN4VFFBfkL1Mi"
+secret_key: "******************************************"
 
 # (optional) Instance size for the master node(s). Default: t2.medium.
 master_vm_size: "t2.medium"
@@ -112,7 +112,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4. AWS
+1. AWS
 
 5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
