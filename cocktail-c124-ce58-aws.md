@@ -35,7 +35,7 @@
 # cube init -p aws
 ```
 
-3.AWS의 경우 서버os명을 서버계정명으로 사용한다. 따라서 ansible cfg의 remote\_user를 서버os명인 centos로 수정한다. \(스크립트생성폴더/cubescripts/ansible.cfg\)
+3.AWS의 경우 서버os명을 서버계정으로 사용한다. 따라서 ansible cfg의 remote\_user를 서버os명인 centos로 수정한다. \(스크립트생성폴더/cubescripts/ansible.cfg\)
 
 ```
 [defaults]
