@@ -20,7 +20,7 @@ MacOS에서 Minikube를 이용하여 Cocktail이 제공하는 기능을 간단�
 
 [https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
-4\) minikube 다운로드 
+4\) minikube 다운로드
 
 [https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
 
@@ -59,7 +59,6 @@ k8s_version: "1.8.0"
 
 # (required) cocktail service
 cocktail: true
-
 ```
 
 hyperv-_switch-name는 windows에서 설치를 할 경우, hyperv 옵션이다.\(실행시 스킵\)_
@@ -72,11 +71,7 @@ hyperv-_switch-name는 windows에서 설치를 할 경우, hyperv 옵션이다.\
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
-
-
 고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
-
-
 
 사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
 
@@ -119,21 +114,25 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 생성된 클러스터 정보를 기입한다. 아래 192.168.50.11은 cube.yaml파일에서 master ip를 기입하면 되고, Certification의 값을 제외한 항목은 그림에서 표시된 값으로 기입하면 된다.
 
-![](/assets/cocktail_conf_cluster.jpeg)
+![](/assets/cocktail_conf_cluster_baremetal.jpeg)
 
-Cluster CA Certification 값은 cube.yaml파일의 master ip로 ssh 접속한 후, 아래 결과값을 넣어주면 되고,
+Cluster CA Certification 값은 master ip로 ssh 접속한 후, 아래 명령의 실행한 결과값을 넣어주면 된다.
 
 ```
 # cat /etc/kubernetes/pki/ca.pem
 ```
 
-Certificate Authority Data 값은 아래 명령을 실행한 결과를 [https://www.base64encode.org/](https://www.base64encode.org/) 접속하여 base64 encoding한 값을 넣어주면 된다.
+Certificate Certificate Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
+
+```
+# cat /etc/kubernetes/pki/apiserver.pem
+```
+
+Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
 
 ```
 # cat /etc/kubernetes/pki/apiserver-key.pem
 ```
-
-![](/assets/cocktail_cert_encoding.jpeg)
 
 8.볼륨 설정하기
 
