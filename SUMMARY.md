@@ -20,5 +20,6 @@
   * [인증서 업데이트](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/c778-c99d-c11c-c5c5-b370-c774-d2b8.md)
   * K8s version 업그레이드
   * 스케일링
-* [Cocktail 설치 - Mac에서 Minikube 2](cocktail-c124-ce58-mac-c5d0-c11c-minikube-2.md)
+* [Cocktail 설치 - Mac에서 Minikube](cocktail-c124-ce58-mac-c5d0-c11c-minikube-2.md)
+* [aaa1](aaa1.md)
 
