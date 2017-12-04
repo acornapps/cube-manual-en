@@ -10,8 +10,6 @@
 
 [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-
-
 2\) ansible cfg의 서버 계정을 바꿔준다. \(cubetest -&gt; cubescripts -&gt; ansible.cfg\)
 
 ```
@@ -102,10 +100,10 @@ worker_node_count: 2
 storage_account_type: "Standard_LRS"
 
 # (required) Path to an SSH private key file to access server.
-private_key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa"
+private_key_path: "/Users/minhona/.ssh/id_rsa"
 
 # (required) Path to an SSH public key file to be provisioned as the SSH key.
-key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa.pub"
+key_path: "/Users/minhona/.ssh/id_rsa.pub"
 
 
 # Kubernetes
