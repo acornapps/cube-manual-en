@@ -147,7 +147,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-5.발급받은 ssh-key 의 유저계정명에 맞게 ansible.cfg파일의 remote\_user명\(기본 값 : root\)을 수정한다.
+ssh접속을 위해 ansible.cfg파일의 remote\_user명을 cocktail로 수정한다.\(기본 값 : root\)
 
 \(script다운로드폴더-&gt;cubescripts -&gt; ansible.cfg\)
 
