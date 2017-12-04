@@ -10,9 +10,7 @@
 
 [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-2\) AWS 설치를 위해서는 Access Key와 Secret Key가 필요하니 아래와 같이 조회하여 메모해 놓는다.
-
-3\) ansible cfg의 서버 계정을 바꿔준다. \(cubetest -&gt; cubescripts -&gt; ansible.cfg\)
+2\) ansible cfg의 서버 계정을 바꿔준다. \(cubetest -&gt; cubescripts -&gt; ansible.cfg\)
 
 ```
 [defaults]
@@ -23,6 +21,8 @@ fact_caching = jsonfile
 fact_caching_connection = /tmp
 callback_whitelist = profile_tasks
 ```
+
+3\) AWS 설치를 위해서는 Access Key와 Secret Key가 필요하니 아래와 같이 조회하여 메모해 놓는다.
 
 
 

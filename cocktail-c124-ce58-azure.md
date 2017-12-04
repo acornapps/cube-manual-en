@@ -10,21 +10,23 @@
 
 [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-2\) Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
 
-* Subscription\_Id : Azure포탈 메인페이지 상단 중간 검색창에 'subscription' 검색하여 subscriptionID값을 확인
 
-3\) ansible cfg의 서버 계정을 바꿔준다. \(cubetest -&gt; cubescripts -&gt; ansible.cfg\)
+2\) ansible cfg의 서버 계정을 바꿔준다. \(cubetest -&gt; cubescripts -&gt; ansible.cfg\)
 
 ```
 [defaults]
-remote_user = 	root
+remote_user =     root
 sudo = yes
 host_key_checking = False
 fact_caching = jsonfile
 fact_caching_connection = /tmp
 callback_whitelist = profile_tasks
 ```
+
+3\) Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
+
+* Subscription\_Id : Azure포탈 메인페이지 상단 중간 검색창에 'subscription' 검색하여 subscriptionID값을 확인
 
 ![](/assets/섭스크립션id.PNG)
 
