@@ -112,7 +112,17 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-1. AWS
+4.AWS의 경우 서버os명을 서버계정명으로 사용한다. 따라서 ansible cfg의 remote\_user를 서버os명인 centos로 수정한다. \(스크립트생성폴더/cubescripts/ansible.cfg\)
+
+```
+[defaults]
+remote_user =     centos
+sudo = yes
+host_key_checking = False
+fact_caching = jsonfile
+fact_caching_connection = /tmp
+callback_whitelist = profile_tasks
+```
 
 5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
