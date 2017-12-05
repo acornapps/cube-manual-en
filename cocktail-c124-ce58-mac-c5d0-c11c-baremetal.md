@@ -61,7 +61,7 @@ master_ip: ["203.236.100.10"]
 worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"]
 
 # (required) Set true if high-availability is required.
-high_availability: false
+haproxy: false
 
 # (conditional) Set load-balancer ip.
 lb_ip:
