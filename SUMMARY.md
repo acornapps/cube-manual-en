@@ -23,4 +23,5 @@
   * [인증서 업데이트](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/c778-c99d-c11c-c5c5-b370-c774-d2b8.md)
   * [K8s version 업그레이드](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/k8s-version-c5c5-adf8-b808-c774-b4dc.md)
   * [스케일링](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/c2a4-cf00-c77c-b9c1.md)
+* [create-docker-tls.sh](create-docker-tlssh.md)
 
