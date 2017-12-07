@@ -52,23 +52,23 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 cloud_provider: "virtualbox"
 
 
-# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
+# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]  -> 마스터 ip
 master_ip: ["192.168.50.11"]
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
-worker_ip: ["192.168.50.12"]
+worker_ip: ["192.168.50.12"]  -> 워커 ip
 
-# (required) vCpu number
+# (required) vCpu number        -> 노드 CPU 사양
 cpus: 2
 
-# (required) Memory size (MB)
+# (required) Memory size (MB)   -> 노드 Memory 사양 
 memory: 2048
 
 
-# (required) Set true if high-availability is required.
+# (required) Set true if high-availability is required.  ->  haproxy 사용여부 ( true, false )
 haproxy: false
 
-# (conditional) Set load-balancer ip.
+# (conditional) Set load-balancer ip.  -> LB사용 시 해당 아이피 입
 lb_ip:
 
 # (required) Path to an SSH private key file to access server.
@@ -89,8 +89,8 @@ addons:
 # (required) cocktail service
 cocktail: true
 # (optional) if nfs server available
-nfs_ip: "192.168.50.12"
-nfs_mountdir: "/nfs"
+nfs_ip: "192.168.50.12"  -> nfs서버 ip
+nfs_mountdir: "/nfs"     -> nfs서버 경
 ```
 
 상기 항목에서 private\_key\_path  와 key\_path 는 각각 VM에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
