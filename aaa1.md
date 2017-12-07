@@ -47,16 +47,12 @@ cloud_provider: "minikube"
 
 # (required) vCpu number    -> 노드 CPU 사양 
 cpus: 2
-
 # (required) Memory size (MB) -> 노드 Memory 사양 
 memory: 4096
-
 # (required) Hyper-V switch name for initializing vm instance. -> Hyper-V 스위치 명. default값 "ExternalSwitch"
 hyperv_switch_name: "ExternalSwitch"
-
 # Kubernetes
 k8s_version: "1.8.0"
-
 # (required) cocktail service
 cocktail: true
 ```
