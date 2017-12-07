@@ -82,9 +82,9 @@ client_secret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 tenant_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
-location: "JapanWest"
+location: "JapanWest"  -> azure region
 
-# (optional) Instance size for the master node(s). Default: Standard_F2s.
+# (optional) Instance size for the master node(s). Default: Standard_F2s.  -> azure vm 
 master_vm_size: "Standard_D2_v3"
 
 # (optional) Instance size for the worker node(s). Default: Standard_F2s.
