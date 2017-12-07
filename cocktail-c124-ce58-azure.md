@@ -84,19 +84,19 @@ tenant_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
 location: "JapanWest"  -> azure region
 
-# (optional) Instance size for the master node(s). Default: Standard_F2s.  -> azure vm 
+# (optional) Instance size for the master node(s). Default: Standard_F2s.  -> AZURE VM 사양(마스터) 
 master_vm_size: "Standard_D2_v3"
 
-# (optional) Instance size for the worker node(s). Default: Standard_F2s.
-worker_vm_size: "Standard_D2_v3"
+# (optional) Instance size for the worker node(s). Default: Standard_F2s.  -> AZURE VM 사양(노드) 
+worker_v m_size: "Standard_D2_v3"
 
-# (required) The number of master nodes to be created. Example: 2
+# (required) The number of master nodes to be created. Example: 2  -> 마스터 노드 수
 master_node_count: 1
 
-# (required) The number of worker nodes to be created. Example: 3
+# (required) The number of worker nodes to be created. Example: 3  -> 워커 노드 수 
 worker_node_count: 2
 
-# (required) Storage account type. Example: Standard_LRS
+# (required) Storage account type. Example: Standard_LRS  ->  Azure 스토리지 타입. default값 "Standard_LRS"
 storage_account_type: "Standard_LRS"
 
 # (required) Path to an SSH private key file to access server.
