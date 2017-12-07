@@ -159,16 +159,5 @@ callback_whitelist = profile_tasks
 
 6.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
-#### ㅤ
-
-### **Shooting Trouble**
-
-1. 할당받은 quota를 초과했을 때
-
-```
-azurerm_virtual_machine.master.1: compute.VirtualMachinesClient#CreateOrUpdate: Failure responding to request: StatusCode=409 -- Original Error: autorest/azure: Service returned an error. Status=409 Code="OperationNotAllowed"
-Message="Operation results in exceeding quota limits of Core. Maximum allowed: 10, Current in use: 10, Additional requested: 2. Please read more about quota increase at http://aka.ms/corequotaincrease."
-```
-
 
 
