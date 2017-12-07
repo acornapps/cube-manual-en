@@ -36,7 +36,7 @@ Windows 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 �
 cloud_provider: "baremetal"
 
 
-# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]  ->마스터 ip 
+# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
 master_ip: "104.199.151.160"  -> 마스터 ip
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
