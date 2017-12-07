@@ -53,7 +53,7 @@ cloud_provider: "virtualbox"
 
 
 # (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]  -> 마스터 ip
-master_ip: ["192.168.50.11"]  -> 마스터 ip 
+master_ip: ["192.168.50.11"]
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
 worker_ip: ["192.168.50.12"]  -> 워커 ip
