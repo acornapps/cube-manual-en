@@ -63,7 +63,7 @@ secret_key: "*****************************************"
 # (optional) Instance size for the master node(s). Default: t2.medium.  -> AWS VM 사양 (마스터 노드) 
 master_vm_size: "t2.medium"
 
-# (optional) Instance size for the worker node(s). Default: t2.medium. -> AWS VM 사양 (워 노드)
+# (optional) Instance size for the worker node(s). Default: t2.medium. -> AWS VM 사양 (워커 노드)
 worker_vm_size: "t2.medium"
 
 # (required) The number of master nodes to be created. Example: 2  -> 마스터 노드 수
