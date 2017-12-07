@@ -55,10 +55,10 @@ cloud_provider: "baremetal"
 
 
 # (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
-master_ip: ["203.236.100.10"]
+master_ip: ["203.236.100.10"]  -> 마스터 ip 
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
-worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"]
+worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"] -> 워 ip 
 
 # (required) Set true if high-availability is required.
 haproxy: false
@@ -131,7 +131,7 @@ The key's randomart image is:
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
-이때,  Loadbalancer가 활성화 되어 있으면, [https://lb\_ip:6443/ui](https://lb_ip:6443/ui) 로 접속하게 되고 아니면 [https://master1\_ip:6443/ui](https://master1_ip:6443/ui) 로 접속한다. 
+이때,  Loadbalancer가 활성화 되어 있으면, [https://lb\_ip:6443/ui](https://lb_ip:6443/ui) 로 접속하게 되고 아니면 [https://master1\_ip:6443/ui](https://master1_ip:6443/ui) 로 접속한다.
 
 ![](/assets/k8s_dashboard_1.jpeg)
 
