@@ -20,7 +20,7 @@ MacOS에서 Minikube를 이용하여 Cocktail이 제공하는 기능을 간단�
 
 [https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
-4\) minikube 다운로
+4\) minikube 다운로드 
 
 [https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
 
