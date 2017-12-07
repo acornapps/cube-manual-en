@@ -55,19 +55,7 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 # cube init -p azure
 ```
 
-3.AWS의 경우 서버os명을 서버계정으로 사용한다. 따라서 ansible cfg의 remote\_user를 서버os명인 centos로 수정한다. \(스크립트생성폴더/cubescripts/ansible.cfg\)
-
-```
-[defaults]
-remote_user =     centos
-sudo = yes
-host_key_checking = False
-fact_caching = jsonfile
-fact_caching_connection = /tmp
-callback_whitelist = profile_tasks
-```
-
-4.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 Azure 정보 및 인스턴스 정보를 기입한다.
+3.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 Azure 정보 및 인스턴스 정보를 기입한다.
 
 ```
 ---
@@ -147,7 +135,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-5.ssh접속을 위해 ansible.cfg파일의 remote\_user명을 cocktail로 수정한다.\(기본 값 : root\)
+4.ssh접속을 위해 ansible.cfg파일의 remote\_user명을 cocktail로 수정한다.\(기본 값 : root\)
 
 \(script다운로드폴더-&gt;cubescripts -&gt; ansible.cfg\)
 
@@ -161,13 +149,13 @@ fact_caching_connection = /tmp
 callback_whitelist = profile_tasks
 ```
 
-6.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+5.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
 # cube deploy [-v debug]
 ```
 
-7.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+6.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
 #### ㅤ
 
