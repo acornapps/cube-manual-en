@@ -53,11 +53,6 @@ Kubernetes
 k8s_version: "1.8.0"
 (required) cocktail service
 cocktail: true
-(required) if cocktail service true
-builder_server_type:
-builder_ca_pem:
-builder_cert_pem:
-builder_key_pem:
 ```
 
 4..cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
