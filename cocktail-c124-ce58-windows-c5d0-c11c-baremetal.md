@@ -36,16 +36,16 @@ Windows 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 �
 cloud_provider: "baremetal"
 
 
-# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
-master_ip: "104.199.151.160"
+# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]  ->마스터 ip 
+master_ip: "104.199.151.160"  -> 마스터 ip
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
-worker_ip: "104.154.140.17"
+worker_ip: "104.154.140.17"  -> 워커 ip
 
-# (required) Set true if high-availability is required.
+# (required) Set true if high-availability is required.  -> haproxy 사용여부(true of false)
 haproxy: false
 
-# (conditional) Set load-balancer ip.
+# (conditional) Set load-balancer ip.  -> LB사용 시 해당 아이피 입력
 lb_ip:
 
 # (required) Path to an SSH private key file to access server.
@@ -66,8 +66,8 @@ addons:
 # (required) cocktail service
 cocktail: true
 # (optional) if nfs server available
-nfs_ip: "35.201.132.14"
-nfs_mountdir: "/nfs/data"
+nfs_ip: "35.201.132.14"  -> nfs서버 ip
+nfs_mountdir: "/nfs/data"  -> nfs서버 경로
 ```
 
 상기 항목에서 private\_key\_path  와 key\_path 는 Baremetal 장비에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 git을 다운로드 받아 bash shell을 실행한 후 아래 절차대로 실행하면 된다. \(git 다운로드 링크 : [https://git-for-windows.github.io/](https://git-for-windows.github.io/) \)
