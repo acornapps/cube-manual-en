@@ -64,7 +64,7 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 cloud_provider: "azure"
 
 ## (required) When azure is used, you need to set the following variables.
-subscription_id: "1e1b970c-b8c5-4497-8b34-a0e5fa50e119"
+subscription_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
 client_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
