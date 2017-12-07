@@ -65,7 +65,7 @@ cpus: 2
 memory: 2048
 
 
-# (required) Set true if high-availability is required.  ->  haproxy 사용여부 ( true, false )
+# (required) Set true if high-availability is required.  ->  haproxy 사용여부 ( true or false )
 haproxy: false
 
 # (conditional) Set load-balancer ip.  -> LB사용 시 해당 아이피 입력 
