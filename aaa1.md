@@ -45,13 +45,13 @@ MacOS에서 Minikube를 이용하여 Cocktail이 제공하는 기능을 간단�
 ---
 cloud_provider: "minikube"
 
-# (required) vCpu number
+# (required) vCpu number    -> 노드 CPU 사양 
 cpus: 2
 
-# (required) Memory size (MB)
+# (required) Memory size (MB) -> 노드 Memory 사양 
 memory: 4096
 
-# (required) Hyper-V switch name for initializing vm instance.
+# (required) Hyper-V switch name for initializing vm instance. -> Hyper-V 스위치 명. default값 "ExternalSwitch"
 hyperv_switch_name: "ExternalSwitch"
 
 # Kubernetes

@@ -63,7 +63,7 @@ worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"] -> 워커 ip
 # (required) Set true if high-availability is required.  -> haproxy 사용여부(true of false)
 haproxy: false
 
-# (conditional) Set load-balancer ip.
+# (conditional) Set load-balancer ip. -> LB사용 시 해당 아이피 입력
 lb_ip:
 
 # (required) Path to an SSH private key file to access server.
@@ -85,8 +85,8 @@ addons:
 # (required) cocktail service
 cocktail: true
 # (optional) if nfs server available
-nfs_ip: "203.236.100.15"
-nfs_mountdir: "/nfs"
+nfs_ip: "203.236.100.15"  -> nfs서버 ip
+nfs_mountdir: "/nfs"      -> nfs서버 경로
 ```
 
 상기 항목에서 private\_key\_path  와 key\_path 는 Baremetal 장비에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
