@@ -21,6 +21,10 @@
 
 Cocktail public Hub는 공인인증서를 이용하여 Harbor &lt;-&gt; Cocktail build server 간 통신 하게 된다.
 
+
+
+![](/assets/cocktailhub.jpeg)
+
 ---
 
 * Docker 설치
