@@ -11,6 +11,7 @@
 * [Cocktail 설치 - aws on windows](cocktail-c124-ce58-win-c5d0-c11c-azure/cocktail-c124-ce58-windows-c5d0-c11c-aws.md)
 * [Cocktail 설치 - azure on windows](cocktail-c124-ce58-win-c5d0-c11c-azure.md)
 * [Cocktail 설치 후 기본 확인사항](cocktail-c124-ce58-d6c4-ae30-bcf8-ac80-c99d-bc29-bc95.md)
+* [Cocktail Public Hub 설치](cocktail-public-hub-c124-ce58.md)
 * [Cocktail Private Hub 설치](b0b4-bd80-d14c-c2a4-d2b8-b97c-c704-d55c-harbor-c0ac-c124-c778-c99d-c11c-c124-c815-d558-ae30.md)
 * [기존 cluster에 node 추가하기](chapter1.md)
 * [Cocktail 설치 - Windows에서 AWS](cocktail-c124-ce58-win-c5d0-c11c-azure/cocktail-c124-ce58-windows-c5d0-c11c-aws.md)
