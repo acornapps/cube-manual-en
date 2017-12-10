@@ -1,8 +1,4 @@
-# Cube Installation Guide
-
-
-
-
+# Cocktail Installation Guide
 
 
 
