@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Cocktail 설치](cocktail-c124-ce58-mac-c5d0-c11c-virtualbox-d65c-c6a9.md)
+* [Cocktail Installation](cocktail-c124-ce58-mac-c5d0-c11c-virtualbox-d65c-c6a9.md)
   * [virtualbox on mac](virtualbox-on-mac.md)
   * [baremetal on mac](cocktail-c124-ce58-mac-c5d0-c11c-baremetal.md)
   * [minikube on mac](aaa1.md)
@@ -12,7 +12,7 @@
   * [aws on windows](cocktail-c124-ce58-win-c5d0-c11c-azure/cocktail-c124-ce58-windows-c5d0-c11c-aws.md)
   * [azure on windows](cocktail-c124-ce58-win-c5d0-c11c-azure.md)
   * [Cocktail 설치 후 기본 확인사항](cocktail-c124-ce58-d6c4-ae30-bcf8-ac80-c99d-bc29-bc95.md)
-* [Cocktail Hub 설치](cocktail-public-hub-c124-ce58.md)
+* [Cocktail Hub Installation](cocktail-public-hub-c124-ce58.md)
   * [Public Hub](public-hub.md)
   * [Private Hub](b0b4-bd80-d14c-c2a4-d2b8-b97c-c704-d55c-harbor-c0ac-c124-c778-c99d-c11c-c124-c815-d558-ae30.md)
 * [Cluster Administration](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8.md)
