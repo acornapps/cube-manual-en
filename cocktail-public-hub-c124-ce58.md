@@ -9,7 +9,7 @@
 >
 > IE, FireFox, Chrome 등의 Web Browser 제작사는 VeriSign 이나 comodo 같은 유명 ROOT CA 들의 인증서를 신뢰하는 CA로 미리 등록해 놓으므로 저런 기관에서 발급된 SSL 인증서를 사용해야 browser 에서는 해당 SSL 인증서를 신뢰할수 있는데 OpenSSL 로 만든 ROOT CA와 SSL 인증서는 Browser가 모르는 기관이 발급한 인증서이므로 보안 경고를 발생시킬 것이나 테스트 사용에는 지장이 없다.
 >
-> ROOT CA 인증서를 Browser에 추가하여 보안 경고를 발생시키지 않으려면 [Browser 에 SSL 인증서 발급기관 추가하기](https://www.lesstif.com/pages/viewpage.action?pageId=6979614#) 를 참고하자.
+> ROOT CA 인증서를 Browser에 추가하여 보안 경고를 발생시키지 않을 수 있다.
 >
 > * CSR\(Certificate Signing Request\)은?
 >
