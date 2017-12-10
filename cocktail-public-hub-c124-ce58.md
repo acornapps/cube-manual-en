@@ -21,15 +21,13 @@
 
 Cocktail public Hub는 공인인증서를 이용하여 Harbor &lt;-&gt; Cocktail build server 간 통신 하게 된다.
 
-
-
 ![](/assets/cocktailhub.jpeg)
 
 ---
 
 * Docker 설치
 
-Cocktail Private Hub를 설치하기 위한 VM또는 machine에서 먼저 Docker를 설치한다.
+Cocktail Public Hub를 설치하기 위한 VM또는 machine에서 먼저 Docker를 설치한다.
 
 ```
 # sudo su - root
@@ -63,21 +61,6 @@ Harbor 압축파일 다운로드 및 압축 해제
 # tar -zxvf harbor-online-installer-v1.1.1-rc4.tgz
 ```
 
-Harbor Self Signing Certificate 생성하기
-
-참고 사이트 \([https://github.com/vmware/harbor/blob/master/docs/configure\_https.md](https://github.com/vmware/harbor/blob/master/docs/configure_https.md%29%29\)
-
-```
-# cd cocktail
-# mkdir cert
-# openssl req -newkey rsa:4096 -nodes -sha256 -keyout ca.key -x509 -days 3650 -out ca.crt
-# openssl req -newkey rsa:4096 -nodes -sha256 -keyout harbor.key -out harbor.csr
-# echo subjectAltName = IP:xxx.xxx.xxx.xxx > extfile.cnf
-# openssl x509 -req -days 3650 -in harbor.csr -CA ca.crt -CAkey ca.key -CAcreateserial -extfile extfile.cnf -out harbor.crt
-# cp harbor.crt ~/cocktail/cert
-# cp harbor.key ~/cocktail/cert
-```
-
 Harbor 설정파일에서 아래  속성 확인 및 변경하기.
 
 ```
@@ -86,8 +69,8 @@ Harbor 설정파일에서 아래  속성 확인 및 변경하기.
 hostname = 서버 ip
 ui_url_protocol = https
 db_password = root123
-ssl_cert = /root/cocktail/cert/harbor.crt     (harbor crt 파일 경로)
-ssl_cert_key = /root/cocktail/cert/harbor.key (harbor 인증서 key 파일 경로)
+ssl_cert = /root/cocktail/cert/harbor.crt     (공인인증서 crt 파일 경로)
+ssl_cert_key = /root/cocktail/cert/harbor.key (공인인증서 key 파일 경로)
 harbor_admin_password = C0ckt@1lAdmin
 ...
 ```
@@ -102,16 +85,6 @@ Harbor가 이미 떠 있는 경우에는 stop한 후 start 한다.
 # ./prepare
 # docker-compose down
 # docker-compose up -d
-```
-
-* Docker client에서 Harbor 로그인이 정상적으로 되는지 확인하기.
-
-Harbor 서버에서 생성한 ca.crt파일을 docker client가 인증서를 확인하는 디렉토리인 /etc/docker/certs.d/serverip/ 밑에 복사한다.
-
-```
-# mkdir -p /etc/docker/certs.d/xxx.xxx.xxx.xxx
-# cp ca.crt /etc/docker/certs.d/xxx.xxx.xxx.xxx
-# docker login xxx.xxx.xxx.xxx
 ```
 
 * 참고 - Harbor 실행/중단/설정변경시
@@ -152,12 +125,7 @@ ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock 
 # systemctl restart docker
 ```
 
-* k8s node에서 harbor로 부터 image를 pull하기 위해 harbor 설치시에 생성한 ca.crt파일을 각  node의 /etc/docker/certs.d/serverip/ 밑에 복사한다.
 
-```
-mkdir -p /etc/docker/certs.d/xxx.xxx.xxx.xxx
-이후 ca.crt를 복사한다.
-```
 
 * Cocktail에서 builder-api, client-api deployment update
 
@@ -166,7 +134,7 @@ k8s dashboard에서 builder-api의 환경변수 REGISTRY_URL, DOCKER\_URL, SERVE
 | 환경변수 | 값 예시 |
 | :--- | :--- |
 | REGISTRY\_URL | xxx.xxx.xxx.xxx |
-| DOCKER\_URL | [https://xxx.xxx.xxx.xxx1](https://172.10.1.1) |
+| DOCKER\_URL | [https://xxx.xxx.xxx.xxx](https://172.10.1.1) |
 | SERVER\_TYPE | 임의의 string |
 | CA\_PEM | build server 인증키 ca.pem파일을 base64 encoding해서  입력 |
 | CERT\_PEM | build server cert.pem파일을 base64 encoding해서 입력 |
