@@ -14,8 +14,6 @@
 * [Cocktail Hub 설치](cocktail-public-hub-c124-ce58.md)
   * [Public Hub](public-hub.md)
   * [Private Hub](b0b4-bd80-d14c-c2a4-d2b8-b97c-c704-d55c-harbor-c0ac-c124-c778-c99d-c11c-c124-c815-d558-ae30.md)
-* [기존 cluster에 node 추가하기](chapter1.md)
-* [Cocktail 설치 - Windows에서 AWS](cocktail-c124-ce58-win-c5d0-c11c-azure/cocktail-c124-ce58-windows-c5d0-c11c-aws.md)
 * [TroubleShooting](troubleshooting.md)
   * [클러스터 health check방법](troubleshooting/case1.md)
   * [특정 micro service가 kubernetes dns로 통신하지 못하는 경우](troubleshooting/d2b9-c815-micro-service-ac00-kubernetes-dns-b85c-d1b5-c2e0-d558-c9c0-babb-d558-b294-acbd-c6b0.md)
@@ -26,4 +24,5 @@
   * [인증서 업데이트](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/c778-c99d-c11c-c5c5-b370-c774-d2b8.md)
   * [K8s version 업그레이드](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/k8s-version-c5c5-adf8-b808-c774-b4dc.md)
   * [스케일링](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/c2a4-cf00-c77c-b9c1.md)
+  * [기존 cluster에 node 추가하기](chapter1.md)
 
