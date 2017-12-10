@@ -15,13 +15,11 @@
 >
 > 공개키 기반\(PKI\)은 private key\(개인키\)와 public key\(공개키\)로 이루어져 있다. 인증서라고 하는 것은 내 공개키가 맞다고 인증기관\(CA\)이 전자서명하여 주는 것이며 나와 보안 통신을 하려는 당사자는 내 인증서를 구해서 그 안에 있는 공개키를 이용하여 보안 통신을 할 수 있다.
 >
-> CSR 은 인증기관에 인증서 발급 요청을 하는 특별한 ASN.1 형식의 파일이며\([PKCS\#10 - RFC2986](http://tools.ietf.org/html/rfc2986)\)  그 안에는 내 공개키 정보와 사용하는 알고리즘 정보등이 들어 있다. 개인키는 외부에 유출되면 안 되므로 저런 특별한 형식의 파일을 만들어서 인증기관에 전달하여 인증서를 발급 받는다.
+> CSR 은 인증기관에 인증서 발급 요청을 하는 특별한 ASN.1 형식의 파일이며 그 안에는 내 공개키 정보와 사용하는 알고리즘 정보등이 들어 있다. 개인키는 외부에 유출되면 안 되므로 저런 특별한 형식의 파일을 만들어서 인증기관에 전달하여 인증서를 발급 받는다.
 >
 > SSL 인증서 발급시 CSR 생성은 Web Server 에서 이루어지는데 Web Server 마다 방식이 상이하여 사용자들이 CSR 생성등을 어려워하니 인증서 발급 대행 기관에서 개인키까지 생성해서 보내주고는 한다.
 
-Cocktail Private Hub는 Harbor Registry와 Cocktail build Server를 위한 인증서 Self signed certificate를 생성하여 내부에서
-
-Harbor와 Docker 인증서를 생성한다.
+Cocktail public Hub는 공인인증서를 이용하여 Harbor &lt;-&gt; Cocktail build server 간 통신 하게 된다. 
 
 ---
 
