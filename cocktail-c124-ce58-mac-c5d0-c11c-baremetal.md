@@ -20,7 +20,7 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 # ssh-copy-id -i id_rsa.pub root@ip
 ```
 
-4\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
+3\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
 
 ```
 # yum install -y nfs-utils
