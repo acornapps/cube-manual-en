@@ -12,11 +12,7 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 
 [https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
-2\) Vagrant 다운로드 후 설치
-
-[https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
-
-3\) SSH private key & public key 복사
+2\) SSH private key & public key 복사
 
 키 복사의 경우 아래의 항목에서 상세하게 확인할 수 있다.
 
