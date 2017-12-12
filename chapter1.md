@@ -2,7 +2,7 @@
 
 기존 cluster에 node를 추가하기 위해 아래의 절차대로 수행한다.
 
-Cube로 설치한 directory를 $CUBE\_DEPLOY라고 하면 
+Cube로 설치한 directory를 $CUBE\_DEPLOY라고 하면
 
 ```
 # cd $CUBE_DEPLOY/cubescripts/inventories
@@ -25,7 +25,7 @@ Cube로 설치한 directory를 $CUBE\_DEPLOY라고 하면
 192.168.50.12 
 
 # cd ..            # CUBE_DEPLOY/cubescripts로 이동        
-# ansible-playbook -i inventories/inventory node.yml     #ansible을 이용하여 node.yml 실
+# ansible-playbook -i inventories/inventory node.yml     #ansible을 이용하여 node.yml 실행 
 ```
 
 주의 사항.
