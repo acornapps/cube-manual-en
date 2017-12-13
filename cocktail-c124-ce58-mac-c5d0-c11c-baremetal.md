@@ -6,13 +6,45 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 
 설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메시지가 발생한다.
 
-\(에러 메시지에대한 해결책은 문서 마지막 TroubleShooting 에서 확인할 수 있다.\)
+\(에러 메시지에 대한 해결책은 문서 마지막 TroubleShooting 에서 확인할 수 있다.\)
 
-1\) Docker 다운로드 후 설치
+1\) 제공받은 cube 바이너리를 어느 디렉토리에서든 사용할 수 있도록 환경변수 path 설정을 한다.
 
-[https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)![](/assets/docker설치.png)
+2\) Docker 다운로드 후 설치
 
-2\) SSH public key 복사
+\( 다운로드 링크 : [https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac) \)![](/assets/docker설치.png)
+
+3\) SSH key 생성
+
+설치 pc에서 각 서버에 ssh로 접속하여 설치하기 때문에 ssh-key 생성이 필요하다. 기존에 가지고 있는 ssh-key를 사용해도 무방하다.
+
+&lt; ssh key 신규 발급 방법 &gt;
+
+```
+# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/cloud/.ssh/id_rsa): /tmp/cubetest/id_rsa
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /tmp/cubetest/id_rsa.
+Your public key has been saved in /tmp/cubetest/id_rsa.pub.
+The key fingerprint is:
+SHA256:liTKyW/l3eU9+mBzyksL0AKpYXRsvsQ793nWJiUgJC0 cloud@Clouds-MacBook-Pro.local
+The key's randomart image is:
++---[RSA 2048]----+
+|     ....        |
+|    . .E.o       |
+|     o=o=        |
+|   o.oo*.o..     |
+|    =.. So... .  |
+|     . B oo. + o |
+|      o + o.o==o.|
+|     .     o=+Bo.|
+|            o*=. |
++----[SHA256]-----+
+```
+
+
 
 설치 PC에서 각 서버에 ssh로 접속하여 설치하기 때문에 ssh키 복사가 필요하다. 아래 명령어를 통해 키 복사가 가능하다.
 
@@ -20,7 +52,7 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 # ssh-copy-id -i id_rsa.pub root@ip
 ```
 
-3\) 제공받은 cube 바이너리를 어느 디렉토리에서든 사용할 수 있도록 환경변수 path 설정을 한다.
+제공받은 cube 바이너리를 어느 디렉토리에서든 사용할 수 있도록 환경변수 path 설정을 한다.
 
 4\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
 
