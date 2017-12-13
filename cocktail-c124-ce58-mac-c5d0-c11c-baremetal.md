@@ -46,7 +46,9 @@ The key's randomart image is:
 
 
 
-설치 PC에서 각 서버에 ssh로 접속하여 설치하기 때문에 ssh키 복사가 필요하다. 아래 명령어를 통해 키 복사가 가능하다.
+4\) ssh-key 복사
+
+설치 pc에서 각 서버에 ssh로 접속할 수 있도록 앞서 발급한 ssh Public키를 각 서버에 복사한다.
 
 ```
 # ssh-copy-id -i id_rsa.pub root@ip
