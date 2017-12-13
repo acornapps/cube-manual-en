@@ -167,7 +167,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 클러스터 등록을 위해 환경설정 -&gt; 클러스터 -&gt;우측상단+ 클릭 후 정보를 기입한다.
 
-마스터 URL은 [https://{lb\_\_ip}:6443](https://{lb__ip}:6443) or [https://{master1ip}:6443](https://{master1ip_}:6443) 로 기재
+마스터 URL은 [https://{lb\_ip}:6443](https://{lb__ip}:6443) or [https://{master1\_ip}:6443](https://{master1ip_}:6443) 로 기재
 
 ![](/assets/cocktail_conf_cluster_baremetal.jpeg)
 
@@ -204,8 +204,6 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 * 레지스트리 편집 
 
 ![](/assets/서비스5.png)
-
-
 
 **9.볼륨 등록 **
 
