@@ -165,11 +165,54 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 **7.클러스터 등록**
 
-클러스터 등록을 위해 환경설정 -&gt; 클러스터 -&gt;우측상단+ 클릭 후 정보를 기입한다.
+클러스터 등록을 위해 환경설정 -&gt; 클러스터 -&gt; 우측상단+ 클릭 후 정보를 기입한다.![](/assets/클러스터1.png)
+
+| 클러스터 옵션  | **설명** |
+| :--- | :--- |
+| 인그레스 지원 | 인그레스 호스트에 subpath로 서비스 노출하는 방식 |
+| 로드밸런서 지원 | 로드밸런스 기능 지원 |
+| 퍼시스턴트 볼륨 지원 | Public cloud스토리지 및 외부 스토리지 사용 가능 |
+| 노드포트 지원 | 노드에 포트를 붙여 서비스 노출하는 방식 |
+
+* **인그레스 지원**![](/assets/클러스터2.png)
+
+* **노드포트 지원 **![](/assets/클러스터3.png)
+
+* **클러스터유\(기본값으로 cube선택\)**![](/assets/클러스터4.png)
+
+| **목록 ** | **설명** |
+| :--- | :--- |
+| k8s 버전 | 1.6.7\(칵테일에서 사용중인 쿠버네티스 버전\) |
+| 마스터 URL | 쿠버네티스 마스터 IP \(L4 구성 시 L4 VIP\) -[https://마스터ip:6443](https://www.gitbook.com/book/acornsoft/cocktail-manual/edit#)형식을 따른다. |
+| 모니터링 호스트 | InfluxDB 설치 ip\(칵테일 모니터링을 위해 influxDB 사용\) |
+| 모니터링 포트 | 30315\(influxDB 기본 포트\) |
+| 모니터링 사용자 | root\(influxDB 사용자 ID\) |
+| 모니터링 비밀번호 | root\(influxDB 사용자 passwd\) |
+
+* **큐브 클러스터 유형**
+
+MANAGED 선
+
+인증유형 : certification![](/assets/클러스터5.png)
+
+
+
+
+| **목록** | **설명** |
+| :--- | :--- |
+| 사용자아이디 | admin |
+| 패스워드 | AdminPass |
+| Cluster CA Certification | 마스터 서버 접속 후 /etc/kubernetes/pki 경로 이동 후 ca.pem파일 값 입력 |
+| Client Certificate Data | 마스터 서버 접속 후 /etc/kubernetes/pki 경로 이동 후 apiserver.pem 파일 값 입력 |
+| Client Key Data | 마스터 서버 접속 후 /etc/kubernetes/pki 경로 이동 후 apiserver-key.pem 파일 값 입력 |
+
+* 
+
+
+
+프로바이더, 이름, 설명 
 
 마스터 URL은 [https://{lb\_ip}:6443](https://{lb__ip}:6443) or [https://{master1\_ip}:6443](https://{master1ip_}:6443) 로 기재
-
-![](/assets/cocktail_conf_cluster_baremetal.jpeg)
 
 모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.![](/assets/스크린샷 2017-12-04 오후 1.12.49.png)Clustngress hoster CA Certification 값은 아래 결과값을 넣어주면 되고,
 
