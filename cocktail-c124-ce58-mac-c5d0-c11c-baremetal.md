@@ -44,8 +44,6 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-
-
 4\) ssh-key 복사
 
 설치 pc에서 각 서버에 ssh로 접속할 수 있도록 앞서 발급한 ssh Public키를 각 서버에 복사한다.
@@ -64,20 +62,24 @@ The key's randomart image is:
 
 #### ㅤ
 
-1.먼저 설치를 위해 맥 터미널을 열고 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
+### 설
+
+1.먼저 설치를 위해 맥 터미널을 열고 아래와 같이 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
 ```
 # mkdir /Desktop/cubetest
 # cd /Desktop/cubetest
 ```
 
-2.cube 명령을 이용하여 baremetal용 설치 script를 download 받고 초기화 한다. \(
+2.cube 명령을 이용하여 baremetal용 설치 script를 download 받는다.
 
 ```
 # cube init -p baremetal
 ```
 
-3.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 3ea, nfs server로 구성하는 예임.
+3.앞서 생성된 스크립트 중 cube.yaml 파일을 편집기로 열고, 설치하고자 하는 VM 정보를 기입한다.
+
+\( 아래는 master 1, worker 3대, nfs server로 구성하는 예임.\)
 
 만약 외부 LoadBalancer가 가용하여 master를 이중화 할 경우 ib\_ip에 해당 load balancer ip를 기재하면 됨.
 
