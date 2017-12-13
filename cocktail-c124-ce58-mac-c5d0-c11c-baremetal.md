@@ -191,7 +191,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 * **큐브 클러스터 유형**
 
-MANAGED 선택 
+MANAGED 선택
 
 인증유형 : certification![](/assets/클러스터5.png)
 
@@ -203,27 +203,7 @@ MANAGED 선택
 | Client Certificate Data | 마스터 서버 접속 후 /etc/kubernetes/pki 경로 이동 후 apiserver.pem 파일 값 입력 |
 | Client Key Data | 마스터 서버 접속 후 /etc/kubernetes/pki 경로 이동 후 apiserver-key.pem 파일 값 입력 |
 
-프로바이더, 이름, 설명
 
-마스터 URL은 [https://{lb\_ip}:6443](https://{lb__ip}:6443) or [https://{master1\_ip}:6443](https://{master1ip_}:6443) 로 기재
-
-모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.![](/assets/스크린샷 2017-12-04 오후 1.12.49.png)Clustngress hoster CA Certification 값은 아래 결과값을 넣어주면 되고,
-
-```
-# cat /etc/kubernetes/pki/ca.pem
-```
-
-Certificate Certificate Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
-
-```
-# cat /etc/kubernetes/pki/apiserver.pem
-```
-
-Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
-
-```
-# cat /etc/kubernetes/pki/apiserver-key.pem
-```
 
 **8.서비스등록 **
 
