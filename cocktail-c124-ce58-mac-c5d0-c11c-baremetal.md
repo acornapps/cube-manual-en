@@ -64,20 +64,20 @@ The key's randomart image is:
 
 ### 설치
 
-1.먼저 설치를 위해 맥 터미널을 열고 아래와 같이 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
+**1.먼저 설치를 위해 맥 터미널을 열고 아래와 같이 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다**
 
 ```
 # mkdir /Desktop/cubetest
 # cd /Desktop/cubetest
 ```
 
-2.cube 명령을 이용하여 baremetal용 설치 script를 download 받는다.
+**2.cube 명령을 이용하여 baremetal용 설치 script를 download 받는다.**
 
 ```
 # cube init -p baremetal
 ```
 
-3.앞서 생성된 스크립트 중 cube.yaml 파일을 편집기로 열고, 설치하고자 하는 VM 정보를 기입한 후 저장한다.
+**3.앞서 생성된 스크립트 중 cube.yaml 파일을 편집기로 열고, 설치하고자 하는 VM 정보를 기입한 후 저장한다.**
 
 \( 아래는 master 1, worker 3대, nfs server로 구성하는 예임.\)
 
@@ -89,7 +89,7 @@ cloud_provider: "baremetal"
 
 
 # (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
-master_ip: ["203.236.100.10"]  -> 마스터 서버 ip 기입 
+master_ip: ["203.236.100.10","203.236.100.11"]  -> 마스터 서버 ip 기입 
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
 worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"] -> 워커 서버 ip 기입 
@@ -123,13 +123,13 @@ nfs_ip: "203.236.100.15"  -> nfs서버의 ip 기입
 nfs_mountdir: "/nfs"      -> nfs서버의 공유 디렉토리 경로 기입
 ```
 
-4.cube.yaml 파일이 있는 경로에서 cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug 옵션을 주면 설치 되는 세부 내용을 확인할 수 있다.
+**4.cube.yaml 파일이 있는 경로에서 cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug 옵션을 주면 설치 되는 세부 내용을 확인할 수 있다.**
 
 ```
 # cube deploy -v debug
 ```
 
-5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+**5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.**
 
 이때,  Loadbalancer가 활성화 되어 있으면, [https://lb\_ip:6443/ui](https://lb_ip:6443/ui) 로 접속하게 되고 아니면 [https://master1\_ip:6443/ui](https://master1_ip:6443/ui) 로 접속한다.
 
@@ -145,7 +145,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 브라우저로 [http://{lb\_ip](http://{VM의)}:31876 또는 [http://{master1\_ip](http://{VM의)}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의
 
-6.프로바이더 등록
+**6.프로바이더 등록**
 
 환경설정-&gt;프로바이더 -&gt;우측상단+ 클릭. 프로바이더는 Onpremise, 유형은 User로 선택하고 생성버튼을 클릭한다.
 
@@ -163,11 +163,11 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 | User | 프로바이더 등록을 위한 기본 값. 미터링 아닌 경우 User 선택 |
 | Metering | Public Cloud를 사용시, 리소스 사용량을 받아오고자 할 때 선택 |
 
-7.클러스터 등록
+**7.클러스터 등록**
 
-환경설정 -&gt; 클러스터 -&gt;우측상단+ 클릭 .생성된 클러스터 정보를 기입한다.
+클러스터 등록을 위해 환경설정 -&gt; 클러스터 -&gt;우측상단+ 클릭 후 정보를 기입한다.
 
-마스터 URL은 [https://{lb\_\_ip}:6443](https://{lb__ip}:6443) or [https://{master1ip\_}:6443](https://{master1ip_}:6443) 로 기재
+마스터 URL은 [https://{lb\_\_ip}:6443](https://{lb__ip}:6443) or [https://{master1ip}:6443](https://{master1ip_}:6443) 로 기재
 
 ![](/assets/cocktail_conf_cluster_baremetal.jpeg)
 
@@ -189,13 +189,29 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 # cat /etc/kubernetes/pki/apiserver-key.pem
 ```
 
-8.서비스등
+**8.서비스등록 **
 
-칵테일에서 사용할 서비스 정보를 기입하기 위해  ![](/assets/서비스1.png)
+서비스 등을 위해 환경설정 -&gt; 서비스  -&gt; 우측상단 + 클릭 후 이름, 설명, 색상 및 사용자, 클러스터, 레지스트리 정보를 입력한다. ![](/assets/서비스2.png)
 
-8.볼륨 설정하기
+* 사용자편집
 
-서비스에서 사용되는 V olume을 등록한다. 입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
+![](/assets/서비스3.png)
+
+* 클러스터 편집 
+
+![](/assets/서비스4.png)
+
+* 레지스트리 편집 
+
+![](/assets/서비스5.png)
+
+
+
+**9.볼륨 등록 **
+
+볼륨 등록을 위해 환경설정 -&gt; 볼륨 -&gt; 우측상단 + 를 클릭한다.
+
+입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
 
 ![](/assets/cocktail_volume.jpeg)
 
