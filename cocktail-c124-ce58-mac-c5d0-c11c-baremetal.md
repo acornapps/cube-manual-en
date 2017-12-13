@@ -199,7 +199,7 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 
 ![](/assets/cocktail_volume.jpeg)
 
-**삭제**
+### **삭제**
 
 1. 테스트가 완료되어 더 이상 필요하지 않을 경우에는 아래 명령으로 삭제할 수 있다.  
    디폴트로 옵션을 주지 않는 경우에는 생성한 k8s cluster만 삭제하고 설치 스크립트는 그대로 유지하며, -f 옵션을 추가하면 cube.yaml 파일을 cube.yaml.org로 백업파일을 생성한 후 설치스크립트도 모두 삭제하게 된다.
@@ -218,12 +218,11 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 
 1. 삭제한 후에 다시 설치하기 위해서는 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
 
-**TroubleShooting**
+### **TroubleShooting**
 
 **1.Docker가 설치되어 있지 않은 경우**
 
 ```
-MinHoui-MacBook-Pro:cubetest minhona$ cube init -p baremetal
 Current Working directory : /Users/minhona/Desktop/cubetest
 Checking pre-requisition [darwin]
 exec: "docker": executable file not found in $PATH
