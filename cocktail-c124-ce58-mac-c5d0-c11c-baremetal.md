@@ -10,17 +10,19 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 
 1\) Docker 다운로드 후 설치
 
-[https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
+[https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)![](/assets/docker설치.png)
 
-2\) SSH private key & public key 복사
+2\) SSH public key 복사
 
-키 복사의 경우 아래의 항목에서 상세하게 확인할 수 있다.
+설치 PC에서 각 서버에 ssh로 접속하여 설치하기 때문에 ssh키 복사가 필요하다. 아래 명령어를 통해 키 복사가 가능하다.
 
 ```
 # ssh-copy-id -i id_rsa.pub root@ip
 ```
 
-3\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
+3\) 제공받은 cube 바이너리를 어느 디렉토리에서든 사용할 수 있도록 환경변수 path 설정을 한다.
+
+4\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
 
 ```
 # yum install -y nfs-utils
@@ -28,14 +30,14 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 
 #### ㅤ
 
-1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
+1.먼저 설치를 위해 맥 터미널을 열고 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
 
 ```
 # mkdir /Desktop/cubetest
 # cd /Desktop/cubetest
 ```
 
-2.cube 명령을 이용하여 baremetal용 설치 script를 download 받고 초기화 한다.
+2.cube 명령을 이용하여 baremetal용 설치 script를 download 받고 초기화 한다. \(
 
 ```
 # cube init -p baremetal
