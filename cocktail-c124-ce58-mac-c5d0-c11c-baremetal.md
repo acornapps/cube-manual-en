@@ -147,10 +147,6 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 6.프로바이더 등록
 
-프로바이더는 클라우드 리소스로 사용 할 Public/Private 클라우드 계정 정보를 등록, 편집, 삭제할 수 있다.
-
-프로바이더 계정을 등록함으로써 해당 프로바이더의 리소스, 미터링 정보를 가져 오거나 서버를 생성 할 수 있다. 단 로컬 테스트 환경에서는 클러스터를 생성하기 위한 정보로만 사용됨.
-
 환경설정-&gt;프로바이더 -&gt;우측상단+ 클릭. 프로바이더는 Onpremise, 유형은 User로 선택하고 생성버튼을 클릭한다.
 
 ![](/assets/cocktail_conf_provider.jpeg)
@@ -169,7 +165,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 7.클러스터 등록
 
-생성된 클러스터 정보를 기입한다.
+환경설정 -&gt; 클러스터 -&gt;우측상단+ 클릭 .생성된 클러스터 정보를 기입한다.
 
 마스터 URL은 [https://{lb\_\_ip}:6443](https://{lb__ip}:6443) or [https://{master1ip\_}:6443](https://{master1ip_}:6443) 로 기재
 
@@ -193,9 +189,9 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 # cat /etc/kubernetes/pki/apiserver-key.pem
 ```
 
-8. 서비
+8.서비스등
 
-칵테일에서 사용할 서비스 정보를 기입한다. ![](/assets/서비스1.png)
+칵테일에서 사용할 서비스 정보를 기입하기 위해  ![](/assets/서비스1.png)
 
 8.볼륨 설정하기
 
@@ -203,29 +199,7 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 
 ![](/assets/cocktail_volume.jpeg)
 
-9.서비스 생성하기
-
-아래와 같이 간단한 tomcat server를 deploy 하고 완료시 해당 service port로 접속하여 정상적으로 tomcat 초기 화면이 표시되는지 확인한다.
-
-![](/assets/deploy1.jpeg)
-
-![](/assets/deploy2.jpeg)
-
-![](/assets/deploy3.jpeg)
-
-![](/assets/deploy4.jpeg)
-
-![](/assets/deploy5.jpeg)
-
-![](/assets/deploy6.jpeg)
-
-![](/assets/deploy7.jpeg)
-
-![](/assets/deploy11.jpeg)
-
-![](/assets/deploy8.jpeg)![](/assets/deploy9.jpeg)![](/assets/deploy10.jpeg)![](/assets/deploy12.jpeg)
-
-### 삭제
+**삭제**
 
 1. 테스트가 완료되어 더 이상 필요하지 않을 경우에는 아래 명령으로 삭제할 수 있다.  
    디폴트로 옵션을 주지 않는 경우에는 생성한 k8s cluster만 삭제하고 설치 스크립트는 그대로 유지하며, -f 옵션을 추가하면 cube.yaml 파일을 cube.yaml.org로 백업파일을 생성한 후 설치스크립트도 모두 삭제하게 된다.
@@ -242,7 +216,7 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 # cube destroy -f
 ```
 
-  2. 삭제한 후에 다시 설치하기 위해서는 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
+1. 삭제한 후에 다시 설치하기 위해서는 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
 
 **TroubleShooting**
 
