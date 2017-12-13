@@ -77,7 +77,7 @@ The key's randomart image is:
 # cube init -p baremetal
 ```
 
-3.앞서 생성된 스크립트 중 cube.yaml 파일을 편집기로 열고, 설치하고자 하는 VM 정보를 기입한다.
+3.앞서 생성된 스크립트 중 cube.yaml 파일을 편집기로 열고, 설치하고자 하는 VM 정보를 기입한 후 저장한다.
 
 \( 아래는 master 1, worker 3대, nfs server로 구성하는 예임.\)
 
@@ -123,41 +123,7 @@ nfs_ip: "203.236.100.15"  -> nfs서버의 ip 기입
 nfs_mountdir: "/nfs"      -> nfs서버의 공유 디렉토리 경로 기입
 ```
 
-상기 항목에서 private\_key\_path  와 key\_path 는 Baremetal 장비에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
-
-&lt; ssh key 신규 발급 방법 &gt;
-
-```
-# ssh-keygen -t rsa
-Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/cloud/.ssh/id_rsa): /tmp/cubetest/id_rsa
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /tmp/cubetest/id_rsa.
-Your public key has been saved in /tmp/cubetest/id_rsa.pub.
-The key fingerprint is:
-SHA256:liTKyW/l3eU9+mBzyksL0AKpYXRsvsQ793nWJiUgJC0 cloud@Clouds-MacBook-Pro.local
-The key's randomart image is:
-+---[RSA 2048]----+
-|     ....        |
-|    . .E.o       |
-|     o=o=        |
-|   o.oo*.o..     |
-|    =.. So... .  |
-|     . B oo. + o |
-|      o + o.o==o.|
-|     .     o=+Bo.|
-|            o*=. |
-+----[SHA256]-----+
-```
-
-1. Baremetal 서버에 ssh private key로 자동 접속을 위해 ssh-copy-id 명령을 사용하여 ssh public key를 해당 서버에 복사한다.
-
-```
-# ssh-copy-id -i /tmp/cubetest/id_rsa.pub root@ip
-```
-
-4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+4.cube.yaml 파일이 있는 경로에서 cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug 옵션을 주면 설치 되는 세부 내용을 확인할 수 있다.
 
 ```
 # cube deploy [-v debug]
@@ -167,21 +133,13 @@ The key's randomart image is:
 
 이때,  Loadbalancer가 활성화 되어 있으면, [https://lb\_ip:6443/ui](https://lb_ip:6443/ui) 로 접속하게 되고 아니면 [https://master1\_ip:6443/ui](https://master1_ip:6443/ui) 로 접속한다.
 
-![](/assets/k8s_dashboard_1.jpeg)
+고급 link를 클릭하고 아래 이동 버튼을 클릭한다.![](/assets/안전하지않음.jpeg)
 
-고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
+사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다. \(사용자 이름 및 비밀번호 별도 문의 \)
 
-![](/assets/k8s_dashboard_2.jpeg)
+Namespace를  cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다![](/assets/k8s.jpeg)
 
-사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
-
-Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다
-
-![](/assets/k8s_dashboard_4.jpeg)
-
-connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 31876 port임.
-
-![](/assets/k8s_dashboard_5.jpeg)
+connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 31876 port임.![](/assets/노드포트.jpeg)
 
 브라우저로 [http://{lb\_ip](http://{VM의)}:31876 또는 [http://{master1\_ip](http://{VM의)}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의
 
