@@ -151,7 +151,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 프로바이더 계정을 등록함으로써 해당 프로바이더의 리소스, 미터링 정보를 가져 오거나 서버를 생성 할 수 있다. 단 로컬 테스트 환경에서는 클러스터를 생성하기 위한 정보로만 사용됨.
 
-환경설정-&gt;프로바이 -&gt;우측상단+ 클릭. 프로바이더는 Onpremise, 유형은 User로 선택하고 생성버튼을 클릭한다.
+환경설정-&gt;프로바이더 -&gt;우측상단+ 클릭. 프로바이더는 Onpremise, 유형은 User로 선택하고 생성버튼을 클릭한다.
 
 ![](/assets/cocktail_conf_provider.jpeg)
 
@@ -193,9 +193,13 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 # cat /etc/kubernetes/pki/apiserver-key.pem
 ```
 
+8. 서비
+
+칵테일에서 사용할 서비스 정보를 기입한다. ![](/assets/서비스1.png)
+
 8.볼륨 설정하기
 
-서비스에서 사용되는 Volume을 등록한다. 입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
+서비스에서 사용되는 V olume을 등록한다. 입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
 
 ![](/assets/cocktail_volume.jpeg)
 
