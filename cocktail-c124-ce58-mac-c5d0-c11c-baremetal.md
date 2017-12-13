@@ -167,7 +167,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 클러스터 등록을 위해 환경설정 -&gt; 클러스터 -&gt; 우측상단+ 클릭 후 정보를 기입한다.![](/assets/클러스터1.png)
 
-| 클러스터 옵션  | **설명** |
+| 클러스터 옵션 | **설명** |
 | :--- | :--- |
 | 인그레스 지원 | 인그레스 호스트에 subpath로 서비스 노출하는 방식 |
 | 로드밸런서 지원 | 로드밸런스 기능 지원 |
@@ -176,7 +176,15 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 * **인그레스 지원**![](/assets/클러스터2.png)
 
+인그레스 방식에 사용할 host ip 주소로 마스터 노드 ip주소를 입력한다.\(마스터 노드 L4 구성 시 L4 VIP 입력\)
+
+
+
 * **노드포트 지원 **![](/assets/클러스터3.png)
+
+노드 포트 방식에 사용할 ip 주소로 마스터 노드 ip주소를 입력한다.\(마스터 노드 L4 구성 시 L4 VIP 입력\)
+
+
 
 * **클러스터유\(기본값으로 cube선택\)**![](/assets/클러스터4.png)
 
@@ -195,9 +203,6 @@ MANAGED 선
 
 인증유형 : certification![](/assets/클러스터5.png)
 
-
-
-
 | **목록** | **설명** |
 | :--- | :--- |
 | 사용자아이디 | admin |
@@ -206,11 +211,7 @@ MANAGED 선
 | Client Certificate Data | 마스터 서버 접속 후 /etc/kubernetes/pki 경로 이동 후 apiserver.pem 파일 값 입력 |
 | Client Key Data | 마스터 서버 접속 후 /etc/kubernetes/pki 경로 이동 후 apiserver-key.pem 파일 값 입력 |
 
-* 
-
-
-
-프로바이더, 이름, 설명 
+프로바이더, 이름, 설명
 
 마스터 URL은 [https://{lb\_ip}:6443](https://{lb__ip}:6443) or [https://{master1\_ip}:6443](https://{master1ip_}:6443) 로 기재
 
