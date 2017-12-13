@@ -238,7 +238,7 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 # cube destroy -f
 ```
 
-2. 삭제한 후에 다시 설치하기 위해서는 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
+  2. 삭제한 후에 다시 설치하기 위해서는 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
 
 **TroubleShooting**
 
