@@ -174,19 +174,11 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 | 퍼시스턴트 볼륨 지원 | Public cloud스토리지 및 외부 스토리지 사용 가능 |
 | 노드포트 지원 | 노드에 포트를 붙여 서비스 노출하는 방식 |
 
-* **인그레스 지원**![](/assets/클러스터2.png)
+* **인그레스 지원**![](/assets/클러스터2.png)인그레스 방식에 사용할 host ip 주소로 마스터 노드 ip주소를 입력한다.\(마스터 노드 L4 구성 시 L4 VIP 입력\)
 
-인그레스 방식에 사용할 host ip 주소로 마스터 노드 ip주소를 입력한다.\(마스터 노드 L4 구성 시 L4 VIP 입력\)
+* **노드포트 지원 **![](/assets/클러스터3.png)노드 포트 방식에 사용할 ip 주소로 마스터 노드 ip주소를 입력한다.\(마스터 노드 L4 구성 시 L4 VIP 입력\)
 
-
-
-* **노드포트 지원 **![](/assets/클러스터3.png)
-
-노드 포트 방식에 사용할 ip 주소로 마스터 노드 ip주소를 입력한다.\(마스터 노드 L4 구성 시 L4 VIP 입력\)
-
-
-
-* **클러스터유\(기본값으로 cube선택\)**![](/assets/클러스터4.png)
+* **클러스터유형 \(기본값으로 cube선택\)**![](/assets/클러스터4.png)
 
 | **목록 ** | **설명** |
 | :--- | :--- |
@@ -199,7 +191,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 * **큐브 클러스터 유형**
 
-MANAGED 선
+MANAGED 선택 
 
 인증유형 : certification![](/assets/클러스터5.png)
 
