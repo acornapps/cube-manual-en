@@ -151,7 +151,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 프로바이더 계정을 등록함으로써 해당 프로바이더의 리소스, 미터링 정보를 가져 오거나 서버를 생성 할 수 있다. 단 로컬 테스트 환경에서는 클러스터를 생성하기 위한 정보로만 사용됨.
 
-프로바이더는 Onpremise, 유형은 User로 선택하고 생성버튼을 클릭한다.
+환경설정-&gt;프로바이 -&gt;우측상단+ 클릭. 프로바이더는 Onpremise, 유형은 User로 선택하고 생성버튼을 클릭한다.
 
 ![](/assets/cocktail_conf_provider.jpeg)
 
