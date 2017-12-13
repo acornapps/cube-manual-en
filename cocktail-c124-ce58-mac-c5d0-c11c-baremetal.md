@@ -107,7 +107,7 @@ private_key_path: "/cubetest/id_rsa"
 key_path: "/cubetest/id_rsa.pub"
 
 
-# Kubernetes  -> 기본사항으로 변경하지 않는다.
+# Kubernetes  -> 기본사항으로 변경하지 않음.
 k8s_version: "1.6.7"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
@@ -120,7 +120,7 @@ addons:
 cocktail: true
 # (optional) if nfs server available
 nfs_ip: "203.236.100.15"  -> nfs서버의 ip 기입
-nfs_mountdir: "/nfs"      -> nfs서버의 공유 디렉토리 경로 기입 
+nfs_mountdir: "/nfs"      -> nfs서버의 공유 디렉토리 경로 기입
 ```
 
 상기 항목에서 private\_key\_path  와 key\_path 는 Baremetal 장비에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
