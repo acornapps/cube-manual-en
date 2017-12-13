@@ -126,12 +126,14 @@ nfs_mountdir: "/nfs"      -> nfs서버의 공유 디렉토리 경로 기입
 4.cube.yaml 파일이 있는 경로에서 cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug 옵션을 주면 설치 되는 세부 내용을 확인할 수 있다.
 
 ```
-# cube deploy [-v debug]
+# cube deploy -v debug
 ```
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
 이때,  Loadbalancer가 활성화 되어 있으면, [https://lb\_ip:6443/ui](https://lb_ip:6443/ui) 로 접속하게 되고 아니면 [https://master1\_ip:6443/ui](https://master1_ip:6443/ui) 로 접속한다.
+
+![](/assets/고급.jpeg)
 
 고급 link를 클릭하고 아래 이동 버튼을 클릭한다.![](/assets/안전하지않음.jpeg)
 
