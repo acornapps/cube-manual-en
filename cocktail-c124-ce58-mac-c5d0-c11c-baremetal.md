@@ -129,21 +129,14 @@ nfs_mountdir: "/nfs"      -> nfs서버의 공유 디렉토리 경로 기입
 # cube deploy -v debug
 ```
 
-**5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.**
+**5.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
 
-이때,  Loadbalancer가 활성화 되어 있으면, [https://lb\_ip:6443/ui](https://lb_ip:6443/ui) 로 접속하게 되고 아니면 [https://master1\_ip:6443/ui](https://master1_ip:6443/ui) 로 접속한다.
+```
+# ssh -i ~/cube/pki/id_rsa root@192.168.0.27
+# watch -n1 "kubectl get pods -n cocktail-system"
+```
 
-![](/assets/고급.jpeg)
 
-고급 link를 클릭하고 아래 이동 버튼을 클릭한다.![](/assets/안전하지않음.jpeg)
-
-사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다. \(사용자 이름 및 비밀번호 별도 문의 \)
-
-Namespace를  cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다![](/assets/k8s.jpeg)
-
-connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 31876 port임.![](/assets/노드포트.jpeg)
-
-브라우저로 [http://{lb\_ip](http://{VM의)}:31876 또는 [http://{master1\_ip](http://{VM의)}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의
 
 **6.프로바이더 등록**
 
@@ -202,8 +195,6 @@ MANAGED 선택
 | Cluster CA Certification | 마스터 서버 접속 후 /etc/kubernetes/pki 경로 이동 후 ca.pem파일 값 입력 |
 | Client Certificate Data | 마스터 서버 접속 후 /etc/kubernetes/pki 경로 이동 후 apiserver.pem 파일 값 입력 |
 | Client Key Data | 마스터 서버 접속 후 /etc/kubernetes/pki 경로 이동 후 apiserver-key.pem 파일 값 입력 |
-
-
 
 **8.서비스등록 **
 
