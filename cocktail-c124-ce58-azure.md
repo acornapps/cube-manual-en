@@ -42,20 +42,20 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 ### **설치**
 
-1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.
+**1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.**
 
 ```
   # mkdir /Desktop/cubetest
   # cd /Desktop/cubetest
 ```
 
-2.cube 명령을 이용하여 azure용 설치 script를 download 받고 초기화 한다.
+**2.cube 명령을 이용하여 azure용 설치 script를 download 받고 초기화 한다.**
 
 ```
 # cube init -p azure
 ```
 
-3.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 Azure 정보 및 인스턴스 정보를 기입한다.
+**3.cube.yaml 파일을 편집기로 열어서 설치하고자 하는 Azure 정보 및 인스턴스 정보를 기입한다.**
 
 ```
 ---
@@ -107,7 +107,7 @@ addons:
 cocktail: true
 ```
 
-상기 항목에서 private\_key\_path  와 key\_path 는 서버에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다. 
+상기 항목에서 private\_key\_path  와 key\_path 는 서버에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
 
 &lt; ssh key 신규 발급 방법 &gt;
 
@@ -135,7 +135,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4.ssh접속을 위해 ansible.cfg파일의 remote\_user명을 cocktail로 수정한다.\(기본 값 : root\)
+**4.ssh접속을 위해 ansible.cfg파일의 remote\_user명을 cocktail로 수정한다.\(기본 값 : root\)**
 
 \(script다운로드폴더-&gt;cubescripts -&gt; ansible.cfg\)
 
@@ -149,15 +149,18 @@ fact_caching_connection = /tmp
 callback_whitelist = profile_tasks
 ```
 
-5.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+**5.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
 
 ```
 # cube deploy [-v debug]
 ```
 
-6.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+**6.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
 
-#### ㅤ
+```
+# ssh -i ~/cube/pki/id_rsa root@{master1_ip}
+# watch -n1 "kubectl get pods -n cocktail-system"ㅤ
+```
 
 ### **Shooting Trouble**
 
