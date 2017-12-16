@@ -127,12 +127,10 @@ The key's randomart image is:
 # cube deploy [-v debug]
 ```
 
-
-
 **5.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
 
 ```
-# ssh -i ~/cube/pki/id_rsa root@203.236.100.10
+# ssh -i ~/cube/pki/id_rsa root@192.168.50.11
 # watch -n1 "kubectl get pods -n cocktail-system"
 ```
 
