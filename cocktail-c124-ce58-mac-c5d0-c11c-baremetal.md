@@ -132,11 +132,9 @@ nfs_mountdir: "/nfs"      -> nfs서버의 공유 디렉토리 경로 기입
 **5.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
 
 ```
-# ssh -i ~/cube/pki/id_rsa root@192.168.0.27
+# ssh -i ~/cube/pki/id_rsa root@203.236.100.10
 # watch -n1 "kubectl get pods -n cocktail-system"
 ```
-
-
 
 **6.프로바이더 등록**
 
