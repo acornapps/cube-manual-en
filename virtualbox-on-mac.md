@@ -31,20 +31,20 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 
 #### ㅤ
 
-1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
+**1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다**
 
 ```
 # mkdir /Desktop/cubetest
 # cd /Desktop/cubetest
 ```
 
-2.cube 명령을 이용하여 virtualbox용 설치 script를 download 받고 초기화 한다.
+**2.cube 명령을 이용하여 virtualbox용 설치 script를 download 받고 초기화 한다.**
 
 ```
 # cube init -p virtualbox
 ```
 
-3.cube.yam 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 예시임.
+**3.cube.yam 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 예시임.**
 
 ```
 # vi cube.yaml
@@ -121,7 +121,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+**4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
 
 ```
 # cube deploy [-v debug]
@@ -134,7 +134,7 @@ The key's randomart image is:
 # watch -n1 "kubectl get pods -n cocktail-system"
 ```
 
-6**.브라우저로 **[**http://{VM의**](http://{VM의)** masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/cocktail_login.jpeg)
+**6.브라우저로 **[**http://{VM의**](http://{VM의)** masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/cocktail_login.jpeg)
 
 1. 프로바이더 등록
 
