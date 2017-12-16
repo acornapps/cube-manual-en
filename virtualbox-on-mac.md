@@ -127,27 +127,16 @@ The key's randomart image is:
 # cube deploy [-v debug]
 ```
 
-5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
-![](/assets/k8s_dashboard_1.jpeg)
 
-고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
+**5.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
 
-![](/assets/k8s_dashboard_2.jpeg)
+```
+# ssh -i ~/cube/pki/id_rsa root@203.236.100.10
+# watch -n1 "kubectl get pods -n cocktail-system"
+```
 
-사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
-
-Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다
-
-![](/assets/k8s_dashboard_4.jpeg)
-
-connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 30000 port임.
-
-![](/assets/k8s_dashboard_5.jpeg)
-
-1. 브라우저로 [http://{VM의](http://{VM의) masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
-
-![](/assets/cocktail_login.jpeg)
+6**.브라우저로 **[**http://{VM의**](http://{VM의)** masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/cocktail_login.jpeg)
 
 1. 프로바이더 등록
 
