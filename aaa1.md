@@ -20,26 +20,26 @@ MacOS에서 Minikube를 이용하여 Cocktail이 제공하는 기능을 간단�
 
 [https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
-4\) minikube 다운로드 
+4\) minikube 다운로드
 
 [https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
 
 #### ㅤ
 
-1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
+**1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다**
 
 ```
 # mkdir /Desktop/cubetest
 # cd /Desktop/cubetest
 ```
 
-2.cube 명령을 이용하여 virtualbox용 설치 script를 download 받고 초기화 한다.
+**2.cube 명령을 이용하여 virtualbox용 설치 script를 download 받고 초기화 한다.**
 
 ```
 # cube init -p minikube
 ```
 
-3.cube.yam 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 예시임.
+**3.cube.yam 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 예시임.**
 
 ```
 ---
@@ -59,13 +59,13 @@ cocktail: true
 
 hyperv-_switch-name는 windows에서 설치를 할 경우, hyperv 옵션이다.\(실행시 스킵\)_
 
-4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+**4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
 
 ```
 # cube deploy [-v debug]
 ```
 
-5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+**5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.**
 
 고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
 

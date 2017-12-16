@@ -22,20 +22,20 @@
 
 ### 설치
 
-1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다
+**1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다**
 
 ```
 # mkdir /Desktop/cubetest
 # cd /Desktop/cubetest
 ```
 
-2.cube 명령을 이용하여 baremetal용 설치 script를 download 받고 초기화 한다.
+**2.cube 명령을 이용하여 baremetal용 설치 script를 download 받고 초기화 한다.**
 
 ```
 # cube init -p aws
 ```
 
-3.AWS의 경우 서버os명을 서버계정으로 사용한다. 따라서 ansible cfg의 remote\_user를 서버os명인 centos로 수정한다. \(스크립트생성폴더/cubescripts/ansible.cfg\)
+**3.AWS의 경우 서버os명을 서버계정으로 사용한다. 따라서 ansible cfg의 remote\_user를 서버os명인 centos로 수정한다. \(스크립트생성폴더/cubescripts/ansible.cfg\)**
 
 ```
 [defaults]
@@ -47,7 +47,7 @@ fact_caching_connection = /tmp
 callback_whitelist = profile_tasks
 ```
 
-4.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 1ea, nfs server로 구성하는 예임.
+**4.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 1ea, nfs server로 구성하는 예임.**
 
 만약 외부 LoadBalancer가 가용하여 master를 이중화 할 경우 ib\_ip에 해당 load balancer ip를 기재하면 됨.
 
@@ -122,13 +122,18 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+**5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
 
 ```
 # cube deploy [-v debug]
 ```
 
-6.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+**6.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
+
+```
+# ssh -i ~/cube/pki/id_rsa root@{master1_ip}
+# watch -n1 "kubectl get pods -n cocktail-system"
+```
 
 ### **Shooting Trouble**
 
