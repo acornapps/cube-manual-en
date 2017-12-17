@@ -38,13 +38,23 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 Home &gt; Azure Active Directory &gt; App registrations 에서 상기 등록한 application명을 선택
 
-우측의 Keys 메뉴를 선택하고 
+우측의 Keys 메뉴를 선택하고
 
 description: cocktail\_key
 
 expires: never expires을 선택하고 저장버튼을 클릭하면 자동으로 value값이 표시되는데 이 값이  client\_secret값임.
 
-#### ㅤ
+
+
+
+
+
+
+* application에 permission 설정하기
+
+Home &gt; Subscription 메뉴 선택 &gt; 등록된 계정 선택 &gt; Access Control\(IAM\) 화면의 상단에서 +Add 버튼을 클릭ㅤ
+
+
 
 ### **설치**
 
