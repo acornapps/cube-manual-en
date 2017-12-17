@@ -109,6 +109,9 @@ worker_node_count: 2
 # (required) Storage account type. Example: Standard_LRS  ->  Azure 스토리지 타입. default값 "Standard_LRS"
 storage_account_type: "Standard_LRS"
 
+# (required) ssh username to access server.
+username: "cube"
+
 # (required) Path to an SSH private key file to access server.
 private_key_path: "/Users/minhona/.ssh/id_rsa"
 
