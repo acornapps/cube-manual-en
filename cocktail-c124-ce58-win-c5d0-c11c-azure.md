@@ -89,10 +89,10 @@ worker_node_count: 2
 # (required) Storage account type. Example: Standard_LRS  ->  Azure 스토리지 타입. default값 "Standard_LRS"
 storage_account_type: "Standard_LRS"
 
-# (required) Path to an SSH private key file to access server.
+# (required) Absolute path to an SSH private key file to access server.
 private_key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa"
 
-# (required) Path to an SSH public key file to be provisioned as the SSH key.
+# (required) Absolute path to an SSH public key file to be provisioned as the SSH key.
 key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa.pub"
 
 
@@ -158,6 +158,4 @@ callback_whitelist = profile_tasks
 ```
 
 6.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
-
-
 
