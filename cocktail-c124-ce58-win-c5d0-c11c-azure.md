@@ -76,7 +76,7 @@ location: "JapanWest"  -> azure region
 
 # (Required) It used as resource group name and prefix to all resources
 # alphanumeric characters, periods, underscores, hyphens and parenthesis allowed
-resource_prefix: "prefix_001"
+resource_prefix: "cube_01"
 
 # (optional) Instance size for the master node(s). Default: Standard_F2s.  -> AZURE VM 사양(마스터) 
 master_vm_size: "Standard_D2_v3"
