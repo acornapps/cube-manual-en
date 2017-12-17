@@ -44,6 +44,12 @@ description: cocktail\_key
 
 expires: never expires을 선택하고 저장버튼을 클릭하면 자동으로 value값이 표시되는데 이 값이  client\_secret값임.
 
+
+
+![](/assets/application key.jpeg)
+
+
+
 * application에 permission 설정하기
 
 Home &gt; Subscription 메뉴 선택 &gt; 등록된 계정 선택 &gt; Access Control\(IAM\) 화면의 상단에서 +Add 버튼을 클릭ㅤ
@@ -54,11 +60,7 @@ Assign access to: Azure user, group, or application 선택
 
 Select: 상기 등록한 application명을 입력
 
-
-
 ![](/assets/application에 permission부여.jpeg)
-
-
 
 ### **설치**
 
