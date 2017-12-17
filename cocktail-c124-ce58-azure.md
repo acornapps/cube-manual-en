@@ -113,10 +113,10 @@ storage_account_type: "Standard_LRS"
 username: "cube"
 
 # (required) Absolute Path to an SSH private key file to access server.
-private_key_path: "/Users/minhona/.ssh/id_rsa"
+private_key_path: "/Users/minhona/.ssh/id_rsa"          -> 반드시 절대경로를 입력해야 함.
 
 # (required) Absolute Path to an SSH public key file to be provisioned as the SSH key.
-key_path: "/Users/minhona/.ssh/id_rsa.pub"
+key_path: "/Users/minhona/.ssh/id_rsa.pub"              -> 반드시 절대경로를 입력해야 함.
 
 
 # Kubernetes
