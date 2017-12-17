@@ -74,6 +74,10 @@ tenant_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
 location: "JapanWest"  -> azure region
 
+# (Required) It used as resource group name and prefix to all resources
+# alphanumeric characters, periods, underscores, hyphens and parenthesis allowed
+resource_prefix: "prefix_001"
+
 # (optional) Instance size for the master node(s). Default: Standard_F2s.  -> AZURE VM 사양(마스터) 
 master_vm_size: "Standard_D2_v3"
 
