@@ -14,7 +14,7 @@
 
 * Subscription\_Id : Azure포탈 메인페이지 상단 중간 검색창에 'subscription' 검색하여 subscriptionID값을 확인
 
-![](/assets/섭스크립션id.PNG)
+![](/assets/subscriptionId.jpeg)
 
 * TenantId : Home &gt; Azure Active Directory &gt; App registrations &gt; Endpoints &gt; OAUTH2.0 AUTHORIZATION에 포함된 값 중 아래 예시와 같이 x로 표시된 부분이 TenantId 임.\) 
 
@@ -44,11 +44,7 @@ description: cocktail\_key
 
 expires: never expires을 선택하고 저장버튼을 클릭하면 자동으로 value값이 표시되는데 이 값이  client\_secret값임.
 
-
-
 ![](/assets/application key.jpeg)
-
-
 
 * application에 permission 설정하기
 
