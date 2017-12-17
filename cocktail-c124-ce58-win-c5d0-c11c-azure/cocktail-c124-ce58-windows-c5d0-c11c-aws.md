@@ -65,9 +65,6 @@ worker_node_count: 2
 # (required) The region name. Example: ap-northeast-2  -> AWS region
 region: "ap-northeast-1"
 
-# (required) ssh username to access server.
-username: "cube"
-
 # (required) Path to an SSH private key file to access server.
 private_key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa"
 
