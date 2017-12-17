@@ -112,10 +112,10 @@ storage_account_type: "Standard_LRS"
 # (required) ssh username to access server.
 username: "cube"
 
-# (required) Path to an SSH private key file to access server.
+# (required) Absolute Path to an SSH private key file to access server.
 private_key_path: "/Users/minhona/.ssh/id_rsa"
 
-# (required) Path to an SSH public key file to be provisioned as the SSH key.
+# (required) Absolute Path to an SSH public key file to be provisioned as the SSH key.
 key_path: "/Users/minhona/.ssh/id_rsa.pub"
 
 
