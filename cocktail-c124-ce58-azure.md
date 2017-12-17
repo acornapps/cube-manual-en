@@ -58,6 +58,10 @@ Select: 상기 등록한 application명을 입력
 
 ![](/assets/application에 permission부여.jpeg)
 
+
+
+
+
 ### **설치**
 
 **1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.**
