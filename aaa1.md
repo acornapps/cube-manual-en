@@ -155,57 +155,5 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 
 삭제한 후에 다시 설치하기 위해서는 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
 
-### **TroubleShooting**
 
-**1.Docker 설치되어 있지 않은 경우**
-
-```
-MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
-Current Working directory : /Users/minhona/Desktop/cubetest
-Checking pre-requisition [darwin]
-exec: "docker": executable file not found in $PATH
-docker is not found. please install docker before proceeding
-Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
-```
-
-다운로드 링크로 이동하여 Docker 설치 후 cube를 재실행 한다.
-
-**2.Virtualbox 설치되어 있지 않은 경우 **
-
-```
-MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
-Current Working directory : /Users/minhona/Desktop/cubetest
-Checking pre-requisition [darwin]
-exit status 126
-virtualbox 5.1.x not found. please install virtualbox before proceeding
-Visit https://www.virtualbox.org/wiki/Download_Old_Builds_5_1
-```
-
-다운로드 링크로 이동하여 Virtualbox 설치 후 cube를 재실행 한다.
-
-**3.kubectl 설치되어 있지 않은 경우 **
-
-```
-MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
-Current Working directory : /Users/minhona/Desktop/cubetest
-Checking pre-requisition [darwin]
-exec: "kubectl": executable file not found in $PATH
-kubectl is not found. please install kubectl before proceeding
-Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
-```
-
-다운로드 링크로 이동하여 kubectl 설치 후 cube를 재실행 한다.
-
-**4.minikube 설치되어 있지 않은 경우 **
-
-```
-MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
-Current Working directory : /Users/minhona/Desktop/cubetest
-Checking pre-requisition [darwin]
-exec: "minikube": executable file not found in $PATH
-minikube is not found. please install minikube before proceeding
-Visit https://github.com/kubernetes/minikube
-```
-
-다운로드 링크로 이동하여 minikube 설치 후 cube를 재실행 한다.
 
