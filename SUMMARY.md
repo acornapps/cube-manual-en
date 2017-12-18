@@ -12,7 +12,7 @@
   * [aws on windows](cocktail-c124-ce58-win-c5d0-c11c-azure/cocktail-c124-ce58-windows-c5d0-c11c-aws.md)
   * [azure on windows](cocktail-c124-ce58-win-c5d0-c11c-azure.md)
   * [Cocktail 설치 후 기본 확인사항](cocktail-c124-ce58-d6c4-ae30-bcf8-ac80-c99d-bc29-bc95.md)
-  * [Cube 설치 시 오류발생 대처방법](cube-c124-ce58-c2dc-c624-b958-bc1c-c0dd-b300-cc98-bc29-bc95.md)
+  * [Cocktail 설치 시 오류발생 대처방법](cube-c124-ce58-c2dc-c624-b958-bc1c-c0dd-b300-cc98-bc29-bc95.md)
 * [Cocktail Hub Installation](cocktail-public-hub-c124-ce58.md)
   * [Public Hub](public-hub.md)
   * [Private Hub](b0b4-bd80-d14c-c2a4-d2b8-b97c-c704-d55c-harbor-c0ac-c124-c778-c99d-c11c-c124-c815-d558-ae30.md)
