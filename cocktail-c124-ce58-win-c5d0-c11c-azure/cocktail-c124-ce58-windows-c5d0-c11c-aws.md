@@ -1,4 +1,4 @@
-# Cocktail Installation on AWS\(windows\)
+# Cocktail Installation on AWS\(windows\) - in process
 
 AWS cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 
