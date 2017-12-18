@@ -42,8 +42,47 @@ name: assign master roles
   when: kube_dash and cloud_provider != "aws"
   shell: "kubectl label nodes {{ item }} role=master --overwrite"
   with_items: "{{ ansible_hostname|lower }}"
-  register: assign_master_roles
+  register: assign_master_roles 
 ```
+
+5**. Minikube에 설치시 Virtualbox가 설치되어 있지 않은 경우 **
+
+```
+MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
+Current Working directory : /Users/minhona/Desktop/cubetest
+Checking pre-requisition [darwin]
+exit status 126
+virtualbox 5.1.x not found. please install virtualbox before proceeding
+Visit https://www.virtualbox.org/wiki/Download_Old_Builds_5_1
+```
+
+다운로드 링크로 이동하여 Virtualbox 설치 후 cube를 재실행 한다.
+
+6**. Minikube에 설치시 kubectl이 설치되어 있지 않은 경우 **
+
+```
+MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
+Current Working directory : /Users/minhona/Desktop/cubetest
+Checking pre-requisition [darwin]
+exec: "kubectl": executable file not found in $PATH
+kubectl is not found. please install kubectl before proceeding
+Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
+```
+
+다운로드 링크로 이동하여 kubectl 설치 후 cube를 재실행 한다.
+
+7**. Minikube에 설치시  minikube가 설치되어 있지 않은 경우 **
+
+```
+MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
+Current Working directory : /Users/minhona/Desktop/cubetest
+Checking pre-requisition [darwin]
+exec: "minikube": executable file not found in $PATH
+minikube is not found. please install minikube before proceeding
+Visit https://github.com/kubernetes/minikube
+```
+
+다운로드 링크로 이동하여 minikube 설치 후 cube를 재실행 한다.
 
 
 
