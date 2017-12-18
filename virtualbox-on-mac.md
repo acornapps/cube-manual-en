@@ -207,44 +207,5 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 
 삭제한 후에 다시 설치하기 위해서는 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
 
-### **TroubleShooting**
 
-**1.Docker가 설치되어 있지 않은 경우**
-
-```
-cocktailui-MacBook-Pro:cubetest cocktail$ cube init -p virtualbox
-Current Working directory : /tmp/cubetest
-Checking pre-requisition [darwin]
-exec: "docker": executable file not found in $PATH
-docker is not found. please install docker before proceeding
-Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
-```
-
-다운로드 링크로 이동하여 Docker 설치 후 cube를 재실행 한다.
-
-**2.Vagrant가 설치되어 있지 않은 경우**
-
-```
-MinHoui-MacBook-Pro:cubetest minhona$ cube init -p virtualbox
-Current Working directory : /Users/minhona/Desktop/cubetest
-Checking pre-requisition [darwin]
-exec: "vagrant": executable file not found in $PATH
-vagrant not found. please install vagrant before proceeding
-Visit https://www.vagrantup.com/downloads.html
-```
-
-다운로드 링크로 이동하여 Vagrant 설치 후 cube를 재실행 한다.
-
-3**.Virtualbox가 설치되어 있지 않은 경우 **
-
-```
-MinHoui-MacBook-Pro:cubetest minhona$ cube init -p virtualbox
-Current Working directory : /Users/minhona/Desktop/cubetest
-Checking pre-requisition [darwin]
-exit status 126
-virtualbox 5.1.x not found. please install virtualbox before proceeding
-Visit https://www.virtualbox.org/wiki/Download_Old_Builds_5_1
-```
-
-다운로드 링크로 이동하여 Virtualbox 설치 후 cube를 재실행 한다.
 
