@@ -12,7 +12,7 @@ AWS cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 
 2\) Hyper-v : \[제어판\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 활성화
 
-3\) cube.exe 파일 환경변수 path 설정 
+3\) cube.exe 파일 환경변수 path 설정
 
 4\) AWS 설치를 위해서는 Access Key와 Secret Key가 필요하니 아래와 같이 조회하여 메모해 놓는다.
 
@@ -39,9 +39,7 @@ AWS cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 # cube init -p baremetal
 ```
 
-3.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 1ea, nfs server로 구성하는 예임.
-
-만약 외부 LoadBalancer가 가용하여 master를 이중화 할 경우 ib\_ip에 해당 load balancer ip를 기재하면 됨.
+3.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 1ea로 구성하는 예임. 
 
 ```
 ---
@@ -53,16 +51,16 @@ access_key: "*********************"
 secret_key: "******************************************"
 
 # (optional) Instance size for the master node(s). Default: t2.medium.  -> AWS VM 사양 (마스터 노드) 
-master_vm_size: "t2.medium"
+master_vm_size: "c4.large"
 
 # (optional) Instance size for the worker node(s). Default: t2.medium. -> AWS VM 사양 (워커 노드)
-worker_vm_size: "t2.medium"
+worker_vm_size: "c4.large"
 
 # (required) The number of master nodes to be created. Example: 2  -> 마스터 노드 수
 master_node_count: 1
 
 # (required) The number of worker nodes to be created. Example: 3  -> 워커 노드 수 
-worker_node_count: 2
+worker_node_count: 1
 
 # (required) The region name. Example: ap-northeast-2  -> AWS region
 region: "ap-northeast-1"
@@ -114,23 +112,32 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4.AWS의 경우 서버os명을 서버계정으로 사용한다. 따라서 ansible cfg의 remote\_user를 서버os명인 centos로 수정한다. \(스크립트생성폴더/cubescripts/ansible.cfg\)
-
-```
-[defaults]
-remote_user =     centos
-sudo = yes
-host_key_checking = False
-fact_caching = jsonfile
-fact_caching_connection = /tmp
-callback_whitelist = profile_tasks
-```
-
-5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
 # cube deploy [-v debug]
 ```
 
-6.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+5.오류없이 설치가 완료되면 마지막에 아래와 같이 InstallationResult를 확인할 수 있고, Dashboardurl을 통해 k8s dashboard로 접속할 수 있다.
+
+```
+-------------- Installation Result -----------------------------------------------
+[etcd]
+13.230.197.109
+[etcd-private]
+10.0.0.122
+[masters]
+13.230.197.109
+[sslhost]
+13.230.197.109
+[node]
+13.230.221.60
+elapsed time:6m46.8254749s
+k8s api server : https://k8s-elb-392981884.ap-northeast-1.elb.amazonaws.com:6443
+Dashboard url : https://k8s-elb-392981884.ap-northeast-1.elb.amazonaws.com:6443/ui
+Grafana url : http://13.230.197.109:30316
+influxdb exposed to 30315 port
+```
+
+
 
