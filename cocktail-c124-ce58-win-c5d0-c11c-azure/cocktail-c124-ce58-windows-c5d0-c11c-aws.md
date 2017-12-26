@@ -39,7 +39,7 @@ AWS cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 # cube init -p baremetal
 ```
 
-3.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 1ea로 구성하는 예임. 
+3.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 1ea로 구성하는 예임.
 
 ```
 ---
