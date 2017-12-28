@@ -10,7 +10,7 @@ Windows 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 �
 
 [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-2\) Hyper-v : \[제어판\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 활성화
+2\) Hyper-v : \[제어판\] - \[프로그램\] - \[windows 기능 겨기/끄기\] 에서 \[Hyper-V\] 기능을 활성화
 
 3\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
 
