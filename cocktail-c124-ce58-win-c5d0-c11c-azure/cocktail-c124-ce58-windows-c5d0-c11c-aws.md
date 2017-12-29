@@ -33,10 +33,10 @@ AWS cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 # cd /tmp/cubetest
 ```
 
-2.cube 명령을 이용하여 baremetal용 설치 script를 download 받고 초기화 한다.
+2.cube 명령을 이용하여 aws 용 설치 script를 download 받고 초기화 한다.
 
 ```
-# cube init -p baremetal
+# cube init -p aws
 ```
 
 3.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 1ea로 구성하는 예임.
