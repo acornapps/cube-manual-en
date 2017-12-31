@@ -6,8 +6,6 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 
 설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메시지가 발생한다.
 
-\(에러 메시지에대한 해결책은 문서 마지막 TroubleShooting 에서 확인할 수 있다.\)
-
 1\) Docker 다운로드 후 설치
 
 [https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
@@ -206,6 +204,4 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 ```
 
 삭제한 후에 다시 설치하기 위해서는 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
-
-
 
