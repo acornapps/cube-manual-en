@@ -1,12 +1,10 @@
-# Cocktail Installation on baremetal\(MAC OS\)
+# Cocktail Installation to baremetal on macos
 
 Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다음과 같다.
 
 ### **사전준비**
 
 설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메시지가 발생한다.
-
-\(에러 메시지에 대한 해결책은 문서 마지막 TroubleShooting 에서 확인할 수 있다.\)
 
 1\) 제공받은 cube 바이너리를 어느 디렉토리에서든 사용할 수 있도록 환경변수 path 설정을 한다.
 
