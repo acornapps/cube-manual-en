@@ -79,7 +79,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/k8s_dashboard_5.jpeg)
 
-1. 브라우저로 [http://{VM의](http://{VM의) masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
+1. 브라우저로 [http://{VM의](http://{VM의) masterip}:{cocktail client node port}으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\).
 
 ![](/assets/cocktail_login.jpeg)
 
@@ -154,6 +154,4 @@ Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어
 ```
 
 삭제한 후에 다시 설치하기 위해서는 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
-
-
 
