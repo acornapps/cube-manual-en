@@ -51,6 +51,14 @@ The key's randomart image is:
 # ssh-add id_rsa (유저등록)
 ```
 
+5\) kubectl 다운로드
+
+[https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
+
+6\) minikube 다운로드
+
+[https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
+
 #### 
 
 
