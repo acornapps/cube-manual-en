@@ -1,4 +1,4 @@
-# Cocktail Installation on AWS\(MAC OS\)
+# Cocktail Installation to AWS on macos
 
 [Amazon Web Services Cloud](https://aws.amazon.com/free/)에 Cocktail를 설치하는 과정은 다음과 같다.
 
