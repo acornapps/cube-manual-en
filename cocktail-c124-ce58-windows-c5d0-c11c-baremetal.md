@@ -25,8 +25,8 @@ Windows 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 �
 1.먼저 설치를 위해 CMD창에서 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.\(**CMD는 반드시 관리자 모드로 실행한다.**\)
 
 ```
-# mkdir /tmp/cubetest
-# cd /tmp/cubetest
+# mkdir c:\tmp\cubetest
+# cd c:\tmp\cubetest
 ```
 
 **2.cube 명령을 이용하여 baremetal용 설치 script를 download 받고 초기화 한다.**
