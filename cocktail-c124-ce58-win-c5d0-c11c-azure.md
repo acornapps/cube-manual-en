@@ -34,7 +34,6 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 등록된 application 상세 화면에서 Application ID가 clientId 값임.
 
-
 ![](/assets/ClientId2.jpeg)
 
 * client\_secret 값 구하기
@@ -49,7 +48,6 @@ expires: never expires을 선택하고 저장버튼을 클릭하면 자동으로
 
 ![](/assets/application key.jpeg)
 
-
 * application에 permission 설정하기
 
 Home &gt; Subscription 메뉴 선택 &gt; 등록된 계정 선택 &gt; Access Control\(IAM\) 화면의 상단에서 +Add 버튼을 클릭ㅤ
@@ -62,7 +60,6 @@ Select: 상기 등록한 application명을 입력
 
 ![](/assets/application에 permission부여.jpeg)
 
-
 #### ㅤ
 
 ### **설치**
@@ -70,8 +67,8 @@ Select: 상기 등록한 application명을 입력
 1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.
 
 ```
-  # mkdir /tmp/cubetest
-  # cd /tmp/cubetest
+# mkdir c:\tmp\cubetest
+# cd c:\tmp\cubetest
 ```
 
 2.cube 명령을 이용하여 azure용 설치 script를 download 받고 초기화 한다.
