@@ -84,8 +84,6 @@ Visit https://github.com/kubernetes/minikube
 
 다운로드 링크로 이동하여 minikube 설치 후 cube를 재실행 한다.
 
-
-
 8**.Vagrant가 설치되어 있지 않은 경우**
 
 ```
