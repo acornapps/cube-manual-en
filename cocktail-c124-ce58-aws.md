@@ -31,27 +31,13 @@
 # cd /Desktop/cubetest
 ```
 
-**2.cube 명령을 이용하여 baremetal용 설치 script를 download 받고 초기화 한다.**
+**2.cube 명령을 이용하여 aws용 설치 script를 download 받고 초기화 한다.**
 
 ```
 # cube init -p aws
 ```
 
-**3.AWS의 경우 서버os명을 서버계정으로 사용한다. 따라서 ansible cfg의 remote\_user를 서버os명인 centos로 수정한다. \(스크립트생성폴더/cubescripts/ansible.cfg\)**
-
-```
-[defaults]
-remote_user =     centos
-sudo = yes
-host_key_checking = False
-fact_caching = jsonfile
-fact_caching_connection = /tmp
-callback_whitelist = profile_tasks
-```
-
-**4.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 1ea, nfs server로 구성하는 예임.**
-
-만약 외부 LoadBalancer가 가용하여 master를 이중화 할 경우 ib\_ip에 해당 load balancer ip를 기재하면 됨.
+3**.cube.yaml 파일을 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 master 1ea, worker 2ea 로 구성하는 예임.**
 
 ```
 ---
@@ -96,7 +82,7 @@ addons:
 cocktail: true
 ```
 
-상기 항목에서 private\_key\_path  와 key\_path 는 서버에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 git을 다운로드 받아 bash shell을 실행한 후 아래 절차대로 실행하면 된다. \(git 다운로드 링크 : [https://git-for-windows.github.io/](https://git-for-windows.github.io/) \)
+상기 항목에서 private\_key\_path  와 key\_path 는 서버에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
 
 &lt; ssh key 신규 발급 방법 &gt;
 
@@ -124,13 +110,13 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-**5.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
+4**.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
 
 ```
 # cube deploy [-v debug]
 ```
 
-**6.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
+5**.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
 
 ```
 # ssh -i ~/cube/pki/id_rsa root@{master1_ip}
@@ -156,20 +142,5 @@ The key's randomart image is:
 
 삭제한 후에 다시 설치하기 위해서는 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
 
-### 
 
-### **Shooting Trouble**
-
-**1.Docker 설치되어 있지 않은 경우**
-
-```
-MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
-Current Working directory : /Users/minhona/Desktop/cubetest
-Checking pre-requisition [darwin]
-exec: "docker": executable file not found in $PATH
-docker is not found. please install docker before proceeding
-Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
-```
-
-다운로드 링크로 이동하여 Docker 설치 후 cube를 재실행 한다.
 

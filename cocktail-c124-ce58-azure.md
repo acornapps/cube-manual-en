@@ -6,11 +6,13 @@
 
 설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메시지가 발생한다.
 
-1\) Docker 다운로드 후 설치
+1\) 제공받은 cube 바이너리를 어느 디렉토리에서든 사용할 수 있도록 환경변수 path 설정을 한다.
+
+2\) Docker 다운로드 후 설치
 
 [https://store.docker.com/editions/community/docker-ce-desktop-windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-2\) Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
+3\) Azure 계정 및 application 과 관련된 값들을 아래와 같이 조회해서 메모해 놓는다.
 
 * Subscription\_Id : Azure포탈 메인페이지 상단 중간 검색창에 'subscription' 검색하여 subscriptionID값을 확인
 
@@ -160,27 +162,15 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-**4.ssh접속을 위해 ansible.cfg파일의 remote\_user명을 cocktail로 수정한다.\(기본 값 : root\)**
 
-\(script다운로드폴더-&gt;cubescripts -&gt; ansible.cfg\)
 
-```
-[defaults]
-remote_user = cocktail
-sudo = yes
-host_key_checking = False
-fact_caching = jsonfile
-fact_caching_connection = /tmp
-callback_whitelist = profile_tasks
-```
-
-**5.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
+4**.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
 
 ```
 # cube deploy [-v debug]
 ```
 
-**6.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
+5**.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
 
 ```
 # ssh -i ~/cube/pki/id_rsa root@{master1_ip}
