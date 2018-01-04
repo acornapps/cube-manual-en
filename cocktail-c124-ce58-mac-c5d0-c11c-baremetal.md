@@ -50,9 +50,7 @@ The key's randomart image is:
 # ssh-copy-id -i id_rsa.pub root@ip
 ```
 
-5\) 제공받은 cube 바이너리를 어느 디렉토리에서든 사용할 수 있도록 환경변수 path 설정을 한다.
-
-6\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
+5\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
 
 ```
 # yum install -y nfs-utils

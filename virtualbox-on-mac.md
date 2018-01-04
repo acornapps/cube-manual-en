@@ -162,7 +162,7 @@ The key's randomart image is:
 
 ![](/assets/cocktail_conf_cluster_baremetal.jpeg)
 
-![](/assets/스크린샷 2017-12-04 오후 1.12.49.png)Cluster CA Certification 값은 master ip로 ssh 접속한 후, 아래 명령의 실행한 결과값을 넣어주면 된다.
+Cluster CA Certification 값은 master ip로 ssh 접속한 후, 아래 명령의 실행한 결과값을 넣어주면 된다.
 
 ```
 # cat /etc/kubernetes/pki/ca.pem
