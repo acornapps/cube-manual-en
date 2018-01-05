@@ -118,7 +118,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/cocktail_conf_cluster_baremetal.jpeg)
 
-모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.![](/assets/스크린샷 2017-12-04 오후 1.12.49.png)Clustngress hoster CA Certification 값은 아래 결과값을 넣어주면 되고,
+모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재. Cluster CA Certification 값은 아래 결과값을 넣어주면 되고,
 
 ```
 # cat /etc/kubernetes/pki/ca.pem
