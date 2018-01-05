@@ -192,6 +192,8 @@ https://github.com/kubernetes/minikube/releases
 
 다운로드 경로로 이동하여 아래와 같이 파일 다운로드 후 minikube.exe로 파일이름을 수정한다. 이후 환경변수 path를 설정한다.![](/assets/minikube다운로드.PNG)
 
+
+
 #### ㅤ
 
 4.**hyper-v 에 가상 스위치가 설정되어있지 않은경우 **
@@ -204,7 +206,7 @@ E1130 13:54:26.071982   11236 start.go:156] Error starting host:  Error creating
 : vswitch "ExternalSwitch" not found
 ```
 
-\[Hyper-V 관리자\] -ㅤ \[가상스위치관리자\] - \[가상스위치만들기\] 를 선택한다. ![](/assets/가상네트워크생성1.png)
+\[Hyper-V 관리자\] -ㅤ \[가상스위치관리자\] - \[가상스위치만들기\] 를 선택한다. ![](/assets/가상네트워크생성1.png)
 
 가상 스위치 이름을 \[ExternalSwitch\]로 설정하고 연결형식을 외부네트워크로 설정한다.  
 ![](/assets/가상네트워크생성2.PNG)
