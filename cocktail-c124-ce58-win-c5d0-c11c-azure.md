@@ -163,25 +163,11 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4.ssh접속을 위해 ansible.cfg파일의 remote\_user명을 cocktail로 수정한다.\(기본 값 : root\)
-
-\(script다운로드폴더-&gt;cubescripts -&gt; ansible.cfg\)
-
-```
-[defaults]
-remote_user = cocktail
-sudo = yes
-host_key_checking = False
-fact_caching = jsonfile
-fact_caching_connection = /tmp
-callback_whitelist = profile_tasks
-```
-
-5.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+4.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
 
 ```
 # cube deploy [-v debug]
 ```
 
-6.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
