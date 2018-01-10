@@ -59,7 +59,7 @@ haproxy: false
 lb_ip:
 
 # (required) ssh username to access server.
-username: "cloud"
+ssh_user_id: "cloud"
 
 # (required) Path to an SSH private key file to access server.
 private_key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa"
