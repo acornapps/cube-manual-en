@@ -81,7 +81,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/k8s_dashboard_5.jpeg)
 
-브라우저로 [http://{VM의](http://{VM의) masterip}:{cocktail client node port}으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\).
+브라우저로 [http://{](http://{VM의)vm의 ip}:{cocktail client node port}으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\).
 
 6.프로바이더 등록
 
@@ -109,29 +109,57 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 생성된 클러스터 정보를 기입한다.
 
-마스터 URL은[https://{master1ip\_}:6443](https://{master1ip_}:6443) 로 기재
-
-모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.
 
 ![](/assets/cocktail_conf_cluster_baremetal.jpeg)
 
-모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재. Cluster CA Certification 값은 아래 결과값을 넣어주면 되고,
+
+
+
+| 클러스터옵션 | 인그렌스 지원, 퍼시스턴트 볼륨 지원, 노드 포트 지원 선택 |
+| :--- | :--- |
+| 클러스터 유형 | CUBE |
+| 큐브 클러스터 유형 | MANAGED |
+| 인증유형 | Certification |
+| k8s버전 | 1.8.0 |
+| 마스터 URL | https://{vm의 ip}:8443 |
+| 모니터링 호스트 | VM의 IP |
+| 모니터링 포트 | 30315 |
+| 모니터링 사용자 | root |
+| 모니터링 비밀번호 | root |
+| 인그레스 url | VM의 IP |
+| 노드포트 url | VM의 IP |
+| 사용자 아이디 | admin |
+| 패스워드 | AdminPass |
+
+
+
+
+
+![](/assets/cocktail_conf_cluster_baremetal.jpeg)
+
+Cluster CA Certification 값은 아래 결과값을 넣어주면 되고,
 
 ```
-# cat /etc/kubernetes/pki/ca.pem
+# C:\Users\{username}\.minikube\ca.crt
 ```
 
 Certificate Certificate Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
 
 ```
-# cat /etc/kubernetes/pki/apiserver.pem
+# C:\Users\{username}\.minikube\client.crt
 ```
 
 Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
 
 ```
-# cat /etc/kubernetes/pki/apiserver-key.pem
+# C:\Users\{username}\.minikube\client.key
 ```
+
+
+
+
+
+
 
 8.볼륨 설정하기
 
