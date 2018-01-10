@@ -73,16 +73,6 @@ cocktail: true
 
 5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
 
-이때,  Loadbalancer가 활성화 되어 있으면, [https://lb\_ip:6443/ui](https://lb_ip:6443/ui) 로 접속하게 되고 아니면 [https://master1\_ip:6443/ui](https://master1_ip:6443/ui) 로 접속한다.
-
-![](/assets/k8s_dashboard_1.jpeg)
-
-고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
-
-![](/assets/k8s_dashboard_2.jpeg)
-
-사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
-
 Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다
 
 ![](/assets/k8s_dashboard_4.jpeg)
@@ -91,7 +81,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/k8s_dashboard_5.jpeg)
 
-브라우저로 [http://{lb\_ip](http://{VM의)}:31876 또는 [http://{master1\_ip](http://{VM의)}:31876으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)
+브라우저로 [http://{VM의](http://{VM의) masterip}:{cocktail client node port}으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\).
 
 6.프로바이더 등록
 
@@ -119,7 +109,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 생성된 클러스터 정보를 기입한다.
 
-마스터 URL은 [https://{lb\_\_ip}:6443](https://{lb__ip}:6443) or [https://{master1ip\_}:6443](https://{master1ip_}:6443) 로 기재
+마스터 URL은[https://{master1ip\_}:6443](https://{master1ip_}:6443) 로 기재
 
 모니터링 호스트, ingress host는 lb\_ip or master1\_ip로 기재.
 
