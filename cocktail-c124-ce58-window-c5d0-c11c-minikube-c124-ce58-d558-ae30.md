@@ -22,7 +22,14 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우 �
 
 [https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
 
-#### 
+5\) hyper-v 에 가상 스위치 설정** **
+
+\[Hyper-V 관리자\] -ㅤ \[가상스위치관리자\] - \[가상스위치만들기\] 를 선택한다. ![](/assets/가상네트워크생성1.png)
+
+가상 스위치 이름을 \[ExternalSwitch\]로 설정하고 연결형식을 외부네트워크로 설정한다.  
+![](/assets/가상네트워크생성2.PNG)
+
+#### ㅤ
 
 ### **설치 **
 
@@ -48,7 +55,7 @@ cloud_provider: "minikube"
 cpus: 2
 # (required) Memory size (MB) -> 노드 Memory 사양 
 memory: 4096
-# (required) Hyper-V switch name for initializing vm instance. -> Hyper-V 스위치 명. default값 "ExternalSwitch"
+# (required) Hyper-V switch name for initializing vm instance. -> Hyper-V 스위치 명. default값 "ExternalSwitch" -> 사전준비에서 설정한 가상 스위치 명
 hyperv_switch_name: "ExternalSwitch"
 # Kubernetes
 k8s_version: "1.8.0"
@@ -191,8 +198,6 @@ https://github.com/kubernetes/minikube/releases
 ```
 
 다운로드 경로로 이동하여 아래와 같이 파일 다운로드 후 minikube.exe로 파일이름을 수정한다. 이후 환경변수 path를 설정한다.![](/assets/minikube다운로드.PNG)
-
-
 
 #### ㅤ
 
