@@ -58,6 +58,9 @@ haproxy: false
 # (conditional) Set load-balancer ip.  -> LB사용 시 해당 아이피 입력
 lb_ip:
 
+# (required) ssh username to access server.
+username: "cloud"
+
 # (required) Path to an SSH private key file to access server.
 private_key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa"
 
