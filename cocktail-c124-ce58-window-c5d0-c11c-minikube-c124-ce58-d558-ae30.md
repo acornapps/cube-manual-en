@@ -33,20 +33,20 @@ Windows에서 minikube를 이용하여 Cocktail을 설치하고자 할 경우 �
 
 ### **설치 **
 
-1.먼저 설치를 위해 CMD창에서 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.\(**CMD는 반드시 관리자 모드로 실행한다.**\)
+**1.먼저 설치를 위해 CMD창에서 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.\(CMD는 반드시 관리자 모드로 실행한다.\)**
 
 ```
 # mkdir c:\tmp\cubetest
 # cd c:\tmp\cubetest
 ```
 
-2.cube 명령을 이용하여 minikube용 설치 script를 download 받고 초기화 한다. \(cube init --help 명령어를 통해 제공하는 프로바이더들을 확인할 수 있다.\)
+**2.cube 명령을 이용하여 minikube용 설치 script를 download 받고 초기화 한다. \(cube init --help 명령어를 통해 제공하는 프로바이더들을 확인할 수 있다.\)**
 
 ```
 # cube init -p minikube
 ```
 
-3.정상적으로 script가 다운로드 되면 해당 폴더에 cube.yaml파일이 생성되고 파일을 열어 필요한 정보를 입력 한다.
+**3.정상적으로 script가 다운로드 되면 해당 폴더에 cube.yaml파일이 생성되고 파일을 열어 필요한 정보를 입력 한다.**
 
 ```
 cloud_provider: "minikube"
@@ -63,7 +63,7 @@ k8s_version: "1.8.0"
 cocktail: true
 ```
 
-4..cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.
+**4..cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
 
 ```
 # cube deploy [-v debug]
@@ -71,7 +71,7 @@ cocktail: true
 
 ㅤ
 
-5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.
+**5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.**
 
 Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다
 
@@ -83,7 +83,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 브라우저로 [http://{](http://{VM의)vm의 ip}:{cocktail client node port}으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\).
 
-6.프로바이더 등록
+**6.프로바이더 등록**
 
 프로바이더는 클라우드 리소스로 사용 할 Public/Private 클라우드 계정 정보를 등록, 편집, 삭제할 수 있다.
 
@@ -105,15 +105,11 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 | User | 프로바이더 등록을 위한 기본 값. 미터링 아닌 경우 User 선택 |
 | Metering | Public Cloud를 사용시, 리소스 사용량을 받아오고자 할 때 선택 |
 
-7.클러스터 등록
+**7.클러스터 등록**
 
 생성된 클러스터 정보를 기입한다.
 
-
 ![](/assets/cocktail_conf_cluster_baremetal.jpeg)
-
-
-
 
 | 클러스터옵션 | 인그렌스 지원, 퍼시스턴트 볼륨 지원, 노드 포트 지원 선택 |
 | :--- | :--- |
@@ -121,7 +117,7 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 | 큐브 클러스터 유형 | MANAGED |
 | 인증유형 | Certification |
 | k8s버전 | 1.8.0 |
-| 마스터 URL | https://{vm의 ip}:8443 |
+| 마스터 URL | [https://{vm의](https://{vm의) ip}:8443 |
 | 모니터링 호스트 | VM의 IP |
 | 모니터링 포트 | 30315 |
 | 모니터링 사용자 | root |
@@ -131,37 +127,25 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 | 사용자 아이디 | admin |
 | 패스워드 | AdminPass |
 
-
-
-
-
-![](/assets/cocktail_conf_cluster_baremetal.jpeg)
-
-Cluster CA Certification 값은 아래 결과값을 넣어주면 되고,
+Cluster CA Certification 은 아래 파일 값을 넣어주면 되고,
 
 ```
 # C:\Users\{username}\.minikube\ca.crt
 ```
 
-Certificate Certificate Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
+Certificate Certificate Data 은 아래 파일 값을 넣어주면 된다.
 
 ```
 # C:\Users\{username}\.minikube\client.crt
 ```
 
-Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
+Certificate Authority Data 은 파일 값을 넣어주면 된다.
 
 ```
 # C:\Users\{username}\.minikube\client.key
 ```
 
-
-
-
-
-
-
-8.볼륨 설정하기
+**8.볼륨 설정하기**
 
 서비스에서 사용되는 Volume을 등록한다. 입력값은 아래 이미지와 같은 값으로 등록하면 된다. \(주의. 스토리지클래스 이름은 반드시 "cocktail-nfs"라고 기입해야 한다.\)
 
