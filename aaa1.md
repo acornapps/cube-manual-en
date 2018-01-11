@@ -87,11 +87,15 @@ hyperv-_switch-name는 windows에서 설치를 할 경우, hyperv 옵션이다.\
 
 Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다.
 
-아래 그림에서는 http://192.168.99.100:31203이 cocktail cloud 접속 URL임을 확인 할 수 있다.
+아래 그림에서는 [http://192.168.99.100:31203이](http://192.168.99.100:31203이) cocktail cloud 접속 URL임을 확인 할 수 있다.
 
 ![](/assets/minikube URL 확인.png)
 
-1. 브라우저로 [http://{VM의](http://{VM의) masterip}:{cocktail client node port}으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\).
+
+
+**7.cocktail cloud.**
+
+브라우저로 [http://{VM의](http://{VM의) masterip}:{cocktail client node port}으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\).
 
 ![](/assets/cocktail_login.jpeg)
 
