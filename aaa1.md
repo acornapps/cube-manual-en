@@ -77,13 +77,19 @@ hyperv-_switch-name는 windows에서 설치를 할 경우, hyperv 옵션이다.\
 
 사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
 
-Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다
+**6.cocktail cloud 접속 url 확인.**
 
-![](/assets/k8s_dashboard_4.jpeg)
+해당 명령을 이용하여 cocktail 홈페이지 url과 port를 확인 할 수 있다.
 
-connection의 internal endpoints에서 cocktail client의 node port를 확인한다. 아래 예에서는 31876 port임.
+```
+# minikube service list -n cocktail-system | grep cocktail-client-node-port
+```
 
-![](/assets/k8s_dashboard_5.jpeg)
+Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다.
+
+아래 그림에서는 http://192.168.99.100:31203이 cocktail cloud 접속 URL임을 확인 할 수 있다.
+
+![](/assets/minikube URL 확인.png)
 
 1. 브라우저로 [http://{VM의](http://{VM의) masterip}:{cocktail client node port}으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\).
 
