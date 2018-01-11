@@ -67,6 +67,12 @@ hyperv-_switch-name는 windows에서 설치를 할 경우, hyperv 옵션이다.\
 
 **5.오류없이 설치가 완료되면 자동으로 browser가 기동되어 k8s dashboard로 접속하게 된다.**
 
+* 만약 browser가 뜨지 않을 경우 터미널에서 다음 명령어를 수행하여 k8s dashboard를 열어준다.
+
+```
+# minikube dashboard
+```
+
 고급 link를 클릭하고 아래 이동 버튼을 클릭한다.
 
 사용자이름과 비밀번호를 입력하면 k8s dashboard로 접속할 수 있다.
