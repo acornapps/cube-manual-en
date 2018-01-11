@@ -118,22 +118,22 @@ connection의 internal endpoints에서 cocktail client의 node port를 확인한
 
 ![](/assets/cocktail_conf_cluster_baremetal.jpeg)
 
-Cluster CA Certification 값은 master ip로 ssh 접속한 후, 아래 명령의 실행한 결과값을 넣어주면 된다.
+Cluster CA Certification 값은 아래 명령의 실행한 결과값을 넣어주면 된다.
 
 ```
-# cat /etc/kubernetes/pki/ca.pem
+# cat /Users/(UserName)/.minikube/ca.crt
 ```
 
 Certificate Certificate Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
 
 ```
-# cat /etc/kubernetes/pki/apiserver.pem
+# cat /Users/(UserName)/.minikube/client.crt
 ```
 
 Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
 
 ```
-# cat /etc/kubernetes/pki/apiserver-key.pem
+# cat /Users/(UserName)/.minikube/client.key
 ```
 
 8.볼륨 설정하기
