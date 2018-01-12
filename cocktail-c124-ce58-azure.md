@@ -112,7 +112,7 @@ worker_node_count: 2
 storage_account_type: "Standard_LRS"
 
 # (required) ssh username to access server.
-username: "cube"
+ssh_user_id: "cocktail"
 
 # (required) Absolute Path to an SSH private key file to access server.
 private_key_path: "/Users/minhona/.ssh/id_rsa"          -> 반드시 절대경로를 입력해야 함.
@@ -162,8 +162,6 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-
-
 4**.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
 
 ```
@@ -176,6 +174,16 @@ The key's randomart image is:
 # ssh -i ~/cube/pki/id_rsa root@{master1_ip}
 # watch -n1 "kubectl get pods -n cocktail-system"ㅤ
 ```
+
+**6.cocktail cloud 접속 url 확인.**
+
+Master node에 접속하 해당 명령을 이용하여 cocktail 홈페이지 url과 port를 확인 할 수 있다.
+
+```
+# kubectl get service -n cocktail-system -o wide | grep cocktail-client-loadbalancer
+```
+
+Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-loadbalancer를 선택한다.
 
 ### **삭제**
 
