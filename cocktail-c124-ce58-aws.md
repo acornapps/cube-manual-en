@@ -123,6 +123,16 @@ The key's randomart image is:
 # watch -n1 "kubectl get pods -n cocktail-system"
 ```
 
+**6.cocktail cloud 접속 url 확인.**
+
+해당 명령을 이용하여 cocktail 홈페이지 url과 port를 확인 할 수 있다.
+
+```
+# kubectl get service -n cocktail-system -o wide | grep cocktail-client-loadbalancer
+```
+
+Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-loadbalancer를 선택한다.
+
 ### **삭제**
 
 1. 더 이상 필요하지 않을 경우에는 아래 명령으로 삭제할 수 있다.  
@@ -141,6 +151,4 @@ The key's randomart image is:
 ```
 
 삭제한 후에 다시 설치하기 위해서는 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
-
-
 
