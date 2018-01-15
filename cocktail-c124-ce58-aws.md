@@ -20,7 +20,7 @@
 
 * **이후 화면에서 Access Keys\(Access Key ID and Secret Access Key\) 를 선택 후 Create New Access Key를 눌러 키를 발급 받는다.**![](/assets/aws-add2.png)
 
-* **키가 생성되면 아래와 같은 창을 볼 수 있고, show Access Key를 통해 Access Key와 Credit Key를 확인할 수 있습니다. 또한 Download Key File을 눌러 키를 저장할 수 있습니다.**![](/assets/aws-add3.png)![](/assets/aws-add4.png)
+* **키가 생성되면 아래와 같은 창을 볼 수 있고, show Access Key를 통해 Access Key와 Credit Key를 확인할 수 있습니다. 또한 Download Key File을 눌러 키를 저장할 수 있습니다.**![](/assets/aws-add4.png)
 
 ### 설치
 
@@ -121,6 +121,15 @@ The key's randomart image is:
 ```
 # ssh -i ~/cube/pki/id_rsa root@{master1_ip}
 # watch -n1 "kubectl get pods -n cocktail-system"
+NAME                                     READY     STATUS    RESTARTS   AGE
+apollomq-3231363346-77ltx                1/1       Running   0          2m
+builder-api-517225361-c9j86              1/1       Running   0          2m
+builder-db-2825750227-fwqlz              1/1       Running   0          2m
+cocktail-api-67592375-63k43              1/1       Running   1          2m
+cocktail-client-4046445963-rrwhh         2/2       Running   1          2m
+cocktail-cmdb-520687312-rhm8s            1/1       Running   0          2m
+cocktail-metering-aws-3487533297-tw1x7   1/1       Running   0          2m
+redis-3766055555-1lzmh                   1/1       Running   0          2m
 ```
 
 **6.cocktail cloud 접속 url 확인.**
@@ -131,7 +140,7 @@ The key's randomart image is:
 # kubectl get service -n cocktail-system -o wide | grep cocktail-client-loadbalancer
 ```
 
-Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-loadbalancer를 선택한다.
+
 
 ### **삭제**
 
