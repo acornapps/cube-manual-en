@@ -138,9 +138,8 @@ redis-3766055555-1lzmh                   1/1       Running   0          2m
 
 ```
 # kubectl get service -n cocktail-system -o wide | grep cocktail-client-loadbalancer
+
 ```
-
-
 
 ### **삭제**
 
