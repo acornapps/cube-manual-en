@@ -132,7 +132,7 @@ The key's randomart image is:
 # watch -n1 "kubectl get pods -n cocktail-system"
 ```
 
-**6.브라우저로 **[**http://{VM의**](http://{VM의)** masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/cocktail_login.jpeg)
+**6.브라우저로 http://master\_IP:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/cocktail_login.jpeg)
 
 ### **삭제**
 
