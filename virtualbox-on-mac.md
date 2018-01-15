@@ -130,9 +130,18 @@ The key's randomart image is:
 ```
 # ssh -i ~/cube/pki/id_rsa root@192.168.50.11
 # watch -n1 "kubectl get pods -n cocktail-system"
+NAME                                     READY     STATUS    RESTARTS   AGE
+apollomq-3231363346-77ltx                1/1       Running   0          2m
+builder-api-517225361-c9j86              1/1       Running   0          2m
+builder-db-2825750227-fwqlz              1/1       Running   0          2m
+cocktail-api-67592375-63k43              1/1       Running   1          2m
+cocktail-client-4046445963-rrwhh         2/2       Running   1          2m
+cocktail-cmdb-520687312-rhm8s            1/1       Running   0          2m
+cocktail-metering-aws-3487533297-tw1x7   1/1       Running   0          2m
+redis-3766055555-1lzmh                   1/1       Running   0          2m
 ```
 
-**6.브라우저로 http://master\_IP:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/cocktail_login.jpeg)
+**6.브라우저로 **[http://master\_IP:30000으로](http://master_IP:30000으로)** 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/cocktail_login.jpeg)
 
 ### **삭제**
 
