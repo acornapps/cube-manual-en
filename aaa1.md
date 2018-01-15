@@ -83,13 +83,12 @@ hyperv-_switch-name는 windows에서 설치를 할 경우, hyperv 옵션이다.\
 
 ```
 # minikube service list -n cocktail-system | grep cocktail-client-node-port
+| cocktail-system | cocktail-client-node-port | http://192.168.99.100:31203 |
 ```
 
 Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-client-node-port를 선택한다.
 
-아래 그림에서는 [http://192.168.99.100:31203이](http://192.168.99.100:31203이) cocktail cloud 접속 URL임을 확인 할 수 있다.
-
-![](/assets/minikube URL 확인.png)
+[http://192.168.99.100:31203이](http://192.168.99.100:31203이) cocktail cloud 접속 URL임을 확인 할 수 있다.
 
 
 
@@ -131,19 +130,19 @@ Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-cl
 Cluster CA Certification 값은 아래 명령의 실행한 결과값을 넣어주면 된다.
 
 ```
-# cat /Users/(UserName)/.minikube/ca.crt
+# cat ~/.minikube/ca.crt
 ```
 
 Certificate Certificate Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
 
 ```
-# cat /Users/(UserName)/.minikube/client.crt
+# cat ~/.minikube/client.crt
 ```
 
 Certificate Authority Data 값은 아래 명령을 실행한 결과값을 넣어주면 된다.
 
 ```
-# cat /Users/(UserName)/.minikube/client.key
+# cat ~/.minikube/client.key
 ```
 
 8.볼륨 설정하기
