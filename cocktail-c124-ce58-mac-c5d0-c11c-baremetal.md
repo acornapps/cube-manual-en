@@ -102,6 +102,8 @@ private_key_path: "/cubetest/id_rsa"
 # (required) Path to an SSH public key file to be provisioned as the SSH key. -> ssh-public 키 경로 기입 
 key_path: "/cubetest/id_rsa.pub"
 
+# (required) Data directory for docker, kubelet, etcd, log.
+data_dir: "/cocktail"
 
 # Kubernetes  -> 기본사항으로 변경하지 않음.
 k8s_version: "1.6.7"
