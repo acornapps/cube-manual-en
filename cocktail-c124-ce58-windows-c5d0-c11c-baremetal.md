@@ -14,7 +14,47 @@ Windows 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 �
 
 3\) cube.exe 파일 환경변수 path 설정
 
-4\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
+4\) SSH key 생성
+
+설치 pc에서 각 서버\(baremetal 장비\)에 ssh로 접속하여 설치하기 때문에 ssh-key 생성이 필요하다. 기존에 가지고 있는 ssh-key를 사용해도 무방하다.
+
+&lt; ssh key 신규 발급 방법 &gt;
+
+```
+# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/cloud/.ssh/id_rsa): /tmp/cubetest/id_rsa
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /tmp/cubetest/id_rsa.
+Your public key has been saved in /tmp/cubetest/id_rsa.pub.
+The key fingerprint is:
+SHA256:liTKyW/l3eU9+mBzyksL0AKpYXRsvsQ793nWJiUgJC0 cloud@Clouds-MacBook-Pro.local
+The key's randomart image is:
++---[RSA 2048]----+
+|     ....        |
+|    . .E.o       |
+|     o=o=        |
+|   o.oo*.o..     |
+|    =.. So... .  |
+|     . B oo. + o |
+|      o + o.o==o.|
+|     .     o=+Bo.|
+|            o*=. |
++----[SHA256]-----+
+```
+
+5\) ssh-key 복사
+
+설치 pc에서 각 서버\(baremetal 장비\)에 ssh로 접속할 수 있도록 앞서 발급한 ssh Public키를 각 서버에 복사한다.
+
+```
+# ssh-copy-id -i id_rsa.pub root@ip
+```
+
+
+
+6\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
 
 ```
 # yum install -y nfs-utils

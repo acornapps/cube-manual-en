@@ -109,7 +109,7 @@ key_path: "/cubetest/id_rsa.pub"
 data_dir: "/cocktail"
 
 # Kubernetes  -> 기본사항으로 변경하지 않음.
-k8s_version: "1.6.7"
+k8s_version: "1.8.6"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
