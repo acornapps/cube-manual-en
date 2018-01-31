@@ -96,6 +96,9 @@ haproxy: false
 # (conditional) Set load-balancer ip. -> LB사용 시 해당 아이피 기입하고 아닐 시 공란
 lb_ip:
 
+# (required) ssh username to access server.
+ssh_user_id: "root" 
+
 # (required) Path to an SSH private key file to access server. -> ssh-private 키 경로 기입
 private_key_path: "/cubetest/id_rsa"
 
