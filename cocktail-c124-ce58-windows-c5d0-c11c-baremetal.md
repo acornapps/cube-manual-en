@@ -16,7 +16,7 @@ Windows 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 �
 
 4\) SSH key 생성
 
-설치 pc에서 각 서버\(baremetal 장비\)에 ssh로 접속하여 설치하기 때문에 ssh-key 생성이 필요하다. 기존에 가지고 있는 ssh-key를 사용해도 무방하다. 신규로 생성할 경우에는 git을 다운로드 받아 bash shell을 실행한 후 아래 절차대로 실행하면 된다. 
+설치 pc에서 각 서버\(baremetal 장비\)에 ssh로 접속하여 설치하기 때문에 ssh-key 생성이 필요하다. 기존에 가지고 있는 ssh-key를 사용해도 무방하다. 신규로 생성할 경우에는 git을 다운로드 받아 bash shell을 실행한 후 아래 절차대로 실행하면 된다.
 
 \(git 다운로드 링크 : [https://git-for-windows.github.io/](https://git-for-windows.github.io/) \)
 
@@ -101,10 +101,10 @@ lb_ip:
 # (required) ssh username to access server.
 ssh_user_id: "cloud"
 
-# (required) Path to an SSH private key file to access server.
+# (required) Path to an SSH private key file to access server. -> ssh-private 키 경로 기입
 private_key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa"
 
-# (required) Path to an SSH public key file to be provisioned as the SSH key.
+# (required) Path to an SSH public key file to be provisioned as the SSH key. -> ssh-public  키 경로 기입
 key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa.pub"
 
 # Kubernetes
@@ -144,7 +144,6 @@ cocktail-client-4046445963-rrwhh         2/2       Running   1          2m
 cocktail-cmdb-520687312-rhm8s            1/1       Running   0          2m
 cocktail-metering-aws-3487533297-tw1x7   1/1       Running   0          2m
 redis-3766055555-1lzmh                   1/1       Running   0          2m
-
 ```
 
 
