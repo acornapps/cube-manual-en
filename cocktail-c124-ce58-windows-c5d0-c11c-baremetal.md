@@ -104,7 +104,7 @@ ssh_user_id: "cloud"
 # (required) Path to an SSH private key file to access server. -> ssh-private 키 경로 기입
 private_key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa"
 
-# (required) Path to an SSH public key file to be provisioned as the SSH key. -> ssh-public  키 경로 기입
+# (required) Path to an SSH public key file to be provisioned as the SSH key. -> ssh-public 키 경로 기입
 key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa.pub"
 
 # Kubernetes
