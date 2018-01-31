@@ -107,8 +107,11 @@ private_key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa"
 # (required) Path to an SSH public key file to be provisioned as the SSH key. -> ssh-public 키 경로 기입
 key_path: "C:\\Users\\acornsoft\\.ssh\\id_rsa.pub"
 
+# (required) Data directory for docker, kubelet, etcd, log.
+data_dir: "/home/data"
+
 # Kubernetes
-k8s_version: "1.6.7"
+k8s_version: "1.8.6"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
