@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Cocktail Installation](cocktail-c124-ce58-mac-c5d0-c11c-virtualbox-d65c-c6a9.md)
   * [virtualbox on mac](virtualbox-on-mac.md)
-  * [baremetal on mac](cocktail-c124-ce58-mac-c5d0-c11c-baremetal.md)
+  * [baremetal on mac, linux](cocktail-c124-ce58-mac-c5d0-c11c-baremetal.md)
   * [minikube on mac](aaa1.md)
   * [aws on mac](cocktail-c124-ce58-aws.md)
   * [azure on mac](cocktail-c124-ce58-azure.md)

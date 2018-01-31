@@ -1,6 +1,6 @@
-# Cocktail Installation to baremetal on macos
+# Cocktail Installation to baremetal on macos, linux 
 
-Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다음과 같다.
+Mac, linux 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다음과 같다.
 
 ### **사전준비**
 
@@ -10,7 +10,7 @@ Mac 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다�
 
 2\) Docker 다운로드 후 설치
 
-\( 다운로드 링크 : [https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac) \)![](/assets/docker설치.png)
+\( 다운로드 링크 : [https://store.docker.com/search?offering=community&q=&type=edition ](https://store.docker.com/search?offering=community&q=&type=edition)\)
 
 3\) SSH key 생성
 
