@@ -1,4 +1,4 @@
-# Cocktail Installation to baremetal on macos, linux 
+# Cocktail Installation to baremetal on macos, linux
 
 Mac, linux 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다음과 같다.
 
@@ -60,7 +60,7 @@ The key's randomart image is:
 
 ### 설치
 
-**1.먼저 설치를 위해 맥 터미널을 열고 아래와 같이 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다**
+**1.먼저 설치를 위해 아래와 같이 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다**
 
 ```
 # mkdir /Desktop/cubetest
