@@ -16,7 +16,9 @@ Windows 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 �
 
 4\) SSH key 생성
 
-설치 pc에서 각 서버\(baremetal 장비\)에 ssh로 접속하여 설치하기 때문에 ssh-key 생성이 필요하다. 기존에 가지고 있는 ssh-key를 사용해도 무방하다.
+설치 pc에서 각 서버\(baremetal 장비\)에 ssh로 접속하여 설치하기 때문에 ssh-key 생성이 필요하다. 기존에 가지고 있는 ssh-key를 사용해도 무방하다. 신규로 생성할 경우에는 git을 다운로드 받아 bash shell을 실행한 후 아래 절차대로 실행하면 된다. 
+
+\(git 다운로드 링크 : [https://git-for-windows.github.io/](https://git-for-windows.github.io/) \)
 
 &lt; ssh key 신규 발급 방법 &gt;
 
@@ -51,8 +53,6 @@ The key's randomart image is:
 ```
 # ssh-copy-id -i id_rsa.pub root@ip
 ```
-
-
 
 6\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
 
@@ -123,40 +123,6 @@ nfs_ip: "35.201.132.14"  -> nfs서버 ip
 nfs_mountdir: "/nfs/data"  -> nfs서버 경로
 ```
 
-상기 항목에서 private\_key\_path  와 key\_path 는 Baremetal 장비에 ssh key로 접속하기 위한 private key와 public key의 경로를 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 git을 다운로드 받아 bash shell을 실행한 후 아래 절차대로 실행하면 된다. \(git 다운로드 링크 : [https://git-for-windows.github.io/](https://git-for-windows.github.io/) \)
-
-&lt; ssh key 신규 발급 방법 &gt;
-
-```
-# ssh-keygen -t rsa
-Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/cloud/.ssh/id_rsa): /tmp/cubetest/id_rsa
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /tmp/cubetest/id_rsa.
-Your public key has been saved in /tmp/cubetest/id_rsa.pub.
-The key fingerprint is:
-SHA256:liTKyW/l3eU9+mBzyksL0AKpYXRsvsQ793nWJiUgJC0 cloud@Clouds-MacBook-Pro.local
-The key's randomart image is:
-+---[RSA 2048]----+
-|     ....        |
-|    . .E.o       |
-|     o=o=        |
-|   o.oo*.o..     |
-|    =.. So... .  |
-|     . B oo. + o |
-|      o + o.o==o.|
-|     .     o=+Bo.|
-|            o*=. |
-+----[SHA256]-----+
-```
-
-Baremetal 서버에 ssh private key로 자동 접속을 위해 ssh-copy-id 명령을 사용하여 ssh public key를 해당 서버에 복사한다.
-
-```
-# ssh-copy-id -i /tmp/cubetest/id_rsa.pub root@ip
-```
-
 **4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
 
 ```
@@ -168,6 +134,17 @@ Baremetal 서버에 ssh private key로 자동 접속을 위해 ssh-copy-id 명�
 ```
 # ssh -i ~/cube/pki/id_rsa root@203.236.100.10
 # watch -n1 "kubectl get pods -n cocktail-system"
+
+NAME                                     READY     STATUS    RESTARTS   AGE
+apollomq-3231363346-77ltx                1/1       Running   0          2m
+builder-api-517225361-c9j86              1/1       Running   0          2m
+builder-db-2825750227-fwqlz              1/1       Running   0          2m
+cocktail-api-67592375-63k43              1/1       Running   1          2m
+cocktail-client-4046445963-rrwhh         2/2       Running   1          2m
+cocktail-cmdb-520687312-rhm8s            1/1       Running   0          2m
+cocktail-metering-aws-3487533297-tw1x7   1/1       Running   0          2m
+redis-3766055555-1lzmh                   1/1       Running   0          2m
+
 ```
 
 
