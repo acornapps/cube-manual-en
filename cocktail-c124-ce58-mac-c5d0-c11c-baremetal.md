@@ -159,6 +159,9 @@ redis-3766055555-1lzmh                   1/1       Running   0          2m
 ```
 # cd /Desktop/cubetest
 
+// k8s를 삭제하기 전 사용자가 생성했던 loadbalancer와 volume을 삭제한다.
+# cube destroy --pre-destroy
+
 // k8s만 삭제하고 설치 스크립트는 그대로 유지 
 # cube destroy
 
