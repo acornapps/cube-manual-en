@@ -1,4 +1,4 @@
-# Cocktail Installation to AWS on macos
+# Cocktail Installation to AWS on mac,linux
 
 [Amazon Web Services Cloud](https://aws.amazon.com/free/)에 Cocktail를 설치하는 과정은 다음과 같다.
 
@@ -138,7 +138,6 @@ redis-3766055555-1lzmh                   1/1       Running   0          2m
 
 ```
 # kubectl get service -n cocktail-system -o wide | grep cocktail-client-loadbalancer
-
 ```
 
 ### **삭제**

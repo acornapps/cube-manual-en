@@ -1,4 +1,4 @@
-# Cocktail Installation to Azure on macos
+# Cocktail Installation to Azure on mac,linux
 
 [Azure cloud](https://azure.microsoft.com/ko-kr/)에 Cocktail를 설치하는 과정은 다음과 같다.
 
