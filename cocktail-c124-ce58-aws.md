@@ -60,17 +60,38 @@ master_node_count: 1
 # (required) The number of worker nodes to be created. Example: 3  -> 워커 노드 수 
 worker_node_count: 2
 
-# (required) The region name. Example: ap-northeast-2  -> AWS region
-region: "ap-northeast-1"
+# Just for reference.
+# In order to retrieve regions and availability zone within the specific region use following commands
+# aws configure
+# aws ec2 describe-regions
+# aws ec2 describe-availability-zones --region region-name
+# region-code	  region-name	        Availability-Zone
+# us-east-1	        Virginia	    us-east-1a, us-east-1b, us-east-1c, us-east-1d, us-east-1e, us-east-1f
+# us-west-2	        Oregon	        us-west-2a, us-west-2b, us-west-2c
+# us-west-1	        N. California	us-west-1b, us-west-1c
+# eu-west-1	        Ireland         eu-west-1a, eu-west-1b, eu-west-1c
+# eu-central-1	    Frankfurt       eu-central-1a, eu-central-1b, eu-central-1c
+# ap-southeast-1	Singapore       ap-southeast-1a, ap-southeast-1b
+# ap-southeast-2	Sydney          ap-southeast-2a, ap-southeast-2b, ap-southeast-2c
+# ap-northeast-1	Tokyo           ap-northeast-1a, ap-northeast-1c
+# ap-northeast-2	Seoul	        ap-northeast-2a, ap-northeast-2c
+# sa-east-1	        Sao Paulo       sa-east-1a, sa-east-1c
+# ap-south-1	    India (Mumbai)  ap-south-1a, ap-south-1b
 
-# (required) Path to an SSH private key file to access server.
+# (required) The region code  -> AWS region
+region: "ap-northeast-2"
+
+# (required) The Availability Zone. It must be belong to region
+azone: "ap-northeast-2a"
+
+# (required) Absolute Path to an SSH private key file to access server.
 private_key_path: "/Users/minhona/.ssh/id_rsa"
 
-# (required) Path to an SSH public key file to be provisioned as the SSH key.
+# (required) Absolute Path to an SSH public key file to be provisioned as the SSH key.
 key_path: "/Users/minhona/.ssh/id_rsa.pub"
 
 # Kubernetes
-k8s_version: "1.6.7"
+k8s_version: "1.8.6"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
@@ -143,12 +164,15 @@ redis-3766055555-1lzmh                   1/1       Running   0          2m
 ### **삭제**
 
 1. 더 이상 필요하지 않을 경우에는 아래 명령으로 삭제할 수 있다.  
-   디폴트로 옵션을 주지 않는 경우에는 생성한 k8s cluster만 삭제하고 설치 스크립트는 그대로 유지하며, -f 옵션을 추가하면 cube.yaml 파일을 cube.yaml.org로 백업파일을 생성한 후 설치스크립트도 모두 삭제하게 된다.
+   디폴트로 옵션을 주지 않는 경우에는 생성한 k8s cluster만 삭제하고 설치 스크립트는 그대로 유지하며, -f 옵션을 추가하면 생성된 aws infra를 삭제하고 cube.yaml 파일을 cube.yaml.org로 백업파일을 생성한 후 설치스크립트도 모두 삭제하게 된다.
 
    따라서, 이 명령어는 주의해서 실행해야 한다.
 
 ```
 # cd /Desktop/cubetest
+
+// k8s가 생성한 persistence volume과 loadbalancer를 먼저 삭제함. 
+# cube destroy --pre-destroy
 
 // k8s만 삭제하고 설치 스크립트는 그대로 유지 
 # cube destroy
