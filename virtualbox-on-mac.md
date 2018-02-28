@@ -76,7 +76,7 @@ private_key_path: "/cubetest/id_rsa"
 key_path: "/cubetest/id_rsa.pub"
 
 # Kubernetes
-k8s_version: "1.6.7"
+k8s_version: "1.8.6"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
