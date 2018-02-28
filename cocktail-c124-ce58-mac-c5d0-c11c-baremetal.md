@@ -99,10 +99,10 @@ lb_ip:
 # (required) ssh username to access server.
 ssh_user_id: "root" 
 
-# (required) Path to an SSH private key file to access server. -> ssh-private 키 경로 기입
+# (required) Absolute Path to an SSH private key file to access server.. -> ssh-private 키 경로 기입
 private_key_path: "/cubetest/id_rsa"
 
-# (required) Path to an SSH public key file to be provisioned as the SSH key. -> ssh-public 키 경로 기입 
+# (required) Absolute Path to an SSH public key file to be provisioned as the SSH key. -> ssh-public 키 경로 기입 
 key_path: "/cubetest/id_rsa.pub"
 
 # (required) Data directory for docker, kubelet, etcd, log.
@@ -151,18 +151,13 @@ redis-3766055555-1lzmh                   1/1       Running   0          2m
 
 ### **삭제**
 
-테스트가 완료되어 더 이상 필요하지 않을 경우에는 아래 명령으로 삭제할 수 있다.  
-1.k8s를 삭제하기전 사용자가 생성했던 loadbalancer와 volume 삭제작업을 선행한다. \(--pre-destroy옵션 사용\)
-
-2.디폴트로 옵션을 주지 않는 경우에는 생성한 k8s cluster만 삭제하고 설치 스크립트는 그대로 유지하며, -f 옵션을 추가하면 cube.yaml 파일을 cube.yaml.org로 백업파일을 생성한 후 설치스크립트도 모두 삭제하게 된다.
+**1.삭제는  옵션에 따라 k8s cluster만 삭제하는 경우와 생성된  VM을 삭제할 수 있다.**  
+디폴트로 옵션을 주지 않는 경우에는 생성한 k8s cluster만 삭제하고 설치 스크립트는 그대로 유지하며, -f 옵션을 추가하면 cube.yaml 파일을 cube.yaml.org로 백업파일을 생성한 후 설치스크립트도 모두 삭제하게 된다.
 
 따라서, 이 명령어는 주의해서 실행해야 한다.
 
 ```
 # cd /Desktop/cubetest
-
-// k8s를 삭제하기 전 사용자가 생성했던 loadbalancer와 volume을 삭제한다.
-# cube destroy --pre-destroy
 
 // k8s만 삭제하고 설치 스크립트는 그대로 유지 
 # cube destroy
@@ -171,5 +166,5 @@ redis-3766055555-1lzmh                   1/1       Running   0          2m
 # cube destroy -f
 ```
 
-
+-f 옵션으로 삭제한 후에 다시 설치하기 위해서 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
 
