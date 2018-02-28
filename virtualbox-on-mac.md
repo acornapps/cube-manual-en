@@ -69,10 +69,10 @@ haproxy: false
 # (conditional) Set load-balancer ip.  -> LB사용 시 해당 아이피 입력 
 lb_ip:
 
-# (required) Path to an SSH private key file to access server.
+# (required) Absolute Path to an SSH private key file to access server.
 private_key_path: "/cubetest/id_rsa"
 
-# (required) Path to an SSH public key file to be provisioned as the SSH key.
+# (required) Absolute Path to an SSH public key file to be provisioned as the SSH key.
 key_path: "/cubetest/id_rsa.pub"
 
 # Kubernetes
