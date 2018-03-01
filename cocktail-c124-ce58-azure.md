@@ -195,6 +195,10 @@ Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-cl
 ```
 # cd /Desktop/cubetest
 
+// k8s가 생성한 persistence volume과 loadbalancer를 먼저 삭제함. 
+// 삭제가 완료된 것을 aws console에서 확인해야 한다.  
+# cube destroy --pre-destroy
+
 // k8s만 삭제하고 설치 스크립트는 그대로 유지 
 # cube destroy
 
