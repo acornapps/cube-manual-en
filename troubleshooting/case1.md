@@ -11,7 +11,9 @@ etcd daemon은 kubernetes에서 생성되는 각종 object의 데이터 저장�
 ```
 etcd cluster의 정상 동작여부를 확인할 수 있다.
 특정 node가 unhealth상태일 경우 해당 메시지가 출력된다.
-# etcdctl cluster-health
+# etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key 
+--cacert /etc/kubernetes/pki/etcd-ca.crt 
+--endpoints=https://k8s-elb-bb5c1a1a1159199b.elb.ap-northeast-2.amazonaws.com:2379 member list
 member 343f53e92dacc502 is healthy: got healthy result from http://192.168.0.172:2379
 member c9e93f4efc1a9813 is healthy: got healthy result from http://192.168.0.173:2379
 member f95af587a997f2bf is healthy: got healthy result from http://192.168.0.171:2379

@@ -122,7 +122,7 @@ key_path: "/Users/minhona/.ssh/id_rsa.pub"              -> 반드시 절대경�
 
 
 # Kubernetes
-k8s_version: "1.6.7"
+k8s_version: "1.8.6"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
