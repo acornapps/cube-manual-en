@@ -11,19 +11,22 @@ etcd daemon은 kubernetes에서 생성되는 각종 object의 데이터 저장�
 ```
 etcd cluster의 정상 동작여부를 확인할 수 있다.
 특정 node가 unhealth상태일 경우 해당 메시지가 출력된다.
+# export ETCDCTL_API=3
 # etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key 
 --cacert /etc/kubernetes/pki/etcd-ca.crt 
---endpoints=https://k8s-elb-bb5c1a1a1159199b.elb.ap-northeast-2.amazonaws.com:2379 member list
+--endpoints=https://k8s-elb-bb5c1a1a1159199b.elb.ap-northeast-2.amazonaws.com:2379 endpoint health
 member 343f53e92dacc502 is healthy: got healthy result from http://192.168.0.172:2379
 member c9e93f4efc1a9813 is healthy: got healthy result from http://192.168.0.173:2379
 member f95af587a997f2bf is healthy: got healthy result from http://192.168.0.171:2379
 cluster is healthy
 
 etcd cluster를 구성하는 node의 ip, port와 어느 node가 leader로 구성되었는지 확인할 수 있다.
-# etcdctl member list
-343f53e92dacc502: name=cocktail02 peerURLs=http://192.168.0.172:2380 clientURLs=http://192.168.0.172:2379 isLeader=false
-c9e93f4efc1a9813: name=cocktail03 peerURLs=http://192.168.0.173:2380 clientURLs=http://192.168.0.173:2379 isLeader=false
-f95af587a997f2bf: name=cocktail01 peerURLs=http://192.168.0.171:2380 clientURLs=http://192.168.0.171:2379 isLeader=true
+# etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key 
+--cacert /etc/kubernetes/pki/etcd-ca.crt 
+--endpoints=https://k8s-elb-bb5c1a1a1159199b.elb.ap-northeast-2.amazonaws.com:2379 member list
+2ff8ca0b39f4ce02, started, ip-10-0-0-37, https://10.0.0.37:2380, https://10.0.0.37:2379
+40e0ff5ee27c98d0, started, ip-10-0-0-6, https://10.0.0.6:2380, https://10.0.0.6:2379
+f1ada6cc179c0400, started, ip-10-0-0-17, https://10.0.0.17:2380, https://10.0.0.17:2379
 ```
 
 * flannel 데몬 상태 체크
