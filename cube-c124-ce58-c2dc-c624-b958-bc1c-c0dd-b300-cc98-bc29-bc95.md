@@ -1,4 +1,4 @@
-# Cocktail 설치 오류발생 대처 방법 - in progress
+# Cocktail 설치 오류발생 대처 방법
 
 **1.Docker가 설치되어 있지 않은 경우**
 
