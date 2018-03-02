@@ -50,10 +50,21 @@ The key's randomart image is:
 # ssh-copy-id -i id_rsa.pub root@ip
 ```
 
-5\) NFS 설치 \(마스터, 워커 노드로 사용될 서버 모두에 nfs를 설치한다.\)
+5\) 만약 NFS 서버가 별도로 없을 경우에 특정 노드에 NFS Server를 설치한다.
+
+나머지 노드에는 모두에 nfs-util를 yum으로 설치한다.
 
 ```
 # yum install -y nfs-utils
+# vi /etc/exports		// 해당 파일에 아래 내용 기술하여 저장. 
+/nfs 203.236.100.0/24(rw, sync, no_root_squash, no_all_squash)
+
+// rpcbind, nfs-server를 서비스에 등록 및 기동.
+# systemctl enable rpcbind
+# systemctl enable nfs-server
+# systemctl start rpcbind
+# systemctl start nfs-server
+
 ```
 
 #### ㅤ
