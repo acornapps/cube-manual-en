@@ -56,15 +56,14 @@ The key's randomart image is:
 
 ```
 # yum install -y nfs-utils
-# vi /etc/exports		// 해당 파일에 아래 내용 기술하여 저장. 
-/nfs 203.236.100.0/24(rw, sync, no_root_squash, no_all_squash)
+# vi /etc/exports        // 해당 파일에 아래 내용 기술하여 저장. 
+/nfs 203.236.100.0/24(rw,sync,no_root_squash,no_all_squash)
 
 // rpcbind, nfs-server를 서비스에 등록 및 기동.
 # systemctl enable rpcbind
 # systemctl enable nfs-server
 # systemctl start rpcbind
 # systemctl start nfs-server
-
 ```
 
 #### ㅤ
