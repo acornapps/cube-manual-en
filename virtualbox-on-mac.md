@@ -32,8 +32,8 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 **1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다**
 
 ```
-# mkdir /Desktop/cubetest
-# cd /Desktop/cubetest
+# mkdir /Desktop/virtualbox
+# cd /Desktop/virtualbox
 ```
 
 **2.cube 명령을 이용하여 virtualbox용 설치 script를 download 받고 초기화 한다.**

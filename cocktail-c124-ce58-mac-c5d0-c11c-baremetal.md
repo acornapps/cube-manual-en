@@ -73,8 +73,8 @@ The key's randomart image is:
 **1.먼저 설치를 위해 아래와 같이 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다**
 
 ```
-# mkdir /Desktop/cubetest
-# cd /Desktop/cubetest
+# mkdir /Desktop/baremetal
+# cd /Desktop/baremetal
 ```
 
 **2.cube 명령을 이용하여 baremetal용 설치 script를 download 받는다.**

@@ -65,8 +65,8 @@ Select: 상기 등록한 application명을 입력
 **1.설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다.**
 
 ```
-  # mkdir /Desktop/cubetest
-  # cd /Desktop/cubetest
+  # mkdir /Desktop/azure
+  # cd /Desktop/azure
 ```
 
 **2.cube 명령을 이용하여 azure용 설치 script를 download 받고 초기화 한다.**
