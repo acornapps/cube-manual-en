@@ -32,14 +32,43 @@ worker-192.168.50.12
 
 # cd ..            # CUBE_DEPLOY/cubescripts로 이동        
 # ansible-playbook -i inventories/inventory -u root node.yml     #ansible을 이용하여 node.yml 실행
+
+# vi node.yml
+---
+# This playbook deploys a kubernetes cluster with the default addons.
+
+- hosts: node
+  roles:
+    - yum-repo
+  tags:
+    - yum-repo
+
+# Install etcd
+- hosts: etcd
+  roles:
+   -   etcd
+  tags:
+    - etcd
+
+# Install docker
+- hosts: node
+  roles:
+    - docker
+  tags:
+    - docker
+
+# install kubernetes on the nodes
+- hosts: node
+  roles:
+    - node
+  tags:
+    - node
 ```
 
 ```
 ansible_ssh_host 부분과 [node] 부분에 추가되는 worker node ip를 추가
 ex)위의 worker 192.168.50.12를 추가하는 과정을 나타낸다.
 ```
-
-
 
 주의 사항.
 
