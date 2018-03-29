@@ -50,30 +50,36 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 cloud_provider: "virtualbox"
 
 
-# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]  -> 마스터 ip
-master_ip: ["192.168.50.11"]
+# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
+master_ip: ["192.168.50.10"]
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
-worker_ip: ["192.168.50.12"]  -> 워커 ip
+worker_ip: ["192.168.50.20", "192.168.50.100"]
 
-# (required) vCpu number        -> 노드 CPU 사양
-cpus: 2
+# (required) Master node vcpu number
+master_cpus: 4
 
-# (required) Memory size (MB)   -> 노드 Memory 사양 
-memory: 2048
+# (required) Master node memory size (MB)
+master_memory: 4096
+
+# (required) Worker node vcpu number
+worker_cpus: 1
+
+# (required) Worker node memory size (MB)
+worker_memory: 2048
 
 
-# (required) Set true if high-availability is required.  ->  haproxy 사용여부 ( true or false )
+# (required) Set true if haproxy is required.
 haproxy: false
 
-# (conditional) Set load-balancer ip.  -> LB사용 시 해당 아이피 입력 
+# (conditional) Set load-balancer ip.
 lb_ip:
 
 # (required) Absolute Path to an SSH private key file to access server.
-private_key_path: "/cubetest/id_rsa"
+private_key_path: "/Users/minhona/.ssh/id_rsa"
 
 # (required) Absolute Path to an SSH public key file to be provisioned as the SSH key.
-key_path: "/cubetest/id_rsa.pub"
+key_path: "/Users/minhona/.ssh/id_rsa.pub"
 
 # Kubernetes
 k8s_version: "1.8.6"
@@ -86,9 +92,9 @@ addons:
 
 # (required) cocktail service
 cocktail: true
-# (optional) if nfs server available
-nfs_ip: "192.168.50.12"  -> nfs서버 ip
-nfs_mountdir: "/nfs"     -> nfs서버 경로
+# (required) if cocktail service true
+nfs_ip: "192.168.50.10"
+nfs_mountdir: "/nfs"
 ```
 
 상기 항목에서 private\_key\_path  와 key\_path 는 각각 VM에 ssh key로 접속하기 위한 private key와 public key로 반드시 절대 경로로 기입한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
