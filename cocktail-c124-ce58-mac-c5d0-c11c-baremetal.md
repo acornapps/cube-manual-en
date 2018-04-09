@@ -95,10 +95,16 @@ cloud_provider: "baremetal"
 
 
 # (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
-master_ip: ["203.236.100.10","203.236.100.11"]  -> 마스터 서버 ip 기입 
+master_ip: ["203.236.100.10","203.236.100.11"]  -> Master Node ip 기입 
+
+# (optional) Master node private ips(comma separated). Example: ["10.10.10.11", "10.10.10.12"]
+master_private_ip: ["10.0.0.2","10.0.0.3"]  -> Master Node private ip 기입
 
 # (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
-worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"] -> 워커 서버 ip 기입 
+worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"] -> Worker Node ip 기입 
+
+# (optional) Worker node private ips(comma separated). Example: ["10.10.10.13", "10.10.10.14", "10.10.10.15"]
+worker_private_ip: ["10.0.0.4","10.0.0.5","10.0.0.6"] -> 워커 서버 private ip 기입
 
 # (required) Set true if high-availability is required.  -> haproxy 사용여부(true of false 기입 )
 haproxy: false
@@ -140,7 +146,7 @@ nfs_mountdir: "/nfs"      -> nfs서버의 공유 디렉토리 경로 기입
 # cube deploy -v debug
 ```
 
-**5.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
+**5.**[**cocktail-builder-c11c-bc84-c124-ce58.md**](cocktail-builder-c11c-bc84-c124-ce58.md)**오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
 
 ```
 # ssh -i ~/cube/pki/id_rsa root@203.236.100.10
@@ -157,7 +163,7 @@ cocktail-metering-aws-3487533297-tw1x7   1/1       Running   0          2m
 redis-3766055555-1lzmh                   1/1       Running   0          2m
 ```
 
-**6.브라우저로 **[**http://{VM의**](http://{VM의)** masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/cocktail_login.jpeg)
+**6.브라우저로 **[**http://{VM의**](http://{VM의)** masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/baremetal_login.jpeg)
 
 ### **삭제**
 
