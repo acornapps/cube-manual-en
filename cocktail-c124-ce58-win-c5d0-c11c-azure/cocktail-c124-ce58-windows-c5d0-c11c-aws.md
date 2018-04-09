@@ -45,10 +45,14 @@ AWS cloud에 Cocktail를 설치하는 과정은 다음과 같다.
 ---
 cloud_provider: "aws"
 
-## (required) When azure is used, you need to set the following variables.
-access_key: "*********************"
+## (required) Account id
+account_id: "7414********"
 
-secret_key: "******************************************"
+# (required) access key
+access_key: "AKIA****************"
+
+# (required) secret key
+secret_key: "ZTba************************************"
 
 # (optional) Instance size for the master node(s). Default: t2.medium.  -> AWS VM 사양 (마스터 노드) 
 master_vm_size: "c4.large"
