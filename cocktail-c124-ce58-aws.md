@@ -43,8 +43,14 @@
 ---
 cloud_provider: "aws"
 
-## (required) When azure is used, you need to set the following variables.
-access_key: "********************"
+## (required) Account id
+account_id: "7414********"
+
+# (required) access key
+access_key: "AKIA****************"
+
+# (required) secret key
+secret_key: "ZTba************************************"
 
 secret_key: "*****************************************"
 
