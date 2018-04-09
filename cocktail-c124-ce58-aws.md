@@ -52,8 +52,6 @@ access_key: "AKIA****************"
 # (required) secret key
 secret_key: "ZTba************************************"
 
-secret_key: "*****************************************"
-
 # (optional) Instance size for the master node(s). Default: t2.medium.  -> AWS VM 사양 (마스터 노드) 
 master_vm_size: "t2.medium"
 
