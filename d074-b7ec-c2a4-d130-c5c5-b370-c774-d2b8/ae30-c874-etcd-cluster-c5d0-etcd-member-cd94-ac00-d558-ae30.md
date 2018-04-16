@@ -47,8 +47,13 @@ ETCD_DATA_DIR=/home/data/etcd
 
 #[cluster]
 ETCD_INITIAL_ADVERTISE_PEER_URLS=https://192.168.0.227:2380
+
+// 기존 etcd intial_cluster url을 포함하여 쉼표(,)로 구분하여 지정함.
 ETCD_INITIAL_CLUSTER=wmaster01=https://192.168.0.226:2380,wworker01=https://192.168.0.227:2380
+
+// 기존 etcd cluster에 추가할 것임으로 initial_cluster_state 값을 "existing"으로 설정함.
 ETCD_INITIAL_CLUSTER_STATE=existing
+
 ETCD_INITIAL_CLUSTER_TOKEN=etcd-k8-cluster
 #ETCD_DISCOVERY=""
 #ETCD_DISCOVERY_SRV=""
