@@ -63,6 +63,8 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
     - "{{ data_root_dir }}/docker"
     - "{{ data_root_dir }}/log"
   tags: ['files']
+  
+# cube destroy -v debug
 
 # vi cubescripts/roles/distributecert/worker/tasks/main.yml
 ---
@@ -90,9 +92,6 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
   with_items: "{{ pki_certs.results }}"
   no_log: true
 
-
-
-# cube destroy -v debug
 # cube deploy -v debug
 ```
 
