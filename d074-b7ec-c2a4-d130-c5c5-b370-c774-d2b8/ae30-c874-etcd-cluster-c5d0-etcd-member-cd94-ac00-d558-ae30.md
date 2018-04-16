@@ -16,7 +16,7 @@ Etcd cluster가 가동중인 상태에서 etcd member를 추가하는 방법에 
 # openssl genrsa -out /etc/kubernetes/pki/etcd.key 2048
 # openssl req -new -key /etc/kubernetes/pki/etcd.key -subj '/CN=etcd' \
 | openssl x509 -req -CA /etc/kubernetes/pki/etcd-ca.crt -CAkey /etc/kubernetes/pki/etcd-ca.key \
--CAcreateserial -out /etc/kubernetes/pki/new/etcd.crt -days 3650 -extensions \
+-CAcreateserial -out /etc/kubernetes/pki/etcd.crt -days 3650 -extensions \
 v3_req -extfile /etc/kubernetes/pki/openssl.conf
 
 # openssl genrsa -out /etc/kubernetes/pki/etcd-peer.key
@@ -24,7 +24,6 @@ v3_req -extfile /etc/kubernetes/pki/openssl.conf
 | openssl x509 -req -CA /etc/kubernetes/pki/etcd-ca.crt -CAkey /etc/kubernetes/pki/etcd-ca.key \
 -CAcreateserial -out /etc/kubernetes/pki/etcd-peer.crt -days 3650 -extensions \
 v3_req -extfile /etc/kubernetes/pki/openssl.conf
-
 ```
 
 **2.인증서를 재 생성한다.**
