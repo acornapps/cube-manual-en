@@ -45,14 +45,10 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
 # cube deploy -v debug
 ```
 
-**3.기존 etcd node에서 member를 join함.**
+**3.etcd restore.**
 
 ```
-# etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
---cacert /etc/kubernetes/pki/etcd-ca.crt member add wworker01 --peer-urls=https://192.168.0.227:2380
-
-# etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
---cacert /etc/kubernetes/pki/etcd-ca.crt member add wworker02 --peer-urls=https://192.168.0.228:2380
+# 
 ```
 
 **4. 추가 후 etcd cluster member list 및 상태 확인**
