@@ -86,12 +86,25 @@ ETCD_DATA_DIR="/home/data/etcd"
 ```
 # etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
 --cacert /etc/kubernetes/pki/etcd-ca.crt member add wworker01 --peer-urls=https://192.168.0.227:2380
+
+# etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
+--cacert /etc/kubernetes/pki/etcd-ca.crt member add wworker02 --peer-urls=https://192.168.0.228:2380
 ```
 
 **4. Worker node -&gt; Master Node 순으로 rebooting한다.**
 
 ```
-# reboot
+# etcdctl --write-out=table --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
+--cacert /etc/kubernetes/pki/etcd-ca.crt --endpoints=https://192.168.0.226:2379 member list
+
+
++------------------+---------+-----------+----------------------------+----------------------------+
+|        ID        | STATUS  |   NAME    |         PEER ADDRS         |        CLIENT ADDRS        |
++------------------+---------+-----------+----------------------------+----------------------------+
+| fb6dacb1ff6a5471 | started | wworker01 | https://192.168.0.227:2380 | https://192.168.0.227:2379 |
+| fddfca0140234d70 | started | wworker02 | https://192.168.0.228:2380 | https://192.168.0.228:2379 |
+| fefe74d66ed53d79 | started | wmaster01 | https://192.168.0.226:2380 | https://192.168.0.226:2379 |
++------------------+---------+-----------+----------------------------+----------------------------+
 ```
 
 
