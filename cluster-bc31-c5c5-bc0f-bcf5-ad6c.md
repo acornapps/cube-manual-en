@@ -41,6 +41,29 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
 기존 k8s cluster를 삭제하고 재설치 한다. 이때, etcd, docker, kubelet, k8s control panel\(apiserver, controll-manager, scheduler\)만 설치하도록 한다.
 
 ```
+# vi cubescripts/roles/reset/tasks/main.yml
+- name: Delete some files and directories
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - /etc/kubernetes/addon
+    - /etc/kubernetes/manifests
+    - /etc/kubernetes/*
+    - /var/lib/kubelet
+    - /var/lib/etcd
+    - /var/lib/docker
+    - /opt/cni
+#    - /opt/kubernetes          // 재설치시 인증서를 재 생성하지 않도록 인증서 파일은 삭제에서 제외함.
+    - /run/kubernetes
+    - /var/log/pods/
+    - /etc/systemd/system/kubelet.service
+    - "{{ data_root_dir }}/etcd"
+    - "{{ data_root_dir }}/kubelet"
+    - "{{ data_root_dir }}/docker"
+    - "{{ data_root_dir }}/log"
+  tags: ['files']
+
 # cube destroy -v debug
 # cube deploy -v debug
 ```
@@ -58,7 +81,6 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
 
 ```
 # kubectl get pods --all-namespaces
-
 ```
 
 
