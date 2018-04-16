@@ -81,10 +81,11 @@ ETCD_INITIAL_CLUSTER_STATE="existing"
 ETCD_DATA_DIR="/home/data/etcd"
 ```
 
-**3.k8s에 생성된 default token를 모두 삭제한다.**
+**3.기존 etcd node에서 member를 join함.**
 
 ```
-# kubectl get secrets --all-namespaces | grep default-token | awk '{print $1, $2}' | xargs -n 2 kubectl delete secrets -n
+# etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
+--cacert /etc/kubernetes/pki/etcd-ca.crt member add wworker01 --peer-urls=https://192.168.0.227:2380
 ```
 
 **4. Worker node -&gt; Master Node 순으로 rebooting한다.**
