@@ -26,42 +26,55 @@ v3_req -extfile /etc/kubernetes/pki/openssl.conf
 v3_req -extfile /etc/kubernetes/pki/openssl.conf
 ```
 
-**2.인증서를 재 생성한다.**
+**2.추가할 etcd node에 etcd 설치 및 환경설정**
 
-이전에 설치를 진행한 디렉토리에서 cert.yaml을 실행하여 인증서를 update한다.
-
-먼저, openssl.conf에서 추가할 ip나 dns를 IP.N에 추가 기입한다.
+추가할 etcd node에 etcd 설치 및 환경파일을 설정한다.
 
 ```
-# vi cubescripts/roles/sslcert/openssl.conf.j2
-[req]
-req_extensions = v3_req
-distinguished_name = req_distinguished_name
-[req_distinguished_name]
-[ v3_req ]
-basicConstraints = CA:FALSE
-keyUsage = nonRepudiation, digitalSignature, keyEncipherment
-subjectAltName = @alt_names
-[alt_names]
-DNS.1 = kubernetes
-DNS.2 = kubernetes.default
-DNS.3 = kubernetes.default.svc
-DNS.4 = kubernetes.default.svc.{{ cluster_name }}
-DNS.5 = {{ domain_name }}
-DNS.6 = *.{{ domain_name }}
-DNS.7 = localhost
-{% if cloud_provider == 'azure' or cloud_provider == 'aws' -%}
-DNS.8 = {{ lb_ip }}
-{% endif -%}
-IP.1 = 127.0.0.1
-IP.2 = {{ kubernetes_service_ip }}
-{% if cloud_provider == 'baremetal' or cloud_provider == 'rovius' or cloud_provider == 'virtualbox' -%}
-IP.3 = {{ lb_ip }}
-IP.4 = 14.52.93.202
-{% endif -%}
+# yum install -y etcd-3.2.15
 
+# vi /etc/etcd/etcd.conf
+#[member]
+ETCD_NAME=wworker01
 
-# ansible-playbook -i inventories/inventory -u {userId} cert.yaml
+ETCD_DATA_DIR=/home/data/etcd
+#ETCD_SNAPSHOT_COUNTER="10000"
+#ETCD_HEARTBEAT_INTERVAL="100"
+#ETCD_ELECTION_TIMEOUT="1000"
+#ETCD_MAX_SNAPSHOTS="5"
+#ETCD_MAX_WALS="5"
+#ETCD_CORS=""
+
+#[cluster]
+ETCD_INITIAL_ADVERTISE_PEER_URLS=https://192.168.0.227:2380
+ETCD_INITIAL_CLUSTER=wmaster01=https://192.168.0.226:2380,wworker01=https://192.168.0.227:2380
+ETCD_INITIAL_CLUSTER_STATE=existing
+ETCD_INITIAL_CLUSTER_TOKEN=etcd-k8-cluster
+#ETCD_DISCOVERY=""
+#ETCD_DISCOVERY_SRV=""
+#ETCD_DISCOVERY_FALLBACK="proxy"
+#ETCD_DISCOVERY_PROXY=""
+ETCD_LISTEN_PEER_URLS=https://0.0.0.0:2380
+ETCD_ADVERTISE_CLIENT_URLS=https://192.168.0.227:2379
+ETCD_LISTEN_CLIENT_URLS="https://0.0.0.0:2379"
+
+#[proxy]
+ETCD_PROXY="off"
+
+#[security]
+ETCD_CA_FILE=/etc/kubernetes/pki/etcd-ca.crt
+ETCD_CERT_FILE=/etc/kubernetes/pki/etcd.crt
+ETCD_KEY_FILE=/etc/kubernetes/pki/etcd.key
+ETCD_PEER_CA_FILE=/etc/kubernetes/pki/etcd-ca.crt
+ETCD_PEER_CERT_FILE=/etc/kubernetes/pki/etcd-peer.crt
+ETCD_PEER_KEY_FILE=/etc/kubernetes/pki/etcd-peer.key
+ETCD_PEER_CLIENT_CERT_AUTH="true"
+ETCD_TRUSTED_CA_FILE="/etc/kubernetes/pki/etcd-ca.crt"
+ETCD_CLIENT_CERT_AUTH="true"
+ETCD_INITIAL_CLUSTER_TOKEN="etcd-cluster"
+ETCD_INITIAL_CLUSTER_STATE="existing"
+ETCD_DATA_DIR="/home/data/etcd"
+
 ```
 
 **3.k8s에 생성된 default token를 모두 삭제한다.**
