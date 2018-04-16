@@ -36,17 +36,13 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
     cp -a /nas/"$SOMAC_CMDB_DIR" "$COCKTAIL_BACKDIR/$SOMAC_CMDB_DIR"_"$CURRENT_DATE"    // cmdb backup
     cp -a /nas/"$SOMAC_BUILDERDB_DIR" "$COCKTAIL_BACKDIR/$SOMAC_BUILDERDB_DIR"_"$CURRENT_DATE"    // builderdb backup
 
-**2.추가할 etcd node에 etcd 설치 및 환경설정**
+**2.k8s cluster 재 설치**
 
-추가할 etcd node에 etcd 설치 및 환경파일을 설정한다.
+기존 k8s cluster를 삭제하고 재설치 한다. 이때, etcd, docker, kubelet, k8s control panel\(apiserver, controll-manager, scheduler\)만 설치하도록 한다.
 
 ```
-# etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
---cacert /etc/kubernetes/pki/etcd-ca.crt --endpoints=https://10.0.0.3:2379 --name=master  \
---initial-advertise-peer-urls="https://10.0.0.3:2380" --initial-cluster="master=https://10.0.0.3:2380" \
---initial-cluster-token="etcd-k8-cluster" --data-dir=“/data/etcd” snapshot restore /root/backup/etcd_20180322
-
-
+# cube destroy -v debug
+# cube deploy -v debug
 ```
 
 **3.기존 etcd node에서 member를 join함.**
