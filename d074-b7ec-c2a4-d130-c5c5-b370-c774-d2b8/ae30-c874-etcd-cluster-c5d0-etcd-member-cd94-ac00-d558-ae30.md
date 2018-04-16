@@ -91,7 +91,7 @@ ETCD_DATA_DIR="/home/data/etcd"
 --cacert /etc/kubernetes/pki/etcd-ca.crt member add wworker02 --peer-urls=https://192.168.0.228:2380
 ```
 
-**4. Worker node -&gt; Master Node 순으로 rebooting한다.**
+**4. 추가 후 etcd cluster member list 및 상태 확인**
 
 ```
 # etcdctl --write-out=table --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
@@ -105,6 +105,13 @@ ETCD_DATA_DIR="/home/data/etcd"
 | fddfca0140234d70 | started | wworker02 | https://192.168.0.228:2380 | https://192.168.0.228:2379 |
 | fefe74d66ed53d79 | started | wmaster01 | https://192.168.0.226:2380 | https://192.168.0.226:2379 |
 +------------------+---------+-----------+----------------------------+----------------------------+
+
+# etcdctl --write-out=table --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
+--cacert /etc/kubernetes/pki/etcd-ca.crt --endpoints=https://192.168.0.226:2379 endpoint status
+
+https://192.168.0.226:2379 is healthy: successfully committed proposal: took = 1.83824ms
+https://192.168.0.227:2379 is healthy: successfully committed proposal: took = 2.419152ms
+https://192.168.0.228:2379 is healthy: successfully committed proposal: took = 2.068545ms
 ```
 
 
