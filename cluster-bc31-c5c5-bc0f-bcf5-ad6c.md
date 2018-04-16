@@ -49,32 +49,16 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
 
 ```
 # etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
- --cacert /etc/kubernetes/pki/etcd-ca.crt --endpoints=https://10.0.0.3:2379 --name=master \
+ --cacert /etc/kubernetes/pki/etcd-ca.crt --endpoints=https://10.0.0.3:2379 --name=master \
  --initial-advertise-peer-urls="https://10.0.0.3:2380" --initial-cluster="master=https://10.0.0.3:2380" \
  --initial-cluster-token="etcd-k8-cluster" --data-dir=“/data/etcd” snapshot restore /root/backup/etcd_20180322
 ```
 
-**4. 추가 후 etcd cluster member list 및 상태 확인**
+**4. k8s resource 기동 확인**
 
 ```
-# etcdctl --write-out=table --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
---cacert /etc/kubernetes/pki/etcd-ca.crt --endpoints=https://192.168.0.226:2379 member list
+# kubectl get pods --all-namespaces
 
-
-+------------------+---------+-----------+----------------------------+----------------------------+
-|        ID        | STATUS  |   NAME    |         PEER ADDRS         |        CLIENT ADDRS        |
-+------------------+---------+-----------+----------------------------+----------------------------+
-| fb6dacb1ff6a5471 | started | wworker01 | https://192.168.0.227:2380 | https://192.168.0.227:2379 |
-| fddfca0140234d70 | started | wworker02 | https://192.168.0.228:2380 | https://192.168.0.228:2379 |
-| fefe74d66ed53d79 | started | wmaster01 | https://192.168.0.226:2380 | https://192.168.0.226:2379 |
-+------------------+---------+-----------+----------------------------+----------------------------+
-
-# etcdctl --write-out=table --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
---cacert /etc/kubernetes/pki/etcd-ca.crt --endpoints=https://192.168.0.226:2379 endpoint status
-
-https://192.168.0.226:2379 is healthy: successfully committed proposal: took = 1.83824ms
-https://192.168.0.227:2379 is healthy: successfully committed proposal: took = 2.419152ms
-https://192.168.0.228:2379 is healthy: successfully committed proposal: took = 2.068545ms
 ```
 
 
