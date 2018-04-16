@@ -31,7 +31,33 @@ v3_req -extfile /etc/kubernetes/pki/openssl.conf
 추가할 etcd node에 etcd 설치 및 환경파일을 설정한다.
 
 ```
-# yum install -y etcd-3.2.15
+# vi cubescripts/roles/distributecert/worker/tasks/main.yml
+---
+- name: Create kubernetes cert directory
+  file: path={{ cert_dir }} state=directory
+
+- name: Slurp CA certificate
+  slurp: src={{ master_cert_dir }}/{{ item }}
+  with_items:
+    - ca.crt
+    - ca.key
+    - etcd-ca.crt
+    - etcd-ca.key
+#    - etcd-peer.crt    // etcd ca 인증서만 배포되도록 주석으로 처리.
+#    - etcd-peer.key
+#    - etcd.crt
+#    - etcd.key
+  register: pki_certs
+  run_once: true
+  delegate_to: "{{ groups['sslhost'][0] }}"
+
+- name: Write CA certificate to disk
+  copy: dest={{ cert_dir }}/{{ item.item }} content="{{ item.content | b64decode }}"
+  register: openssl_cert
+  with_items: "{{ pki_certs.results }}"
+  no_log: true
+
+yum install -y etcd-3.2.15
 
 # vi /etc/etcd/etcd.conf
 #[member]
