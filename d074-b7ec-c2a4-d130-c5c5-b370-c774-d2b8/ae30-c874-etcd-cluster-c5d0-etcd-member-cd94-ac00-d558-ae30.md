@@ -74,7 +74,6 @@ ETCD_CLIENT_CERT_AUTH="true"
 ETCD_INITIAL_CLUSTER_TOKEN="etcd-cluster"
 ETCD_INITIAL_CLUSTER_STATE="existing"
 ETCD_DATA_DIR="/home/data/etcd"
-
 ```
 
 **3.k8s에 생성된 default token를 모두 삭제한다.**
