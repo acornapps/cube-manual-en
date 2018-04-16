@@ -64,6 +64,34 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
     - "{{ data_root_dir }}/log"
   tags: ['files']
 
+# vi cubescripts/roles/distributecert/worker/tasks/main.yml
+---
+- name: Create kubernetes cert directory
+  file: path={{ cert_dir }} state=directory
+
+- name: Slurp CA certificate
+  slurp: src={{ master_cert_dir }}/{{ item }}
+  with_items:
+    - ca.crt
+    - ca.key
+    - etcd.crt
+    - etcd.key
+#    - etcd-ca.crt      // k8s ca인증서와 etcd ca 인증서만 copy되도록 주석으로 처리함.
+#    - etcd-ca.key
+#    - etcd-peer.crt
+#    - etcd-peer.key
+  register: pki_certs
+  run_once: true
+  delegate_to: "{{ groups['sslhost'][0] }}"
+
+- name: Write CA certificate to disk
+  copy: dest={{ cert_dir }}/{{ item.item }} content="{{ item.content | b64decode }}"
+  register: openssl_cert
+  with_items: "{{ pki_certs.results }}"
+  no_log: true
+
+
+
 # cube destroy -v debug
 # cube deploy -v debug
 ```
