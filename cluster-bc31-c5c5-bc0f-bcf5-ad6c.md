@@ -30,16 +30,11 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
     SOMAC_CMDB_DIR=`kubectl get pvc -n cocktail-system | grep cocktail-cmdb | awk '{print "cocktail-system-"$1"-"$3}'`
     SOMAC_BUILDERDB_DIR=`kubectl get pvc -n cocktail-system | grep builder-db | awk '{print "cocktail-system-"$1"-"$3}'`
 
-    /bin/etcdctl --cert "$ETCD_CERT" --key "$ETCD_KEY" --cacert "$ETCD_CACERT" --endpoints="$ETCD_EP" snapshot save "$ETCD_BACKDIR/etcd_$CURRENT_DATE"
+    /bin/etcdctl --cert "$ETCD_CERT" --key "$ETCD_KEY" --cacert "$ETCD_CACERT" --endpoints="$ETCD_EP" \
+    snapshot save "$ETCD_BACKDIR/etcd_$CURRENT_DATE"
 
     cp -a /nas/"$SOMAC_CMDB_DIR" "$COCKTAIL_BACKDIR/$SOMAC_CMDB_DIR"_"$CURRENT_DATE"
     cp -a /nas/"$SOMAC_BUILDERDB_DIR" "$COCKTAIL_BACKDIR/$SOMAC_BUILDERDB_DIR"_"$CURRENT_DATE"
-
-    cp -a /nas/"$CMDB_DIR1" "$COCKTAIL_BACKDIR/$CMDB_DIR1"_"$CURRENT_DATE"
-    cp -a /nas/"$BUILDERDB_DIR1" "$COCKTAIL_BACKDIR/$BUILDERDB_DIR1"_"$CURRENT_DATE"
-
-    cp -a /nas/"$CMDB_DIR2" "$COCKTAIL_BACKDIR/$CMDB_DIR2"_"$CURRENT_DATE"
-    cp -a /nas/"$BUILDERDB_DIR2" "$COCKTAIL_BACKDIR/$BUILDERDB_DIR2"_"$CURRENT_DATE"
 
 **2.추가할 etcd node에 etcd 설치 및 환경설정**
 
