@@ -63,7 +63,7 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
     - "{{ data_root_dir }}/docker"
     - "{{ data_root_dir }}/log"
   tags: ['files']
-  
+
 # cube destroy -v debug
 
 # vi cubescripts/roles/distributecert/worker/tasks/main.yml
@@ -91,6 +91,43 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
   register: openssl_cert
   with_items: "{{ pki_certs.results }}"
   no_log: true
+  
+# vi cubescripts/cluster.yaml 에서 etcd, docker, kubelet, k8s control panel만 설치되도록 아래와 같이 수정함.
+---
+# This playbook deploys a kubernetes cluster with the default addons.
+
+- hosts: yum-proxy
+  roles:
+    - { role: yum-proxy, tags: yum-proxy }
+
+- hosts: masters:node
+  roles:
+    - { role: bootstrap-os, tags: bootstrap-os }
+
+- hosts: masters:node
+  roles:
+    - { role: yum-repo, tags: yum-repo }
+
+# install ssl cert
+- hosts: sslhost
+  gather_facts: false
+  roles:
+     - { role: sslcert, tags: sslcert }
+
+# Install etcd
+- hosts: etcd
+  roles:
+   - { role: etcd, tags: etcd }
+
+# Install docker
+- hosts: masters:node
+  roles:
+   - { role: docker, tags: docker }
+
+# install kubernetes master services
+- hosts: masters
+  roles:
+    - { role: master, tags: master }
 
 # cube deploy -v debug
 ```
