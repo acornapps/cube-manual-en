@@ -91,7 +91,7 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
   register: openssl_cert
   with_items: "{{ pki_certs.results }}"
   no_log: true
-  
+
 # vi cubescripts/cluster.yaml 에서 etcd, docker, kubelet, k8s control panel만 설치되도록 아래와 같이 수정함.
 ---
 # This playbook deploys a kubernetes cluster with the default addons.
@@ -136,8 +136,8 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
 
 ```
 # etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
- --cacert /etc/kubernetes/pki/etcd-ca.crt --endpoints=https://10.0.0.3:2379 --name=master \
- --initial-advertise-peer-urls="https://10.0.0.3:2380" --initial-cluster="master=https://10.0.0.3:2380" \
+ --cacert /etc/kubernetes/pki/etcd-ca.crt --endpoints=https://192.168.0.226:2379 --name=master \
+ --initial-advertise-peer-urls="https://192.168.0.226:2380" --initial-cluster="master=https://192.168.0.226:2380" \
  --initial-cluster-token="etcd-k8-cluster" --data-dir=“/data/etcd” snapshot restore /root/backup/etcd_20180322
 ```
 
