@@ -31,4 +31,5 @@
   * [NFS 접속 확인 방법](troubleshooting/nfs-c811-c18d-d655-c778-bc29-bc95.md)
   * [Instance IP가 변경될 경우](instance-ipac00-bcc0-acbd-b420-acbd-c6b0.md)
   * [cube로 설치시 에러 대처 방법](troubleshooting/cubeb85c-c124-ce58-c2dc-c5d0-b7ec-b300-cc98-bc29-bc95.md)
+  * [Yum 자동 업그레이드 방지](yum-c790-b3d9-c5c5-adf8-b808-c774-b4dc-bc29-c9c0.md)
 
