@@ -12,13 +12,11 @@ Cocktail은 k8s package의 버전에 따라 설정파일의 차이가 있으므�
 # vi /etc/yum/yum-cron-hourly.conf
   ...
   update_cmd = security 로 수정
-
-
 ```
 
+참고\) [https://www.lesstif.com/pages/viewpage.action?pageId=46366785](https://www.lesstif.com/pages/viewpage.action?pageId=46366785), http://webdir.tistory.com/175
 
 
-참고\) https://www.lesstif.com/pages/viewpage.action?pageId=46366785
 
-         http://webdir.tistory.com/175
+
 
