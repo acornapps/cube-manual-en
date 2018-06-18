@@ -92,7 +92,7 @@ Namespace를 cocktail-system으로 선택하고 Services메뉴에서 cocktail-cl
 
 **7.cocktail cloud.**
 
-브라우저로 [http://{VM의](http://{VM의) masterip}:{cocktail client node port}으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\).
+브라우저로 [http://{VM의](http://{VM의) masterip}:{cocktail client node port}으로 접속하면 cocktail login 화면으로 접속할 수 있다.
 
 ![](/assets/cocktail_login.jpeg)
 
