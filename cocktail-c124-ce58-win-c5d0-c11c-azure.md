@@ -36,7 +36,7 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 등록된 application 상세 화면에서 Application ID가 clientId 값임.
 
-![](/assets/ClientId2.jpeg)
+
 
 * client\_secret 값 구하기
 
