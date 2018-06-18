@@ -116,7 +116,7 @@ k8s dashboard에서 builder-api의 환경변수 REGISTRY_URL, DOCKER\_URL, SERVE
 | 환경변수 | 값 예시 |
 | :--- | :--- |
 | REGISTRY\_URL | [https://](https://172.10.1.1)xxx.xxx.xxx.xxx |
-| REGISTRY\_USER | harbor login id \(admin\) |
+| REGISTRY\_USER | harbor login id |
 | REGISTRY\_PASSWORD | harbor password |
 
 
