@@ -46,7 +46,7 @@ ui_url_protocol = https
 db_password = root123
 ssl_cert = /root/cocktail/cert/harbor.crt     (공인인증서 crt 파일 경로)
 ssl_cert_key = /root/cocktail/cert/harbor.key (공인인증서 key 파일 경로)
-harbor_admin_password = C0ckt@1lAdmin
+harbor_admin_password = xxxxx
 ...
 ```
 
@@ -117,7 +117,7 @@ k8s dashboard에서 builder-api의 환경변수 REGISTRY_URL, DOCKER\_URL, SERVE
 | :--- | :--- |
 | REGISTRY\_URL | [https://](https://172.10.1.1)xxx.xxx.xxx.xxx |
 | REGISTRY\_USER | harbor login id \(admin\) |
-| REGISTRY\_PASSWORD | harbor login passwd \(C0ckt@1!Admin\) |
+| REGISTRY\_PASSWORD |  |
 
 
 
