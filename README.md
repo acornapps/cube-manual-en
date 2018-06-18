@@ -1,4 +1,4 @@
-# Cube Installation Guide
+# Cube User Guide
 
 
 
