@@ -1,9 +1,5 @@
 # Cocktail Installation
 
-Cocktail은 cube command line interface를 통해 쉽게 local test 환경, baremetal 서버, public cloud\(aws, azure, gcp\) 서버에 설치할 수 있다. Local test 환경은 windows의 경우 hyperv를 통해 minikube를 활용하며 linux, macos의 경우에는 minikube 뿐만 아니라 virtualbox를 통해 cluster 환경을 시험할 수도 있다.
-
-Cube는 내부적으로 docker를 기반으로한 cubetool과 cube cli로 나뉘며, cubetool은 cube cli가 필요로하는 cube script 다운로드와 public cloud infra생성, k8s 설치, cocktail 설치 역할을 수행하며 cube cli는 cube.yaml\(cube 구성파일\)의 처리 및 cubetool이 필요로 하는 구성파일을생성하고 사용자의 cmd option을 처리하는 역할을 수행한다.
-
 ## 사전 준비 사항
 
 설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메시지가 발생한다.
@@ -16,13 +12,17 @@ Cube는 내부적으로 docker를 기반으로한 cubetool과 cube cli로 나뉘
 
 [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
-3\) Virtualbox 다운로드 \(5.1.x version\) \(virtualbox를 이용한 로컬 테스트 환경 구축시\)
+3\) VirtualBox 다운로드 \(5.1.x version\) \(VirtualBox를 이용한 로컬 테스트 환경 구축시\)
 
 [https://www.virtualbox.org/wiki/Download\_Old\_Builds\_5\_1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 
 4\) SSH private key & public key 생성 및 유저 등록 \(필수\)
 
-키 생성의 경우 아래의 항목에서 상세하게 확인할 수 있다.
+* SSH키는 Cube가 생성한 server instance에 접속하기 위해 사용하며,  **cube init** 명령을 실행하면 'cubescripts/cert' 폴더 밑에 자동생성한 키를 저장하여 사용한다. 
+
+* 자동 생성한 키를 사용하지 않고 기존에 사용 중인 키를 사용 한다면 이 키 파일의 경로를 'cube.yaml 파일'의 키 경로 항목에 지정한다. 이에 대한 자세한 내용은 각 설치 환경에 대한 문서를 참조한다.
+
+* 새로운 키 생성은 아래를 참조한다. 기존 키 사용과 마찬가지로 생성한 키는 'cube.yaml' 파일에 지정해야 한다.
 
 ```
 # ssh-keygen -t rsa
