@@ -16,13 +16,9 @@
 
 * Subscription\_Id : Azure포탈 메인페이지 상단 중간 검색창에 'subscription' 검색하여 subscriptionID값을 확인
 
-![](/assets/subscriptionId.jpeg)
-
 * TenantId : Home &gt; Azure Active Directory &gt; App registrations &gt; Endpoints &gt; OAUTH2.0 AUTHORIZATION에 포함된 값 중 아래 예시와 같이 x로 표시된 부분이 TenantId 임.\) 
 
 \(EX : [https://login.microsoftonline.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/oauth2/authorize](https://login.microsoftonline.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/oauth2/authorize) \)
-
-![](/assets/TenantId.jpeg)
 
 * ApplicationId 등록하여  clientId 값 구하기
 
@@ -30,11 +26,7 @@ Home &gt; Azure Active Directory &gt; App registrations 에서  +New application
 
 Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서비스 URL\) [http://cocktail.acornsoft.io](http://cocktail.acornsoft.io) 로 입력
 
-![](/assets/ClientId.jpeg)
-
 아래 화면과 같이 등록된 application 상세 화면에서 Application ID가 clientId 값임.
-
-![](/assets/ClientId2.jpeg)
 
 * client\_secret 값 구하기
 
@@ -46,8 +38,6 @@ description: cocktail\_key
 
 expires: never expires을 선택하고 저장버튼을 클릭하면 자동으로 value값이 표시되는데 이 값이  client\_secret값임.
 
-![](/assets/application key.jpeg)
-
 * application에 permission 설정하기
 
 Home &gt; Subscription 메뉴 선택 &gt; 등록된 계정 선택 &gt; Access Control\(IAM\) 화면의 상단에서 +Add 버튼을 클릭ㅤ
@@ -57,8 +47,6 @@ Role: Contributor 선택
 Assign access to: Azure user, group, or application 선택
 
 Select: 상기 등록한 application명을 입력
-
-![](/assets/application에 permission부여.jpeg)
 
 ### **설치**
 
