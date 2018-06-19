@@ -4,6 +4,8 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 
 ### **사전준비**
 
+사전 준비는 [Cocktail Installation](/cocktail-c124-ce58-mac-c5d0-c11c-virtualbox-d65c-c6a9.md)을 참조한다.
+
 설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메시지가 발생한다.
 
 1\) Docker 다운로드 후 설치
