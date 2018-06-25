@@ -14,9 +14,9 @@
 
 3\) AWS 설치를 위해서는 Access Key와 Secret Key를 환경변수로 등록해야 한다.
 
-* **Account id는 IAMccess Key와 Secret Key를 발급받기 위해 AWS 서비스 콘솔에서 상단 우측 카테고리에서 'Security Credentials'를 클릭한다**
+* **Account id는 IAM &gt; Users&gt; Summary에서 User ARN에 포함된 문자열이다.**
 
-![](/assets/AccountId.jpeg)
+![](/assets/AccountId.png)
 
 * **Access Key와 Secret Key를 발급받기 위해 AWS 서비스 콘솔에서 상단 우측 카테고리에서 'Security Credentials'를 클릭한다.**![](/assets/aws-add.png)
 
