@@ -32,6 +32,8 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 아래 화면과 같이 등록된 application 상세 화면에서 Application ID가 clientId 값임.
 
+![](/assets/AzureClientId.png)
+
 * client\_secret 값 구하기
 
 Home &gt; Azure Active Directory &gt; App registrations 에서 상기 등록한 application명을 선택
