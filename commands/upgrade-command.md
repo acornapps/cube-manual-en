@@ -28,7 +28,7 @@ Kubernetes 설치 상태.`create` command or `create k8s` command
 
 | flag 값 |
 | :--- |
-| 1.8.13 |
+| 1.8.13 ~ 1.8.14 |
 | 1.9.0 ~ 1.9.8 |
 | 1.10.0 ~ 1.10.3 |
 
