@@ -8,11 +8,13 @@ Upgrade할 version은 기존 version의 상위버전으로만 허용되며 하�
 # cube upgrade -v version
 ```
 
+Upgrade가 정상 완료되었는지 확인하기 위해서는 cube status 명령으로 node의 버전을 조회한다.
+
+```
+# cube status
+```
 
 
-
-
-### 
 
 
 
