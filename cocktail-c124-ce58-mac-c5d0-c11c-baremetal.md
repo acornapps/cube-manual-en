@@ -152,13 +152,13 @@ nfs_mountdir: "/nfs"      -> nfs서버의 공유 디렉토리 경로 기입
 # ssh -i ~/cube/pki/id_rsa root@203.236.100.10
 # watch -n1 "kubectl get pods -n cocktail-system"
 
-NAME                                     READY     STATUS    RESTARTS   AGE
-apollomq-3231363346-77ltx                1/1       Running   0          2m
-cocktail-api-67592375-63k43              1/1       Running   1          2m
-cocktail-client-4046445963-rrwhh         2/2       Running   1          2m
-cocktail-cmdb-520687312-rhm8s            1/1       Running   0          2m
-cocktail-metering-aws-3487533297-tw1x7   1/1       Running   0          2m
-redis-3766055555-1lzmh                   1/1       Running   0          2m
+NAME                                 READY     STATUS    RESTARTS   AGE
+apollomq-59fbfbb7c4-nzpls            1/1       Running   0          3d
+cocktail-api-7c9bb84c46-dgw8c        1/1       Running   0          3d
+cocktail-client-5869fb7975-tmckz     1/1       Running   0          3d
+cocktail-cmdb-fd87c6c5f-tfzlg        1/1       Running   1          3d
+cocktail-dashboard-fb6f8f5b9-zn6sj   1/1       Running   0          3d
+redis-cb9c6859f-qq4f8                1/1       Running   0          3d
 ```
 
 **6.브라우저로 **[**http://{VM의**](http://{VM의)** masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/baremetal_login.jpeg)
