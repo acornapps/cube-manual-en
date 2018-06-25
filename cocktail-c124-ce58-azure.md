@@ -16,7 +16,7 @@
 
 * Subscription\_Id : Azure포탈 메인페이지 상단 중간 검색창에 'subscription' 검색하여 subscriptionID값을 확인
 
-* TenantId : Home &gt; Azure Active Directory &gt; App registrations &gt; Endpoints &gt; OAUTH2.0 AUTHORIZATION에 포함된 값 중 아래 예시와 같이 x로 표시된 부분이 TenantId 임.\) 
+* TenantId : Home &gt; Azure Active Directory &gt; App registrations &gt; Endpoints &gt; OAUTH2.0 AUTHORIZATION에 포함된 값 중 아래 예시와 같이 x로 표시된 부분이 TenantId 임.\)
 
 \(EX : [https://login.microsoftonline.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/oauth2/authorize](https://login.microsoftonline.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/oauth2/authorize) \)
 
@@ -69,48 +69,39 @@ Select: 상기 등록한 application명을 입력
 ---
 cloud_provider: "azure"
 
-## (required) When azure is used, you need to set the following variables.
-subscription_id: "1e1b970c-b8c5-4497-8b34-a0e5fa50e119"
-
-client_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-
-client_secret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-
-tenant_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-
-location: "JapanWest"  -> azure region
+# (required) The location string.
+location: "koreacentral"
 
 # (Required) It used as resource group name and prefix to all resources
 # alphanumeric characters, periods, underscores, hyphens and parenthesis allowed
-resource_prefix: "cube-01"
+resource_prefix: "cube-v198-01"
 
-# (optional) Instance size for the master node(s). Default: Standard_F2s.  -> AZURE VM 사양(마스터) 
-master_vm_size: "Standard_D2_v3"
+# (optional) Instance size for the master node(s). Default: Standard_F2s.
+master_vm_size: "Standard_F4s"
 
-# (optional) Instance size for the worker node(s). Default: Standard_F2s.  -> AZURE VM 사양(노드) 
-worker_vm_size: "Standard_D2_v3"
+# (optional) Instance size for the worker node(s). Default: Standard_F2s.
+worker_vm_size: "Standard_F2s"
 
-# (required) The number of master nodes to be created. Example: 2  -> 마스터 노드 수
+# (required) The number of master nodes to be created. Example: 2
 master_node_count: 1
 
-# (required) The number of worker nodes to be created. Example: 3  -> 워커 노드 수 
-worker_node_count: 2
+# (required) The number of worker nodes to be created. Example: 3
+worker_node_count: 1
 
-# (required) Storage account type. Example: Standard_LRS  ->  Azure 스토리지 타입. default값 "Standard_LRS"
+# (required) Storage account type. Example: Standard_LRS
 storage_account_type: "Standard_LRS"
 
 # (required) ssh username to access server.
 ssh_user_id: "cocktail"
 
 # (required) Absolute Path to an SSH private key file to access server.
-private_key_path: "/Users/minhona/.ssh/id_rsa"          -> 반드시 절대경로를 입력해야 함.
+private_key_path: "/path/to/ssh_private_key"
 
 # (required) Absolute Path to an SSH public key file to be provisioned as the SSH key.
-key_path: "/Users/minhona/.ssh/id_rsa.pub"              -> 반드시 절대경로를 입력해야 함.
-
+key_path: "/path/to/ssh_public_key"
 
 # Kubernetes
-k8s_version: "1.8.6"
+k8s_version: "1.9.8"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
