@@ -84,7 +84,7 @@ private_key_path: "/path/to/ssh_private_key"
 key_path: "/path/to/ssh_public_key"
 
 # Kubernetes
-k8s_version: "1.8.6"
+k8s_version: "1.9.8"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
