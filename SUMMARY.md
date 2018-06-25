@@ -26,6 +26,7 @@
   * [캐시 메모리 증가에 따른 클러스터 노드 메모리 최적화](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/ce90-c2dc-ba54-baa8-b9ac-c99d-ac00-c5d0-b530-b978-d074-b7ec-c2a4-d130-b178-b4dc-ba54-baa8-b9ac-cd5c-c801-d654.md)
   * [기존 etcd cluster에 etcd member 추가하기](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/ae30-c874-etcd-cluster-c5d0-etcd-member-cd94-ac00-d558-ae30.md)
   * [Cluster 백업 및 복구](cluster-bc31-c5c5-bc0f-bcf5-ad6c.md)
+  * [암호 관리 정책](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/c554-d638-ad00-b9ac-c815-cc45.md)
 * [TroubleShooting](troubleshooting.md)
   * [클러스터 health check방법](troubleshooting/case1.md)
   * [특정 micro service가 kubernetes dns로 통신하지 못하는 경우](troubleshooting/d2b9-c815-micro-service-ac00-kubernetes-dns-b85c-d1b5-c2e0-d558-c9c0-babb-d558-b294-acbd-c6b0.md)
