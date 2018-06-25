@@ -94,16 +94,16 @@ The key's randomart image is:
 cloud_provider: "baremetal"
 
 
-# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
+# (required) Master node ips(comma separated).
 master_ip: ["203.236.100.10","203.236.100.11"]  -> Master Node ip 기입 
 
-# (optional) Master node private ips(comma separated). Example: ["10.10.10.11", "10.10.10.12"]
+# (optional) Master node private ips(comma separated).
 master_private_ip: ["10.0.0.2","10.0.0.3"]  -> Master Node private ip 기입
 
-# (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
+# (required) Worker node ips(comma separated).
 worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"] -> Worker Node ip 기입 
 
-# (optional) Worker node private ips(comma separated). Example: ["10.10.10.13", "10.10.10.14", "10.10.10.15"]
+# (optional) Worker node private ips(comma separated).
 worker_private_ip: ["10.0.0.4","10.0.0.5","10.0.0.6"] -> 워커 서버 private ip 기입
 
 # (required) Set true if high-availability is required.  -> haproxy 사용여부(true of false 기입 )
@@ -125,7 +125,7 @@ key_path: "/path/to/ssh_public_key"
 data_dir: "/cocktail"
 
 # Kubernetes  -> 기본사항으로 변경하지 않음.
-k8s_version: "1.8.6"
+k8s_version: "1.9.8"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
