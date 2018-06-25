@@ -36,7 +36,7 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 * client\_secret 값 구하기
 
-Home &gt; Azure Active Directory &gt; App registrations 에서 상기 등록한 application명을 선택하고 상단의 Settings 버튼 클릭 
+Home &gt; Azure Active Directory &gt; App registrations 에서 상기 등록한 application명을 선택하고 상단의 Settings 버튼 클릭
 
 Keys 메뉴를 선택하고
 
@@ -149,10 +149,10 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4**.cube deploy 명령을 이용하여 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
+4**.cube create 명령을 이용하여 cocktail을 설치한다.**
 
 ```
-# cube deploy [-v debug]
+# cube create
 ```
 
 5**.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
