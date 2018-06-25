@@ -36,13 +36,15 @@ Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서�
 
 * client\_secret 값 구하기
 
-Home &gt; Azure Active Directory &gt; App registrations 에서 상기 등록한 application명을 선택
+Home &gt; Azure Active Directory &gt; App registrations 에서 상기 등록한 application명을 선택하고 상단의 Settings 버튼 클릭 
 
-우측의 Keys 메뉴를 선택하고
+Keys 메뉴를 선택하고
 
 description: cocktail\_key
 
 expires: never expires을 선택하고 저장버튼을 클릭하면 자동으로 value값이 표시되는데 이 값이  client\_secret값임.
+
+![](/assets/AzureClientSecret.png)
 
 * application에 permission 설정하기
 
