@@ -12,6 +12,8 @@ cube init \[flags\]
 
 1. `--provider, -p`
 
+
+
 * Kubernetes와 Cocktail을 설치할 플랫폼의 이름을 지정한다.
 
 * 필수: 필수
