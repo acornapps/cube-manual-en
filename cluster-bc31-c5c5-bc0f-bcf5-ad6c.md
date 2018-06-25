@@ -48,17 +48,17 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
 
         cocktail_cmdb_pod=`kubectl get pods -n cocktail-system | grep cocktail-cmdb | awk '{print $1}'`
 
-    	if [ -z $cocktail_cmdb_pod ]; then
-    		echo "Can't get cocktail cmdb pod name. exit."
-    		exit 1;
-    	fi
+        if [ -z $cocktail_cmdb_pod ]; then
+            echo "Can't get cocktail cmdb pod name. exit."
+            exit 1;
+        fi
 
-    	cocktail_cmdb_pvc=`kubectl get pvc -n cocktail-system | grep cocktail-cmdb | awk '{print "cocktail-system-"$1"-"$3}'`
+        cocktail_cmdb_pvc=`kubectl get pvc -n cocktail-system | grep cocktail-cmdb | awk '{print "cocktail-system-"$1"-"$3}'`
 
-    	if [ -z $cocktail_cmdb_pvc ]; then
-    		echo "Can't get somac cmdb pvc name. exit."
-    		exit 2;
-    	fi
+        if [ -z $cocktail_cmdb_pvc ]; then
+            echo "Can't get somac cmdb pvc name. exit."
+            exit 2;
+        fi
     }
 
     main() {
@@ -189,8 +189,8 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
 
 ```
 # etcdctl --cert /etc/kubernetes/pki/etcd-peer.crt --key /etc/kubernetes/pki/etcd-peer.key \
- --cacert /etc/kubernetes/pki/etcd-ca.crt --endpoints=https://192.168.0.226:2379 --name=master \
- --initial-advertise-peer-urls="https://192.168.0.226:2380" --initial-cluster="master=https://192.168.0.226:2380" \
+ --cacert /etc/kubernetes/pki/etcd-ca.crt --endpoints=https://xxx.xxx.xxx.xxx:2379 --name=master \
+ --initial-advertise-peer-urls="https://xxx.xxx.xxx.xxx:2380" --initial-cluster="master=https://xxx.xxx.xxx.xxx:2380" \
  --initial-cluster-token="etcd-k8-cluster" --data-dir=“/data/etcd” snapshot restore /root/backup/etcd_20180322
 ```
 
