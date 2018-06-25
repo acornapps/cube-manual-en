@@ -55,10 +55,6 @@ The key's randomart image is:
 
 [https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
-6\) minikube 다운로드 \(k8s minikube를 이용한 로컬 테스트 환경 구축시\)
-
-[https://github.com/kubernetes/minikube/releases](https://github.com/kubernetes/minikube/releases)
-
 #### 
 
 
