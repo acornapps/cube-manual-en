@@ -2,13 +2,13 @@
 
 upgrade는 설치된 Kubernetes를 upgrade한다. **1.8.x 버전에서 1.10.x 버전으로의 upgrade는 지원하지 않으며**, 먼저 1.9.x로 upgrade한 후 다시 1.10.x로 upgrade 한다.
 
-_현재 버전에서 downgrade는 지원하지 않는다_. 
+_현재 버전에서 downgrade는 지원하지 않는다_.
 
 ---
 
 ### Prerequisite
 
-`create` command or `create k8s` command
+Kubernetes 설치 상태.`create` command or `create k8s` command
 
 ### Usage
 
@@ -31,8 +31,6 @@ _현재 버전에서 downgrade는 지원하지 않는다_.
 | 1.8.13 |
 | 1.9.0 ~ 1.9.8 |
 | 1.10.0 ~ 1.10.3 |
-
-
 
 
 
