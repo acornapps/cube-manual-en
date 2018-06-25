@@ -146,7 +146,7 @@ nfs_mountdir: "/nfs"      -> nfs서버의 공유 디렉토리 경로 기입
 # cube create
 ```
 
-**5.**[**cocktail-builder-c11c-bc84-c124-ce58.md**](cocktail-builder-c11c-bc84-c124-ce58.md)**오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
+**5.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
 
 ```
 # ssh -i ~/cube/pki/id_rsa root@203.236.100.10
