@@ -85,7 +85,7 @@ The key's randomart image is:
 
 **3.앞서 생성된 스크립트 중 cube.yaml 파일을 편집기로 열고, 설치하고자 하는 VM 정보를 기입한 후 저장한다.**
 
-\( 아래는 master 1, worker 3대, nfs server로 구성하는 예임.\)
+\( 아래는 master 2, worker 3대, nfs server로 구성하는 예임.\)
 
 만약 외부 LoadBalancer 가용하여 master를 이중화 할 경우 lb\_ip에 해당 load balancer ip를 기재하면 됨.
 
