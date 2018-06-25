@@ -43,25 +43,16 @@
 ---
 cloud_provider: "aws"
 
-## (required) Account id
-account_id: "7414********"
+# (optional) Instance size for the master node(s). Default: t2.medium.
+master_vm_size: "t2.xlarge"
 
-# (required) access key
-access_key: "AKIA****************"
-
-# (required) secret key
-secret_key: "ZTba************************************"
-
-# (optional) Instance size for the master node(s). Default: t2.medium.  -> AWS VM 사양 (마스터 노드) 
-master_vm_size: "t2.medium"
-
-# (optional) Instance size for the worker node(s). Default: t2.medium. -> AWS VM 사양 (워커 노드)
+# (optional) Instance size for the worker node(s). Default: t2.medium.
 worker_vm_size: "t2.medium"
 
-# (required) The number of master nodes to be created. Example: 2  -> 마스터 노드 수
+# (required) The number of master nodes to be created. Example: 2
 master_node_count: 1
 
-# (required) The number of worker nodes to be created. Example: 3  -> 워커 노드 수 
+# (required) The number of worker nodes to be created. Example: 3
 worker_node_count: 2
 
 # Just for reference.
@@ -69,33 +60,33 @@ worker_node_count: 2
 # aws configure
 # aws ec2 describe-regions
 # aws ec2 describe-availability-zones --region region-name
-# region-code      region-name            Availability-Zone
-# us-east-1            Virginia        us-east-1a, us-east-1b, us-east-1c, us-east-1d, us-east-1e, us-east-1f
-# us-west-2            Oregon            us-west-2a, us-west-2b, us-west-2c
-# us-west-1            N. California    us-west-1b, us-west-1c
-# eu-west-1            Ireland         eu-west-1a, eu-west-1b, eu-west-1c
-# eu-central-1        Frankfurt       eu-central-1a, eu-central-1b, eu-central-1c
+# region-code     region-name           Availability-Zone
+# us-east-1         Virginia        us-east-1a, us-east-1b, us-east-1c, us-east-1d, us-east-1e, us-east-1f
+# us-west-2         Oregon          us-west-2a, us-west-2b, us-west-2c
+# us-west-1         N. California   us-west-1b, us-west-1c
+# eu-west-1         Ireland         eu-west-1a, eu-west-1b, eu-west-1c
+# eu-central-1      Frankfurt       eu-central-1a, eu-central-1b, eu-central-1c
 # ap-southeast-1    Singapore       ap-southeast-1a, ap-southeast-1b
 # ap-southeast-2    Sydney          ap-southeast-2a, ap-southeast-2b, ap-southeast-2c
 # ap-northeast-1    Tokyo           ap-northeast-1a, ap-northeast-1c
-# ap-northeast-2    Seoul            ap-northeast-2a, ap-northeast-2c
-# sa-east-1            Sao Paulo       sa-east-1a, sa-east-1c
+# ap-northeast-2    Seoul           ap-northeast-2a, ap-northeast-2c
+# sa-east-1         Sao Paulo       sa-east-1a, sa-east-1c
 # ap-south-1        India (Mumbai)  ap-south-1a, ap-south-1b
 
-# (required) The region code  -> AWS region
-region: "ap-northeast-2"
+# (required) The region code.
+region: "us-west-2"
 
 # (required) The Availability Zone. It must be belong to region
-azone: "ap-northeast-2a"
+azone: "us-west-2a"
 
 # (required) Absolute Path to an SSH private key file to access server.
-private_key_path: "/Users/minhona/.ssh/id_rsa"
+private_key_path: "/path/to/ssh_private_key"
 
 # (required) Absolute Path to an SSH public key file to be provisioned as the SSH key.
-key_path: "/Users/minhona/.ssh/id_rsa.pub"
+key_path: "/path/to/ssh_public_key"
 
 # Kubernetes
-k8s_version: "1.8.6"
+k8s_version: "1.8.13"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
@@ -138,7 +129,7 @@ The key's randomart image is:
 4**.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
 
 ```
-# cube deploy [-v debug]
+# cube create
 ```
 
 5**.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
