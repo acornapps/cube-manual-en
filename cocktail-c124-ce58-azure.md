@@ -28,7 +28,7 @@
 
 Home &gt; Azure Active Directory &gt; App registrations 에서  +New application registration 메뉴 선택.
 
-Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서비스 URL\) [http://cocktail.acornsoft.io](http://cocktail.acornsoft.io) 로 입력
+Application Type을 Web app/API로 선택하고, Sign-on URL\(제공하는 서비스 URL\) 예. [http://cocktail.acornsoft.io](http://cocktail.acornsoft.io) 로 입력
 
 아래 화면과 같이 등록된 application 상세 화면에서 Application ID가 clientId 값임.
 
