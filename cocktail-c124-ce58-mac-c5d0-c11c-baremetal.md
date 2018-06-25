@@ -116,10 +116,10 @@ lb_ip:
 ssh_user_id: "root" 
 
 # (required) Absolute Path to an SSH private key file to access server.. -> ssh-private 키 경로 기입
-private_key_path: "/cubetest/id_rsa"
+private_key_path: "/path/to/ssh_private_key"
 
 # (required) Absolute Path to an SSH public key file to be provisioned as the SSH key. -> ssh-public 키 경로 기입 
-key_path: "/cubetest/id_rsa.pub"
+key_path: "/path/to/ssh_public_key"
 
 # (required) Data directory for docker, kubelet, etcd, log.
 data_dir: "/cocktail"
