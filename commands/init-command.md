@@ -10,13 +10,15 @@ init는 Kubernetes와 Cocktail을 설치하려는 플랫폼에 맞는 스크립�
 
 ### Flags
 
-1. `--provider, -p`
+##### provider
 
-2. Kubernetes와 Cocktail을 설치할 플랫폼의 이름을 지정한다.
+* `--provider, -p`
 
-3. 필수: 필수
+* Kubernetes와 Cocktail을 설치할 플랫폼의 이름을 지정한다.
 
-4. 현재 버전에서 지원하는 provider 목록은 아래와 같다.
+* 필수: 필수
+
+* 현재 버전에서 지원하는 provider 목록은 아래와 같다.
 
 | flag 값 | Provider |
 | :--- | :--- |

@@ -4,6 +4,7 @@
 * [Commands](commands.md)
   * [init command](commands/init-command.md)
   * [create command](commands/create-command.md)
+  * [upgrade command](commands/upgrade-command.md)
 * [Cocktail Installation](cocktail-c124-ce58-mac-c5d0-c11c-virtualbox-d65c-c6a9.md)
   * [virtualbox on mac](virtualbox-on-mac.md)
   * [baremetal on mac, linux](cocktail-c124-ce58-mac-c5d0-c11c-baremetal.md)

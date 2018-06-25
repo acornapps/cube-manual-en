@@ -10,7 +10,7 @@ create는 Kubernetes, Cocktail\(전체 또는 각각\)을 `init`로 준비한 �
 
 ### Usage
 
-* cube create \[ infra \| k8s \]
+* `cube create [infra | k8s]`
 * sub command 없이 실행하면 서버 인스턴스 생성\(infra\) 후 Kubernetes\(k8s\)를 설치한다.
 
 ### Sub command
@@ -22,8 +22,6 @@ create는 Kubernetes, Cocktail\(전체 또는 각각\)을 `init`로 준비한 �
 ##### k8s
 
 * Kubernetes를 설치한다. 이 명령을 실행하려면 반드시 infra 명령을 먼저 실행 해야 한다.
-
-
 
 
 
