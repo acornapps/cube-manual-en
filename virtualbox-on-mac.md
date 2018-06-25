@@ -78,10 +78,10 @@ haproxy: false
 lb_ip:
 
 # (required) Absolute Path to an SSH private key file to access server.
-private_key_path: "/Users/minhona/.ssh/id_rsa"
+private_key_path: "/path/to/ssh_private_key"
 
 # (required) Absolute Path to an SSH public key file to be provisioned as the SSH key.
-key_path: "/Users/minhona/.ssh/id_rsa.pub"
+key_path: "/path/to/ssh_public_key"
 
 # Kubernetes
 k8s_version: "1.8.6"
