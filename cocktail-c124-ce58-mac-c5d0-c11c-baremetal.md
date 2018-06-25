@@ -161,7 +161,7 @@ cocktail-dashboard-fb6f8f5b9-zn6sj   1/1       Running   0          3d
 redis-cb9c6859f-qq4f8                1/1       Running   0          3d
 ```
 
-**6.브라우저로 **[**http://{VM의**](http://{VM의)** masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/baremetal_login.jpeg)
+**6.브라우저로 **[**http://{VM의**](http://{VM의)** masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다.**![](/assets/baremetal_login.jpeg)
 
 ### **삭제**
 
