@@ -8,11 +8,9 @@ init는 Kubernetes와 Cocktail을 설치하려는 플랫폼에 맞는 스크립�
 
 cube init \[flags\]
 
-
-
 ## Flags
 
-1. `--provider, -p` 
+1. `--provider, -p`
 
 * Kubernetes와 Cocktail을 설치할 플랫폼의 이름을 지정한다.
 
