@@ -25,5 +25,5 @@ Cocktail Private Hub는 Harbor Registry와 Cocktail build Server를 위한 인�
 
 Harbor와 Docker 인증서를 생성한다.
 
-![](/assets/cocktailhub.jpeg)
+![](/assets/PrivateHubOverview.jpeg)
 
