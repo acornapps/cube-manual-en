@@ -52,10 +52,10 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 cloud_provider: "virtualbox"
 
 
-# (required) Master node ips(comma separated). Example: ["192.168.50.11", "192.168.50.12"]
+# (required) Master node ips(comma separated).
 master_ip: ["192.168.50.10"]
 
-# (required) Worker node ips(comma separated). Example: ["192.168.50.13", "192.168.50.14", "192.168.50.15"]
+# (required) Worker node ips(comma separated).
 worker_ip: ["192.168.50.20", "192.168.50.100"]
 
 # (required) Master node vcpu number
