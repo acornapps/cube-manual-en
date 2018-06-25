@@ -127,10 +127,10 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-**4.cube deploy 명령을 이용하여 실제 VM에 cocktail을 설치한다. -v debug옵션을 주면 설치되는 세부 내용을 확인할 수 있다.**
+**4.cube create 명령을 이용하여 실제 VM에 cocktail을 설치한다.**
 
 ```
-# cube deploy [-v debug]
+# cube create
 ```
 
 **5.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system을  구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
@@ -140,8 +140,6 @@ The key's randomart image is:
 # watch -n1 "kubectl get pods -n cocktail-system"
 NAME                                     READY     STATUS    RESTARTS   AGE
 apollomq-3231363346-77ltx                1/1       Running   0          2m
-builder-api-517225361-c9j86              1/1       Running   0          2m
-builder-db-2825750227-fwqlz              1/1       Running   0          2m
 cocktail-api-67592375-63k43              1/1       Running   1          2m
 cocktail-client-4046445963-rrwhh         2/2       Running   1          2m
 cocktail-cmdb-520687312-rhm8s            1/1       Running   0          2m
