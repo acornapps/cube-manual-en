@@ -7,12 +7,15 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
 * etcd 인증서 디렉토리: /etc/kubernets/pki
 * etcd 설정파일: /etc/etcd/etcd.conf
 
-**1.etcd, cocktail cmdb, builderdb backup**
+**1.etcd, cocktail cmdb backup**
 
 아래와 같이 etcd snapshot 생성, cocktail db backup을 위한 shell script를 자신의 환경에 맞게 수정한 후 backup을 주기적으로 실시한다.
 
     # vi cocktail_backup.sh
     #!/bin/sh
+
+    # usage: cocktail_backup.sh save_path(backup data를 저장할 경로) days(보관 기간. 일)
+    # ./cocktail-backup.sh /nas/BACKUP/ 10
 
     export ETCDCTL_API=3
 
@@ -20,21 +23,71 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
     ETCD_KEY="/etc/kubernetes/pki/etcd-peer.key"
     ETCD_CACERT="/etc/kubernetes/pki/etcd-ca.crt"
 
-    ETCD_EP="https://192.168.0.202:2379"        // etcd endpoint 값 지정
+    ETCD_EP="https://192.168.0.202:2379"            // ETCD endpoint를 설정함.
     CURRENT_DATE=`date '+%Y%m%d'`
     CURRENT_TIME=`date '+%Y%m%d_%H%M%S.db'`
 
-    ETCD_BACKDIR="/nas/BACKUP/etcd"            // etcd snapshot을 백업할 위치
-    COCKTAIL_BACKDIR="/nas/BACKUP/db"          // cocktail cmddb, builderdb를 백업할 위치
+    ETCD_BACKDIR="$1/etcd"
+    COCKTAIL_BACKDIR="$1/db"
 
-    SOMAC_CMDB_DIR=`kubectl get pvc -n cocktail-system | grep cocktail-cmdb | awk '{print "cocktail-system-"$1"-"$3}'`
-    SOMAC_BUILDERDB_DIR=`kubectl get pvc -n cocktail-system | grep builder-db | awk '{print "cocktail-system-"$1"-"$3}'`
+    error_exit() {
+        echo "error: ${1:-"unknown error"}" 1>&2
+        exit 1
+    }
 
-    /bin/etcdctl --cert "$ETCD_CERT" --key "$ETCD_KEY" --cacert "$ETCD_CACERT" --endpoints="$ETCD_EP" \
-    snapshot save "$ETCD_BACKDIR/etcd_$CURRENT_DATE"        // etcd snapshot backup
+    verify_prereqs() {
+        echo "Verifying Prerequisites"
 
-    cp -a /nas/"$SOMAC_CMDB_DIR" "$COCKTAIL_BACKDIR/$SOMAC_CMDB_DIR"_"$CURRENT_DATE"    // cmdb backup
-    cp -a /nas/"$SOMAC_BUILDERDB_DIR" "$COCKTAIL_BACKDIR/$SOMAC_BUILDERDB_DIR"_"$CURRENT_DATE"    // builderdb backup
+        if [ ! -d $ETCD_BACKDIR ]; then
+            error_exit "Can't access etcd backup directory $ETCD_BACKDIR"
+        fi
+
+        if [ ! -d $COCKTAIL_BACKDIR ]; then
+            error_exit "Can't access cmdb backup directory $ETCD_BACKDIR"
+        fi
+
+        cocktail_cmdb_pod=`kubectl get pods -n cocktail-system | grep cocktail-cmdb | awk '{print $1}'`
+
+    	if [ -z $cocktail_cmdb_pod ]; then
+    		echo "Can't get cocktail cmdb pod name. exit."
+    		exit 1;
+    	fi
+
+    	cocktail_cmdb_pvc=`kubectl get pvc -n cocktail-system | grep cocktail-cmdb | awk '{print "cocktail-system-"$1"-"$3}'`
+
+    	if [ -z $cocktail_cmdb_pvc ]; then
+    		echo "Can't get somac cmdb pvc name. exit."
+    		exit 2;
+    	fi
+    }
+
+    main() {
+        if [ "$#" -ne 2 ]; then
+            error_exit "Illegal number of parameters. You must pass backup directory path and number of days to keep backups"
+        fi
+
+        verify_prereqs
+
+        echo "Getting ready to backup to etcd($ETCD_BACKDIR), cmdb($COCKTAIL_BACKDIR)"
+
+        kubectl exec "$somac_cmdb_pod" -n cocktail-system -- sh -c "cd /var/lib/mysql; /usr/bin/mysqldump --single-transaction --databases cocktail builder -u root -pC0ckt@il > somac_cmdb_dump.sql"
+        echo "Somac cmdb dump succeeded."
+
+        # etcd backup
+        /bin/etcdctl --cert "$ETCD_CERT" --key "$ETCD_KEY" --cacert "$ETCD_CACERT" --endpoints="$ETCD_EP" snapshot save "$ETCD_BACKDIR/etcd_$CURRENT_DATE"
+
+        # mv cmdb dumpfiles to backup directory
+        echo "mv /nas/$cocktail_cmdb_pvc/somac_cmdb_dump.sql $COCKTAIL_BACKDIR/somac_cmdb_dump.$CURRENT_DATE.sql"
+        mv /nas/"$cocktail_cmdb_pvc"/somac_cmdb_dump.sql "$COCKTAIL_BACKDIR"/somac_cmdb_dump."$CURRENT_DATE".sql
+
+        echo "find $ETCD_BACKDIR -name 'etcd*' -mtime +$2 | xargs rm -rf"
+        find $ETCD_BACKDIR -name "etcd*" -mtime +$2 | xargs rm -rf
+
+        echo "find $COCKTAIL_BACKDIR -name '*cmdb-pvc*' -mtime +$2 | xargs rm -rf"
+        find $COCKTAIL_BACKDIR -name "*cmdb-pvc*" -mtime +$2 | xargs rm -rf
+    }
+
+    main "${@:-}"
 
 **2.k8s cluster 재 설치**
 
@@ -64,7 +117,7 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
     - "{{ data_root_dir }}/log"
   tags: ['files']
 
-# cube destroy -v debug
+# cube destroy
 
 # vi cubescripts/roles/distributecert/worker/tasks/main.yml
 ---
