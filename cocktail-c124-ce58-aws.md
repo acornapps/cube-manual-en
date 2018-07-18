@@ -36,20 +36,20 @@ The following programs must be installed before installing Cocktail. Otherwise, 
 
 ### Installation
 
-**1.Create an empty directory for installation and move to that directory**
+**1. Create an empty directory for installation and move to that directory**
 
 ```
 # mkdir /Desktop/aws
 # cd /Desktop/aws
 ```
 
-**2.Use the cube command to download and initialize the aws installation script.**
+**2. Use the cube command to download and initialize the aws installation script.**
 
 ```
 # cube init -p aws
 ```
 
-3**Open the cube.yam file with an editor and enter the information of the VM to be installed. Below is an example of a 1-master and 2-worker configuration.**
+**3. Open the cube.yam file with an editor and enter the information of the VM to be installed. Below is an example of a 1-master and 2-worker configuration.**
 
 ```
 ---
@@ -138,13 +138,13 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4**.cube create 명령을 이용하여 실제 VM에 cocktail을 설치한다.**
+**4. Install Cocktail on actual VM using the cube create command**
 
 ```
 # cube create
 ```
 
-5**If the installation completes without errors, access the master device via SSH and verify that the containers that constitute cocktail-system is running normally.**
+**5. If the installation completes without errors, access the master device via SSH and verify that the containers that constitute cocktail-system is running normally.**
 
 ```
 # ssh -i ~/cube/pki/id_rsa root@{master1_ip}
@@ -158,7 +158,7 @@ cocktail-metering-aws-3487533297-tw1x7   1/1       Running   0          2m
 redis-3766055555-1lzmh                   1/1       Running   0          2m
 ```
 
-**6.Check Cocktail Cloud access URL.**
+**6. Check Cocktail Cloud access URL.**
 
 You can verify the Cocktail website URL and port using the following command.
 
@@ -168,7 +168,7 @@ You can verify the Cocktail website URL and port using the following command.
 
 ### **Delete**
 
-1. Deletion is performed via the below command.  
+**1. Deletion is performed via the below command.**
 
 If an option is not provided by default, only generated k8s clusters are deleted and installation scripts remain intact. If the -f option is added, however, generated AWS infrastructures are deleted and installation scripts are also deleted after creating a backup of the cube.yaml file to cube.yaml.org.
    
