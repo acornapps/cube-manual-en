@@ -108,7 +108,7 @@ Modify the builder-api environment variables (REGISTRY_URL, DOCKER_URL, SERVER_T
 | :--- | :--- |
 | REGISTRY\_URL | xxx.xxx.xxx.xxx |
 | DOCKER\_URL | [https://xxx.xxx.xxx.xxx](https://172.10.1.1) |
-| SERVER\_TYPE | Optional string |
+| SERVER\_TYPE | Any String |
 | CA\_PEM | Base64-encode and enter the build server ca.pem authentication key file |
 | CERT\_PEM | Base64-encode and enter the build server cert.pem file |
 | KEY\_PEM | Base64-encode and enter the build server key.pem file |
