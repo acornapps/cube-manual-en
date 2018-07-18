@@ -1,29 +1,27 @@
-# Cocktail Public Hub 서버 설치
+# Cocktail Public Hub Server Installation
 
-웹서비스에 https 를 적용할 경우 SSL 인증서를 VeriSign 이나 Thawte, GeoTrust 등에서 인증서를 발급받아야 하지만 비용이 발생하므로 실제 운영 서버가 아니면 발급 받는데 부담이 된다.
+An SSL certificate must be issued (VeriSign, Thawte, GeoTrust, etc.) when applying HTTPS to a web service. Due to the additional costs, however, such action should be avoided unless it's applied to an actual operational server.
 
-이런 경우에, OpenSSL 을 이용하여 인증기관을 만들고 Self signed certificate 를 생성하고 SSL 인증서를 발급하는 사용한다.
+In this case, you can create a certificate authority via OpenSSL to generate a self-signed certificate and issue an SSL certificate.
 
-> 참고. Self Signed Certificate\(SSC\)란 ?  
-> 인증서\(digital certificate\)는 개인키 소유자의 공개키\(public key\)에 인증기관의 개인키로 전자서명한 데이타다. 모든 인증서는 발급기관\(CA\) 이 있어야 하나 최상위에 있는 인증기관\(root ca\)은 서명해줄 상위 인증기관이 없으므로 root ca의 개인키로 스스로의 인증서에 서명하여 최상위 인증기관 인증서를 만든다. 이렇게 스스로 서명한 ROOT CA 인증서를 Self Signed Certificate 라고 부른다.
+> Reference: What is a Self-Signed Certificate\(SSC\)?  
+> A digital certificate is data that is digitally-signed on a private key holder's public key using a certificate authority's private key. All certificates must have a certificate authority (CA). Because no higher authority exists to sign for the highest-level certificate authority (root CA), a certificate is self-signed with the private key of the root CA to create a top-level certificate. This type of root CA certificate is referred to as a self-signed certificate.
 >
-> IE, FireFox, Chrome 등의 Web Browser 제작사는 VeriSign 이나 comodo 같은 유명 ROOT CA 들의 인증서를 신뢰하는 CA로 미리 등록해 놓으므로 저런 기관에서 발급된 SSL 인증서를 사용해야 browser 에서는 해당 SSL 인증서를 신뢰할수 있는데 OpenSSL 로 만든 ROOT CA와 SSL 인증서는 Browser가 모르는 기관이 발급한 인증서이므로 보안 경고를 발생시킬 것이나 테스트 사용에는 지장이 없다.
+> Developers of web browsers such as IE, Firefox, and Chrome pre-registered the certificates of well-known root CAs like VeriSign and Comodo as trusted CAs. Trusted SSL certificates issued by such agencies are required for browsers. Because root CA and SSL certificates created via OpenSSL are not recognized by browsers, such certificates will trigger a browser security alert. However, OpenSSL-based certificates pose no harm for testing purposes. 
 >
-> ROOT CA 인증서를 Browser에 추가하여 보안 경고를 발생시키지 않을 수 있다.
+> A root CA certificate can be added to a browser while avoiding a security warning.
 >
 > * CSR\(Certificate Signing Request\)은?
 >
-> 공개키 기반\(PKI\)은 private key\(개인키\)와 public key\(공개키\)로 이루어져 있다. 인증서라고 하는 것은 내 공개키가 맞다고 인증기관\(CA\)이 전자서명하여 주는 것이며 나와 보안 통신을 하려는 당사자는 내 인증서를 구해서 그 안에 있는 공개키를 이용하여 보안 통신을 할 수 있다.
+> A public key infrastructure (PKI) consists of private and public keys. A certificate is an electronically-signed proof that a certificate authority (CA) deemed a public key to be legitimate. Secure communications can be conducted between two parties having the other party use the public key within one's certificate.
 >
-> CSR 은 인증기관에 인증서 발급 요청을 하는 특별한 ASN.1 형식의 파일이며 그 안에는 내 공개키 정보와 사용하는 알고리즘 정보등이 들어 있다. 개인키는 외부에 유출되면 안 되므로 저런 특별한 형식의 파일을 만들어서 인증기관에 전달하여 인증서를 발급 받는다.
+> A CSR is a special ASN.1 file that requests a certificate authority to issue a certificate and contains public key information and related algorithm information. Since a private key must remain secure without exposure to third parties, a special type of file such as a CSR is created and sent to the certificate authority to obtain a certificate.
 >
-> SSL 인증서 발급시 CSR 생성은 Web Server 에서 이루어지는데 Web Server 마다 방식이 상이하여 사용자들이 CSR 생성등을 어려워하니 인증서 발급 대행 기관에서 개인키까지 생성해서 보내주고는 한다.
+> CSR generation is performed on a web server when an SSL certificate is issued. Because the methods vary by web server, users face difficulty creating CSRs, and so certificate-issuing agencies generate and transmit private keys.
 
-Cocktail public Hub는 공인인증서를 이용하여 Harbor &lt;-&gt; Cocktail build server 간 통신 하게 된다.
+Cocktail Public Hub uses digital certificates for communications between Harbor and Cocktail build servers.
 
-Cocktail Private Hub는 Harbor Registry와 Cocktail build Server를 위한 인증서 Self signed certificate를 생성하여 내부에서
-
-Harbor와 Docker 인증서를 생성한다.
+Cocktail Private Hub generates self-signed certificates for Harbor Registry and Cocktail build servers to internally generate Harbor and Docker certificates.
 
 ![](/assets/PrivateHubOverview.jpeg)
 
