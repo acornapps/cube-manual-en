@@ -102,12 +102,8 @@ k8s_version: "1.9.8"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
-  ingress: true
-  monitoring: true
-  logging: true
-
-# (required) cocktail service
-cocktail: true
+  cm: true # cocktail + prometheus monitoring(without grafana)
+  km: false # kube dashboard + prometheus monitoring(with grafana)
 ```
 
 As shown above, private_key_path and key_path are private and public SSH key paths, respectively, for accessing servers and require the corresponding paths to be entered. If the keys already exist, simply enter the corresponding paths. To generate new keys, follow the procedure below.
