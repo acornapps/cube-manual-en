@@ -1,12 +1,12 @@
-# Cocktail Public Hub 서버 설치
+# Cocktail Public Hub Server Installation
 
-* Docker 설치
+* Docker Installation
 
-Cocktail Public Hub를 설치하기 위한 VM또는 machine에서 먼저 Docker를 설치한다.
+Install Docker first on the virtual or physical machine where Cocktail Public Hub is to be installed.
 
 ```
 # sudo su - root
-# mkdir cocktail        // 작업 디렉토리를 하나 생성한다.
+# mkdir cocktail        // Creates a working directory.
 # yum install –y yum-utils
 # yum-config-manager  --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 # yum makecache fast
@@ -17,7 +17,7 @@ Cocktail Public Hub를 설치하기 위한 VM또는 machine에서 먼저 Docker�
 
 * Docker-Compose 설치
 
-Docker-Compose 설치를 위한 방법은 아래와 같다.
+# Docker-Compose Installation Docker-Compose is installed as follows:
 
     # mkdir -p cocktail
     # cd cocktail
@@ -26,9 +26,9 @@ Docker-Compose 설치를 위한 방법은 아래와 같다.
     # mv docker-compose /usr/local/bin/
     # docker-compose --version
 
-* Harbor 설치
+* Harbor Installation
 
-Harbor 압축파일 다운로드 및 압축 해제
+Download and decompress the Harbor installation file
 
 ```
 # cd cocktail
