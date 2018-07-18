@@ -89,7 +89,7 @@ To make this process easier, the "create-docker-tls.sh" file is uploaded to and 
 # cd /root/.docker
 # ls -al
 # vi /etc/profile.d/docker.sh
-  export DOCKER_CERT_PATH=/root/home/.docker -> export DOCKER_CERT_PATH=/root/.docker 로 변경
+  export DOCKER_CERT_PATH=/root/home/.docker -> export DOCKER_CERT_PATH=/root/.docker 
 
 # ./docker.sh
 # vi /lib/systemd/system/docker.service  
