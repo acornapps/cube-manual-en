@@ -88,12 +88,9 @@ k8s_version: "1.9.8"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
-  ingress: true
-  monitoring: true
-  logging: true
+  cm: true # cocktail + prometheus monitoring(without grafana)
+  km: false # kube dashboard + prometheus monitoring(with grafana)
 
-# (required) cocktail service
-cocktail: true
 # (required) if cocktail service true
 nfs_ip: "192.168.50.10"
 nfs_mountdir: "/nfs"
