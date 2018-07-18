@@ -1,6 +1,6 @@
 # `init` command
 
-init는 Kubernetes와 Cocktail을 설치하려는 플랫폼에 맞는 스크립트, 설정 파일 및 기타 필요 자원을 준비하고 초기화한다.
+The init command prepares and initializes the scripts, settings files, and other required resources for the platform on which Kubernetes and Cocktail are to be installed.
 
 ---
 
@@ -14,11 +14,11 @@ init는 Kubernetes와 Cocktail을 설치하려는 플랫폼에 맞는 스크립�
 
 * `--provider, -p`
 
-* Kubernetes와 Cocktail을 설치할 플랫폼의 이름을 지정한다.
+* Specifies the name of the platform on which Kubernetes and Cocktail will be installed.
 
-* 필수: 필수
+* Requirement: Required
 
-* 현재 버전에서 지원하는 provider 목록은 아래와 같다.
+* The list of providers supported by the current version are as follows.
 
 | flag 값 | Provider |
 | :--- | :--- |
@@ -26,7 +26,7 @@ init는 Kubernetes와 Cocktail을 설치하려는 플랫폼에 맞는 스크립�
 | virtualbox | VirtualBox |
 | aws | Amazon Web Service |
 | azure | Microsoft Azure |
-| gce | Google Compute Engine |
+| gce | Google Compute Engine (not yet supported) |
 
 
 

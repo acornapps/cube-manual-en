@@ -2,7 +2,6 @@
 
 ---
 
-Cube 명령어는 아래와 같은 형식을 갖는다.
+**Cube** commands have the following format: 
 
 cube command \[sub-commands\] \[flags\]
-

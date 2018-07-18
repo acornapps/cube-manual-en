@@ -1,8 +1,6 @@
 # `add` command
 
-add는 Kubernetes cluster에 node 및 monitoring, logging 등의 add-on을 추가한다.
-
-현재 버전에서 node 추가만 지원한다.
+The add command adds add-ons (nodes, monitoring, logging, etc.) to a Kubernetes cluster. Only node add-ons are supported in the current version.
 
 ---
 
