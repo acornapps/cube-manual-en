@@ -1,6 +1,6 @@
 # `status` command
 
-status는 Kubernetes와 Cocktail의 현재 상태를 출력한다.
+The status command queries the current states of Kubernetes and Cocktail.
 
 ---
 
