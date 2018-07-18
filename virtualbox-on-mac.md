@@ -147,7 +147,7 @@ cocktail-metering-aws-3487533297-tw1x7   1/1       Running   0          2m
 redis-3766055555-1lzmh                   1/1       Running   0          2m
 ```
 
-**6.Go to **[http://master\_IP:30000으로](http://master_IP:30000으로)** using your browser to access the Cocktail login page. \(Contact us about having a user ID and password issued\)**![](/assets/cocktail_login.jpeg)
+**6.Go to **[http://Master-IP:30000](http://Master-IP:30000)** using your browser to access the Cocktail login page. \(Contact us about having a user ID and password issued\)**![](/assets/cocktail_login.jpeg)
 
 ### **Delete**
 
