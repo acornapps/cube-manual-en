@@ -104,16 +104,16 @@ ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock 
 
 Modify the builder-api environment variables (REGISTRY_URL, DOCKER_URL, SERVER_TYPE, CA_PEM, CERT_PEM, and KEY_PEM) and cocktail-api environment variable (REGISTRY_URL) from the k8s dashboard._
 
-| 환경변수 | 값 예시 |
+| Environment Variable | Example Value |
 | :--- | :--- |
 | REGISTRY\_URL | xxx.xxx.xxx.xxx |
 | DOCKER\_URL | [https://xxx.xxx.xxx.xxx](https://172.10.1.1) |
-| SERVER\_TYPE | 임의의 string |
-| CA\_PEM | build server 인증키 ca.pem파일을 base64 encoding해서  입력 |
-| CERT\_PEM | build server cert.pem파일을 base64 encoding해서 입력 |
-| KEY\_PEM | build server key.pem파일을 base64 encoding해서 입력 |
+| SERVER\_TYPE | Optional string |
+| CA\_PEM | Base64-encode and enter the build server ca.pem authentication key file |
+| CERT\_PEM | Base64-encode and enter the build server cert.pem file |
+| KEY\_PEM | Base64-encode and enter the build server key.pem file |
 
-| 환경변수 | 값 예시 |
+| Environment Variable | Example Value |
 | :--- | :--- |
 | REGISTRY\_URL | [https://](https://172.10.1.1)xxx.xxx.xxx.xxx |
 | REGISTRY\_USER | harbor login id |
