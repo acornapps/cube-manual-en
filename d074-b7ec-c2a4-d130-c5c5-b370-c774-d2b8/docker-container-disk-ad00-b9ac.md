@@ -17,15 +17,15 @@ Container 내에서 stdout, stderr로 출력을 보내면 docker overlay storage
 }
 ```
 
-* 로테이트주기로 **daily, weekly, monthly, yearly **를 선택할 수 있다.
+* Rotation Period: one of daily, weekly, monthly, yearly
 * rotate: rotate되는 파일을 최대 4개까지만 유지하고 이전 파일을 삭제한다.
 * compress : 백업파일을 gzip 압축한다. 압축하고 싶지 않다면 nocompress를 설정하면 된다.
 * copytruncate : 대부분의 잘 만든 애플리케이션들은 로그파일을 새로 만들기 위한 시그널 처리 코드를 가지고 있다. 하지만 그렇지 않은 애플리케이션들도 있다. copytruncate를 이용하면 원본파일을 지우지 않고 **truncate\(파일 크기를 0으로 만든다\) **한다. 애플리케이션은 파일을 잃어버리지 않으므로 계속 해서 로그를 쓸 수 있다. 다만 파일을 복사하고 truncate 하는 순간 로그를 잃어버릴 수도 있다.
 * size : size 보다 로그파일이 클 경우 로테이션을 수행한다. M\(메가\), K\(키로\)단위로 설정 할 수 있다.
 
-2**. Docker Storage driver 구조.**
+**2. Understanding Docker Storage driver**
 
-https://www.joinc.co.kr/w/man/12/docker/storage 참조. 
+Refer to https://www.joinc.co.kr/w/man/12/docker/storage
 
 
 
