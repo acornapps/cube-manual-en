@@ -31,8 +31,8 @@
   * [Docker container disk 관리](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/docker-container-disk-ad00-b9ac.md)
 * [TroubleShooting](troubleshooting.md)
   * [클러스터 health check방법](troubleshooting/case1.md)
-  * [특정 micro service가 kubernetes dns로 통신하지 못하는 경우](troubleshooting/d2b9-c815-micro-service-ac00-kubernetes-dns-b85c-d1b5-c2e0-d558-c9c0-babb-d558-b294-acbd-c6b0.md)
-  * [NFS 접속 확인 방법](troubleshooting/nfs-c811-c18d-d655-c778-bc29-bc95.md)
+  * [If a particular microservice cannot communicate via Kubernetes DNS](troubleshooting/d2b9-c815-micro-service-ac00-kubernetes-dns-b85c-d1b5-c2e0-d558-c9c0-babb-d558-b294-acbd-c6b0.md)
+  * [Checking an NFS Connection](troubleshooting/nfs-c811-c18d-d655-c778-bc29-bc95.md)
   * [If the instance IP changes](instance-ipac00-bcc0-acbd-b420-acbd-c6b0.md)
   * [Automatic Yum Upgrade Prevention](yum-c790-b3d9-c5c5-adf8-b808-c774-b4dc-bc29-c9c0.md)
 

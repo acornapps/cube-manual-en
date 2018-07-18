@@ -1,12 +1,12 @@
-# 사용자의 micro service가 서로 연결이 안될때.
+# If user microservices cannot connect to each other.
 
-일반적으로 k8s에서 각 Container들은 연관된 Container와 통신하기 이해 Kubernetes DNS를 사용한다. 즉 POD는 생성과 삭제가 일어나면 POD가 가지고 있던 내부 cluster ip는 변동되게 됨으로 일반적으로 micro service들을 k8s dns를 통해 필요한 container를 찾는다.
+Generally, the containers on k8s use Kubernetes DNS for inter-container communications. The internal cluster IP of a pod changes when creation and deletion occurs, and pods generally use k8s DNS to look for the required container in a microservice.
 
-먼저 k8s의 DNS 서비스가 정상 동작 중인지 확인하는 방법은 busybox를 생성하고 컨테이너에 접속해서 nslookup명령으로 k8s의 DNS에 접속되는지 확인한다.
+The method used to verify the operational status of the k8s DNS service involves the creation of a busybox to access a container and checking the connection to k8s DNS via the nslookup command.
 
-* busybox container 생성
+* Creating a Busybox Container
 
-아래는 busybox의 yaml 파일로 이를 busybox.yaml로 저장한다.
+The following is a busybox yaml file that is saved as busybox.yaml.
 
 ```
 apiVersion: v1
@@ -24,13 +24,13 @@ spec:
   restartPolicy: Always
 ```
 
-* 마스터 서버에 ssh로 접속하여 kubectl 명령으로 busybox container를 생성한다.
+* Connect to the master server via SSH and create a busybox container via the kubectl command.
 
 ```
-// busybox 생성
+// Creates busybox
 # kubectl create -f busybox.yaml
 
-// busybox container가 생성되는지 확인
+// Verifies whether the busybox container was created successfully
 # kubectl get pods
 [root@master1 test]# kubectl get pods
 NAME                                      READY     STATUS    RESTARTS   AGE
@@ -38,21 +38,21 @@ busybox                                   1/1       Running   0          1m
 ...
 ```
 
-* Busybox container에 접속하여 nslookup 명령으로 kubernetes의 DNS 접속여부를 확인한다.
+* Connect to the busybox container via the nslookup command and check the Kubernetes DNS connection status.
 
 ```
-// busybox에 접속후 shell 실행
+// Connects to busybox and runs shell
 # kubectl exec -it busybox -- /bin/sh
 
-// kubernetes.default dns 접속여부 확인
-/ # nslookup kubernetes.default
+// Checks kubernetes.default dns connection
+# nslookup kubernetes.default
 Server:    100.64.0.10
 Address 1: 100.64.0.10 kube-dns.kube-system.svc.cube
 
 Name:      kubernetes.default
 Address 1: 100.64.0.1 kubernetes.default.svc.cube
 
-// 다른 서비스 접속 여부 확인 (아래는 예시로 cocktail component중 api server를 lookup한 예임)
+// Checks connection to other services. (The following is an example of an api server lookup among cocktail components.)
 / # nslookup cocktail-api.cocktail-system
 Server:    100.64.0.10
 Address 1: 100.64.0.10 kube-dns.kube-system.svc.cube
