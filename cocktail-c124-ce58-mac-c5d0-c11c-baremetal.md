@@ -1,22 +1,22 @@
 # Cocktail Installation to baremetal on macos, linux
 
-Mac, linux 설치 PC에서 baremetal 장비에 Cocktail를 설치하는 과정은 다음과 같다.
+The procedure for installing Cocktail on a bare-metal server from a macOS- or Linux-based computer is as follows.
 
-### **사전준비**
+### **Preparations**
 
-설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메시지가 발생한다.
+The following programs must be installed before installing Cocktail. Otherwise, an error will occur.
 
-1\) 제공받은 cube 바이너리를 어느 디렉토리에서든 사용할 수 있도록 환경변수 path 설정을 한다.
+1\) Set the environment variable path so that the provided Cube binary can be used in any directory.
 
-2\) Docker 다운로드 후 설치
+2\) Download and install Docker
 
-\( 다운로드 링크 : [https://store.docker.com/search?offering=community&q=&type=edition ](https://store.docker.com/search?offering=community&q=&type=edition)\)
+\(Download link : [https://store.docker.com/search?offering=community&q=&type=edition ](https://store.docker.com/search?offering=community&q=&type=edition)\)
 
-3\) SSH key 생성
+3\) Generate SSH keys
 
-설치 pc에서 각 서버\(baremetal 장비\)에 ssh로 접속하여 설치하기 때문에 ssh-key 생성이 필요하다. 기존에 가지고 있는 ssh-key를 사용해도 무방하다.
+SSH keys need to be generated, because the computer uses SSH connections to install on each server (bare-metal equipment). You may also use an existing ssh-key.
 
-&lt; ssh key 신규 발급 방법 &gt;
+&lt; Generating New SSH Keys  &gt;
 
 ```
 # ssh-keygen -t rsa
@@ -42,24 +42,22 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4\) ssh-key 복사
+4\) Copy SSH Keys
 
-설치 pc에서 각 서버\(baremetal 장비\)에 ssh로 접속할 수 있도록 앞서 발급한 ssh Public키를 각 서버에 복사한다.
+Copy the generated SSH keys to each server (bare-metal equipment) for access.
 
 ```
 # ssh-copy-id -i id_rsa.pub root@ip
 ```
 
-5\) 만약 NFS 서버가 별도로 없을 경우에 특정 노드에 NFS Server를 설치한다.
-
-나머지 노드에는 모두에 nfs-util를 yum으로 설치한다.
+5\) If there is no NFS server, install an NFS server on a specific node. Install nfs-util on all remaining nodes via yum.
 
 ```
 # yum install -y nfs-utils
-# vi /etc/exports        // 해당 파일에 아래 내용 기술하여 저장. 
+# vi /etc/exports        // Include the following in the file and save. 
 /nfs 203.236.100.0/24(rw,sync,no_root_squash,no_all_squash)
 
-// rpcbind, nfs-server를 서비스에 등록 및 기동.
+// Add rpcbind and nfs-server in service and start.
 # systemctl enable rpcbind
 # systemctl enable nfs-server
 # systemctl start rpcbind
@@ -68,26 +66,26 @@ The key's randomart image is:
 
 #### ㅤ
 
-### 설치
+### Installation
 
-**1.먼저 설치를 위해 아래와 같이 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다**
+**1.Create an empty directory for installation and move to that directory**
 
 ```
 # mkdir /Desktop/baremetal
 # cd /Desktop/baremetal
 ```
 
-**2.cube 명령을 이용하여 baremetal용 설치 script를 download 받는다.**
+**2.Use the cube command to download the baremetal installation script.**
 
 ```
 # cube init -p baremetal
 ```
 
-**3.앞서 생성된 스크립트 중 cube.yaml 파일을 편집기로 열고, 설치하고자 하는 VM 정보를 기입한 후 저장한다.**
+**3.Open the previously-generated cube.yam script file with an editor, enter the information of the VM to be installed, and save.**
 
-\( 아래는 master 2, worker 3대, nfs server로 구성하는 예임.\)
+\( Below is an example of a 2-master, 3-worker, and nfs server configuration.\)
 
-만약 외부 LoadBalancer 가용하여 master를 이중화 할 경우 lb\_ip에 해당 load balancer ip를 기재하면 됨.
+If an external load balancer is used and the master is duplicated, enter the corresponding load balancer ip at lb_ip.
 
 ```
 ---
@@ -95,36 +93,35 @@ cloud_provider: "baremetal"
 
 
 # (required) Master node ips(comma separated).
-master_ip: ["203.236.100.10","203.236.100.11"]  -> Master Node ip 기입 
+master_ip: ["203.236.100.10","203.236.100.11"]  -> Enter Master Node ip 
 
 # (optional) Master node private ips(comma separated).
-master_private_ip: ["10.0.0.2","10.0.0.3"]  -> Master Node private ip 기입
+master_private_ip: ["10.0.0.2","10.0.0.3"]  -> Enter Master Node private ip
 
 # (required) Worker node ips(comma separated).
-worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"] -> Worker Node ip 기입 
+worker_ip: ["203.236.100.12", "203.236.100.13", "203.236.100.14"] -> Enter Worker Node ip
 
 # (optional) Worker node private ips(comma separated).
-worker_private_ip: ["10.0.0.4","10.0.0.5","10.0.0.6"] -> 워커 서버 private ip 기입
+worker_private_ip: ["10.0.0.4","10.0.0.5","10.0.0.6"] -> Enter Worker server private ip 기입
 
-# (required) Set true if high-availability is required.  -> haproxy 사용여부(true of false 기입 )
+# (required) Set true if high-availability is required.  -> Set haproxy usage(true of false 기입 )
 haproxy: false
 
-# (conditional) Set load-balancer ip. -> LB사용 시 해당 아이피 기입하고 아닐 시 공란
-lb_ip:
+# (conditional) Set load-balancer ip. -> If using an LB, fill in the corresponding IP; If not, leave blank:
 
 # (required) ssh username to access server.
 ssh_user_id: "root" 
 
-# (required) Absolute Path to an SSH private key file to access server.. -> ssh-private 키 경로 기입
+# (required) Absolute Path to an SSH private key file to access server.. -> Enter ssh-private key path
 private_key_path: "/path/to/ssh_private_key"
 
-# (required) Absolute Path to an SSH public key file to be provisioned as the SSH key. -> ssh-public 키 경로 기입 
+# (required) Absolute Path to an SSH public key file to be provisioned as the SSH key. -> Enter ssh-public key path 
 key_path: "/path/to/ssh_public_key"
 
 # (required) Data directory for docker, kubelet, etcd, log.
 data_dir: "/cocktail"
 
-# Kubernetes  -> 기본사항으로 변경하지 않음.
+# Kubernetes  -> Default data; do not change.
 k8s_version: "1.9.8"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
@@ -136,17 +133,17 @@ addons:
 # (required) cocktail service
 cocktail: true
 # (optional) if nfs server available
-nfs_ip: "203.236.100.15"  -> nfs서버의 ip 기입
-nfs_mountdir: "/nfs"      -> nfs서버의 공유 디렉토리 경로 기입
+nfs_ip: "203.236.100.15"  -> Enter nfs server ip
+nfs_mountdir: "/nfs"      -> Enter nfs server's shared directory path
 ```
 
-**4.cube.yaml 파일이 있는 경로에서 cube create 명령을 이용하여 실제 VM에 cocktail을 설치한다.**
+**4.Install Cocktail on actual VM using the cube create command in the path where the cube.yaml file is located.**
 
 ```
 # cube create
 ```
 
-**5.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system를 구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
+**5.If the installation completes without errors, access the master device via SSH and verify that the containers that constitute the cocktail-system are running normally.**
 
 ```
 # ssh -i ~/cube/pki/id_rsa root@203.236.100.10
@@ -161,9 +158,9 @@ cocktail-dashboard-fb6f8f5b9-zn6sj   1/1       Running   0          3d
 redis-cb9c6859f-qq4f8                1/1       Running   0          3d
 ```
 
-**6.브라우저로 **[**http://{VM의**](http://{VM의)** masterip}:30000으로 접속하면 cocktail login 화면으로 접속할 수 있다.**![](/assets/baremetal_login.jpeg)
+**6.Go to **[http://Master-IP:30000](http://Master-IP:30000)** using your browser to access the Cocktail login page.**![](/assets/baremetal_login.jpeg)
 
-### **삭제**
+### **Delete**
 
 **1.삭제는  옵션에 따라 k8s cluster만 삭제하거나, script를 모두 정리하고 cube.yaml파일을 백업할 수 있다.**  
 디폴트로 옵션을 주지 않는 경우에는 생성한 k8s cluster만 삭제하고 설치 스크립트는 그대로 유지하며, -f 옵션을 추가하면 cube.yaml 파일을 cube.yaml.org로 백업파일을 생성한 후 설치스크립트도 모두 삭제하게 된다.
