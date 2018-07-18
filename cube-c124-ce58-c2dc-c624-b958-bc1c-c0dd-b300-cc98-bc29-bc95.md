@@ -1,6 +1,6 @@
-# Cocktail 설치 오류발생 대처 방법
+# Troubleshooting Cocktail Installation Errors
 
-**1.Docker가 설치되어 있지 않은 경우**
+**1.If Docker is not installed**
 
 ```
 # cube init -p baremetal
@@ -11,19 +11,19 @@ docker is not found. please install docker before proceeding
 Visit https://store.docker.com/editions/community/docker-ce-desktop-mac
 ```
 
-다운로드 링크로 이동하여 Docker 설치 후 cube를 재실행 한다.
+Use the download link to install Docker and then restart Cube.
 
-**2.cube 실행중에 Ctrl+C를 누른 경우**
+**2.If Ctrl + C is pressed while running Cube**
 
 ```
-# docker ps -a                  // cubetool container가 running상태인지 확인
-# docker stop cube              // cubetool container가 running상태일 경우 stop함.
-# docker rm cube                // cubetool container 삭제.
+# docker ps -a                  // Verify that the cubetool container is running
+# docker stop cube              // If running, stop the cubetool container
+# docker rm cube                // Delete the cubetool container
 ```
 
-이런식으로 cubetool docker를 중지 및 삭제한 후 작업을 계속한다.
+Stop and delete the cubetool container in the above manner and continue.
 
-**3.local-**_**hostname과 ansible-hostname이 다른 경우**_
+**3.If local-hostname and ansible-hostname are different**_
 
 ```
 TASK [addon : assign master roles]
@@ -35,7 +35,7 @@ true, "item": "master1", "rc" 1, "start": "2017-10-30 10:54:29.993468", "stderr"
 "master1\" not found"]
 ```
 
-서버에서 직접 hostname을 검색하고 그 값을 \[cubescripts-&gt;roles-&gt;addon-&gt;tasks-&gt;main.yml\]의 with\_items 값을 수정하고 재실행합니다.
+Search the hostname directly from the server and modify the with_items value from Cube Scripts > Roles > Addon > Tasks > main.yml with the search result.
 
 ```
 name: assign master roles
@@ -45,7 +45,7 @@ name: assign master roles
   register: assign_master_roles
 ```
 
-5**. Minikube에 설치시 Virtualbox가 설치되어 있지 않은 경우 **
+**4. If VirtualBox is not installed when installing on Minikube **
 
 ```
 MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
@@ -56,9 +56,9 @@ virtualbox 5.1.x not found. please install virtualbox before proceeding
 Visit https://www.virtualbox.org/wiki/Download_Old_Builds_5_1
 ```
 
-다운로드 링크로 이동하여 Virtualbox 설치 후 cube를 재실행 한다.
+Use the download link to install VirtualBox and then restart Cube.
 
-6**. Minikube에 설치시 kubectl이 설치되어 있지 않은 경우 **
+**5. If kubectl is not installed when installing on Minikube **
 
 ```
 MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
@@ -69,9 +69,9 @@ kubectl is not found. please install kubectl before proceeding
 Visit https://kubernetes.io/docs/tasks/tools/install-kubectl
 ```
 
-다운로드 링크로 이동하여 kubectl 설치 후 cube를 재실행 한다.
+Use the download link to install VirtualBox and then restart Cube.
 
-7**. Minikube에 설치시  minikube가 설치되어 있지 않은 경우 **
+**6. If minikube is not installed when installing on Minikube **
 
 ```
 MinHoui-MacBook-Pro:cubetest minhona$ cube init -p minikube
@@ -82,9 +82,9 @@ minikube is not found. please install minikube before proceeding
 Visit https://github.com/kubernetes/minikube
 ```
 
-다운로드 링크로 이동하여 minikube 설치 후 cube를 재실행 한다.
+Use the download link to install minikube and then restart Cube.
 
-8**.Vagrant가 설치되어 있지 않은 경우**
+**7.If Vagrant is not installed**
 
 ```
 MinHoui-MacBook-Pro:cubetest minhona$ cube init -p virtualbox
@@ -95,9 +95,9 @@ vagrant not found. please install vagrant before proceeding
 Visit https://www.vagrantup.com/downloads.html
 ```
 
-다운로드 링크로 이동하여 Vagrant 설치 후 cube를 재실행 한다.
+Use the download link to install Vagrant and then restart Cube.
 
-9**.Virtualbox가 설치되어 있지 않은 경우 **
+**8.If VirtualBox is not installed **
 
 ```
 MinHoui-MacBook-Pro:cubetest minhona$ cube init -p virtualbox
