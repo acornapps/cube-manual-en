@@ -14,7 +14,7 @@
   * [baremetal on mac, linux](cocktail-c124-ce58-mac-c5d0-c11c-baremetal.md)
   * [aws on mac, linux](cocktail-c124-ce58-aws.md)
   * [azure on mac, linux](cocktail-c124-ce58-azure.md)
-  * [Cocktail 설치 후 기본 확인사항](cocktail-c124-ce58-d6c4-ae30-bcf8-ac80-c99d-bc29-bc95.md)
+  * [Cocktail Installation Checklist](cocktail-c124-ce58-d6c4-ae30-bcf8-ac80-c99d-bc29-bc95.md)
   * [Cocktail 설치 시 오류발생 대처방법](cube-c124-ce58-c2dc-c624-b958-bc1c-c0dd-b300-cc98-bc29-bc95.md)
 * [Cocktail Hub Installation](cocktail-public-hub-c124-ce58.md)
   * [Public Hub](public-hub.md)
