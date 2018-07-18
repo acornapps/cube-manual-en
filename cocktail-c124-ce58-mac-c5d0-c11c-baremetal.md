@@ -1,4 +1,4 @@
-# Cocktail Installation to baremetal on macos, linux
+# Cocktail Installation to baremetal on mac os, linux
 
 The procedure for installing Cocktail on a bare-metal server from a macOS- or Linux-based computer is as follows.
 

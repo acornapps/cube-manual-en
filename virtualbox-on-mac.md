@@ -26,7 +26,7 @@ Refer to the section below for detailed key generation information.
 
 ```
 # ssh-keygen -t rsa
-# ssh-add id_rsa (유저등록)
+# ssh-add id_rsa (user-added)
 ```
 
 #### ㅤ

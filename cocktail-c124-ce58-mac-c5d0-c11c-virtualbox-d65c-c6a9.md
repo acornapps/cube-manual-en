@@ -48,7 +48,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 
 
-# ssh-add id_rsa (유저등록)
+# ssh-add id_rsa (user-added)
 ```
 
 5\) Download kubectl \(Optional\)
