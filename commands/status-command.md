@@ -10,11 +10,12 @@ status는 Kubernetes와 Cocktail의 현재 상태를 출력한다.
 
 ### Output
 
-* etcd 상태
-* node 상태
-* Kubernetes pod 상태
-* Cocktail pod 상태
-* Monitoring pod 상태 
+* etcd status
+* node status
+* Kubernetes pod status
+* Cocktail pod status
+* Monitoring pod status
+ 
 
 
 
