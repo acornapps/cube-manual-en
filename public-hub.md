@@ -17,13 +17,12 @@ First of all, install docker on target server where Cocktail Public Hub is to be
 
 * Install Docker-Compose 
 ```
-
-    # mkdir -p cocktail
-    # cd cocktail
-    # curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > docker-compose
-    # chmod +x docker-compose
-    # mv docker-compose /usr/local/bin/
-    # docker-compose --version
+# mkdir -p cocktail
+# cd cocktail
+# curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > docker-compose
+# chmod +x docker-compose
+# mv docker-compose /usr/local/bin/
+# docker-compose --version
 ```    
 
 * Harbor Installation
@@ -36,12 +35,12 @@ Download and decompress the Harbor installation file
 # tar -zxvf harbor-online-installer-v1.1.1-rc4.tgz
 ```
 
-Check and modify the following properties in the Harbor settings file.
+* Check and modify the following properties in the Harbor settings file.
 
 ```
 # vi harbor/harbor.cfg
 ...
-hostname = server ip
+hostname = {harbor_ip}
 ui_url_protocol = https
 db_password = root123
 ssl_cert = /root/cocktail/cert/harbor.crt     (Digital certificate crt file path)
