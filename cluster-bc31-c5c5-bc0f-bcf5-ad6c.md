@@ -1,20 +1,20 @@
 # Cluster backup & restore
 
-k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb, builderdb를 restore하여 기존 상태로 복원하는 절차를 기술한다.
+This section describes the procedure for reinstalling and restoring an existing k8s cluster state by restoring etcd snapshot, cocktail cmdb, and builderdb.
 
-이때, 반드시 etcd 인증서는 기존 인증서를 사용해야 하며, 그렇지 않을 경우 복원할 수 없다.
+In such cases, the previous etcd certificate must be used for a successful restoration. Otherwise, the restoration cannot be completed.
 
 * etcd 인증서 디렉토리: /etc/kubernets/pki
 * etcd 설정파일: /etc/etcd/etcd.conf
 
 **1.etcd, cocktail cmdb backup**
 
-아래와 같이 etcd snapshot 생성, cocktail db backup을 위한 shell script를 자신의 환경에 맞게 수정한 후 backup을 주기적으로 실시한다.
+Modify the shell script according to your own environment as shown below to create an etcd snapshot and back up the cocktail db. Then, perform backups periodically.
 
     # vi cocktail_backup.sh
     #!/bin/sh
 
-    # usage: cocktail_backup.sh save_path(backup data를 저장할 경로) days(보관 기간. 일)
+    # usage: cocktail_backup.sh save_path(path for storing backup data) days(storage period in days)
     # ./cocktail-backup.sh /nas/BACKUP/ 10
 
     export ETCDCTL_API=3
@@ -23,7 +23,7 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
     ETCD_KEY="/etc/kubernetes/pki/etcd-peer.key"
     ETCD_CACERT="/etc/kubernetes/pki/etcd-ca.crt"
 
-    ETCD_EP="https://192.168.0.202:2379"            // ETCD endpoint를 설정함.
+    ETCD_EP="https://192.168.0.202:2379"            // Sets ETCD endpoint.
     CURRENT_DATE=`date '+%Y%m%d'`
     CURRENT_TIME=`date '+%Y%m%d_%H%M%S.db'`
 
@@ -89,9 +89,9 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
 
     main "${@:-}"
 
-**2.k8s cluster 재 설치**
+**2.k8s Cluster Reinstallation**
 
-기존 k8s cluster를 삭제하고 재설치 한다. 이때, etcd, docker, kubelet, k8s control panel\(apiserver, controll-manager, scheduler\)만 설치하도록 한다.
+The following describes how to delete an existing k8s cluster and reinstall. In this case, only etcd, docker, kubelet, and k8s control panel (apiserver, controll-manager, and scheduler) are installed.
 
 ```
 # vi cubescripts/roles/reset/tasks/main.yml
@@ -107,7 +107,7 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
     - /var/lib/etcd
     - /var/lib/docker
     - /opt/cni
-#    - /opt/kubernetes          // 재설치시 인증서를 재 생성하지 않도록 인증서 파일은 삭제에서 제외함.
+#    - /opt/kubernetes          // Certificate files are excluded from deletion to avoid having to regenerate certificates when reinstalling.
     - /run/kubernetes
     - /var/log/pods/
     - /etc/systemd/system/kubelet.service
@@ -131,7 +131,7 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
     - ca.key
     - etcd.crt
     - etcd.key
-#    - etcd-ca.crt      // k8s ca인증서와 etcd ca 인증서만 copy되도록 주석으로 처리함.
+#    - etcd-ca.crt      // Comment out to ensure that only the k8s ca certificate and etcd ca certificate are copied.
 #    - etcd-ca.key
 #    - etcd-peer.crt
 #    - etcd-peer.key
@@ -194,7 +194,7 @@ k8s cluster를 어떤 이유로 재설치 경우, etcd snapshot과 cocktail cmdb
  --initial-cluster-token="etcd-k8-cluster" --data-dir=“/data/etcd” snapshot restore /root/backup/etcd_20180322
 ```
 
-**4. k8s resource 기동 확인**
+**4.Verify k8s resource activation**
 
 ```
 # kubectl get pods --all-namespaces
