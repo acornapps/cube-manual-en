@@ -2,7 +2,7 @@
 
 * Docker Installation
 
-Install Docker first on the virtual or physical machine where Cocktail Public Hub is to be installed.
+First of all, install docker on target server where Cocktail Public Hub is to be installed.
 
 ```
 # sudo su - root
@@ -15,9 +15,8 @@ Install Docker first on the virtual or physical machine where Cocktail Public Hu
 # systemctl start docker
 ```
 
-* Docker-Compose 설치
-
-# Docker-Compose Installation Docker-Compose is installed as follows:
+* Install Docker-Compose 
+```
 
     # mkdir -p cocktail
     # cd cocktail
@@ -25,6 +24,7 @@ Install Docker first on the virtual or physical machine where Cocktail Public Hu
     # chmod +x docker-compose
     # mv docker-compose /usr/local/bin/
     # docker-compose --version
+```    
 
 * Harbor Installation
 
