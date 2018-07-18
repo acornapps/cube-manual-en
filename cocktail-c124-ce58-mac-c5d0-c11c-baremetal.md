@@ -162,20 +162,20 @@ redis-cb9c6859f-qq4f8                1/1       Running   0          3d
 
 ### **Delete**
 
-**1.삭제는  옵션에 따라 k8s cluster만 삭제하거나, script를 모두 정리하고 cube.yaml파일을 백업할 수 있다.**  
-디폴트로 옵션을 주지 않는 경우에는 생성한 k8s cluster만 삭제하고 설치 스크립트는 그대로 유지하며, -f 옵션을 추가하면 cube.yaml 파일을 cube.yaml.org로 백업파일을 생성한 후 설치스크립트도 모두 삭제하게 된다.
+**1.Depending on the option, you may delete only k8s clusters or clean up the scripts and back up the cube.yaml file.**  
+If an option is not provided by default, only generated k8s clusters are deleted and installation scripts remain intact. If the -f option is added, however, installation scripts are also deleted after creating a backup of the cube.yaml file to cube.yaml.org.
 
-따라서, 이 명령어는 주의해서 실행해야 한다.
+**Therefore, this command must be run with caution**.
 
 ```
 # cd /Desktop/cubetest
 
-// k8s만 삭제하고 설치 스크립트는 그대로 유지 
+// Only deletes k8s and keeps installation scripts intact 
 # cube destroy
 
-// k8s와 설치 스크립트를 삭제하고 cube.yaml을 cube.yaml.org파일로 백업함. 
+// Deletes k8s and installation scripts and backs up cube.yaml to cube.yaml.org. 
 # cube destroy -f
 ```
 
--f 옵션으로 삭제한 후에 다시 설치하기 위해서 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
+To reinstall after deleting with the -f option, download the installation scripts again via the cube init command and reinstall.
 
