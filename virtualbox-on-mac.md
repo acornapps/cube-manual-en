@@ -16,20 +16,14 @@ The following programs must be installed before installing Cocktail. Otherwise, 
 
 [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
-3\) Download VirtualBox. (v. 5.1.x)
+3\) Download VirtualBox. \(v. 5.1.x\)
 
 [https://www.virtualbox.org/wiki/Download\_Old\_Builds\_5\_1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 
 4\) Create and add private & public SSH keys
 
-Refer to the section below for detailed key generation information.
-
-```
-# ssh-keygen -t rsa
-# ssh-add id_rsa (user-added)
-```
-
-#### ㅤ
+ㅤRefer to "Create and add private & public SSH keys section"
+ in Overview 
 
 **1. Create an empty directory for installation and move to that directory**
 
@@ -96,33 +90,11 @@ nfs_ip: "192.168.50.10"
 nfs_mountdir: "/nfs"
 ```
 
-As shown above, private_key_path and key_path are private and public SSH key paths, respectively, for accessing VMs and **must be entered using absolute paths**. If the keys already exist, simply enter the corresponding paths. To generate new keys, follow the procedure below
+As shown above, private\_key\_path and key\_path are private and public SSH key paths, respectively, for accessing VMs and **must be entered using absolute paths**. If the keys already exist, simply enter the corresponding paths. To generate new keys, follow the procedure below
 
 **&lt; Generating New SSH Keys  &gt;**
 
-```
-# ssh-keygen
-Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/cloud/.ssh/id_rsa): /Desktop/cubetest/id_rsa
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /Users/cloud/git/cubedeploy/virtualbox/5/id_rsa.
-Your public key has been saved in /Users/cloud/git/cubedeploy/virtualbox/5/id_rsa.pub.
-The key fingerprint is:
-SHA256:liTKyW/l3eU9+mBzyksL0AKpYXRsvsQ793nWJiUgJC0 cloud@Clouds-MacBook-Pro.local
-The key's randomart image is:
-+---[RSA 2048]----+
-|     ....        |
-|    . .E.o       |
-|     o=o=        |
-|   o.oo*.o..     |
-|    =.. So... .  |
-|     . B oo. + o |
-|      o + o.o==o.|
-|     .     o=+Bo.|
-|            o*=. |
-+----[SHA256]-----+
-```
+
 
 **4.Install Cocktail on actual VM using the cube create command.**
 
@@ -149,7 +121,7 @@ redis-3766055555-1lzmh                   1/1       Running   0          2m
 ### **Delete**
 
 **1.Depending on the option, you may delete only k8s clusters or generated VMs.**  
-If an option is not provided by default, only generated k8s clusters are deleted and installation scripts remain intact. If the -f option is added, however, generated VMs are deleted and installation scripts are also deleted after creating a backup of the cube.yaml file to cube.yaml.org.
+If an option is not provided by default, only generated k8s clusters are deleted and installation scripts remain intact. If the -f option is added, however, generated VMs are deleted and installation scripts are also deleted after creating a backup of the cube.yaml file to cube.yaml.org.  
 **Therefore, this command must be run with caution**.
 
 ```

@@ -14,11 +14,11 @@ The following programs must be installed before installing Cocktail. Otherwise, 
 
 3\) Make a note of the Azure account and application-related values as shown below.
 
-* Subscription_Id: Check the subscriptionlD value under Home > Subscriptions
+* Subscription\_Id: Check the subscriptionlD value under Home &gt; Subscriptions
 
 ![](/assets/AzureSubscriptionId.png)
 
-* TenantId : Among the values contained under Home > Azure Active Directory > App Registrations > Endpoints > OAUTH2.0 AUTHORIZATION, the item indicated by an 'X' is the TenantId as shown in the below example.\)
+* TenantId : Among the values contained under Home &gt; Azure Active Directory &gt; App Registrations &gt; Endpoints &gt; OAUTH2.0 AUTHORIZATION, the item indicated by an 'X' is the TenantId as shown in the below example.\)
 
 ![](/assets/AzureTenantId.png)
 
@@ -26,35 +26,35 @@ The following programs must be installed before installing Cocktail. Otherwise, 
 
 * Registering the application lD to get the client ID value
 
-Select [+ New Application Registration] under Home > Azure Active Directory > App Registrations.
+Select \[+ New Application Registration\] under Home &gt; Azure Active Directory &gt; App Registrations.
 
-Select 'Web app/API' for ‘Application Type’ and enter  [http://cocktail.acornsoft.io](http://cocktail.acornsoft.io) (example) as the sign-on URL (provided service URL)
+Select 'Web app/API' for ‘Application Type’ and enter  [http://cocktail.acornsoft.io](http://cocktail.acornsoft.io) \(example\) as the sign-on URL \(provided service URL\)
 
 As shown below, the application ID is the client ID value in the detailed registered application screen.
 
 ![](/assets/AzureClientId.png)
 
-* Obtaining the client_secret value
+* Obtaining the client\_secret value
 
-Select the previously-registered application name under Home > Azure Active Directory > App Registrations and click the [Settings] button at the top
+Select the previously-registered application name under Home &gt; Azure Active Directory &gt; App Registrations and click the \[Settings\] button at the top
 
 Select the Keys menu
 
 description: cocktail\_key
 
-expires: Select 'Never Expires' under ‘Expires’ and click the [Save] button. The value that is automatically displayed is the client_secret value.
+expires: Select 'Never Expires' under ‘Expires’ and click the \[Save\] button. The value that is automatically displayed is the client\_secret value.
 
 ![](/assets/AzureClientSecret.png)
 
 * Setting application permissions
 
-Click the [+ Add] button at the top of the screen from Home > Subscription > Registered Account > Access Control (IAM) ㅤ
+Click the \[+ Add\] button at the top of the screen from Home &gt; Subscription &gt; Registered Account &gt; Access Control \(IAM\) ㅤ
 
 Role: Select 'Contributor' under ‘Role'
 
-Assign access to: Select 'Azure User, Group, or Application' under ‘Assign Access To’ 
+Assign access to: Select 'Azure User, Group, or Application' under ‘Assign Access To’
 
-Select: Enter the previously-registered application name under 'Select' 
+Select: Enter the previously-registered application name under 'Select'
 
 ### **Installation**
 
@@ -117,33 +117,12 @@ addons:
   km: false # kube dashboard + prometheus monitoring(with grafana)
 ```
 
-As shown above, private_key_path and key_path are private and public SSH key paths, respectively, for accessing servers and require the corresponding paths to be entered. If the keys already exist, simply enter the corresponding paths. To generate new keys, follow the procedure below.
+As shown above, private\_key\_path and key\_path are private and public SSH key paths, respectively, for accessing servers and require the corresponding paths to be entered. If the keys already exist, simply enter the corresponding paths. To generate new keys, follow the procedure below.
 
 &lt; Generating New SSH Keys &gt;
 
-```
-# ssh-keygen -t rsa
-Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/cloud/.ssh/id_rsa): /tmp/cubetest/id_rsa
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /tmp/cubetest/id_rsa.
-Your public key has been saved in /tmp/cubetest/id_rsa.pub.
-The key fingerprint is:
-SHA256:liTKyW/l3eU9+mBzyksL0AKpYXRsvsQ793nWJiUgJC0 cloud@Clouds-MacBook-Pro.local
-The key's randomart image is:
-+---[RSA 2048]----+
-|     ....        |
-|    . .E.o       |
-|     o=o=        |
-|   o.oo*.o..     |
-|    =.. So... .  |
-|     . B oo. + o |
-|      o + o.o==o.|
-|     .     o=+Bo.|
-|            o*=. |
-+----[SHA256]-----+
-```
+ㅤRefer to "Create and add private & public SSH keys section"
+in Overview
 
 **4.Install Cocktail on actual VM using the cube create command.**
 

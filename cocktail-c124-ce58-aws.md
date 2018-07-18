@@ -14,17 +14,17 @@ The following programs must be installed before installing Cocktail. Otherwise, 
 
 3\) To install on AWS, access and secret keys must be added as environment variables.
 
-* **The account ID is the string contained in User ARN under IAM > Users > Summary.**
+* **The account ID is the string contained in User ARN under IAM &gt; Users &gt; Summary.**
 
 ![](/assets/AccountId.png)
 
 * **To obtain the access and secret keys, click Security Credentials from the drop-down menu in the top-right corner of the AWS console.**![](/assets/aws-add.png)
 
-* **On the initial screen, you will be prompted with a warning message about creating IAM users. Continue by clicking the [Continue to Security Credentials] button on the left.**![](/assets/aws-add1.png)
+* **On the initial screen, you will be prompted with a warning message about creating IAM users. Continue by clicking the \[Continue to Security Credentials\] button on the left.**![](/assets/aws-add1.png)
 
-* **On the following screen, select [Access Keys (Access Key ID and Secret Access Key)] and click [Create New Access Key] to be issued new keys.**![](/assets/aws-add2.png)
+* **On the following screen, select \[Access Keys \(Access Key ID and Secret Access Key\)\] and click \[Create New Access Key\] to be issued new keys.**![](/assets/aws-add2.png)
 
-* **You will see the following screen when completed, and you will be able to check the Access Key and Credit Key via [Show Access Key]. You may also save the keys by clicking [Download Key File].**![](/assets/aws-add4.png)
+* **You will see the following screen when completed, and you will be able to check the Access Key and Credit Key via \[Show Access Key\]. You may also save the keys by clicking \[Download Key File\].**![](/assets/aws-add4.png)
 
 * **Register the values in the environment variables as shown below.**
 
@@ -106,33 +106,12 @@ addons:
   km: false # kube dashboard + prometheus monitoring(with grafana)
 ```
 
-As shown above, private_key_path and key_path are private and public SSH key paths, respectively, for accessing servers and require the corresponding paths to be entered. If the keys already exist, simply enter the corresponding paths. To generate new keys, follow the procedure below.
+As shown above, private\_key\_path and key\_path are private and public SSH key paths, respectively, for accessing servers and require the corresponding paths to be entered. If the keys already exist, simply enter the corresponding paths. To generate new keys, follow the procedure below.
 
 &lt; Generating New SSH Keys &gt;
 
-```
-# ssh-keygen -t rsa
-Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/cloud/.ssh/id_rsa): /tmp/cubetest/id_rsa
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /tmp/cubetest/id_rsa.
-Your public key has been saved in /tmp/cubetest/id_rsa.pub.
-The key fingerprint is:
-SHA256:liTKyW/l3eU9+mBzyksL0AKpYXRsvsQ793nWJiUgJC0 cloud@Clouds-MacBook-Pro.local
-The key's randomart image is:
-+---[RSA 2048]----+
-|     ....        |
-|    . .E.o       |
-|     o=o=        |
-|   o.oo*.o..     |
-|    =.. So... .  |
-|     . B oo. + o |
-|      o + o.o==o.|
-|     .     o=+Bo.|
-|            o*=. |
-+----[SHA256]-----+
-```
+ㅤRefer to "Create and add private & public SSH keys section"
+in Overview
 
 **4. Install Cocktail on actual VM using the cube create command**
 
@@ -167,7 +146,7 @@ You can verify the Cocktail website URL and port using the following command.
 **1. Deletion is performed via the below command.**
 
 If an option is not provided by default, only generated k8s clusters are deleted and installation scripts remain intact. If the -f option is added, however, generated AWS infrastructures are deleted and installation scripts are also deleted after creating a backup of the cube.yaml file to cube.yaml.org.
-   
+
 **Therefore, this command must be run with caution**.
 
 ```

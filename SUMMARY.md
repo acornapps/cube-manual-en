@@ -9,7 +9,7 @@
   * [delete command](commands/delete-command.md)
   * [status command](commands/status-command.md)
   * [destroy command](commands/destroy-command.md)
-* [Cocktail Installation](cocktail-c124-ce58-mac-c5d0-c11c-virtualbox-d65c-c6a9.md)
+* [Cocktail Installation Overview](cocktail-c124-ce58-mac-c5d0-c11c-virtualbox-d65c-c6a9.md)
   * [virtualbox on mac](virtualbox-on-mac.md)
   * [baremetal on mac, linux](cocktail-c124-ce58-mac-c5d0-c11c-baremetal.md)
   * [aws on mac, linux](cocktail-c124-ce58-aws.md)

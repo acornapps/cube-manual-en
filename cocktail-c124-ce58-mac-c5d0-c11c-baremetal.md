@@ -14,37 +14,12 @@ The following programs must be installed before installing Cocktail. Otherwise, 
 
 3\) Generate SSH keys
 
-SSH keys need to be generated, because the computer uses SSH connections to install on each server (bare-metal equipment). You may also use an existing ssh-key.
-
-&lt; Generating New SSH Keys  &gt;
-
-```
-# ssh-keygen -t rsa
-Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/cloud/.ssh/id_rsa): /tmp/cubetest/id_rsa
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /tmp/cubetest/id_rsa.
-Your public key has been saved in /tmp/cubetest/id_rsa.pub.
-The key fingerprint is:
-SHA256:liTKyW/l3eU9+mBzyksL0AKpYXRsvsQ793nWJiUgJC0 cloud@Clouds-MacBook-Pro.local
-The key's randomart image is:
-+---[RSA 2048]----+
-|     ....        |
-|    . .E.o       |
-|     o=o=        |
-|   o.oo*.o..     |
-|    =.. So... .  |
-|     . B oo. + o |
-|      o + o.o==o.|
-|     .     o=+Bo.|
-|            o*=. |
-+----[SHA256]-----+
-```
+ㅤRefer to "Create and add private & public SSH keys section"
+in Overview
 
 4\) Copy SSH Keys
 
-Copy the generated SSH keys to each server (bare-metal equipment) for access.
+Copy the generated SSH keys to each server \(bare-metal equipment\) for access.
 
 ```
 # ssh-copy-id -i id_rsa.pub root@ip
@@ -85,7 +60,7 @@ Copy the generated SSH keys to each server (bare-metal equipment) for access.
 
 \( Below is an example of a 2-master, 3-worker, and nfs server configuration.\)
 
-If an external load balancer is used and the master is duplicated, enter the corresponding load balancer ip at lb_ip.
+If an external load balancer is used and the master is duplicated, enter the corresponding load balancer ip at lb\_ip.
 
 ```
 ---
