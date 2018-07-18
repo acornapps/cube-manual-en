@@ -149,13 +149,13 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-4**.cube create 명령을 이용하여 cocktail을 설치한다.**
+**4.Install Cocktail on actual VM using the cube create command.**
 
 ```
 # cube create
 ```
 
-5**.If the installation completes without errors, access the master device via SSH and verify that the containers that constitute cocktail-system is running normally.**
+**5.If the installation completes without errors, access the master device via SSH and verify that the containers that constitute cocktail-system is running normally.**
 
 ```
 # ssh -i ~/cube/pki/id_rsa root@{master1_ip}
