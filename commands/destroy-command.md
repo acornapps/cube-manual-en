@@ -1,17 +1,17 @@
 # `destroy` command
 
-destroy는 Kubernetes cluster 노드,  Cocktail삭제한다.
+The destroy command deletes Kubernetes cluster nodes and Cocktail.
 
 ---
 
 ### Prerequisite
 
-Kubernetes 및 Cocktail이 설치된 상태
+Kubernetes and Cocktail already installed
 
 ### Usage
 
 * `cube destroy [flags]`
-* flag없이 호출하면 Cocktail만 제거한다.
+* Only Cocktail is deleted if called without a flag.
 
 ### Flags
 
@@ -19,17 +19,17 @@ Kubernetes 및 Cocktail이 설치된 상태
 
 * `--pre-destroy`
 
-* aws, azure provider 삭제 시 연결된 load balancer, volume을 삭제한다. **반드시 호출해야 한다**.
+* When an aws or azure provider is deleted, the associated load balancers and volumes will also be deleted. **It must be called **.
 
-* 필수: 필수
+* Requirement: Required
 
 ##### force
 
 * `--force, -f`
 
-* aws, azure provider에서는 노드\(서버 인스턴스\)까지 삭제한다.
+* The nodes \(server instance\) are also deleted on aws and azure.
 
-* 필수: 선택
+* Requirement: Optional
 
 
 
