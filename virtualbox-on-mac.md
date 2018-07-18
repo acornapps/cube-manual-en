@@ -22,7 +22,7 @@ The following programs must be installed before installing Cocktail. Otherwise, 
 
 4\) Create and add private & public SSH keys
 
-ㅤRefer to "Create and add private & public SSH keys section"
+ㅤRefer to "Create and add private & public SSH keys" section
  in Overview 
 
 **1. Create an empty directory for installation and move to that directory**

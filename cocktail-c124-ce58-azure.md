@@ -121,7 +121,7 @@ As shown above, private\_key\_path and key\_path are private and public SSH key 
 
 &lt; Generating New SSH Keys &gt;
 
-ㅤRefer to "Create and add private & public SSH keys section"
+ㅤRefer to "Create and add private & public SSH keys" section
 in Overview
 
 **4.Install Cocktail on actual VM using the cube create command.**
