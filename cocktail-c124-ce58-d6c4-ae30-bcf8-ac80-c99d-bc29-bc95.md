@@ -2,7 +2,7 @@
 
 When Cocktail has been installed and environment setup has been completed, verify that the basic functions, such as service deployment, build, and deployment via template, are working properly.
 
-**1. Creating a Service**
+**1.Deploy simple server**
 
 Deploy a simple Tomcat server. When finished, connect to the corresponding service port and verify that the initial Tomcat screen is displayed normally. 
 `Note`: For Tomcat, the memory request and limit amounts must be set to 512 and 1024, respectively, so that the system starts normally.
