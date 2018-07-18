@@ -8,21 +8,19 @@ The following programs must be installed before installing Cocktail. Otherwise, 
 
 [https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
-2\) Download and install Vagrant \(If building a local testing environment using VirtualBox\)
+2\) Download and install Vagrant \(Optional, For local test using virtualbox\)
 
 [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
-3\) Download VirtualBox \(5.1.x version\) \(If building a local testing environment using VirtualBox\)
+3\) Download VirtualBox \(5.1.x version\) \(Optional, For local test using virtualbox\)
 
 [https://www.virtualbox.org/wiki/Download\_Old\_Builds\_5\_1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 
 4\) Create and add private & public SSH keys \(Required\)
 
-* SSH keys are used to access server instances created via Cube.
+* SSH keys are used to access server instances without password.
 
-* The SSH key paths are specified in the key path entry of the cube.yaml file. For more information, refer to the documentation for each installation environment.
-
-* Refer to the below section for information on creating new keys. As with existing keys, the newly-generated keys must be specified in the cube.yaml file.
+* The SSH key paths are specified in the key path entry of the cube.yaml file. For more information, refer to the documentation for each installation section. You can easily create SSH key pair as below:
 
 ```
 # ssh-keygen -f /path/to/file -t rsa -N ''
@@ -45,7 +43,12 @@ The key's randomart image is:
 +----[SHA256]-----+
 
 
-# ssh-add id_rsa (user-added)
+```
+
+* For convenience, you can add private key identities to the authentication agent as below:
+
+```
+# ssh-add /path/to/ssh_private_file
 ```
 
 5\) Download kubectl \(Optional\)
