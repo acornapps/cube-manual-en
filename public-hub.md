@@ -36,25 +36,25 @@ Download and decompress the Harbor installation file
 # tar -zxvf harbor-online-installer-v1.1.1-rc4.tgz
 ```
 
-Harbor 설정파일에서 아래  속성 확인 및 변경하기.
+Check and modify the following properties in the Harbor settings file.
 
 ```
 # vi harbor/harbor.cfg
 ...
-hostname = 서버 ip
+hostname = server ip
 ui_url_protocol = https
 db_password = root123
-ssl_cert = /root/cocktail/cert/harbor.crt     (공인인증서 crt 파일 경로)
-ssl_cert_key = /root/cocktail/cert/harbor.key (공인인증서 key 파일 경로)
+ssl_cert = /root/cocktail/cert/harbor.crt     (Digital certificate crt file path)
+ssl_cert_key = /root/cocktail/cert/harbor.key (Digital certificate key file path)
 harbor_admin_password = xxxxx
 ...
 ```
 
-* Harbor 설치 및 기동
+* Harbor Installation and Startup
 
-./prepare 스크립트를 실행해서 harbor 설정 파일들을 generation한다.
+Run the ./prepare script to generate Harbor settings files.
 
-Harbor가 이미 떠 있는 경우에는 stop한 후 start 한다.
+If Harbor is already running, stop Harbor before starting.
 
 ```
 # ./prepare
@@ -62,30 +62,30 @@ Harbor가 이미 떠 있는 경우에는 stop한 후 start 한다.
 # docker-compose up -d
 ```
 
-* 참고 - Harbor 실행/중단/설정변경시
+* Note: When Running, Stopping, or Reconfiguring Harbor
 
-Harbor는 부팅시에 자동 실행되며 수동으로 기동, 종료 및 설정 변경시에 아래 명령을 실행하면 된다.
+Harbor runs automatically at boot time. To manually start, stop, or reconfigure Harbor, execute the following command:
 
 ```
 # cd cocktail/harbor
 # docker-compose start
 # docker-compose stop
 
-설정을 변경한 경우에는 install.sh 파일을 다시 실행한다.
+If settings have been changed, run the install.sh file again.
 ```
 
 * ---
 
-  Docker Build Server 설치.
+  Docker Build Server Installation.
 
-Docker build Server는 docker상에 container로 실행되며 Cocktail Builder-api component와 통신하게 된다.
+The Docker build server runs as a container on Docker and communicates with the Cocktail builder-api component.
 
-또한,  Docker Server와 Docker Client간 로컬이 아닌 원격지에서는 반드시 TLS로 통신해야 함으로 사설인증서를 생성하여 설정해 준다.
+Remote communication between a Docker server and Docker client must be performed via TLS, and so a private certificate must be generated and set up.
 
-이를 편하게 설정하기 위해 "create-docker-tls.sh" 파일을 설치하고자 하는 VM 또는 machine에 upload하여 실행한다.
+To make this process easier, the "create-docker-tls.sh" file is uploaded to and run on the target virtual or physical machine.
 
 ```
-# ./create-docker-tls.sh "도메인 또는 IP"
+# ./create-docker-tls.sh "Domain or IP"
 # cd /root/.docker
 # ls -al
 # vi /etc/profile.d/docker.sh
@@ -100,9 +100,9 @@ ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock 
 # systemctl restart docker
 ```
 
-* Cocktail에서 builder-api, client-api deployment update
+* Builder-api and client-api deployment update on Cocktail
 
-k8s dashboard에서 builder-api의 환경변수 REGISTRY_URL, DOCKER\_URL, SERVER\_TYPE, CA\_PEM, CERT\_PEM, KEY\_PEM 를 수정하고, cocktail-api의 환경변수 REGISTRY\_URL을 수정한다._
+Modify the builder-api environment variables (REGISTRY_URL, DOCKER_URL, SERVER_TYPE, CA_PEM, CERT_PEM, and KEY_PEM) and cocktail-api environment variable (REGISTRY_URL) from the k8s dashboard._
 
 | 환경변수 | 값 예시 |
 | :--- | :--- |
