@@ -22,8 +22,8 @@ The following programs must be installed before installing Cocktail. Otherwise, 
 
 4\) Create and add private & public SSH keys
 
-ㅤRefer to "Create and add private & public SSH keys" section
- in Overview 
+ㅤRefer to "Create and add private & public SSH keys" section  
+ in Overview
 
 **1. Create an empty directory for installation and move to that directory**
 
@@ -94,8 +94,6 @@ As shown above, private\_key\_path and key\_path are private and public SSH key 
 
 **&lt; Generating New SSH Keys  &gt;**
 
-
-
 **4.Install Cocktail on actual VM using the cube create command.**
 
 ```
@@ -116,7 +114,7 @@ cocktail-metering-aws-3487533297-tw1x7   1/1       Running   0          2m
 redis-3766055555-1lzmh                   1/1       Running   0          2m
 ```
 
-**6.Go to **[http://Master-IP:30000](http://Master-IP:30000)** using your browser to access the Cocktail login page. \(Contact us about having a user ID and password issued\)**![](/assets/cocktail_login.jpeg)
+**6.Go to **[http://Master-IP:30000](http://Master-IP:30000)** using your browser to access the Cocktail login page.**
 
 ### **Delete**
 
