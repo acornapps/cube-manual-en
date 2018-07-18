@@ -149,7 +149,7 @@ redis-3766055555-1lzmh                   1/1       Running   0          2m
 
 **6.Go to **[http://master\_IP:30000으로](http://master_IP:30000으로)** using your browser to access the Cocktail login page. \(Contact us about having a user ID and password issued\)**![](/assets/cocktail_login.jpeg)
 
-### **삭제**
+### **Delete**
 
 **1.Depending on the option, you may delete only k8s clusters or generated VMs.**  
 If an option is not provided by default, only generated k8s clusters are deleted and installation scripts remain intact. If the -f option is added, however, generated VMs are deleted and installation scripts are also deleted after creating a backup of the cube.yaml file to cube.yaml.org.
@@ -158,12 +158,12 @@ If an option is not provided by default, only generated k8s clusters are deleted
 ```
 # cd /Desktop/cubetest
 
-// k8s만 삭제하고 설치 스크립트는 그대로 유지 
+// Only deletes k8s and keeps installation scripts intact 
 # cube destroy
 
-// k8s와 설치 스크립트를 삭제하고 cube.yaml을 cube.yaml.org파일로 백업함. 
+// Deletes k8s and installation scripts and backs up cube.yaml to cube.yaml.org. 
 # cube destroy -f
 ```
 
--f 옵션으로 삭제한 후에 다시 설치하기 위해서 cube init 명령을 통해 설치 스크립트를 다시 다운로드 받은 후 설치하면 된다.
+To reinstall after deleting with the -f option, download the installation scripts again via the cube init command and reinstall.
 
