@@ -4,7 +4,8 @@ When Cocktail has been installed and environment setup has been completed, verif
 
 **1. Creating a Service**
 
-Deploy a simple Tomcat server. When finished, connect to the corresponding service port and verify that the initial Tomcat screen is displayed normally. **Note that for Tomcat, the memory request and limit amounts must be set to 512 and 1024, respectively, so that the system starts normally.**
+Deploy a simple Tomcat server. When finished, connect to the corresponding service port and verify that the initial Tomcat screen is displayed normally. 
+`Note`: For Tomcat, the memory request and limit amounts must be set to 512 and 1024, respectively, so that the system starts normally.
 
 **2.Verifying Deployment via Catalogs**
 
