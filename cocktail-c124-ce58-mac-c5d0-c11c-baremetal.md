@@ -126,12 +126,9 @@ k8s_version: "1.9.8"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
-  ingress: true
-  monitoring: true
-  logging: true
+  cm: true # cocktail + prometheus monitoring(without grafana)
+  km: false # kube dashboard + prometheus monitoring(with grafana)
 
-# (required) cocktail service
-cocktail: true
 # (optional) if nfs server available
 nfs_ip: "203.236.100.15"  -> Enter nfs server ip
 nfs_mountdir: "/nfs"      -> Enter nfs server's shared directory path
