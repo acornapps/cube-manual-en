@@ -2,13 +2,13 @@
 
 The upgrade command upgrades a Kubernetes installation. **Upgrading directly from version 1.8.x to version 1.10.x is not supported**. You must first upgrade to 1.9.x and then to 1.10.x.
 
-Downgrades are currently not supported
+_Downgrades are currently not supported_
 
 ---
 
 ### Prerequisite
 
-Kubernetes already installed. `create` command or `create k8s` command
+Kubernetes already installed. Execute `create` command or `create k8s` command
 
 ### Usage
 
