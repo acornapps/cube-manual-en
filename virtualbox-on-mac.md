@@ -1,28 +1,28 @@
 # Cocktail Installation to Virtualbox on Mac OS X
 
-MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단하게 확인하고자 할 경우에 아래의 절차를 따라 설치한다.
+To check the functionality provided by Cocktail via VirtualBox on macOS, follow the installation steps below.
 
-### **사전준비**
+### **Preparations**
 
-사전 준비는 [Cocktail Installation](/cocktail-c124-ce58-mac-c5d0-c11c-virtualbox-d65c-c6a9.md)을 참조한다.
+Refer to [Cocktail Installation](/cocktail-c124-ce58-mac-c5d0-c11c-virtualbox-d65c-c6a9.md)for details on preparations.
 
-설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메시지가 발생한다.
+The following programs must be installed before installing Cocktail. Otherwise, an error will occur.
 
-1\) Docker 다운로드 후 설치
+1\) Download and install Docker
 
 [https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
-2\) Vagrant 다운로드 후 설치
+2\) Download and install Vagrant
 
 [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
-3\) Virtualbox 다운로드 \(5.1.x version\)
+3\) Download VirtualBox. (v. 5.1.x)
 
 [https://www.virtualbox.org/wiki/Download\_Old\_Builds\_5\_1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 
-4\) SSH private key & public key 생성 및 유저 등록
+4\) Create and add private & public SSH keys
 
-키 생성의 경우 아래의 항목에서 상세하게 확인할 수 있다.
+Refer to the section below for detailed key generation information.
 
 ```
 # ssh-keygen -t rsa
@@ -31,20 +31,20 @@ MacOS에서 VirtualBox를 이용하여 Cocktail이 제공하는 기능을 간단
 
 #### ㅤ
 
-**1.먼저 설치를 위해 빈 디렉토리를 만든 후 해당 디렉토리로 이동한다**
+**1. Create an empty directory for installation and move to that directory**
 
 ```
 # mkdir /Desktop/virtualbox
 # cd /Desktop/virtualbox
 ```
 
-**2.cube 명령을 이용하여 virtualbox용 설치 script를 download 받고 초기화 한다.**
+**2.Use the cube command to download and initialize the virtualbox installation script.**
 
 ```
 # cube init -p virtualbox
 ```
 
-**3.cube.yam 파일을 편집기로 열어서 설치하고자 하는 VM 정보를 기입한다. 아래는 예시임.**
+**3.Open the cube.yam file with an editor and enter the information of the VM to be installed. Below is an example.**
 
 ```
 # vi cube.yaml
@@ -99,9 +99,9 @@ nfs_ip: "192.168.50.10"
 nfs_mountdir: "/nfs"
 ```
 
-상기 항목에서 private\_key\_path  와 key\_path 는 각각 VM에 ssh key로 접속하기 위한 **private key와 public key로 반드시 절대 경로로 기입**한다. 이미 존재하는 경우에는 해당 경로를 기입하면 되고, 신규로 생성할 경우에는 아래 절차대로 실행하면 된다.
+As shown above, private_key_path and key_path are private and public SSH key paths, respectively, for accessing VMs and **must be entered using absolute paths**. If the keys already exist, simply enter the corresponding paths. To generate new keys, follow the procedure below
 
-**&lt; ssh key 신규 발급 방법 &gt;**
+**&lt; Generating New SSH Keys  &gt;**
 
 ```
 # ssh-keygen
@@ -127,13 +127,13 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-**4.cube create 명령을 이용하여 실제 VM에 cocktail을 설치한다.**
+**4.Install Cocktail on actual VM using the cube create command.**
 
 ```
 # cube create
 ```
 
-**5.오류없이 설치가 완료되면 master 장비에 ssh로 접속하여 cocktail-system을  구성하는 컨테이너가 정상적으로 기동하는지 확인한다.**
+**5.If the installation completes without errors, access the master device via SSH and verify that the containers that constitute cocktail-system is running normally.**
 
 ```
 # ssh -i ~/cube/pki/id_rsa root@192.168.50.11
@@ -147,14 +147,13 @@ cocktail-metering-aws-3487533297-tw1x7   1/1       Running   0          2m
 redis-3766055555-1lzmh                   1/1       Running   0          2m
 ```
 
-**6.브라우저로 **[http://master\_IP:30000으로](http://master_IP:30000으로)** 접속하면 cocktail login 화면으로 접속할 수 있다. \(User Id, Password는 별도 문의\)**![](/assets/cocktail_login.jpeg)
+**6.Go to **[http://master\_IP:30000으로](http://master_IP:30000으로)** using your browser to access the Cocktail login page. \(Contact us about having a user ID and password issued\)**![](/assets/cocktail_login.jpeg)
 
 ### **삭제**
 
-**1.삭제는  옵션에 따라 k8s cluster만 삭제하는 경우와 생성된  VM을 삭제할 수 있다.**  
-디폴트로 옵션을 주지 않는 경우에는 생성한 k8s cluster만 삭제하고 설치 스크립트는 그대로 유지하며, -f 옵션을 추가하면 생성된 VM을 삭제하고 cube.yaml 파일을 cube.yaml.org로 백업파일을 생성한 후 설치스크립트도 모두 삭제하게 된다.
-
-따라서, 이 명령어는 주의해서 실행해야 한다.
+**1.Depending on the option, you may delete only k8s clusters or generated VMs.**  
+If an option is not provided by default, only generated k8s clusters are deleted and installation scripts remain intact. If the -f option is added, however, generated VMs are deleted and installation scripts are also deleted after creating a backup of the cube.yaml file to cube.yaml.org.
+**Therefore, this command must be run with caution**.
 
 ```
 # cd /Desktop/cubetest

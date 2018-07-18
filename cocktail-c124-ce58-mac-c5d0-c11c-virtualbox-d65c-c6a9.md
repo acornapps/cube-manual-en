@@ -1,28 +1,28 @@
 # Cocktail Installation
 
-## 사전 준비 사항
+## Preparations
 
-설치 전 아래와 같은 프로그램들이 미리 설치 되어 있어야 하며 설치 되어 있지 않을 경우 에러 메시지가 발생한다.
+The following programs must be installed before installing Cocktail. Otherwise, an error will occur.
 
-1\) Docker 다운로드 후 설치 \(필수\)
+1\) Download and install Docker \(Required\)
 
 [https://store.docker.com/editions/community/docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
-2\) Vagrant 다운로드 후 설치 \(virtualbox를 이용한 로컬 테스트 환경 구축시\)
+2\) Download and install Vagrant \(If building a local testing environment using VirtualBox\)
 
 [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
-3\) VirtualBox 다운로드 \(5.1.x version\) \(VirtualBox를 이용한 로컬 테스트 환경 구축시\)
+3\) Download VirtualBox \(5.1.x version\) \(If building a local testing environment using VirtualBox\)
 
 [https://www.virtualbox.org/wiki/Download\_Old\_Builds\_5\_1](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 
-4\) SSH private key & public key 생성 및 유저 등록 \(필수\)
+4\) Create and add private & public SSH keys \(Required\)
 
-* SSH키는 Cube가 생성한 server instance에 접속하기 위해 사용한다.
+* SSH keys are used to access server instances created via Cube.
 
-* SSH key경로는 'cube.yaml 파일'의 키 경로 항목에 지정한다. 이에 대한 자세한 내용은 각 설치 환경에 대한 문서를 참조한다.
+* The SSH key paths are specified in the key path entry of the cube.yaml file. For more information, refer to the documentation for each installation environment.
 
-* 새로운 키 생성은 아래를 참조한다. 기존 키 사용과 마찬가지로 생성한 키는 'cube.yaml' 파일에 지정해야 한다.
+* Refer to the below section for information on creating new keys. As with existing keys, the newly-generated keys must be specified in the cube.yaml file.
 
 ```
 # ssh-keygen -t rsa
@@ -51,7 +51,7 @@ The key's randomart image is:
 # ssh-add id_rsa (유저등록)
 ```
 
-5\) kubectl 다운로드 \(옵션\)
+5\) Download kubectl \(Optional\)
 
 [https://kubernetes.io/docs/tasks/tools/install-kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl)
 
