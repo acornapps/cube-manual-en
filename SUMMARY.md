@@ -21,7 +21,7 @@
   * [Private Hub](b0b4-bd80-d14c-c2a4-d2b8-b97c-c704-d55c-harbor-c0ac-c124-c778-c99d-c11c-c124-c815-d558-ae30.md)
 * [Cluster Administration](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8.md)
   * [Cluster Startup and Shutdown](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/cluster-startup-and-shutdiown.md)
-  * [인증서 업데이트](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/c778-c99d-c11c-c5c5-b370-c774-d2b8.md)
+  * [Certificate Update](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/c778-c99d-c11c-c5c5-b370-c774-d2b8.md)
   * [K8s version 업그레이드](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/k8s-version-c5c5-adf8-b808-c774-b4dc.md)
   * [Adding a Node to an Existing Cluster](chapter1.md)
   * [Cluster Node Memory Optimization According to Increase in Cache Memory](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/ce90-c2dc-ba54-baa8-b9ac-c99d-ac00-c5d0-b530-b978-d074-b7ec-c2a4-d130-b178-b4dc-ba54-baa8-b9ac-cd5c-c801-d654.md)

@@ -1,10 +1,10 @@
 # Cluster startup & shutdown
 
-Cocktail이 설치된 cluster의 startup과 shutdown은 일련의 순서대로 진행해야 한다.
+Startup and shutdown of the cluster where Cocktail is installed must be performed sequentially.
 
 ### Startup
 
-Startup시에는 master node를 먼저 기동하고 worker node를 기동하는 순서로 진행한다.
+For startups, master nodes must be activated before worker nodes.
 
 1\) Master Node
 
@@ -25,7 +25,7 @@ Startup시에는 master node를 먼저 기동하고 worker node를 기동하는 
 
 ### Shutdown
 
-Shutdown시에는 worker node를 먼저 종료하고 master node를 종료하는 순서로 진행한다.
+Conversely, worker nodes must be deactivated before master nodes for shutdowns.
 
 1\) Worker Node
 
