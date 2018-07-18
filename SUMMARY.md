@@ -23,7 +23,7 @@
   * [Cluster Startup and Shutdown](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/cluster-startup-and-shutdiown.md)
   * [인증서 업데이트](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/c778-c99d-c11c-c5c5-b370-c774-d2b8.md)
   * [K8s version 업그레이드](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/k8s-version-c5c5-adf8-b808-c774-b4dc.md)
-  * [기존 cluster에 node 추가하기](chapter1.md)
+  * [Adding a Node to an Existing Cluster](chapter1.md)
   * [Cluster Node Memory Optimization According to Increase in Cache Memory](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/ce90-c2dc-ba54-baa8-b9ac-c99d-ac00-c5d0-b530-b978-d074-b7ec-c2a4-d130-b178-b4dc-ba54-baa8-b9ac-cd5c-c801-d654.md)
   * [Adding an Etcd Member to Existing Etcd Cluster](d074-b7ec-c2a4-d130-c5c5-b370-c774-d2b8/ae30-c874-etcd-cluster-c5d0-etcd-member-cd94-ac00-d558-ae30.md)
   * [Cluster Backup & Restore](cluster-bc31-c5c5-bc0f-bcf5-ad6c.md)
