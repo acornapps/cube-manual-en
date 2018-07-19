@@ -14,5 +14,5 @@ There are differences in Cocktail settings files depending on the version of a k
   update_cmd = security (modify to)
 ```
 
-참고\) [https://www.lesstif.com/pages/viewpage.action?pageId=46366785](https://www.lesstif.com/pages/viewpage.action?pageId=46366785), [http://webdir.tistory.com/175](http://webdir.tistory.com/175)
+For more information refer to [https://www.lesstif.com/pages/viewpage.action?pageId=46366785](https://www.lesstif.com/pages/viewpage.action?pageId=46366785), [http://webdir.tistory.com/175](http://webdir.tistory.com/175)
 
