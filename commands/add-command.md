@@ -1,6 +1,6 @@
 # `add` command
 
-The add command adds add-ons (nodes, monitoring, logging, etc.) to a Kubernetes cluster. 
+The add command adds noade and add-ons (monitoring, Cocktail, etc.) to a Kubernetes cluster. 
 
 _`add` command work with sub command_
   
