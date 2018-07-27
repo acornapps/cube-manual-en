@@ -101,13 +101,18 @@ k8s_version: "1.9.8"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
-  cm: true # cocktail + prometheus monitoring(without grafana)
+  cm: false # cocktail + prometheus monitoring(without grafana)
   km: false # kube dashboard + prometheus monitoring(with grafana)
 
 # (optional) if nfs server available
 nfs_ip: "203.236.100.15"  -> Enter nfs server ip
 nfs_mountdir: "/nfs"      -> Enter nfs server's shared directory path
-```
+
+# Prometheus Rule Language - en, ko, jp
+alertmsg_lang: "en"
+
+# (required) The unique cluster id. Equal or less than 50 characters.
+cluster_id: "cluster_1234567896"```
 
 **4.Install Cocktail on actual VM using the cube create command in the path where the cube.yaml file is located.**
 

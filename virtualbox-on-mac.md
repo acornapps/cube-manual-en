@@ -82,12 +82,18 @@ k8s_version: "1.9.8"
 cluster_name: "cube"
 domain_name: "acornsoft.io"
 addons:
-  cm: true # cocktail + prometheus monitoring(without grafana)
+  cm: false # cocktail + prometheus monitoring(without grafana)
   km: false # kube dashboard + prometheus monitoring(with grafana)
 
 # (required) if cocktail service true
 nfs_ip: "192.168.50.10"
 nfs_mountdir: "/nfs"
+
+# Prometheus Rule Language - en, ko, jp
+alertmsg_lang: "en"
+
+# (required) The unique cluster id. Equal or less than 50 characters.
+cluster_id: "cluster_1234567896"
 ```
 
 As shown above, private\_key\_path and key\_path are private and public SSH key paths, respectively, for accessing VMs and **must be entered using absolute paths**. If the keys already exist, simply enter the corresponding paths. To generate new keys, follow the procedure below
