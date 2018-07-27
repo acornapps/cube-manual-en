@@ -1,6 +1,6 @@
 # `create` command
 
-The create command installs Kubernetes and/or Cocktail on the platform you prepared via the `init` command.
+The create command installs Kubernetes and/or add-ons on the platform you prepared via the `init` command.
 
 ---
 
@@ -24,4 +24,6 @@ The create command installs Kubernetes and/or Cocktail on the platform you prepa
 * Installs Kubernetes. To use this command, you must first execute the `infra` command.
 
 
+### Install add-ons
+* If you want to install add-ons with `create` or `create k8s` command, modify **cube.yaml** file's `addons` section
 
