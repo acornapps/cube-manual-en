@@ -1,9 +1,9 @@
 # `delete` command
 
 The `delete` command deletes node and add-ons (monitoring, Cocktail, etc.) from a Kubernetes cluster.
-Only node deletions are supported in the current version.
 
-_The delete command merely removes a node from a cluster - it does not destroy it physically_.
+
+_The delete command for baremetal cluster only removes a node from a cluster - it does not destroy it physically_.
 
 ---
 
