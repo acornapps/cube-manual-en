@@ -1,4 +1,4 @@
-# Cube Introduction1
+# Cube Introduction
 
 **Cube** allows for the easy installation of **Cocktail** on local testing environments, bare-metal servers, public clouds \(AWS, Azure, and GCE\) via a command-line interface. On Linux and Mac OS, you can test cluster environments via [VirtualBox](https://www.virtualbox.org/) as the local testing environment.
 
